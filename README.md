@@ -24,18 +24,20 @@
 ## Deakin University
 
 - [MIS710 - Machine Learning In Business](MIS710%20-%20Machine%20Learning%20In%20Business)
+- [MIS715 - Responsible Artificial Intelligence](MIS715%20-%20Responsible%20Artificial%20Intelligence)
 - [MIS761 - Cyber Security Strategies](MIS761%20-%20Cyber%20Security%20Strategies)
 - [MIS770 - Foundation Skills In Data Analysis](MIS770%20-%20Foundation%20Skills%20In%20Data%20Analysis)
 - [MIS771 - Descriptive Analytics And Visualisation](MIS771%20-%20Descriptive%20Analytics%20And%20Visualisation)
 - [MIS772 - Predictive Analytics](MIS772%20-%20Predictive%20Analytics)
+- [MIS779 - Decision Analytics In Practice](MIS779%20-%20Decision%20Analytics%20In%20Practice)
 - [MIS781 - Business Intelligence And Database](MIS781%20-%20Business%20Intelligence%20And%20Database)
+- [MIS782 - Value Of Information](MIS782%20-%20Value%20Of%20Information)
 - [SIT104 - Introduction to Web Development](SIT104%20-%20Introduction%20to%20Web%20Development)
 - [SIT113 - Cloud Computing and Virtualisation](SIT113%20-%20Cloud%20Computing%20and%20Virtualisation)
 - [SIT151 - Game Fundamentals](SIT151%20-%20Game%20Fundamentals)
 - [SIT703 - Advanced Digital Forensics](SIT703%20-%20Advanced%20Digital%20Forensics)
 - [SIT706 - Cloud Computing](SIT706%20-%20Cloud%20Computing)
 - [SIT708 - Mobile Systems Development](SIT708%20-%20Mobile%20Systems%20Development)
-- [MIS715 - Responsible Artificial Intelligence](MIS715%20-%20Responsible%20Artificial%20Intelligence)
 - [SIT718 - Real World Analytics](SIT718%20-%20Real%20World%20Analytics)
 - [SIT725 - Software Engineering](SIT725%20-%20Software%20Engineering)
 - [SIT737 - Service Oriented Architectures and Technologies](SIT737%20-%20Service%20Oriented%20Architectures%20and%20Technologies)
@@ -43,7 +45,6 @@
 - [SIT742 - Modern Data Science](SIT742%20-%20Modern%20Data%20Science)
 - [SIT764 - Project Analysis and Design](SIT764%20-%20Project%20Analysis%20and%20Design)
 - [SIT103_SIT772 - Database Fundamentals](SIT103_SIT772%20-%20Database%20Fundamentals)
-- [MIS782 - Value Of Information](MIS782%20-%20Value%20Of%20Information)
 
 ## Edith Cowan University
 
