@@ -29,6 +29,7 @@
 - [MIS770 - Foundation Skills In Data Analysis](MIS770%20-%20Foundation%20Skills%20In%20Data%20Analysis)
 - [MIS771 - Descriptive Analytics And Visualisation](MIS771%20-%20Descriptive%20Analytics%20And%20Visualisation)
 - [MIS772 - Predictive Analytics](MIS772%20-%20Predictive%20Analytics)
+- [MIS775 - Decision Modelling For Business Analytics](MIS775%20-%20Decision%20Modelling%20For%20Business%20Analytics)
 - [MIS779 - Decision Analytics In Practice](MIS779%20-%20Decision%20Analytics%20In%20Practice)
 - [MIS781 - Business Intelligence And Database](MIS781%20-%20Business%20Intelligence%20And%20Database)
 - [MIS782 - Value Of Information](MIS782%20-%20Value%20Of%20Information)
