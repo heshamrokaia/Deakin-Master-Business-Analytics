@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Welcome to Week 4</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<h5><span style="color: #cf2a27;"><img src="banner-939233_19201.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true" /><br /></span></h5>
+<p>This week, we will explore the supervised learning algorithms and demonstrate one important use-case.</p>
+<p>&nbsp;In the beginning, we will discuss the fundamental concepts of supervised learning. Next, state-of-the-art performance-measure techniques will be explored.&nbsp; This week, students will also be familiar with one powerful machine learning and data mining tool WEKA. Next, students will be introduced to one cyber-security dataset that contains attack instances.&nbsp; Finally, WEKA will be used to classify attack instances from normal data using benchmark algorithms for that dataset.&nbsp;</p>
+<p></p>
+<p></p>
+<p>Once a student completes this week successfully, it will significantly help them by developing the fundamental knowledge of supervised machine learning for security analysis, be familiar with WEKA and classification of attack data for large datasets. They will also be familiar with how to evaluate the performance of attack classification. This week will help the students&nbsp;towards achieving the ULOs related to 1, 3, and 5.</p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

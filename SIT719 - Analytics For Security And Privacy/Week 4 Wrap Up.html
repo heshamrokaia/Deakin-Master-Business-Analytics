@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>Week 4 Wrap Up</h1>
+<p><img src="learn-64058_19202.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<p></p>
+<p></p>
+<p>Well done! You have reached the end of week 4. This week, at the start, we focused on the fundamental concepts of supervised machine learning.&nbsp; Next, we introduced different performance measures. The powerful machine learning and data mining tool WEKA is also introduced in this week. We have then utilized the week to solve one cyber security related problem.&nbsp; Here, we have used widely used NSL-KDD dataset for network intrusion detection. WEKA based classification tasks are explored to detect attack instances.&nbsp;&nbsp;</p>
+<p>This week helped you towards solving a challenging security problem related to the intrusion detection system. You have learned how to used state-of-the-art classification algorithms using a powerful tool like WEKA.&nbsp;&nbsp;</p>
+<p>Hope you enjoyed this week.</p>
+<p>This week material is based on the following references:</p>
+<p>1. M. Tavallaee, E. Bagheri, W. Lu, and A. Ghorbani, “A Detailed Analysis of the KDD CUP 99 Data Set,”&nbsp;<em>Submitted to Second IEEE Symposium on Computational Intelligence for Security and Defense Applications (CISDA)</em>, 2009.</p>
+<p>2. NSL-KDD Datasets, Available Online&nbsp;<a href="https://www.unb.ca/cic/datasets/nsl.html">https://www.unb.ca/cic/datasets/nsl.html</a></p>
+<p>3. P. Louridas and C. Ebert, "Machine Learning," in&nbsp;<em>IEEE Software</em>, vol. 33, no. 5, pp. 110-115, Sept.-Oct. 2016.</p>
+<p>4. Scott Fortmann-Roe, " Understanding the Bias-Variance Tradeoff",&nbsp;<a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">http://scott.fortmann-roe.com/docs/BiasVariance.html</a>&nbsp;(Accessed Online 03/03/2020)</p>
+<p>5. Jason Brownlee, " Gentle Introduction to the Bias-Variance Trade-Off in Machine Learning"&nbsp;<a href="https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/">https://machinelearningmastery.com/gentle-introduction-to-the-bias-variance-trade-off-in-machine-learning/</a>&nbsp;(Accessed Online 03/03/2020)</p>
+<p>6.&nbsp;Seema Singh, "Understanding the Bias-Variance Tradeoff", Online Available&nbsp;<a href="https://towardsdatascience.com/understanding-the-bias-variance-tradeoff-165e6942b229">https://towardsdatascience.com/understanding-the-bias-variance-tradeoff-165e6942b229</a>&nbsp;(Accessed on 03/03/2020)</p>
+<p>7. Introduction To Supervised Learning, Online Available&nbsp;<a href="http://bhagyeshvikani.blogspot.com/2015/10/what-is-supervised-learning.html">http://bhagyeshvikani.blogspot.com/2015/10/what-is-supervised-learning.html</a>&nbsp;(Accessed on 03/03/2020)</p>
+<p>8. Mastering Machine Learning for Penetration Testing, by Chiheb Chebbi, Released June 2018 Publisher(s): Packt publishing, Available through Deakin Library&nbsp;<a href="https://learning.oreilly.com/library/view/mastering-machine-learning/9781788997409/5a52b22d-b0e9-4f33-a396-50dd38796116.xhtml">https://learning.oreilly.com/library/view/mastering-machine-learning/9781788997409/5a52b22d-b0e9-4f33-a396-50dd38796116.xhtml</a>&nbsp;(Accessed Online 03/03/2020)</p>
+<p></p>
+<p></p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

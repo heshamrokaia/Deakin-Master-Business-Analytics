@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Differential Privacy and Machine Learning</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p>The objective of machine learning is to extract useful information from data, such as how to classify data, how to predict a quantity, or how to find clusters of similar samples. Given a family of learning models, machine learning algorithms select and output the best one based on some given data. The output model can be used in either dealing with future data or interpreting the distribution of data. Although the output model typically far more compact than the underlying dataset, it must capture some information describing the dataset. Privacy, on the other hand, concerns the protection of private data from leakage, especially the information of individuals</p>
+<p>Now, the process of the machining learning model building requires data. Therefore, there the output of the machine learning may reveal some sensitive information which is not desirable.&nbsp;</p>
+<p>Differential privacy uses random noise to ensure that the publicly visible information doesn&rsquo;t change much if one individual in the dataset changes. As no individual sample can significantly affect the output, attackers cannot infer the private information corresponding to any individual sample confidently.&nbsp;Researchers have designed many mechanisms to build models that can capture the distributions corresponding to&nbsp;large datasets while guaranteeing differential privacy with respect to individual examples. In order to achieve generalizability, machine learning models should not depend heavily on any single sample. Therefore, it is possible to hide the effects of individual samples, simultaneously preserving privacy and providing utility.&nbsp;</p>
+<p>The IBM Differential Privacy Library is a general-purpose library for experimenting, investigating and developing applications in differential privacy.</p>
+<p>Use the Differential Privacy Library if you are looking to:</p>
+<ul>
+<li>Experiment with differential privacy</li>
+<li>Explore the impact of differential privacy on machine learning accuracy using basic classification and clustering models</li>
+<li>Build your own differential privacy applications, using our extensive collection of mechanisms</li>
+</ul>
+<p></p>
+<p>To learn more and download, visit:&nbsp;<a href="https://github.com/IBM/differential-privacy-library">https://github.com/IBM/differential-privacy-library</a></p>
+<p></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

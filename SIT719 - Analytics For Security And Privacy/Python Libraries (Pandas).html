@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Python Libraries&nbsp;</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2></h2>
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;">Pandas</span></h2>
+<p><a href="http://pandas.pydata.org/">pandas</a>&nbsp;provides&nbsp;high-level data structures and functions designed to make working with structured or tabular data fast, easy, and expressive.&nbsp;The primary objects in pandas that will be used in this&nbsp;unit are&nbsp;the&nbsp;DataFrame, a tabular, column-oriented data structure with both row and column labels, and&nbsp;the&nbsp;Series, a one-dimensional labeled array object.</p>
+<p>pandas blends the high-performance, array-computing ideas of NumPy with the flexible data manipulation capabilities of spreadsheets and relational databases (such as SQL). It provides sophisticated indexing&nbsp;functionality to make it easy to reshape, slice and dice, perform aggregations, and select subsets of data.</p>
+<p>Some characteristics include:</p>
+<ul>
+<li>Data structures with labeled axes supporting automatic or explicit data alignment</li>
+<li>Integrated time series functionality</li>
+<li>The same data structures handle both time series data and non&ndash;time series data</li>
+<li>Arithmetic operations and reductions that preserve metadata</li>
+<li>Flexible handling of missing data</li>
+<li>Merge and other relational operations found in popular databases (SQL-based, for example)</li>
+</ul>
+<p>&nbsp;</p>
+<p>A short introduction to pandas is demonstrated in the link shared next page.</p>
+<p>&nbsp;Follow the below code for constructing Pandas DataFrame from a dictionary:</p>
+<p style="vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 7.5pt 0cm 0pt; line-height: normal;"></p>
+<div style="background: #fafafa; padding: 8pt; border: 1pt solid #c9c9c9;">
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><span style="font-family: Consolas; color: #222222;">d </span><span style="font-family: Consolas; color: #666666;">=</span><span style="font-family: Consolas; color: #222222;"> {</span><span style="font-family: Consolas; color: #4070a0;">'col1'</span><span style="font-family: Consolas; color: #222222;">: [</span><span style="font-family: Consolas; color: #208050;">1</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">2</span><span style="font-family: Consolas; color: #222222;">], </span><span style="font-family: Consolas; color: #4070a0;">'col2'</span><span style="font-family: Consolas; color: #222222;">: [</span><span style="font-family: Consolas; color: #208050;">3</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">4</span><span style="font-family: Consolas; color: #222222;">]}</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><strong><span style="font-family: Consolas; color: #c65d09;">&gt;&gt;&gt; </span></strong><span style="font-family: Consolas; color: #222222;">df </span><span style="font-family: Consolas; color: #666666;">=</span><span style="font-family: Consolas; color: #222222;"> pd</span><span style="font-family: Consolas; color: #666666;">.</span><span style="font-family: Consolas; color: #222222;">DataFrame(data</span><span style="font-family: Consolas; color: #666666;">=</span><span style="font-family: Consolas; color: #222222;">d)</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><strong><span style="font-family: Consolas; color: #c65d09;">&gt;&gt;&gt; </span></strong><span style="font-family: Consolas; color: #222222;">df</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">&nbsp;&nbsp; col1&nbsp; col2</span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">0&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 3</span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">1&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 4</span></p>
+</div>
+<p style="vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 7.5pt 0cm 0pt; line-height: normal;"><span style="font-size: 17.5pt; color: #333333;">&nbsp;</span></p>
+<p style="vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 7.5pt 0cm 0pt; line-height: normal;">Constructing DataFrame from numpy ndarray:</p>
+<p style="vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 7.5pt 0cm 0pt; line-height: normal;"></p>
+<div style="background: #fafafa; padding: 8pt; border: 1pt solid #c9c9c9;">
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><span style="font-family: Consolas; color: #222222;">df2 </span><span style="font-family: Consolas; color: #666666;">=</span><span style="font-family: Consolas; color: #222222;"> pd</span><span style="font-family: Consolas; color: #666666;">.</span><span style="font-family: Consolas; color: #222222;">DataFrame(np</span><span style="font-family: Consolas; color: #666666;">.</span><span style="font-family: Consolas; color: #222222;">array([[</span><span style="font-family: Consolas; color: #208050;">1</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">2</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">3</span><span style="font-family: Consolas; color: #222222;">], [</span><span style="font-family: Consolas; color: #208050;">4</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">5</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">6</span><span style="font-family: Consolas; color: #222222;">], [</span><span style="font-family: Consolas; color: #208050;">7</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">8</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #208050;">9</span><span style="font-family: Consolas; color: #222222;">]]),</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><strong><span style="font-family: Consolas; color: #c65d09;">... </span></strong><span style="font-family: Consolas; color: #222222;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns</span><span style="font-family: Consolas; color: #666666;">=</span><span style="font-family: Consolas; color: #222222;">[</span><span style="font-family: Consolas; color: #4070a0;">'a'</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #4070a0;">'b'</span><span style="font-family: Consolas; color: #222222;">, </span><span style="font-family: Consolas; color: #4070a0;">'c'</span><span style="font-family: Consolas; color: #222222;">])</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt;"><strong><span style="font-family: Consolas; color: #c65d09;">&gt;&gt;&gt; </span></strong><span style="font-family: Consolas; color: #222222;">df2</span></span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">&nbsp;&nbsp; a&nbsp; b&nbsp; c</span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">0&nbsp; 1&nbsp; 2&nbsp; 3</span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">1&nbsp; 4&nbsp; 5&nbsp; 6</span></p>
+<p style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 0cm; margin: 18pt 0cm; line-height: 14.4pt; border: medium none initial;"><span style="font-size: 12pt; font-family: Consolas; color: #333333;">2&nbsp; 7&nbsp; 8&nbsp; 9</span></p>
+</div>
+<p style="margin-bottom: 19.2pt; vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; line-height: 20.4pt;"><span style="font-size: 12pt; font-family: Arial, sans-serif; color: #333333;">Importing dataset using pandas data frame</span></p>
+<p style="vertical-align: baseline; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; margin: 7.5pt 0cm 0pt; line-height: normal;"></p>
+<div style="background: #fafafa; padding: 8pt; border: 1pt solid #c9c9c9;">
+<p># Import the `pandas` library as `pd`</p>
+<p>import pandas as pd</p>
+<p></p>
+<p># Load in the data with `read_csv()`</p>
+<p>iris_data = pd.read_csv("<a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data">https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data</a>", header=None)</p>
+<p></p>
+<p># Print out `iris_data`</p>
+<p>print(iris_data)</p>
+</div>
+<p></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

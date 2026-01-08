@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>Unit Learning&nbsp;Outcomes (ULO)</h1>
+<p><img src="books-1245690_1920.jpg" alt="" title="" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;"></span></h2>
+<h5><span style="color: #cf2a27;"></span></h5>
+<h2>By the end of&nbsp;this unit,&nbsp;you should be able to develop the following skills:</h2>
+<p><strong>UL01</strong>&nbsp;Scripting skills as they relate to large datasets that are encountered in cybersecurity,&nbsp;and the use of popular toolkits used to build analytics.</p>
+<p><strong>UL02</strong>&nbsp;Recognise and apply the relevant ethical,&nbsp;regulatory and governance constraints on organisations and professionals when dealing with data and analytics.&nbsp;</p>
+<p><strong>UL03</strong>&nbsp;Understanding the basics of supervised and unsupervised machine learning algorithms,&nbsp;including their basic mathematical underpinnings,&nbsp;and how they can be implemented using popular libraries.</p>
+<p><strong>UL04</strong>&nbsp;Understand how analytics can be used to protect computer networks as well as what types of network defence data might be useful for building analytics. Explore what types of attacks have been successful mitigated by the current state of the art and where work still needs to be done.</p>
+<p><strong>UL05</strong> Understand the technical threats to privacy that may result from the use of analytics in cyber security.</p>
+<p>Week 1 to Week 7 will focus on the&nbsp; UL01, UL03 and UL04. The UL05 will be covered in Week 8 and Week9. Finally, the UL02 will be the focus of Week 10.</p>
+<p>The ULOs are also closely related to the Deakin's Graduate Learning Outcomes:</p>
+<p><img src="PastedImage_hlraml5t1gm0vluhzqubsfdyu3wx20ib001117423483.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5></h5>
+<h2><span style="color: #990000;">Reading List</span></h2>
+<p>You can access the reading list from the below link:</p>
+<p><a href="https://rl.talis.com/3/deakin/lists/94D00345-3E64-4FA9-71F2-99398FE4E2F6.html?lang=en-GB&amp;login=1">https://rl.talis.com/3/deakin/lists/94D00345-3E64-4FA9-71F2-99398FE4E2F6.html?lang=en-GB&amp;login=1</a></p>
+<p><iframe src="https://rl.talis.com/3/deakin/lists/94D00345-3E64-4FA9-71F2-99398FE4E2F6.html?lang=en-GB&amp;login=1" style="border: 0px #ffffff none;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen="allowfullscreen"></iframe></p>
+<p>Besides, you will also find the reference list at the end of each week's weekly resources.&nbsp;</p>
+<p></p>
+<p></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

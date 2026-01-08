@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>The Australian Privacy Act</h1>
+<div>
+<p><img src="/content/enforced/753854-SIT719_TRI-2_2019/week_4/4.9/SIT719-4.9-THE-AUSTRALIAN-PRIVACY-ACT.jpg" alt="Global abstract internet cyber security concept" title="Global abstract internet cyber security concept" data-d2l-editor-default-img-style="true" /></p>
+</div>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">&copy; Getty Images</a></address>
+<h5>What regulations are there for the privacy of personal information?</h5>
+<hr />
+<h1>The Australian Privacy Act</h1>
+<div>
+<p>The <em>Privacy Act 1988</em> is an Australian law that deals with the privacy of personal information.</p>
+<p>The Act was updated in 2014 to reflect changes in perceptions and views of technology.</p>
+<p>Watch the Office of the Australian Information Commissioner (OAIC) video for an overview of the Australian Privacy Act and what is meant by private information.</p>
+<div>
+<p class="centerVideo"><iframe src="https://www.youtube.com/embed/wmCE_CkV58I?wmode=opaque" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="648" height="365" frameborder="0"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p></p>
+<p>The Privacy Act is based upon Australian Privacy Principles (APPs), outlined in this guidelines video. There are 13 principles including security provisions, for example:</p>
+<ul>
+<li>Australian Privacy Principle 11 &ndash; security of personal information.</li>
+</ul>
+<p></p>
+<div>
+<p class="centerVideo"><iframe src="https://www.youtube.com/embed/gd-1iR1611o?wmode=opaque" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="648" height="365" frameborder="0"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p></p>
+<p>11.1: If an APP entity holds personal information, the entity must take such steps as are reasonable in the circumstances to protect the information: 1) from misuse, interference and loss and 2) from unauthorised access, modification or disclosure.<br />(<a href="https://www.oaic.gov.au/agencies-and-organisations/app-guidelines/">OAIC 2018</a>)</p>
+<p>These principles also relate to analytical data and the protection of that data.</p>
+<p>The Australian <em>Privacy Act</em> is the only legal requirement for organisations to protect their analytical data and something that very Australian organisation should be made aware of.</p>
+<p id="your-task"></p>
+<h3 id="references">References</h3>
+<p>Office of the Australian Information Commissioner (OAIC) 2018, <a href="https://www.oaic.gov.au/agencies-and-organisations/app-guidelines/" target="_blank" rel="noopener noreferrer">&lsquo;Chapter 11: APP 11 &mdash; Security of personal information&rsquo;</a>, Australian Privacy Principles Guidelines, accessed July 11, 2018.</p>
+</div>
+<p><!-- ------------------------------------------- --></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

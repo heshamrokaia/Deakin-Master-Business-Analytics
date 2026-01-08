@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Week 7 Wrap Up</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p>This week you learned the&nbsp;potential<strong>&nbsp;</strong>vulnerabilities&nbsp;of machine learning algorithms during learning and classification. Different attack classifications are explored, specifically, the examples of poisoning attacks are discussed in detail.&nbsp;</p>
+<p>The weekly resource is based on the following references:</p>
+<p></p>
+<h3><b><a href="https://dl.acm.org/doi/abs/10.1145/2046684.2046692?casa_token=vNM1HfxALkcAAAAA:KOIgfgrNLNYWWbBVP59h51n8wApe7E1El8CJm4nvveXhRG-9Sp72GL6WlBcr2dK6SZJ3qSszao55">Adversarial machine learning</a></b></h3>
+<p>1.&nbsp;Huang et al., "Adversarial machine learning", Proceedings of the 4th ACM workshop on Security and artificial intelligence, October 2011.</p>
+<p>2.&nbsp;Machine Learning and Security by Clarence Chio; David Freeman Published by O'Reilly Media, Inc., 2018, Access through Deakin Library&nbsp;<a href="https://learning.oreilly.com/library/view/machine-learning-and/9781491979891/ch08.html">https://learning.oreilly.com/library/view/machine-learning-and/9781491979891/ch08.html</a></p>
+<p>&nbsp;3.&nbsp;Elie Bursztein, "Attacks against machine learning &mdash; an overview", May 2018, Online Available&nbsp;<a href="https://elie.net/blog/ai/attacks-against-machine-learning-an-overview/">https://elie.net/blog/ai/attacks-against-machine-learning-an-overview/</a>&nbsp;(Accessed on 03/03/2018)</p>
+<p>4.&nbsp; Adversarial Machine Learning, PRALab,&nbsp;University of Cagliari,&nbsp;<a href="https://pralab.diee.unica.it/en/AdversarialMachineLearning">https://pralab.diee.unica.it/en/AdversarialMachineLearning</a></p>
+<p>5.&nbsp;Battista Biggio, Fabio Roli, Wild patterns: Ten years after the rise of adversarial machine learning, Pattern Recognition,<br />Volume 84, 2018, Pages 317-331, Online Available (Accessed on 03/03/2020)&nbsp;<a href="https://arxiv.org/pdf/1712.03141.pdf">https://arxiv.org/pdf/1712.03141.pdf</a></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

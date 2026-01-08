@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>Performance Evaluation</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p style="text-align: center;"><iframe src="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1545175&amp;type=lti&amp;rCode=DeakinUniversity-4663482" title="ConfusionMatrix" allowfullscreen="allowfullscreen" allow="microphone *; camera *; autoplay *" height="405" width="720"></iframe></p>
+<p>In order to evaluate a machine learning performance, we need to use well-defined parameters and insights. To compute the different evaluation metrics, we need to use four important parameters:</p>
+<ul>
+<li>True positive (TP)</li>
+<li>False positive (FP)</li>
+<li>True negative (TN)</li>
+<li>False negative (FN)</li>
+</ul>
+<p>&nbsp;</p>
+<p>To explain the above parameters, let’s assume that we have a labeled classification dataset consists of normal and attack instances. Any single instance is classified as either TP, FP, TN or FN according to the following definitions.</p>
+<p>&nbsp;</p>
+<p>TP = ATTACK scenario correctly identified as ATTACK.</p>
+<p>FP = NORMAL scenario incorrectly identified as ATTACK.</p>
+<p>TN= NORMAL scenario correctly identified as NORMAL.</p>
+<p>FN = ATTACK scenario incorrectly identified as NORMAL.</p>
+<p>&nbsp;</p>
+<p>The following evaluation metrics are used to quantify the classification performance.</p>
+<p><b>Precision</b>: Precision, or positive predictive value, is the ratio of attack samples that are correctly predicted divided by the total number of predicted ATTACK samples.</p>
+<p><img width="182" height="34" src="PastedImage_3h8vq9kjiw19xyzwhcmljr0v9wi5lhlt001118199818.png"><!--[endif]--></p>
+<p align="center">&nbsp;</p>
+<h5><b></b></h5>
+<p><b>Recall</b>:&nbsp;Recall, or the true positive rate, is the ratio of attack samples that are correctly predicted by the total number of actual ATTACK samples in the dataset. Also known as sensitivity or hit rate.</p>
+<h5><b> <!-- [if gte vml 1]>
+<![endif]--><!-- [if !vml]--><img width="162" height="34" src="PastedImage_qurc6a8ap5nv6d5dhpcfq77uflwmb2w9001118961692.png"><!--[endif]--> </b></h5>
+<p><b></b></p>
+<h5><b></b></h5>
+<p><b>F1 Score</b>:&nbsp;The F1-score, or F-measure, is a measure the harmonic mean of the precision and recall.</p>
+<p><br><b> <!-- [if gte vml 1]>
+<![endif]--><!-- [if !vml]--><img width="174" height="34" src="PastedImage_ofxhrpv5wremm1ghv0q3dwsdhv8gyqem001118961692.png"><!--[endif]--> </b></p>
+<p><b></b></p>
+<h5><b></b></h5>
+<p><b>Accuracy</b>: Accuracy is the ratio of the total correctly predicted samples divided by the total number of samples.</p>
+<p><!-- [if gte vml 1]>
+<![endif]--><!-- [if !vml]--><img width="255" height="34" src="PastedImage_esapzxa5341ar6shtbs1wrx4vwwykhfr001118961692.png"><!--[endif]--></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

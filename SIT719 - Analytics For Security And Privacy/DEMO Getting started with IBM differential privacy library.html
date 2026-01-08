@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Getting started with IBM differential privacy library</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<div>
+<div>
+<div>
+<p>We're using the&nbsp;<a href="https://archive.ics.uci.edu/ml/datasets/iris">Iris dataset</a>, so let's load it and perform an 80/20 train/test split.</p>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<div>
+<pre>from sklearn import datasets
+from sklearn.model_selection import train_test_split
+
+dataset = datasets.load_iris()
+X_train, X_test, y_train, y_test = train_test_split(dataset.data, dataset.target, test_size=0.2)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<p>Now, let's train a differentially private naive Bayes classifier. Our classifier&nbsp;<strong>runs just like an&nbsp;<code>sklearn</code>&nbsp;classifier</strong>, so you can get up and running quickly.</p>
+<p><code>diffprivlib.models.GaussianNB</code>&nbsp;can be run&nbsp;<strong>without any parameters</strong>, although this will throw a warning (we need to specify the&nbsp;<code>bounds</code>&nbsp;parameter to avoid this). The privacy level is controlled by the parameter&nbsp;<code>epsilon</code>, which is passed to the classifier at initialisation (e.g.&nbsp;<code>models.GaussianNB(epsilon=0.1)</code>). The default is&nbsp;<code>epsilon = 1.0</code>.</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>In&nbsp;[2]:</div>
+<div>
+<div>
+<div>
+<pre>import diffprivlib.models as models
+
+clf = models.GaussianNB()
+clf.fit(X_train, y_train)</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>Out[2]:</div>
+<div>
+<pre>GaussianNB(bounds=[(4.3, 7.7), (2.0, 4.4), (1.0, 6.6), (0.1, 2.5)], epsilon=1,
+           priors=None, var_smoothing=1e-09)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<p>We can now classify unseen examples, knowing that the trained model is differentially private and preserves the privacy of the 'individuals' in the training set (flowers are entitled to their privacy too!).</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>In&nbsp;[3]:</div>
+<div>
+<div>
+<div>
+<pre>clf.predict(X_test)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div>Out[3]:</div>
+<div>
+<pre>array([0, 2, 2, 1, 2, 1, 0, 2, 0, 1, 2, 2, 2, 0, 2, 1, 0, 0, 0, 0, 0, 2,
+       2, 2, 2, 0, 1, 2, 2, 2])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<p>Every time the model is trained with&nbsp;<code>.fit()</code>, a different model is produced due to the randomness of differential privacy. The accuracy will therefore change, even if it's re-trained with the same training data. Try it for yourself to find out!</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>In&nbsp;[4]:</div>
+<div>
+<div>
+<div>
+<pre>from sklearn.metrics import accuracy_score
+
+print("Test accuracy: %f" % accuracy_score(y_test, clf.predict(X_test)))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div></div>
+<div>
+<pre>Test accuracy: 0.933333
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<p>We can easily evaluate the accuracy of the model for various&nbsp;<code>epsilon</code>&nbsp;values and plot it with&nbsp;<code>matplotlib</code>.</p>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>In&nbsp;[5]:</div>
+<div>
+<div>
+<div>
+<pre>import numpy as np
+import matplotlib.pyplot as plt
+
+epsilons = np.logspace(-2, 2, 50)
+bounds = [(4.3, 7.9), (2.0, 4.4), (1.1, 6.9), (0.1, 2.5)]
+accuracy = list()
+
+for epsilon in epsilons:
+    clf = models.GaussianNB(bounds=bounds, epsilon=epsilon)
+    clf.fit(X_train, y_train)
+    
+    accuracy.append(accuracy_score(y_test, clf.predict(X_test)))
+
+plt.semilogx(epsilons, accuracy)
+plt.title("Differentially private Naive Bayes accuracy")
+plt.xlabel("epsilon")
+plt.ylabel("Accuracy")
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<div></div>
+<div><img src="PastedImage_ry0ffcoy2vm1vz0c5or4jr18zggtxu2k001120535185.png" style="height: auto; border-width: 0px;" /></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div></div>
+<div>
+<div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5></h5>
+<p>Congratulations, you've completed your first differentially private machine learning task with the Differential Privacy Library!&nbsp;</p>
+</div>
+</div>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

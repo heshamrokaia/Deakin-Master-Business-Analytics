@@ -1,0 +1,1001 @@
+id,gender,race,age,marital_status,degree,native_country,workclass,occupation,salary
+1,Male,Asian,99,Single,Master's Degree,United States,Federal-gov,Business Systems Development Analyst,161014.5
+2,Male,Asian,66,Married,Doctorate,United States,Never-worked,GIS Technical Architect,196866.6
+3,Male,Native American,100,Widowed,Master's Degree,United States,Local-gov,Help Desk Operator,189774.76
+4,Female,Black,36,Widowed,Master's Degree,United States,Self-emp-inc,Product Engineer,69357.38
+5,Female,Hispanic,79,Single,Master's Degree,United States,Federal-gov,VP Sales,22885.68
+6,Agender,Asian,46,Widowed,Doctorate,United States,Never-worked,Civil Engineer,136796.13
+7,Female,White,45,Married,Associate's Degree,United States,Without-pay,Speech Pathologist,44417.13
+8,Genderfluid,Native American,92,Divorced,Doctorate,United States,Local-gov,Financial Advisor,121125.73
+9,Male,Native American,53,Married,Doctorate,United States,Self-emp-inc,Sales Representative,117041.18
+10,Female,Black,82,Single,Associate's Degree,United States,Private,Financial Analyst,33015.61
+11,Female,Native American,19,Divorced,Bachelor's Degree,United States,Never-worked,VP Marketing,35514.95
+12,Genderfluid,Asian,96,Widowed,Doctorate,United States,Private,Assistant Media Planner,110490.71
+13,Male,Hispanic,75,Divorced,Associate's Degree,United States,Never-worked,Software Test Engineer III,126997.35
+14,Male,Native American,88,Divorced,Master's Degree,United States,State-gov,Accounting Assistant II,136331.81
+15,Male,Native American,24,Divorced,Master's Degree,United States,Local-gov,Structural Engineer,52410.22
+16,Male,Native American,22,Widowed,Master's Degree,United States,State-gov,Software Engineer IV,183077.71
+17,Male,Asian,90,Widowed,Doctorate,United States,State-gov,Assistant Professor,187179.48
+18,Male,Asian,23,Widowed,Master's Degree,United States,Self-emp-not-inc,Civil Engineer,84613.06
+19,Female,Hispanic,30,Widowed,Associate's Degree,United States,Never-worked,Automation Specialist IV,115035.5
+20,Male,Asian,25,Single,Master's Degree,United States,Without-pay,Accountant I,21736.8
+21,Male,Hispanic,53,Divorced,Associate's Degree,United States,Local-gov,Technical Writer,31535.69
+22,Female,Hispanic,22,Single,Associate's Degree,United States,State-gov,Administrative Assistant IV,86697.83
+23,Female,Asian,75,Divorced,Master's Degree,United States,Private,Nurse,99821.3
+24,Polygender,Hispanic,22,Single,Doctorate,United States,Self-emp-not-inc,Legal Assistant,29691.15
+25,Female,White,56,Divorced,Bachelor's Degree,United States,Without-pay,Chief Design Engineer,71106.37
+26,Female,Asian,60,Divorced,Bachelor's Degree,United States,Local-gov,Financial Analyst,64614.44
+27,Female,Black,93,Widowed,Master's Degree,United States,Self-emp-not-inc,Recruiting Manager,154950.71
+28,Female,Hispanic,90,Married,Doctorate,United States,Never-worked,VP Product Management,179309.12
+29,Female,Native American,27,Widowed,Associate's Degree,United States,Private,Office Assistant II,41159.94
+30,Female,Hispanic,42,Single,Associate's Degree,United States,Private,Research Associate,94175.36
+31,Male,Native American,49,Widowed,Doctorate,United States,State-gov,Quality Engineer,94162.67
+32,Female,Native American,98,Widowed,Doctorate,United States,Never-worked,Information Systems Manager,183070.63
+33,Male,Black,50,Married,Master's Degree,United States,State-gov,Office Assistant II,154387.36
+34,Male,Asian,88,Widowed,Associate's Degree,United States,Federal-gov,Technical Writer,64807.38
+35,Genderqueer,White,84,Single,Associate's Degree,United States,Self-emp-not-inc,Geological Engineer,175697.4
+36,Male,Asian,81,Single,Doctorate,United States,Local-gov,Accounting Assistant IV,188035.86
+37,Male,Hispanic,32,Married,Master's Degree,United States,Self-emp-not-inc,Computer Systems Analyst IV,145526.15
+38,Male,Black,66,Widowed,Doctorate,United States,Self-emp-not-inc,Internal Auditor,32405.3
+39,Female,Black,89,Widowed,Associate's Degree,United States,State-gov,Staff Scientist,106201.93
+40,Male,Hispanic,40,Widowed,Associate's Degree,United States,State-gov,Staff Scientist,192197.28
+41,Female,Native American,78,Single,Doctorate,United States,Federal-gov,Environmental Tech,67341.51
+42,Male,Native American,27,Single,Master's Degree,United States,Self-emp-not-inc,Sales Associate,163918.73
+43,Female,Native American,18,Married,Bachelor's Degree,United States,Self-emp-not-inc,Chief Design Engineer,124832.33
+44,Female,Native American,25,Single,Associate's Degree,United States,Without-pay,Computer Systems Analyst IV,58872.87
+45,Male,Native American,48,Single,Bachelor's Degree,United States,Local-gov,Desktop Support Technician,80932.24
+46,Male,Native American,90,Married,Master's Degree,United States,Without-pay,Programmer III,91126.38
+47,Female,Asian,66,Married,Doctorate,United States,Private,Nuclear Power Engineer,172768.33
+48,Male,Black,29,Widowed,Bachelor's Degree,United States,Self-emp-inc,Safety Technician II,192827.51
+49,Male,Native American,84,Single,Associate's Degree,United States,Self-emp-not-inc,Research Associate,23892.33
+50,Male,Native American,86,Divorced,Doctorate,United States,Self-emp-not-inc,Human Resources Assistant I,94158.93
+51,Male,Hispanic,35,Married,Master's Degree,United States,Local-gov,VP Marketing,31874.39
+52,Female,Asian,45,Divorced,Doctorate,United States,Never-worked,Media Manager IV,193213.53
+53,Female,Black,62,Married,Master's Degree,United States,Federal-gov,Physical Therapy Assistant,117786.13
+54,Male,Hispanic,55,Married,Bachelor's Degree,United States,State-gov,VP Accounting,197694.0
+55,Male,Native American,47,Widowed,Doctorate,United States,Federal-gov,Librarian,164093.68
+56,Male,Hispanic,24,Divorced,Master's Degree,United States,Federal-gov,Safety Technician IV,88273.59
+57,Non-binary,White,61,Widowed,Bachelor's Degree,United States,Private,Nurse,52030.41
+58,Female,White,21,Married,Associate's Degree,United States,Self-emp-inc,Operator,197802.02
+59,Male,Asian,62,Widowed,Doctorate,United States,Private,Electrical Engineer,106733.39
+60,Male,Black,53,Single,Bachelor's Degree,United States,Local-gov,Web Developer IV,101064.42
+61,Male,Black,38,Married,Associate's Degree,United States,Self-emp-not-inc,Health Coach III,122914.5
+62,Male,Black,76,Married,Doctorate,United States,Never-worked,Financial Analyst,44617.17
+63,Male,Black,18,Divorced,Bachelor's Degree,United States,Local-gov,Environmental Tech,49739.87
+64,Bigender,Asian,77,Divorced,Doctorate,United States,Federal-gov,Account Representative III,106005.11
+65,Female,Black,90,Widowed,Bachelor's Degree,United States,Local-gov,Environmental Specialist,150541.85
+66,Male,White,37,Single,Associate's Degree,United States,Never-worked,VP Sales,21744.85
+67,Female,Asian,64,Widowed,Doctorate,United States,Never-worked,GIS Technical Architect,178562.82
+68,Female,Hispanic,99,Married,Bachelor's Degree,United States,State-gov,Data Coordinator,119838.21
+69,Female,Hispanic,100,Widowed,Doctorate,United States,Federal-gov,Editor,43859.57
+70,Male,Native American,92,Divorced,Bachelor's Degree,United States,Self-emp-inc,Business Systems Development Analyst,58340.97
+71,Female,White,59,Widowed,Doctorate,United States,Private,Quality Control Specialist,167032.53
+72,Genderfluid,Native American,82,Widowed,Master's Degree,United States,Without-pay,Teacher,168194.41
+73,Female,Native American,68,Widowed,Bachelor's Degree,United States,Local-gov,Budget/Accounting Analyst IV,72885.43
+74,Non-binary,Asian,29,Widowed,Master's Degree,United States,Without-pay,Research Assistant II,114859.24
+75,Male,Asian,71,Widowed,Bachelor's Degree,United States,Local-gov,Executive Secretary,106773.82
+76,Male,Native American,32,Married,Master's Degree,United States,Self-emp-inc,Account Coordinator,139236.18
+77,Male,Black,49,Married,Master's Degree,United States,Self-emp-not-inc,Geologist IV,136913.2
+78,Female,Hispanic,55,Married,Bachelor's Degree,United States,Private,VP Sales,97410.03
+79,Female,Black,38,Divorced,Doctorate,United States,Federal-gov,Accountant III,102262.47
+80,Female,Black,19,Divorced,Bachelor's Degree,United States,Local-gov,Payment Adjustment Coordinator,73887.23
+81,Male,White,49,Single,Associate's Degree,United States,Self-emp-inc,Information Systems Manager,28340.6
+82,Male,Black,19,Divorced,Master's Degree,United States,Self-emp-not-inc,Help Desk Technician,198503.47
+83,Genderfluid,White,95,Single,Bachelor's Degree,United States,Private,Quality Control Specialist,129973.25
+84,Female,Native American,77,Widowed,Doctorate,United States,Without-pay,Environmental Tech,51879.4
+85,Male,Asian,69,Single,Master's Degree,United States,Self-emp-inc,Engineer I,145016.87
+86,Female,Hispanic,49,Divorced,Bachelor's Degree,United States,Never-worked,VP Product Management,65208.46
+87,Male,Black,64,Single,Associate's Degree,United States,State-gov,Teacher,156897.85
+88,Male,Asian,28,Divorced,Bachelor's Degree,United States,Without-pay,Mechanical Systems Engineer,53579.3
+89,Male,Hispanic,89,Married,Master's Degree,United States,State-gov,Quality Control Specialist,98438.11
+90,Male,Hispanic,34,Widowed,Associate's Degree,United States,Never-worked,Nurse Practicioner,23163.68
+91,Female,Native American,81,Divorced,Bachelor's Degree,United States,Never-worked,Marketing Assistant,162061.18
+92,Male,Native American,68,Widowed,Master's Degree,United States,State-gov,Accountant I,170509.13
+93,Female,Hispanic,75,Married,Bachelor's Degree,United States,State-gov,Teacher,196705.49
+94,Male,White,57,Married,Doctorate,United States,Private,Design Engineer,161236.28
+95,Male,White,96,Single,Bachelor's Degree,United States,Private,Editor,35295.12
+96,Female,Native American,18,Married,Doctorate,United States,Never-worked,Recruiting Manager,166150.28
+97,Male,Black,62,Divorced,Bachelor's Degree,United States,State-gov,Associate Professor,130939.17
+98,Female,Hispanic,54,Single,Bachelor's Degree,United States,Without-pay,Analog Circuit Design manager,110994.02
+99,Female,Asian,60,Married,Bachelor's Degree,United States,Self-emp-inc,Programmer IV,32602.8
+100,Bigender,Native American,71,Divorced,Master's Degree,United States,Federal-gov,Accountant III,183780.16
+101,Female,White,40,Divorced,Doctorate,United States,Local-gov,Geologist III,73171.49
+102,Male,Hispanic,41,Married,Bachelor's Degree,United States,Local-gov,Chemical Engineer,181540.38
+103,Non-binary,Native American,28,Single,Associate's Degree,United States,Never-worked,Quality Control Specialist,103922.08
+104,Female,Hispanic,88,Single,Bachelor's Degree,United States,State-gov,VP Product Management,99980.56
+105,Male,Native American,37,Divorced,Bachelor's Degree,United States,Private,Health Coach I,188542.97
+106,Male,Hispanic,31,Widowed,Master's Degree,United States,State-gov,Civil Engineer,76410.21
+107,Polygender,Hispanic,38,Married,Master's Degree,United States,Private,Desktop Support Technician,146722.24
+108,Male,Native American,51,Single,Associate's Degree,United States,Self-emp-not-inc,Biostatistician I,181659.3
+109,Female,White,21,Widowed,Master's Degree,United States,State-gov,Structural Analysis Engineer,116477.13
+110,Female,Native American,33,Married,Doctorate,United States,Never-worked,Budget/Accounting Analyst III,151752.56
+111,Female,White,85,Single,Bachelor's Degree,United States,Never-worked,Internal Auditor,196064.95
+112,Female,Native American,18,Widowed,Master's Degree,United States,Self-emp-inc,Software Engineer IV,29290.72
+113,Female,Hispanic,73,Divorced,Associate's Degree,United States,Private,Business Systems Development Analyst,144236.46
+114,Female,Asian,39,Widowed,Doctorate,United States,Self-emp-not-inc,VP Marketing,189916.58
+115,Female,Hispanic,55,Single,Master's Degree,United States,Self-emp-inc,General Manager,114391.25
+116,Male,Asian,28,Divorced,Associate's Degree,United States,Local-gov,Accounting Assistant IV,51664.67
+117,Male,Hispanic,36,Divorced,Doctorate,United States,Federal-gov,Clinical Specialist,111519.3
+118,Female,White,55,Married,Associate's Degree,United States,State-gov,Senior Cost Accountant,119497.73
+119,Male,Hispanic,28,Single,Master's Degree,United States,Self-emp-not-inc,Sales Associate,193563.05
+120,Male,Native American,45,Divorced,Associate's Degree,United States,Local-gov,Account Coordinator,46069.74
+121,Female,Hispanic,39,Widowed,Doctorate,United States,Private,Professor,106252.87
+122,Agender,Native American,56,Single,Master's Degree,United States,Private,Actuary,159625.51
+123,Male,White,69,Single,Associate's Degree,United States,Local-gov,Structural Analysis Engineer,57569.34
+124,Male,White,44,Married,Doctorate,United States,Local-gov,Accounting Assistant III,42131.7
+125,Male,Asian,25,Single,Master's Degree,United States,State-gov,Staff Accountant II,169733.12
+126,Female,Native American,39,Widowed,Doctorate,United States,Local-gov,Software Engineer IV,133675.61
+127,Male,Hispanic,39,Married,Doctorate,United States,Self-emp-not-inc,Senior Cost Accountant,138627.02
+128,Female,White,75,Widowed,Bachelor's Degree,United States,Self-emp-inc,Geologist IV,78381.74
+129,Female,Native American,54,Married,Associate's Degree,United States,State-gov,Nurse,88280.99
+130,Male,Asian,95,Single,Master's Degree,United States,Without-pay,GIS Technical Architect,36824.57
+131,Male,Black,34,Married,Doctorate,United States,Local-gov,Staff Accountant II,186007.41
+132,Male,Black,24,Divorced,Doctorate,United States,Self-emp-inc,Safety Technician II,179151.87
+133,Female,White,46,Widowed,Associate's Degree,United States,State-gov,Speech Pathologist,79869.07
+134,Female,Asian,86,Divorced,Master's Degree,United States,Local-gov,Structural Engineer,79626.37
+135,Female,White,72,Single,Associate's Degree,United States,Private,Programmer III,159904.07
+136,Female,Hispanic,85,Widowed,Master's Degree,United States,Self-emp-not-inc,Physical Therapy Assistant,156258.56
+137,Male,Asian,98,Single,Bachelor's Degree,United States,State-gov,Health Coach II,71853.38
+138,Female,Asian,25,Married,Associate's Degree,United States,Private,Geological Engineer,159963.22
+139,Male,White,28,Married,Doctorate,United States,Federal-gov,Speech Pathologist,91666.85
+140,Male,Native American,75,Married,Associate's Degree,United States,Private,Director of Sales,160775.89
+141,Female,Black,84,Divorced,Doctorate,United States,Federal-gov,Registered Nurse,145471.28
+142,Male,Native American,76,Divorced,Master's Degree,United States,Federal-gov,Account Coordinator,188432.63
+143,Male,Hispanic,64,Widowed,Associate's Degree,United States,Federal-gov,Technical Writer,156946.53
+144,Female,Asian,43,Married,Master's Degree,United States,Never-worked,Administrative Assistant III,167263.33
+145,Female,Asian,68,Married,Bachelor's Degree,United States,Without-pay,Account Executive,176328.13
+146,Male,Black,64,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Physical Therapy Assistant,41752.63
+147,Male,Black,85,Single,Associate's Degree,United States,Federal-gov,Software Test Engineer II,121199.21
+148,Male,Black,85,Single,Associate's Degree,United States,Self-emp-inc,Database Administrator II,65594.98
+149,Female,Hispanic,46,Divorced,Associate's Degree,United States,Without-pay,Marketing Manager,147426.42
+150,Agender,Hispanic,41,Married,Associate's Degree,United States,Without-pay,Systems Administrator III,170967.35
+151,Female,Asian,25,Married,Master's Degree,United States,State-gov,Dental Hygienist,48469.13
+152,Male,Asian,68,Divorced,Bachelor's Degree,United States,Never-worked,Payment Adjustment Coordinator,103342.73
+153,Male,Hispanic,41,Divorced,Bachelor's Degree,United States,State-gov,Programmer Analyst I,100989.17
+154,Male,Native American,70,Single,Master's Degree,United States,Private,Marketing Assistant,159712.98
+155,Male,White,70,Divorced,Associate's Degree,United States,Never-worked,Geologist IV,159225.76
+156,Male,Native American,71,Married,Master's Degree,United States,Never-worked,General Manager,79528.88
+157,Male,Hispanic,94,Widowed,Associate's Degree,United States,Self-emp-inc,Research Assistant III,109629.33
+158,Male,Native American,82,Married,Bachelor's Degree,United States,Federal-gov,VP Marketing,113427.77
+159,Female,White,27,Divorced,Associate's Degree,United States,Self-emp-inc,VP Accounting,122372.83
+160,Male,Hispanic,82,Single,Bachelor's Degree,United States,Local-gov,Sales Representative,83685.46
+161,Female,Hispanic,37,Married,Master's Degree,United States,Self-emp-inc,Professor,135186.7
+162,Male,White,72,Widowed,Master's Degree,United States,Self-emp-inc,Recruiter,163592.18
+163,Female,Hispanic,60,Widowed,Associate's Degree,United States,Self-emp-inc,Director of Sales,23417.66
+164,Non-binary,White,32,Single,Doctorate,United States,Private,Paralegal,196553.61
+165,Non-binary,Hispanic,92,Divorced,Associate's Degree,United States,State-gov,Assistant Media Planner,98298.19
+166,Female,White,64,Widowed,Master's Degree,United States,State-gov,Automation Specialist II,175720.76
+167,Female,Black,46,Widowed,Bachelor's Degree,United States,Without-pay,Librarian,33716.59
+168,Female,White,79,Married,Associate's Degree,United States,Self-emp-not-inc,Structural Engineer,117786.57
+169,Male,White,86,Widowed,Master's Degree,United States,State-gov,Dental Hygienist,121038.82
+170,Female,Asian,91,Divorced,Bachelor's Degree,United States,Without-pay,Project Manager,45547.98
+171,Agender,Asian,67,Single,Master's Degree,United States,Private,Staff Accountant I,149167.81
+172,Female,Hispanic,60,Divorced,Bachelor's Degree,United States,Without-pay,Account Representative III,143579.62
+173,Male,Hispanic,64,Widowed,Associate's Degree,United States,State-gov,Human Resources Manager,152298.97
+174,Female,Native American,83,Divorced,Doctorate,United States,State-gov,Occupational Therapist,154116.68
+175,Female,Hispanic,36,Married,Master's Degree,United States,Local-gov,Developer IV,128811.7
+176,Male,Asian,76,Married,Master's Degree,United States,Federal-gov,Staff Scientist,199034.11
+177,Female,White,75,Widowed,Associate's Degree,United States,Self-emp-inc,Assistant Manager,199148.37
+178,Male,White,22,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Media Manager IV,104310.02
+179,Female,Black,89,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Senior Sales Associate,129682.8
+180,Male,Asian,96,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Geologist II,120912.07
+181,Female,Asian,45,Divorced,Master's Degree,United States,Federal-gov,Systems Administrator I,72280.64
+182,Male,Hispanic,43,Widowed,Doctorate,United States,Self-emp-not-inc,Assistant Professor,141114.84
+183,Male,Hispanic,23,Divorced,Bachelor's Degree,United States,Self-emp-inc,Financial Advisor,136008.55
+184,Male,Hispanic,82,Widowed,Master's Degree,United States,Federal-gov,Programmer Analyst IV,137630.75
+185,Male,White,56,Single,Doctorate,United States,Never-worked,Social Worker,58201.74
+186,Male,White,76,Married,Doctorate,United States,Without-pay,Database Administrator II,59258.86
+187,Female,White,44,Divorced,Bachelor's Degree,United States,State-gov,Recruiter,53556.02
+188,Female,White,41,Widowed,Associate's Degree,United States,Self-emp-not-inc,Community Outreach Specialist,50238.11
+189,Female,Asian,41,Married,Master's Degree,United States,Self-emp-not-inc,Administrative Assistant III,80562.88
+190,Male,Black,63,Divorced,Doctorate,United States,State-gov,GIS Technical Architect,55877.87
+191,Male,White,81,Married,Doctorate,United States,Self-emp-not-inc,Research Assistant II,28636.31
+192,Female,Native American,20,Married,Doctorate,United States,Private,Health Coach IV,21832.94
+193,Female,Hispanic,34,Divorced,Master's Degree,United States,State-gov,Payment Adjustment Coordinator,118181.75
+194,Female,Hispanic,29,Married,Doctorate,United States,Private,Marketing Assistant,124261.19
+195,Female,Native American,43,Widowed,Bachelor's Degree,United States,Self-emp-inc,Web Designer IV,24295.12
+196,Male,Black,71,Married,Associate's Degree,United States,Never-worked,Financial Analyst,175526.0
+197,Female,Black,49,Divorced,Bachelor's Degree,United States,Never-worked,Senior Developer,176285.44
+198,Female,Native American,49,Widowed,Associate's Degree,United States,Federal-gov,Nurse,128899.1
+199,Male,Native American,28,Divorced,Doctorate,United States,Local-gov,Assistant Manager,124685.97
+200,Genderqueer,Hispanic,31,Divorced,Master's Degree,United States,Self-emp-inc,Assistant Media Planner,69841.79
+201,Male,Black,80,Widowed,Master's Degree,United States,Private,Actuary,173176.37
+202,Agender,Hispanic,61,Married,Bachelor's Degree,United States,Private,Occupational Therapist,95983.17
+203,Male,Asian,43,Married,Master's Degree,United States,Self-emp-inc,Nurse,91678.47
+204,Male,Black,40,Married,Doctorate,United States,Never-worked,Safety Technician III,172751.91
+205,Bigender,Hispanic,52,Widowed,Bachelor's Degree,United States,Federal-gov,Quality Control Specialist,98040.23
+206,Female,White,47,Married,Associate's Degree,United States,Self-emp-inc,Health Coach IV,70079.18
+207,Male,Hispanic,26,Married,Bachelor's Degree,United States,Local-gov,Social Worker,191212.69
+208,Female,Hispanic,90,Married,Master's Degree,United States,Local-gov,Legal Assistant,162700.07
+209,Female,White,48,Single,Bachelor's Degree,United States,Federal-gov,Geologist IV,131336.65
+210,Female,Native American,27,Single,Bachelor's Degree,United States,State-gov,Analyst Programmer,90171.38
+211,Female,Native American,88,Divorced,Bachelor's Degree,United States,Private,VP Quality Control,50542.32
+212,Male,Native American,42,Widowed,Master's Degree,United States,Private,Technical Writer,142600.01
+213,Female,Black,71,Widowed,Bachelor's Degree,United States,State-gov,Research Assistant IV,113329.29
+214,Female,Black,21,Divorced,Doctorate,United States,State-gov,Sales Representative,197074.07
+215,Female,Native American,92,Widowed,Associate's Degree,United States,Without-pay,Dental Hygienist,155456.75
+216,Male,Asian,83,Married,Doctorate,United States,Self-emp-not-inc,Senior Sales Associate,82141.67
+217,Male,Asian,92,Widowed,Associate's Degree,United States,Never-worked,Tax Accountant,146276.61
+218,Male,White,60,Divorced,Bachelor's Degree,United States,Without-pay,Automation Specialist III,45857.99
+219,Female,Black,51,Divorced,Associate's Degree,United States,Without-pay,Help Desk Technician,54719.44
+220,Female,Asian,64,Single,Doctorate,United States,Self-emp-not-inc,Database Administrator III,75851.99
+221,Male,Asian,66,Widowed,Doctorate,United States,Self-emp-not-inc,Quality Engineer,69746.89
+222,Male,Asian,37,Divorced,Associate's Degree,United States,Private,Recruiter,165734.95
+223,Female,White,63,Single,Master's Degree,United States,Federal-gov,Paralegal,81078.61
+224,Female,Native American,45,Widowed,Master's Degree,United States,Without-pay,Project Manager,50267.46
+225,Female,Native American,19,Married,Doctorate,United States,Never-worked,Web Developer III,137497.08
+226,Female,Black,70,Widowed,Doctorate,United States,Self-emp-not-inc,Account Representative III,30154.92
+227,Female,Black,41,Divorced,Master's Degree,United States,State-gov,Staff Scientist,143040.12
+228,Female,Black,56,Divorced,Bachelor's Degree,United States,Never-worked,Associate Professor,155031.46
+229,Male,Hispanic,28,Single,Doctorate,United States,Self-emp-not-inc,Community Outreach Specialist,73076.59
+230,Female,Hispanic,70,Single,Doctorate,United States,Private,Help Desk Operator,79701.46
+231,Non-binary,Hispanic,28,Married,Doctorate,United States,Self-emp-inc,Software Consultant,66496.24
+232,Female,Native American,82,Single,Master's Degree,United States,State-gov,Payment Adjustment Coordinator,185201.59
+233,Male,Hispanic,50,Divorced,Associate's Degree,United States,Self-emp-not-inc,Design Engineer,122565.21
+234,Male,Native American,86,Married,Associate's Degree,United States,Self-emp-not-inc,Health Coach IV,81972.09
+235,Female,Black,56,Divorced,Associate's Degree,United States,Without-pay,Executive Secretary,159319.22
+236,Male,Hispanic,91,Widowed,Associate's Degree,United States,Private,Automation Specialist I,98159.33
+237,Female,Native American,18,Married,Bachelor's Degree,United States,Self-emp-not-inc,Statistician II,154635.86
+238,Female,Black,79,Single,Associate's Degree,United States,Never-worked,Electrical Engineer,93467.29
+239,Female,Native American,99,Single,Associate's Degree,United States,State-gov,Paralegal,118070.03
+240,Female,White,70,Widowed,Associate's Degree,United States,Without-pay,Research Associate,162120.41
+241,Female,Asian,96,Widowed,Bachelor's Degree,United States,Self-emp-inc,Research Assistant IV,58354.77
+242,Female,Hispanic,88,Widowed,Doctorate,United States,Self-emp-not-inc,Assistant Professor,183609.23
+243,Female,Hispanic,32,Widowed,Master's Degree,United States,Without-pay,GIS Technical Architect,177492.67
+244,Male,Hispanic,60,Widowed,Bachelor's Degree,United States,Local-gov,Nurse Practicioner,50818.16
+245,Polygender,Black,37,Married,Master's Degree,United States,Private,Structural Engineer,46428.85
+246,Male,Black,77,Widowed,Associate's Degree,United States,Self-emp-not-inc,Statistician II,60957.58
+247,Female,Hispanic,55,Divorced,Associate's Degree,United States,Never-worked,Statistician I,112912.46
+248,Female,White,60,Married,Master's Degree,United States,Private,Database Administrator III,108658.2
+249,Male,Asian,72,Single,Doctorate,United States,Self-emp-not-inc,Chief Design Engineer,188351.92
+250,Male,Asian,54,Divorced,Associate's Degree,United States,Self-emp-inc,Professor,22157.51
+251,Male,Black,20,Married,Doctorate,United States,Self-emp-not-inc,Assistant Media Planner,78918.86
+252,Female,Black,93,Married,Associate's Degree,United States,Self-emp-inc,Desktop Support Technician,181711.85
+253,Female,Native American,56,Divorced,Associate's Degree,United States,Local-gov,Compensation Analyst,127523.49
+254,Female,Black,68,Widowed,Associate's Degree,United States,Self-emp-inc,Registered Nurse,40117.84
+255,Male,Black,93,Married,Associate's Degree,United States,Self-emp-not-inc,Business Systems Development Analyst,31936.72
+256,Female,Black,28,Married,Associate's Degree,United States,Self-emp-not-inc,Geological Engineer,147137.56
+257,Female,Black,91,Single,Master's Degree,United States,Self-emp-not-inc,Systems Administrator I,38671.44
+258,Female,Hispanic,41,Divorced,Master's Degree,United States,Federal-gov,Desktop Support Technician,88709.09
+259,Female,Black,67,Single,Bachelor's Degree,United States,State-gov,Compensation Analyst,138548.54
+260,Genderfluid,Hispanic,50,Widowed,Doctorate,United States,Local-gov,VP Accounting,193343.52
+261,Male,Hispanic,65,Widowed,Associate's Degree,United States,Federal-gov,Software Test Engineer I,195734.85
+262,Female,White,22,Single,Bachelor's Degree,United States,Never-worked,Structural Analysis Engineer,126730.82
+263,Male,Asian,92,Divorced,Doctorate,United States,Federal-gov,Account Representative I,173038.82
+264,Female,Black,80,Married,Master's Degree,United States,Federal-gov,Account Executive,52161.56
+265,Male,Hispanic,100,Married,Bachelor's Degree,United States,State-gov,Accountant I,38628.51
+266,Female,Hispanic,36,Single,Master's Degree,United States,Federal-gov,Administrative Assistant I,138341.52
+267,Male,Native American,46,Divorced,Associate's Degree,United States,Never-worked,Business Systems Development Analyst,101781.02
+268,Female,White,62,Divorced,Doctorate,United States,Never-worked,Junior Executive,184308.03
+269,Male,Hispanic,44,Divorced,Doctorate,United States,Never-worked,Software Consultant,86960.81
+270,Male,Asian,61,Divorced,Doctorate,United States,Without-pay,Operator,91620.42
+271,Female,Black,71,Married,Master's Degree,United States,Without-pay,Web Developer II,40259.28
+272,Male,Asian,86,Married,Doctorate,United States,State-gov,Financial Advisor,69789.06
+273,Female,Asian,32,Widowed,Associate's Degree,United States,State-gov,Registered Nurse,103266.22
+274,Female,White,25,Single,Bachelor's Degree,United States,Local-gov,Staff Scientist,197547.1
+275,Female,Black,76,Married,Bachelor's Degree,United States,Never-worked,VP Product Management,134244.79
+276,Male,Black,61,Single,Doctorate,United States,Never-worked,Staff Accountant IV,184907.77
+277,Male,Native American,96,Widowed,Master's Degree,United States,Never-worked,Sales Representative,114044.38
+278,Female,Native American,43,Widowed,Bachelor's Degree,United States,Never-worked,Financial Analyst,198665.37
+279,Female,Asian,19,Married,Associate's Degree,United States,Never-worked,Accountant II,73779.47
+280,Female,Black,74,Single,Doctorate,United States,Private,Assistant Media Planner,151077.57
+281,Female,Asian,49,Widowed,Associate's Degree,United States,Never-worked,Office Assistant II,115257.03
+282,Male,Black,76,Single,Master's Degree,United States,Self-emp-inc,Nuclear Power Engineer,43621.63
+283,Female,Black,50,Married,Associate's Degree,United States,Self-emp-not-inc,Human Resources Manager,79407.12
+284,Polygender,Asian,71,Single,Master's Degree,United States,Federal-gov,Staff Accountant III,129059.81
+285,Female,Asian,93,Widowed,Doctorate,United States,Self-emp-not-inc,Clinical Specialist,152965.51
+286,Male,Native American,78,Married,Doctorate,United States,Local-gov,Research Associate,149422.28
+287,Female,White,64,Single,Associate's Degree,United States,Local-gov,Staff Scientist,103965.01
+288,Genderfluid,White,59,Single,Associate's Degree,United States,Never-worked,Account Executive,163344.5
+289,Female,Asian,72,Single,Associate's Degree,United States,Private,Budget/Accounting Analyst III,38432.23
+290,Female,Native American,74,Divorced,Doctorate,United States,Private,Marketing Manager,148253.79
+291,Male,Asian,58,Divorced,Bachelor's Degree,United States,Private,Structural Engineer,20690.55
+292,Female,Hispanic,20,Married,Master's Degree,United States,Self-emp-not-inc,Business Systems Development Analyst,136718.42
+293,Male,Hispanic,19,Divorced,Master's Degree,United States,Private,Assistant Professor,25185.39
+294,Male,Hispanic,92,Widowed,Associate's Degree,United States,Never-worked,VP Product Management,121766.87
+295,Polygender,Native American,27,Married,Associate's Degree,United States,Self-emp-not-inc,Assistant Manager,32585.08
+296,Female,White,64,Divorced,Master's Degree,United States,Self-emp-inc,Chief Design Engineer,172355.26
+297,Male,White,81,Married,Associate's Degree,United States,Federal-gov,Junior Executive,163262.94
+298,Female,Native American,83,Single,Bachelor's Degree,United States,Local-gov,Data Coordinator,53277.8
+299,Female,Native American,58,Divorced,Associate's Degree,United States,Self-emp-not-inc,Database Administrator III,92572.66
+300,Male,Native American,55,Divorced,Doctorate,United States,Never-worked,Associate Professor,180790.6
+301,Female,Black,77,Single,Doctorate,United States,Local-gov,Analyst Programmer,113415.21
+302,Female,White,58,Married,Bachelor's Degree,United States,Private,Cost Accountant,168231.71
+303,Bigender,Asian,19,Divorced,Bachelor's Degree,United States,Federal-gov,Account Coordinator,63921.6
+304,Bigender,Native American,92,Married,Bachelor's Degree,United States,Local-gov,Computer Systems Analyst IV,70270.76
+305,Bigender,Asian,81,Divorced,Bachelor's Degree,United States,Federal-gov,Electrical Engineer,47524.53
+306,Male,Native American,28,Married,Bachelor's Degree,United States,Without-pay,Occupational Therapist,26757.6
+307,Female,Native American,31,Single,Bachelor's Degree,United States,Without-pay,Database Administrator III,192045.11
+308,Female,Native American,35,Widowed,Doctorate,United States,Self-emp-inc,Structural Analysis Engineer,167221.98
+309,Male,Native American,87,Divorced,Doctorate,United States,Federal-gov,Recruiting Manager,168699.94
+310,Male,Black,93,Divorced,Bachelor's Degree,United States,State-gov,Registered Nurse,127199.64
+311,Male,White,93,Divorced,Doctorate,United States,Federal-gov,Desktop Support Technician,150206.65
+312,Male,Black,35,Divorced,Master's Degree,United States,Without-pay,Editor,41550.74
+313,Female,Asian,44,Married,Doctorate,United States,Local-gov,Assistant Manager,176746.47
+314,Female,Asian,54,Divorced,Doctorate,United States,Self-emp-inc,VP Marketing,50097.91
+315,Male,Asian,55,Widowed,Doctorate,United States,Local-gov,Food Chemist,64408.46
+316,Female,Black,23,Divorced,Doctorate,United States,Without-pay,Software Consultant,98131.66
+317,Female,Black,93,Widowed,Bachelor's Degree,United States,Self-emp-inc,Food Chemist,34725.11
+318,Male,Asian,32,Widowed,Master's Degree,United States,Private,Web Developer III,56426.66
+319,Female,Black,59,Divorced,Associate's Degree,United States,Private,Director of Sales,145429.39
+320,Polygender,Native American,64,Widowed,Associate's Degree,United States,Federal-gov,Research Assistant IV,27274.05
+321,Male,Black,44,Single,Bachelor's Degree,United States,Local-gov,Teacher,199083.61
+322,Non-binary,Native American,86,Widowed,Bachelor's Degree,United States,Federal-gov,Clinical Specialist,135539.3
+323,Female,Asian,52,Divorced,Bachelor's Degree,United States,Without-pay,Assistant Media Planner,101674.46
+324,Male,Hispanic,77,Single,Bachelor's Degree,United States,State-gov,Project Manager,77507.36
+325,Bigender,Black,43,Married,Associate's Degree,United States,Without-pay,Compensation Analyst,191270.52
+326,Male,Hispanic,84,Married,Master's Degree,United States,State-gov,Nurse,80330.5
+327,Male,Native American,53,Single,Doctorate,United States,Self-emp-not-inc,Associate Professor,189883.02
+328,Male,Native American,94,Single,Bachelor's Degree,United States,Without-pay,Structural Analysis Engineer,27710.1
+329,Male,White,41,Widowed,Associate's Degree,United States,Never-worked,Information Systems Manager,198201.83
+330,Female,Black,38,Single,Doctorate,United States,State-gov,Quality Control Specialist,175235.3
+331,Male,Asian,74,Divorced,Doctorate,United States,Private,Nurse Practicioner,183370.06
+332,Female,Hispanic,87,Divorced,Associate's Degree,United States,Never-worked,Computer Systems Analyst IV,71877.15
+333,Male,Black,59,Single,Bachelor's Degree,United States,Self-emp-inc,Social Worker,122610.27
+334,Female,Native American,30,Divorced,Doctorate,United States,Self-emp-not-inc,Occupational Therapist,184877.08
+335,Female,Native American,94,Married,Bachelor's Degree,United States,Private,Professor,133238.39
+336,Male,White,32,Married,Doctorate,United States,Federal-gov,Nuclear Power Engineer,96887.51
+337,Male,White,21,Single,Master's Degree,United States,Never-worked,Statistician III,96764.2
+338,Male,White,83,Widowed,Bachelor's Degree,United States,Local-gov,Human Resources Assistant IV,32457.57
+339,Male,Hispanic,87,Widowed,Master's Degree,United States,Self-emp-inc,Senior Developer,113600.17
+340,Male,Asian,86,Married,Associate's Degree,United States,Federal-gov,GIS Technical Architect,28914.34
+341,Male,Hispanic,18,Single,Master's Degree,United States,Without-pay,Analog Circuit Design manager,138535.15
+342,Female,Native American,79,Widowed,Master's Degree,United States,Self-emp-not-inc,Paralegal,174781.09
+343,Male,Native American,64,Single,Doctorate,United States,Self-emp-not-inc,GIS Technical Architect,115783.37
+344,Male,Native American,61,Divorced,Associate's Degree,United States,State-gov,Help Desk Technician,61255.43
+345,Agender,Hispanic,56,Widowed,Master's Degree,United States,State-gov,GIS Technical Architect,86961.13
+346,Male,Black,54,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,VP Marketing,61779.85
+347,Female,White,53,Married,Doctorate,United States,Without-pay,Web Designer IV,158954.17
+348,Female,Native American,52,Married,Associate's Degree,United States,Federal-gov,Research Nurse,180548.63
+349,Female,Black,28,Married,Bachelor's Degree,United States,Private,Community Outreach Specialist,36974.05
+350,Female,Native American,77,Divorced,Associate's Degree,United States,Never-worked,Payment Adjustment Coordinator,102987.49
+351,Female,Black,87,Single,Bachelor's Degree,United States,Without-pay,Geologist IV,108034.22
+352,Female,Asian,65,Single,Associate's Degree,United States,Private,VP Quality Control,197236.1
+353,Male,Black,96,Single,Doctorate,United States,Self-emp-not-inc,Geological Engineer,46589.42
+354,Female,Asian,100,Single,Master's Degree,United States,Self-emp-inc,Registered Nurse,37330.89
+355,Bigender,White,99,Widowed,Doctorate,United States,Private,Director of Sales,182867.92
+356,Female,White,33,Widowed,Bachelor's Degree,United States,Without-pay,Staff Accountant IV,80160.38
+357,Non-binary,Asian,73,Divorced,Bachelor's Degree,United States,Local-gov,Software Consultant,167919.59
+358,Female,Black,35,Single,Associate's Degree,United States,Self-emp-inc,Information Systems Manager,183165.27
+359,Female,Asian,31,Divorced,Bachelor's Degree,United States,Without-pay,Computer Systems Analyst I,139575.12
+360,Female,Native American,30,Divorced,Associate's Degree,United States,State-gov,Social Worker,113343.76
+361,Genderfluid,Asian,48,Single,Associate's Degree,United States,Self-emp-not-inc,Chemical Engineer,95910.98
+362,Male,Asian,48,Divorced,Doctorate,United States,State-gov,Civil Engineer,68047.34
+363,Male,Native American,81,Widowed,Doctorate,United States,Self-emp-not-inc,Budget/Accounting Analyst IV,75921.86
+364,Female,Hispanic,84,Married,Doctorate,United States,Never-worked,Operator,79607.83
+365,Female,Hispanic,21,Married,Bachelor's Degree,United States,Private,GIS Technical Architect,135812.39
+366,Agender,Hispanic,86,Widowed,Associate's Degree,United States,Self-emp-not-inc,Web Designer III,154539.63
+367,Female,Hispanic,88,Widowed,Doctorate,United States,State-gov,Librarian,174519.42
+368,Male,White,99,Single,Associate's Degree,United States,Never-worked,Quality Engineer,47924.6
+369,Female,Black,100,Single,Master's Degree,United States,Never-worked,Web Designer III,103901.29
+370,Male,Black,69,Married,Master's Degree,United States,Without-pay,Electrical Engineer,184998.74
+371,Male,Black,55,Single,Associate's Degree,United States,Federal-gov,Engineer IV,39863.69
+372,Male,White,65,Married,Doctorate,United States,Private,Assistant Media Planner,148477.19
+373,Male,Native American,35,Single,Associate's Degree,United States,Local-gov,VP Accounting,82759.1
+374,Male,White,75,Single,Master's Degree,United States,Local-gov,Office Assistant IV,181357.29
+375,Female,Native American,27,Widowed,Associate's Degree,United States,Never-worked,Senior Editor,76524.4
+376,Male,White,39,Single,Associate's Degree,United States,Self-emp-inc,Compensation Analyst,32436.09
+377,Agender,Native American,36,Married,Doctorate,United States,Federal-gov,Accountant II,125348.39
+378,Female,Black,86,Married,Bachelor's Degree,United States,Without-pay,Senior Cost Accountant,198008.99
+379,Non-binary,Native American,84,Widowed,Doctorate,United States,Local-gov,Analog Circuit Design manager,161944.54
+380,Male,Native American,26,Married,Doctorate,United States,Local-gov,GIS Technical Architect,59074.02
+381,Male,Hispanic,85,Divorced,Bachelor's Degree,United States,Federal-gov,Paralegal,169752.97
+382,Female,White,54,Divorced,Associate's Degree,United States,Self-emp-not-inc,Desktop Support Technician,69317.44
+383,Agender,Hispanic,26,Divorced,Master's Degree,United States,Self-emp-not-inc,Senior Editor,22340.35
+384,Female,Black,92,Married,Master's Degree,United States,Private,Automation Specialist IV,35910.43
+385,Male,Black,26,Widowed,Bachelor's Degree,United States,Self-emp-inc,Registered Nurse,173853.52
+386,Female,White,92,Divorced,Doctorate,United States,Never-worked,Sales Associate,172057.96
+387,Male,Native American,53,Widowed,Doctorate,United States,Self-emp-inc,Help Desk Technician,164527.25
+388,Genderqueer,Hispanic,21,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Senior Developer,76012.98
+389,Male,Asian,20,Widowed,Bachelor's Degree,United States,State-gov,Automation Specialist IV,53412.51
+390,Male,Native American,52,Married,Doctorate,United States,Local-gov,Civil Engineer,88417.98
+391,Female,Asian,45,Widowed,Doctorate,United States,Private,Nurse Practicioner,54486.23
+392,Female,Hispanic,99,Married,Bachelor's Degree,United States,Without-pay,Database Administrator II,26801.61
+393,Female,Black,35,Single,Doctorate,United States,Private,Recruiter,182231.57
+394,Male,Asian,28,Single,Master's Degree,United States,Private,Environmental Tech,175409.53
+395,Female,Native American,37,Single,Master's Degree,United States,Local-gov,Chief Design Engineer,178495.09
+396,Male,Asian,52,Widowed,Associate's Degree,United States,Never-worked,Automation Specialist III,198086.13
+397,Female,Native American,59,Single,Master's Degree,United States,State-gov,Nurse Practicioner,53052.61
+398,Agender,Asian,77,Single,Associate's Degree,United States,Self-emp-inc,Business Systems Development Analyst,145271.82
+399,Male,Asian,70,Married,Bachelor's Degree,United States,Local-gov,Automation Specialist IV,159821.17
+400,Male,Black,91,Single,Associate's Degree,United States,Local-gov,Project Manager,161094.32
+401,Male,Black,75,Divorced,Doctorate,United States,State-gov,Teacher,73799.18
+402,Male,Hispanic,93,Single,Bachelor's Degree,United States,Local-gov,Internal Auditor,78779.89
+403,Male,Hispanic,31,Single,Bachelor's Degree,United States,Without-pay,Quality Control Specialist,55502.32
+404,Female,Black,36,Married,Associate's Degree,United States,Self-emp-not-inc,Web Developer IV,58909.7
+405,Female,Native American,97,Single,Bachelor's Degree,United States,Local-gov,Statistician II,139141.66
+406,Male,White,100,Single,Master's Degree,United States,State-gov,Professor,23662.59
+407,Male,Black,35,Divorced,Master's Degree,United States,Self-emp-not-inc,Mechanical Systems Engineer,107174.27
+408,Male,Hispanic,88,Single,Master's Degree,United States,Self-emp-not-inc,Sales Associate,116276.54
+409,Female,Native American,52,Widowed,Bachelor's Degree,United States,State-gov,Actuary,31694.92
+410,Male,Asian,55,Widowed,Associate's Degree,United States,Never-worked,Software Engineer III,119540.31
+411,Female,Asian,54,Divorced,Associate's Degree,United States,Never-worked,Paralegal,167435.63
+412,Genderfluid,White,94,Divorced,Bachelor's Degree,United States,State-gov,VP Accounting,182744.54
+413,Female,Black,76,Single,Doctorate,United States,Never-worked,Quality Engineer,32318.71
+414,Female,Asian,97,Divorced,Associate's Degree,United States,Private,Analyst Programmer,189610.82
+415,Female,Native American,96,Divorced,Doctorate,United States,Self-emp-not-inc,Pharmacist,94244.2
+416,Female,Asian,45,Single,Doctorate,United States,Self-emp-not-inc,Information Systems Manager,170955.7
+417,Genderfluid,Asian,89,Divorced,Bachelor's Degree,United States,Never-worked,Nurse Practicioner,192724.14
+418,Female,Black,79,Divorced,Master's Degree,United States,State-gov,Biostatistician I,107814.7
+419,Male,Native American,31,Single,Master's Degree,United States,Never-worked,Senior Sales Associate,121902.85
+420,Male,Black,90,Widowed,Bachelor's Degree,United States,State-gov,Systems Administrator IV,147247.41
+421,Bigender,Black,60,Divorced,Associate's Degree,United States,Private,Financial Analyst,46574.54
+422,Male,Black,58,Single,Doctorate,United States,Private,Civil Engineer,77873.02
+423,Male,Asian,48,Single,Associate's Degree,United States,Self-emp-inc,Accountant III,126712.46
+424,Female,Asian,67,Single,Bachelor's Degree,United States,Never-worked,Information Systems Manager,39987.82
+425,Female,Hispanic,60,Single,Bachelor's Degree,United States,Federal-gov,Structural Analysis Engineer,61594.01
+426,Female,White,41,Single,Bachelor's Degree,United States,State-gov,Clinical Specialist,142496.79
+427,Male,Asian,51,Single,Bachelor's Degree,United States,Never-worked,Clinical Specialist,184143.95
+428,Female,White,76,Divorced,Bachelor's Degree,United States,Federal-gov,Engineer II,154540.1
+429,Female,Native American,56,Widowed,Associate's Degree,United States,Without-pay,Structural Analysis Engineer,87450.6
+430,Male,Native American,22,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Social Worker,23649.33
+431,Female,Black,78,Widowed,Master's Degree,United States,Local-gov,Actuary,148307.62
+432,Male,Hispanic,21,Widowed,Master's Degree,United States,Private,Legal Assistant,131765.19
+433,Polygender,Asian,35,Widowed,Doctorate,United States,Federal-gov,Mechanical Systems Engineer,62582.08
+434,Male,White,96,Single,Master's Degree,United States,Never-worked,Senior Developer,112710.74
+435,Male,Black,77,Married,Master's Degree,United States,Federal-gov,Junior Executive,41012.3
+436,Male,White,52,Single,Associate's Degree,United States,Never-worked,Help Desk Operator,154690.58
+437,Female,Black,59,Single,Doctorate,United States,Self-emp-not-inc,Programmer II,97296.87
+438,Female,Hispanic,49,Widowed,Doctorate,United States,State-gov,Speech Pathologist,74966.79
+439,Male,Native American,96,Divorced,Doctorate,United States,Self-emp-not-inc,Assistant Professor,113197.24
+440,Female,Hispanic,94,Single,Bachelor's Degree,United States,Never-worked,Teacher,140066.51
+441,Male,Hispanic,35,Widowed,Associate's Degree,United States,Local-gov,Physical Therapy Assistant,100979.27
+442,Male,Asian,74,Married,Bachelor's Degree,United States,Self-emp-inc,Marketing Manager,176870.43
+443,Female,Native American,78,Divorced,Doctorate,United States,Private,Human Resources Assistant I,165160.5
+444,Male,Hispanic,80,Married,Doctorate,United States,Local-gov,Junior Executive,160700.04
+445,Male,Asian,71,Married,Master's Degree,United States,Never-worked,Staff Accountant I,48583.38
+446,Female,White,91,Married,Master's Degree,United States,State-gov,Geological Engineer,38085.97
+447,Male,White,89,Married,Doctorate,United States,Local-gov,Recruiting Manager,157330.86
+448,Male,Native American,78,Divorced,Bachelor's Degree,United States,Federal-gov,Mechanical Systems Engineer,190537.6
+449,Female,White,22,Married,Associate's Degree,United States,Local-gov,Web Designer IV,40774.75
+450,Female,Asian,24,Widowed,Master's Degree,United States,Private,Assistant Media Planner,134627.3
+451,Female,Black,22,Widowed,Doctorate,United States,Local-gov,Tax Accountant,111680.09
+452,Male,Native American,34,Single,Doctorate,United States,Private,Pharmacist,112342.7
+453,Female,Hispanic,66,Married,Associate's Degree,United States,Never-worked,Data Coordinator,158746.18
+454,Male,Asian,69,Married,Doctorate,United States,Self-emp-inc,Biostatistician I,141389.24
+455,Female,Asian,57,Single,Associate's Degree,United States,Self-emp-inc,Pharmacist,139043.25
+456,Male,Hispanic,90,Married,Associate's Degree,United States,Local-gov,Chemical Engineer,191331.28
+457,Male,Asian,80,Widowed,Doctorate,United States,Federal-gov,Compensation Analyst,69870.36
+458,Female,Hispanic,94,Married,Bachelor's Degree,United States,Without-pay,Human Resources Manager,140355.01
+459,Female,Asian,89,Divorced,Bachelor's Degree,United States,Without-pay,Internal Auditor,141199.07
+460,Male,Hispanic,83,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Health Coach IV,98849.6
+461,Male,Hispanic,44,Widowed,Doctorate,United States,Local-gov,Human Resources Assistant II,149934.71
+462,Male,Hispanic,35,Married,Associate's Degree,United States,Local-gov,Speech Pathologist,76226.02
+463,Male,White,75,Widowed,Doctorate,United States,Self-emp-not-inc,Accounting Assistant III,162528.64
+464,Female,Native American,22,Married,Bachelor's Degree,United States,Never-worked,Payment Adjustment Coordinator,197831.96
+465,Female,Asian,90,Single,Associate's Degree,United States,Local-gov,Sales Associate,136946.79
+466,Female,Native American,28,Widowed,Doctorate,United States,Without-pay,Web Designer III,56713.2
+467,Male,Native American,30,Married,Bachelor's Degree,United States,Self-emp-not-inc,Programmer II,82812.08
+468,Female,White,46,Single,Doctorate,United States,Without-pay,Operator,146526.18
+469,Male,Native American,86,Single,Doctorate,United States,Self-emp-not-inc,Legal Assistant,97917.47
+470,Male,Black,33,Divorced,Master's Degree,United States,Local-gov,Senior Developer,43319.49
+471,Female,Black,94,Married,Doctorate,United States,Federal-gov,Quality Engineer,196950.75
+472,Female,Black,28,Divorced,Doctorate,United States,Self-emp-inc,Senior Editor,88230.68
+473,Male,Black,66,Widowed,Associate's Degree,United States,Self-emp-inc,Payment Adjustment Coordinator,198374.35
+474,Male,Hispanic,21,Widowed,Master's Degree,United States,Local-gov,Physical Therapy Assistant,84753.34
+475,Genderqueer,Black,49,Widowed,Doctorate,United States,Without-pay,Administrative Officer,92325.46
+476,Bigender,Hispanic,74,Widowed,Associate's Degree,United States,Without-pay,Human Resources Assistant III,198333.02
+477,Female,Hispanic,80,Single,Master's Degree,United States,Without-pay,Accounting Assistant I,143980.67
+478,Male,Asian,61,Divorced,Doctorate,United States,Local-gov,GIS Technical Architect,67583.37
+479,Female,Native American,100,Widowed,Bachelor's Degree,United States,Local-gov,Nurse,188555.59
+480,Female,Black,50,Single,Bachelor's Degree,United States,Federal-gov,Software Engineer I,25668.56
+481,Female,Native American,83,Married,Bachelor's Degree,United States,State-gov,Electrical Engineer,52799.82
+482,Male,White,98,Divorced,Doctorate,United States,Self-emp-not-inc,Recruiting Manager,113942.91
+483,Male,Asian,95,Divorced,Master's Degree,United States,Never-worked,Quality Control Specialist,34145.66
+484,Female,White,85,Married,Doctorate,United States,Without-pay,Associate Professor,64743.06
+485,Female,White,78,Single,Associate's Degree,United States,Without-pay,Senior Quality Engineer,149149.25
+486,Male,Hispanic,85,Divorced,Master's Degree,United States,Federal-gov,Senior Editor,166726.05
+487,Non-binary,White,23,Single,Doctorate,United States,Federal-gov,Budget/Accounting Analyst II,138367.69
+488,Female,White,83,Single,Associate's Degree,United States,Never-worked,Librarian,126598.62
+489,Male,Native American,31,Married,Doctorate,United States,Federal-gov,Help Desk Technician,170699.64
+490,Non-binary,Native American,72,Widowed,Master's Degree,United States,Without-pay,Staff Accountant II,132971.83
+491,Male,Asian,30,Married,Bachelor's Degree,United States,Local-gov,Food Chemist,33006.15
+492,Female,Hispanic,78,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Community Outreach Specialist,73598.08
+493,Genderfluid,Asian,50,Divorced,Bachelor's Degree,United States,Private,Geological Engineer,164399.06
+494,Male,Hispanic,64,Single,Master's Degree,United States,Never-worked,Mechanical Systems Engineer,42913.94
+495,Female,White,100,Married,Associate's Degree,United States,Without-pay,Assistant Manager,182102.95
+496,Female,Black,22,Divorced,Bachelor's Degree,United States,Never-worked,Nurse Practicioner,158512.89
+497,Male,Native American,55,Single,Associate's Degree,United States,Federal-gov,Executive Secretary,120352.24
+498,Female,White,21,Single,Doctorate,United States,State-gov,Dental Hygienist,163252.44
+499,Female,White,58,Widowed,Associate's Degree,United States,Federal-gov,Help Desk Technician,103348.32
+500,Male,Hispanic,93,Widowed,Bachelor's Degree,United States,Federal-gov,Electrical Engineer,141814.65
+501,Genderqueer,Native American,28,Divorced,Associate's Degree,United States,Local-gov,Assistant Manager,174693.59
+502,Female,Native American,95,Divorced,Associate's Degree,United States,Never-worked,Financial Analyst,171873.41
+503,Male,Hispanic,92,Widowed,Associate's Degree,United States,Local-gov,Graphic Designer,47155.5
+504,Bigender,Black,65,Widowed,Associate's Degree,United States,Never-worked,VP Accounting,193818.03
+505,Female,Black,35,Married,Associate's Degree,United States,Private,Dental Hygienist,170879.38
+506,Male,White,42,Single,Bachelor's Degree,United States,Never-worked,Nurse,55032.15
+507,Male,White,20,Single,Associate's Degree,United States,Self-emp-not-inc,Speech Pathologist,64673.92
+508,Female,Asian,29,Married,Associate's Degree,United States,Local-gov,Social Worker,190157.5
+509,Female,Asian,71,Divorced,Master's Degree,United States,Never-worked,Graphic Designer,102530.76
+510,Male,Black,94,Widowed,Bachelor's Degree,United States,State-gov,Web Designer IV,144061.69
+511,Male,White,89,Single,Associate's Degree,United States,Without-pay,Staff Scientist,113354.59
+512,Bigender,Hispanic,55,Divorced,Master's Degree,United States,Local-gov,Senior Editor,134468.88
+513,Polygender,Hispanic,47,Divorced,Master's Degree,United States,Federal-gov,Structural Analysis Engineer,103477.08
+514,Male,Native American,67,Divorced,Master's Degree,United States,Self-emp-not-inc,VP Marketing,28502.42
+515,Male,Asian,26,Widowed,Bachelor's Degree,United States,Never-worked,Design Engineer,80408.75
+516,Female,Native American,52,Single,Doctorate,United States,Self-emp-not-inc,Assistant Manager,116175.21
+517,Male,Native American,20,Divorced,Bachelor's Degree,United States,Federal-gov,Social Worker,108051.43
+518,Female,Asian,67,Widowed,Associate's Degree,United States,Self-emp-not-inc,Design Engineer,53474.81
+519,Female,White,79,Married,Doctorate,United States,Never-worked,Structural Engineer,112491.48
+520,Female,White,56,Single,Associate's Degree,United States,Local-gov,Software Consultant,55738.55
+521,Non-binary,Native American,91,Married,Master's Degree,United States,Never-worked,Senior Cost Accountant,77826.39
+522,Male,Native American,49,Divorced,Master's Degree,United States,Local-gov,Media Manager II,104515.43
+523,Genderqueer,White,21,Divorced,Master's Degree,United States,Local-gov,Senior Financial Analyst,124303.44
+524,Male,Hispanic,19,Widowed,Master's Degree,United States,Self-emp-not-inc,Account Executive,100575.55
+525,Female,Native American,24,Single,Master's Degree,United States,Never-worked,Computer Systems Analyst II,166287.79
+526,Female,White,79,Single,Bachelor's Degree,United States,Self-emp-inc,Environmental Specialist,118073.0
+527,Male,Native American,80,Married,Associate's Degree,United States,Self-emp-inc,Help Desk Operator,90892.16
+528,Female,Asian,69,Married,Master's Degree,United States,Self-emp-inc,Junior Executive,185569.14
+529,Male,Hispanic,93,Widowed,Master's Degree,United States,Self-emp-inc,Senior Editor,119427.55
+530,Male,Hispanic,45,Married,Doctorate,United States,Federal-gov,Recruiter,64880.08
+531,Male,White,75,Single,Master's Degree,United States,Private,Account Representative I,136366.5
+532,Female,White,48,Single,Associate's Degree,United States,Never-worked,Office Assistant I,171630.52
+533,Female,Hispanic,48,Widowed,Associate's Degree,United States,State-gov,Senior Sales Associate,141382.49
+534,Male,Asian,69,Divorced,Master's Degree,United States,State-gov,Executive Secretary,134914.28
+535,Male,Hispanic,46,Divorced,Associate's Degree,United States,State-gov,Payment Adjustment Coordinator,48932.96
+536,Male,Asian,92,Widowed,Doctorate,United States,Private,Human Resources Assistant IV,111022.19
+537,Male,Black,63,Divorced,Doctorate,United States,Federal-gov,Budget/Accounting Analyst I,147384.11
+538,Female,Black,18,Divorced,Master's Degree,United States,Federal-gov,Geologist I,77557.36
+539,Polygender,Hispanic,82,Married,Bachelor's Degree,United States,Self-emp-inc,Account Coordinator,195797.76
+540,Female,Asian,25,Married,Master's Degree,United States,State-gov,Administrative Assistant III,125882.78
+541,Female,Native American,94,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Physical Therapy Assistant,155720.01
+542,Male,Asian,76,Married,Doctorate,United States,Never-worked,Social Worker,156886.2
+543,Female,White,66,Widowed,Master's Degree,United States,Self-emp-not-inc,Chemical Engineer,135020.88
+544,Female,Black,33,Divorced,Doctorate,United States,Local-gov,Senior Sales Associate,94644.91
+545,Male,Asian,78,Married,Master's Degree,United States,Private,Research Associate,153096.74
+546,Male,Native American,96,Widowed,Doctorate,United States,Self-emp-inc,Programmer II,26564.7
+547,Male,Black,75,Single,Doctorate,United States,Without-pay,Teacher,115940.49
+548,Female,Asian,72,Married,Bachelor's Degree,United States,State-gov,Speech Pathologist,65955.36
+549,Female,Native American,75,Married,Associate's Degree,United States,Local-gov,Information Systems Manager,120250.66
+550,Genderqueer,Hispanic,38,Single,Bachelor's Degree,United States,Federal-gov,Nuclear Power Engineer,139705.24
+551,Female,Black,39,Married,Master's Degree,United States,State-gov,Executive Secretary,111672.09
+552,Male,Asian,36,Widowed,Bachelor's Degree,United States,Federal-gov,Research Nurse,132037.92
+553,Female,Native American,41,Divorced,Doctorate,United States,Federal-gov,Senior Sales Associate,196532.85
+554,Female,Asian,95,Married,Master's Degree,United States,Private,Database Administrator III,156767.46
+555,Female,White,68,Married,Bachelor's Degree,United States,Never-worked,Software Consultant,72266.21
+556,Male,Native American,65,Single,Bachelor's Degree,United States,Federal-gov,Clinical Specialist,83108.53
+557,Female,White,93,Widowed,Doctorate,United States,Federal-gov,Marketing Manager,29877.77
+558,Male,Asian,21,Widowed,Associate's Degree,United States,Local-gov,Chief Design Engineer,130393.12
+559,Female,Asian,62,Married,Doctorate,United States,Never-worked,Nurse Practicioner,150029.97
+560,Female,Asian,100,Single,Bachelor's Degree,United States,Never-worked,GIS Technical Architect,123795.6
+561,Non-binary,Asian,29,Married,Master's Degree,United States,State-gov,Chemical Engineer,178000.92
+562,Male,Native American,77,Widowed,Master's Degree,United States,Federal-gov,Professor,94122.22
+563,Male,Hispanic,94,Widowed,Bachelor's Degree,United States,Self-emp-inc,Payment Adjustment Coordinator,89980.18
+564,Male,White,63,Married,Associate's Degree,United States,Self-emp-inc,Environmental Specialist,50671.79
+565,Female,Black,85,Single,Associate's Degree,United States,Self-emp-not-inc,Senior Editor,93522.32
+566,Female,Asian,89,Married,Doctorate,United States,Federal-gov,Recruiter,75239.92
+567,Male,Asian,60,Divorced,Associate's Degree,United States,Federal-gov,Web Designer IV,32514.7
+568,Male,White,94,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Analyst Programmer,162226.04
+569,Male,White,54,Widowed,Doctorate,United States,Local-gov,Associate Professor,55363.4
+570,Male,Asian,48,Single,Associate's Degree,United States,Federal-gov,Systems Administrator II,52061.0
+571,Male,Asian,72,Widowed,Master's Degree,United States,Private,Senior Cost Accountant,136969.76
+572,Male,White,36,Divorced,Bachelor's Degree,United States,Self-emp-inc,Structural Engineer,93178.99
+573,Male,Hispanic,71,Divorced,Bachelor's Degree,United States,Never-worked,Executive Secretary,147234.77
+574,Male,Hispanic,78,Divorced,Master's Degree,United States,Never-worked,Human Resources Assistant IV,198037.45
+575,Female,Native American,50,Divorced,Bachelor's Degree,United States,Never-worked,Tax Accountant,173873.49
+576,Female,Asian,43,Married,Associate's Degree,United States,Without-pay,Biostatistician IV,181607.94
+577,Female,White,24,Single,Doctorate,United States,Local-gov,Help Desk Operator,37599.06
+578,Female,Hispanic,28,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Budget/Accounting Analyst I,133614.62
+579,Male,Black,29,Married,Bachelor's Degree,United States,State-gov,Staff Scientist,24432.54
+580,Female,White,87,Widowed,Master's Degree,United States,State-gov,Chief Design Engineer,119903.64
+581,Male,Hispanic,19,Single,Doctorate,United States,Private,Automation Specialist II,72066.41
+582,Female,Native American,98,Single,Master's Degree,United States,Federal-gov,Account Executive,173042.28
+583,Male,White,24,Married,Bachelor's Degree,United States,Federal-gov,Software Engineer I,140497.74
+584,Female,Native American,45,Widowed,Doctorate,United States,Never-worked,Civil Engineer,166660.34
+585,Male,Asian,24,Widowed,Associate's Degree,United States,Local-gov,Administrative Assistant III,53272.74
+586,Female,Native American,84,Divorced,Master's Degree,United States,Never-worked,Occupational Therapist,46111.69
+587,Female,Asian,67,Married,Doctorate,United States,Local-gov,Payment Adjustment Coordinator,120556.25
+588,Male,White,29,Divorced,Master's Degree,United States,Federal-gov,Graphic Designer,192512.23
+589,Male,White,26,Single,Bachelor's Degree,United States,Without-pay,Programmer Analyst III,83692.0
+590,Female,Hispanic,52,Single,Associate's Degree,United States,State-gov,Environmental Tech,138069.36
+591,Female,Asian,25,Single,Associate's Degree,United States,Self-emp-inc,Computer Systems Analyst II,184273.93
+592,Male,Hispanic,44,Widowed,Master's Degree,United States,Without-pay,Senior Financial Analyst,23404.11
+593,Female,Black,30,Widowed,Master's Degree,United States,Without-pay,Statistician III,134368.27
+594,Female,White,82,Widowed,Doctorate,United States,Self-emp-not-inc,Web Developer II,176632.1
+595,Female,Hispanic,38,Married,Bachelor's Degree,United States,Self-emp-inc,Senior Quality Engineer,100623.79
+596,Female,Asian,68,Married,Bachelor's Degree,United States,Self-emp-not-inc,Sales Representative,69229.28
+597,Female,Asian,93,Widowed,Doctorate,United States,Self-emp-inc,Financial Analyst,57423.77
+598,Male,Native American,60,Widowed,Associate's Degree,United States,Federal-gov,Chief Design Engineer,141944.77
+599,Female,Black,44,Widowed,Doctorate,United States,Private,Engineer IV,38241.48
+600,Male,Black,42,Widowed,Associate's Degree,United States,State-gov,Product Engineer,39503.29
+601,Female,Asian,24,Married,Master's Degree,United States,Local-gov,Programmer III,42356.95
+602,Male,White,70,Widowed,Bachelor's Degree,United States,Self-emp-inc,Marketing Manager,137540.52
+603,Male,Hispanic,46,Single,Associate's Degree,United States,Never-worked,Registered Nurse,139403.84
+604,Polygender,Hispanic,19,Married,Associate's Degree,United States,State-gov,Environmental Tech,41870.18
+605,Female,Hispanic,57,Married,Bachelor's Degree,United States,State-gov,VP Sales,80430.33
+606,Female,Hispanic,23,Widowed,Doctorate,United States,Self-emp-inc,Assistant Manager,103370.8
+607,Non-binary,White,82,Divorced,Master's Degree,United States,Local-gov,GIS Technical Architect,192662.01
+608,Male,White,98,Divorced,Bachelor's Degree,United States,Self-emp-inc,Safety Technician II,122482.76
+609,Male,Hispanic,85,Single,Doctorate,United States,Federal-gov,Programmer Analyst III,92910.42
+610,Male,Black,96,Widowed,Doctorate,United States,Private,Data Coordinator,124064.45
+611,Male,White,54,Single,Associate's Degree,United States,Self-emp-not-inc,Systems Administrator III,27455.13
+612,Female,Hispanic,27,Single,Bachelor's Degree,United States,Self-emp-inc,Project Manager,58115.59
+613,Female,White,86,Widowed,Bachelor's Degree,United States,Federal-gov,Financial Advisor,116876.16
+614,Male,Asian,35,Divorced,Associate's Degree,United States,Local-gov,Staff Accountant III,181893.6
+615,Female,Native American,34,Widowed,Associate's Degree,United States,Without-pay,Physical Therapy Assistant,37636.67
+616,Female,Native American,41,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Administrative Officer,41260.31
+617,Male,Hispanic,94,Divorced,Master's Degree,United States,Without-pay,Senior Cost Accountant,59554.59
+618,Male,Asian,74,Widowed,Bachelor's Degree,United States,Never-worked,VP Marketing,139671.11
+619,Male,Black,63,Single,Associate's Degree,United States,State-gov,Editor,192131.65
+620,Female,Black,26,Single,Bachelor's Degree,United States,State-gov,Programmer II,28321.61
+621,Genderfluid,Hispanic,22,Divorced,Associate's Degree,United States,State-gov,Senior Financial Analyst,131524.36
+622,Male,Hispanic,84,Divorced,Bachelor's Degree,United States,Without-pay,Nuclear Power Engineer,157942.59
+623,Male,Hispanic,49,Divorced,Master's Degree,United States,Self-emp-inc,Chemical Engineer,58911.76
+624,Male,Black,39,Married,Bachelor's Degree,United States,Without-pay,Electrical Engineer,156594.77
+625,Male,Black,28,Divorced,Associate's Degree,United States,Local-gov,Product Engineer,70548.67
+626,Male,Asian,62,Single,Master's Degree,United States,Never-worked,Health Coach IV,132686.67
+627,Female,Asian,90,Divorced,Bachelor's Degree,United States,Never-worked,VP Product Management,67090.36
+628,Agender,Black,21,Divorced,Associate's Degree,United States,Private,Web Developer IV,144939.84
+629,Male,White,22,Widowed,Associate's Degree,United States,Never-worked,Occupational Therapist,76694.06
+630,Male,Hispanic,22,Widowed,Master's Degree,United States,Private,Registered Nurse,131765.72
+631,Male,White,49,Single,Bachelor's Degree,United States,Private,Automation Specialist III,50411.97
+632,Genderfluid,Native American,70,Widowed,Master's Degree,United States,Federal-gov,Administrative Officer,64265.45
+633,Male,White,88,Married,Bachelor's Degree,United States,Local-gov,Chief Design Engineer,146122.8
+634,Female,Black,42,Married,Associate's Degree,United States,Self-emp-not-inc,Accountant III,184102.87
+635,Male,White,88,Widowed,Associate's Degree,United States,Self-emp-not-inc,Database Administrator III,108509.14
+636,Genderfluid,Asian,100,Single,Associate's Degree,United States,Self-emp-not-inc,Tax Accountant,39899.44
+637,Male,White,52,Married,Master's Degree,United States,State-gov,Marketing Assistant,141738.82
+638,Male,Hispanic,18,Widowed,Doctorate,United States,Without-pay,Speech Pathologist,108814.36
+639,Male,Hispanic,73,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Financial Advisor,47452.76
+640,Male,Native American,51,Married,Bachelor's Degree,United States,Local-gov,Financial Analyst,100375.4
+641,Female,White,49,Divorced,Master's Degree,United States,State-gov,Accounting Assistant II,88148.73
+642,Male,White,38,Married,Doctorate,United States,Never-worked,Account Coordinator,96295.55
+643,Female,Asian,61,Single,Bachelor's Degree,United States,Never-worked,Structural Engineer,100104.73
+644,Male,Hispanic,27,Divorced,Bachelor's Degree,United States,Without-pay,Clinical Specialist,120858.62
+645,Male,Asian,41,Single,Bachelor's Degree,United States,Federal-gov,Civil Engineer,183234.8
+646,Female,Asian,73,Married,Master's Degree,United States,Without-pay,Social Worker,51227.88
+647,Male,White,78,Divorced,Master's Degree,United States,Never-worked,Accountant I,36548.53
+648,Female,White,31,Married,Associate's Degree,United States,Private,Web Designer IV,99060.89
+649,Male,Black,80,Single,Associate's Degree,United States,Self-emp-inc,Staff Accountant I,89886.85
+650,Female,Native American,95,Single,Doctorate,United States,Never-worked,Senior Sales Associate,195769.64
+651,Male,Black,78,Widowed,Master's Degree,United States,Self-emp-inc,Data Coordinator,162905.33
+652,Male,Asian,18,Widowed,Master's Degree,United States,Self-emp-not-inc,Nurse,82711.29
+653,Male,Asian,48,Divorced,Doctorate,United States,Private,Account Executive,67196.48
+654,Female,Hispanic,24,Single,Doctorate,United States,Never-worked,Speech Pathologist,161510.35
+655,Male,Black,59,Married,Associate's Degree,United States,Without-pay,Chief Design Engineer,35871.32
+656,Female,Asian,20,Divorced,Doctorate,United States,Never-worked,Sales Associate,122564.33
+657,Polygender,Black,30,Married,Bachelor's Degree,United States,Private,Chemical Engineer,136661.37
+658,Male,White,62,Widowed,Bachelor's Degree,United States,State-gov,Dental Hygienist,189083.46
+659,Male,Black,78,Widowed,Doctorate,United States,Never-worked,Administrative Officer,144113.43
+660,Female,Asian,63,Married,Associate's Degree,United States,Self-emp-inc,Staff Accountant III,86360.93
+661,Female,Native American,19,Widowed,Associate's Degree,United States,Private,Community Outreach Specialist,120740.49
+662,Female,Black,69,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Research Nurse,112790.5
+663,Male,Asian,72,Married,Master's Degree,United States,Never-worked,Financial Analyst,194019.55
+664,Male,White,52,Widowed,Associate's Degree,United States,Never-worked,Media Manager II,68668.6
+665,Female,Black,45,Married,Bachelor's Degree,United States,Without-pay,Sales Associate,174085.91
+666,Female,Asian,44,Widowed,Master's Degree,United States,Self-emp-inc,Administrative Assistant III,65162.27
+667,Male,Hispanic,58,Single,Master's Degree,United States,Self-emp-inc,Research Associate,78745.66
+668,Agender,Native American,96,Divorced,Doctorate,United States,State-gov,Community Outreach Specialist,40223.72
+669,Female,Native American,57,Single,Master's Degree,United States,Federal-gov,Environmental Tech,81623.48
+670,Female,Asian,56,Single,Bachelor's Degree,United States,Federal-gov,Assistant Professor,182353.11
+671,Male,Native American,21,Single,Associate's Degree,United States,Without-pay,Media Manager III,159137.87
+672,Female,Black,98,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Software Engineer III,69954.22
+673,Female,White,27,Widowed,Associate's Degree,United States,Self-emp-inc,Recruiter,61461.36
+674,Female,Native American,98,Widowed,Master's Degree,United States,Federal-gov,Account Representative IV,24566.68
+675,Female,Native American,61,Divorced,Doctorate,United States,Without-pay,Computer Systems Analyst IV,57634.72
+676,Male,Native American,79,Married,Associate's Degree,United States,Self-emp-not-inc,Web Developer IV,188645.9
+677,Male,White,32,Married,Master's Degree,United States,Federal-gov,Biostatistician III,99946.38
+678,Male,Hispanic,57,Single,Bachelor's Degree,United States,Local-gov,Sales Representative,133317.02
+679,Polygender,Black,100,Single,Master's Degree,United States,Federal-gov,Assistant Professor,105986.41
+680,Female,Native American,69,Divorced,Master's Degree,United States,Local-gov,Engineer II,189493.59
+681,Female,Native American,27,Widowed,Associate's Degree,United States,Private,VP Marketing,110592.9
+682,Male,Black,72,Single,Master's Degree,United States,Local-gov,Physical Therapy Assistant,75472.9
+683,Female,Asian,33,Widowed,Associate's Degree,United States,Private,Paralegal,102167.7
+684,Female,Hispanic,53,Married,Master's Degree,United States,Local-gov,Structural Analysis Engineer,79802.76
+685,Male,Black,41,Divorced,Associate's Degree,United States,Local-gov,Associate Professor,96009.5
+686,Male,Black,52,Widowed,Master's Degree,United States,Never-worked,Environmental Tech,28231.7
+687,Male,Native American,74,Married,Doctorate,United States,Without-pay,Tax Accountant,136351.22
+688,Female,Asian,20,Divorced,Doctorate,United States,Self-emp-inc,Staff Accountant I,43828.93
+689,Bigender,White,51,Single,Doctorate,United States,Local-gov,Account Coordinator,82178.79
+690,Female,Native American,52,Divorced,Associate's Degree,United States,Private,Automation Specialist III,123148.03
+691,Polygender,Black,43,Single,Doctorate,United States,State-gov,Editor,180896.32
+692,Male,Native American,21,Widowed,Doctorate,United States,Self-emp-not-inc,Structural Engineer,183780.78
+693,Male,White,29,Married,Associate's Degree,United States,State-gov,Geologist I,26028.79
+694,Polygender,Black,82,Widowed,Doctorate,United States,Self-emp-not-inc,Computer Systems Analyst III,121941.16
+695,Male,Native American,50,Widowed,Associate's Degree,United States,Self-emp-not-inc,VP Product Management,135087.4
+696,Female,Black,23,Single,Master's Degree,United States,Federal-gov,Executive Secretary,124258.83
+697,Female,White,70,Divorced,Doctorate,United States,Private,VP Marketing,198893.43
+698,Male,Hispanic,28,Widowed,Master's Degree,United States,Self-emp-inc,Compensation Analyst,85906.3
+699,Male,Hispanic,100,Single,Bachelor's Degree,United States,Self-emp-not-inc,Computer Systems Analyst III,156701.62
+700,Female,Native American,66,Divorced,Associate's Degree,United States,Without-pay,Design Engineer,107710.41
+701,Female,White,33,Married,Bachelor's Degree,United States,Self-emp-inc,Speech Pathologist,25337.95
+702,Female,White,21,Divorced,Bachelor's Degree,United States,State-gov,Computer Systems Analyst IV,114398.54
+703,Female,Native American,45,Single,Bachelor's Degree,United States,State-gov,Engineer I,36821.7
+704,Female,Black,85,Married,Doctorate,United States,Never-worked,Civil Engineer,73776.48
+705,Female,White,93,Widowed,Master's Degree,United States,Private,Environmental Tech,161089.93
+706,Male,Native American,26,Single,Associate's Degree,United States,Local-gov,Chief Design Engineer,94535.59
+707,Male,Hispanic,46,Single,Associate's Degree,United States,Self-emp-not-inc,Project Manager,145643.58
+708,Female,Native American,82,Single,Master's Degree,United States,Local-gov,Office Assistant III,106650.2
+709,Male,Black,24,Widowed,Master's Degree,United States,Self-emp-not-inc,Automation Specialist III,178183.11
+710,Male,White,71,Widowed,Bachelor's Degree,United States,Never-worked,Director of Sales,88996.88
+711,Female,Black,85,Divorced,Doctorate,United States,Private,Office Assistant I,71705.38
+712,Female,White,99,Married,Doctorate,United States,Never-worked,Operator,198244.83
+713,Female,Native American,86,Married,Doctorate,United States,Without-pay,Research Assistant IV,101049.93
+714,Male,Black,66,Married,Doctorate,United States,Private,Accounting Assistant IV,50841.26
+715,Female,Native American,38,Widowed,Bachelor's Degree,United States,Self-emp-inc,Quality Control Specialist,97845.63
+716,Female,Black,63,Widowed,Bachelor's Degree,United States,Local-gov,Automation Specialist IV,198121.32
+717,Agender,White,76,Divorced,Master's Degree,United States,Never-worked,Quality Control Specialist,183714.51
+718,Male,Hispanic,55,Single,Doctorate,United States,Never-worked,Automation Specialist IV,52675.96
+719,Male,Asian,26,Divorced,Associate's Degree,United States,Never-worked,Geologist III,185772.48
+720,Male,Asian,76,Single,Associate's Degree,United States,Private,Database Administrator I,129016.92
+721,Female,Black,36,Divorced,Doctorate,United States,State-gov,Quality Control Specialist,127994.55
+722,Genderfluid,Native American,73,Widowed,Doctorate,United States,Without-pay,Account Representative II,129992.64
+723,Male,Black,96,Single,Doctorate,United States,Self-emp-not-inc,Assistant Media Planner,58292.35
+724,Male,White,92,Married,Bachelor's Degree,United States,Self-emp-not-inc,Recruiting Manager,48097.58
+725,Female,Asian,98,Single,Associate's Degree,United States,Local-gov,Professor,88046.53
+726,Female,White,45,Widowed,Bachelor's Degree,United States,Self-emp-inc,Desktop Support Technician,113822.8
+727,Male,Hispanic,50,Widowed,Master's Degree,United States,Self-emp-not-inc,Human Resources Manager,82361.06
+728,Male,Hispanic,61,Married,Doctorate,United States,Federal-gov,Community Outreach Specialist,79042.6
+729,Female,Black,80,Married,Bachelor's Degree,United States,Local-gov,Office Assistant IV,177242.44
+730,Female,Black,20,Divorced,Master's Degree,United States,State-gov,Chemical Engineer,34690.5
+731,Male,White,19,Single,Associate's Degree,United States,Never-worked,Programmer Analyst III,194058.48
+732,Male,Black,43,Divorced,Doctorate,United States,Local-gov,Chemical Engineer,49553.18
+733,Male,Asian,93,Widowed,Doctorate,United States,Never-worked,Nurse,150913.08
+734,Female,Native American,74,Divorced,Associate's Degree,United States,State-gov,Data Coordinator,79123.99
+735,Female,Hispanic,55,Single,Bachelor's Degree,United States,Local-gov,Sales Representative,166362.56
+736,Female,Black,57,Married,Associate's Degree,United States,Local-gov,Administrative Assistant II,195786.4
+737,Genderfluid,Asian,91,Widowed,Master's Degree,United States,Self-emp-not-inc,Business Systems Development Analyst,89282.33
+738,Female,Native American,31,Divorced,Bachelor's Degree,United States,Never-worked,Computer Systems Analyst IV,73573.49
+739,Male,Asian,93,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Teacher,76720.95
+740,Male,Black,31,Married,Associate's Degree,United States,Never-worked,Office Assistant I,45385.24
+741,Male,Asian,73,Divorced,Associate's Degree,United States,Without-pay,Financial Analyst,40264.83
+742,Male,White,66,Divorced,Doctorate,United States,Local-gov,Research Associate,141134.33
+743,Male,Native American,98,Married,Associate's Degree,United States,Local-gov,Executive Secretary,81500.03
+744,Female,White,85,Married,Master's Degree,United States,Never-worked,Financial Advisor,156413.64
+745,Female,White,84,Married,Associate's Degree,United States,Local-gov,Marketing Assistant,125876.49
+746,Male,Asian,48,Married,Doctorate,United States,Local-gov,Statistician I,58389.45
+747,Female,Asian,30,Single,Associate's Degree,United States,Self-emp-inc,Project Manager,150398.12
+748,Female,Black,40,Widowed,Doctorate,United States,State-gov,Senior Quality Engineer,45007.8
+749,Male,Hispanic,22,Single,Associate's Degree,United States,Local-gov,Quality Engineer,190406.5
+750,Female,Asian,72,Widowed,Doctorate,United States,Self-emp-not-inc,VP Accounting,189412.85
+751,Agender,White,94,Widowed,Master's Degree,United States,Without-pay,Office Assistant III,192730.15
+752,Female,Black,76,Divorced,Doctorate,United States,Federal-gov,Sales Representative,39808.28
+753,Male,Hispanic,82,Married,Associate's Degree,United States,Self-emp-inc,Senior Financial Analyst,110112.82
+754,Female,Hispanic,50,Divorced,Master's Degree,United States,Federal-gov,Human Resources Assistant I,189090.39
+755,Male,Hispanic,71,Divorced,Associate's Degree,United States,Self-emp-not-inc,Legal Assistant,87291.58
+756,Polygender,Black,45,Widowed,Doctorate,United States,State-gov,Budget/Accounting Analyst II,36344.27
+757,Female,Native American,57,Divorced,Master's Degree,United States,Federal-gov,Product Engineer,97034.46
+758,Female,Black,100,Married,Master's Degree,United States,Federal-gov,Geologist I,67534.57
+759,Female,Native American,50,Widowed,Associate's Degree,United States,State-gov,Help Desk Technician,140829.26
+760,Male,Asian,67,Married,Bachelor's Degree,United States,Private,Software Consultant,160894.11
+761,Female,Hispanic,53,Married,Master's Degree,United States,Self-emp-not-inc,Recruiter,98286.95
+762,Male,Native American,19,Widowed,Bachelor's Degree,United States,Self-emp-inc,Pharmacist,41979.51
+763,Female,Asian,30,Single,Master's Degree,United States,Self-emp-not-inc,Structural Analysis Engineer,143692.76
+764,Female,Asian,38,Widowed,Doctorate,United States,Self-emp-inc,Human Resources Assistant III,159526.11
+765,Male,Hispanic,88,Single,Master's Degree,United States,Private,Office Assistant I,82807.23
+766,Female,Asian,21,Divorced,Associate's Degree,United States,Self-emp-inc,Staff Accountant IV,92092.32
+767,Female,Black,73,Single,Master's Degree,United States,Private,Administrative Officer,136525.9
+768,Female,Black,97,Widowed,Doctorate,United States,Never-worked,Technical Writer,187518.17
+769,Female,Asian,28,Divorced,Master's Degree,United States,State-gov,Research Associate,172200.33
+770,Male,Black,47,Married,Doctorate,United States,State-gov,Sales Representative,105006.63
+771,Female,Asian,18,Divorced,Master's Degree,United States,Self-emp-not-inc,Electrical Engineer,100754.85
+772,Female,Native American,20,Married,Bachelor's Degree,United States,Federal-gov,Recruiter,177210.1
+773,Male,White,35,Single,Bachelor's Degree,United States,Private,Sales Representative,186770.98
+774,Male,White,27,Married,Associate's Degree,United States,State-gov,Librarian,41857.45
+775,Male,White,98,Divorced,Bachelor's Degree,United States,Local-gov,Human Resources Assistant III,175748.93
+776,Male,Asian,23,Widowed,Associate's Degree,United States,Without-pay,Systems Administrator III,185154.83
+777,Female,Native American,27,Divorced,Doctorate,United States,Self-emp-inc,Mechanical Systems Engineer,34199.58
+778,Male,White,37,Divorced,Master's Degree,United States,Local-gov,Actuary,151090.57
+779,Male,Asian,65,Divorced,Master's Degree,United States,Local-gov,Web Designer I,175434.54
+780,Female,Asian,24,Widowed,Associate's Degree,United States,Never-worked,Analyst Programmer,176948.17
+781,Male,Hispanic,72,Widowed,Master's Degree,United States,Self-emp-inc,Senior Editor,166549.68
+782,Female,Black,48,Married,Associate's Degree,United States,Self-emp-inc,Health Coach IV,149784.32
+783,Female,Hispanic,68,Married,Associate's Degree,United States,Self-emp-not-inc,Operator,189487.93
+784,Male,Black,53,Widowed,Associate's Degree,United States,Self-emp-inc,Statistician II,134044.1
+785,Female,Native American,96,Widowed,Doctorate,United States,Without-pay,Account Executive,103679.72
+786,Female,Native American,70,Widowed,Associate's Degree,United States,Never-worked,Recruiting Manager,32226.39
+787,Male,Native American,55,Widowed,Associate's Degree,United States,Without-pay,Sales Representative,145225.04
+788,Male,Hispanic,20,Single,Doctorate,United States,State-gov,Human Resources Assistant III,133719.72
+789,Female,Asian,38,Married,Bachelor's Degree,United States,Federal-gov,Community Outreach Specialist,150983.61
+790,Male,Native American,69,Divorced,Master's Degree,United States,Local-gov,Payment Adjustment Coordinator,96003.77
+791,Male,Native American,68,Widowed,Associate's Degree,United States,Local-gov,Quality Control Specialist,94192.86
+792,Female,Black,33,Single,Bachelor's Degree,United States,Federal-gov,VP Marketing,44218.32
+793,Female,Hispanic,45,Widowed,Associate's Degree,United States,State-gov,Electrical Engineer,82207.23
+794,Agender,Native American,78,Widowed,Associate's Degree,United States,Federal-gov,Staff Accountant IV,117083.22
+795,Female,Asian,32,Married,Bachelor's Degree,United States,Never-worked,Office Assistant II,138988.19
+796,Female,Black,22,Divorced,Associate's Degree,United States,Self-emp-inc,Analog Circuit Design manager,135099.2
+797,Female,Hispanic,48,Divorced,Master's Degree,United States,Private,Recruiter,37256.52
+798,Male,Black,93,Married,Associate's Degree,United States,Federal-gov,Mechanical Systems Engineer,42773.31
+799,Male,White,44,Married,Associate's Degree,United States,Federal-gov,VP Product Management,163898.25
+800,Male,Hispanic,69,Married,Associate's Degree,United States,Self-emp-not-inc,Marketing Assistant,32233.83
+801,Female,White,71,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Administrative Officer,152931.53
+802,Female,Black,62,Married,Associate's Degree,United States,Private,Accountant III,106023.9
+803,Male,Asian,53,Widowed,Associate's Degree,United States,Self-emp-inc,Product Engineer,191739.71
+804,Polygender,Hispanic,63,Divorced,Bachelor's Degree,United States,State-gov,Software Consultant,93198.21
+805,Female,White,63,Widowed,Doctorate,United States,State-gov,Speech Pathologist,182455.59
+806,Genderfluid,White,42,Single,Master's Degree,United States,Never-worked,Analog Circuit Design manager,127801.55
+807,Male,Native American,89,Single,Master's Degree,United States,Without-pay,Research Associate,83832.37
+808,Female,Hispanic,35,Widowed,Associate's Degree,United States,Self-emp-inc,Project Manager,146207.43
+809,Female,Native American,64,Married,Master's Degree,United States,Without-pay,Marketing Assistant,170927.84
+810,Female,Hispanic,36,Married,Master's Degree,United States,Federal-gov,Developer I,80466.43
+811,Male,Black,29,Married,Master's Degree,United States,State-gov,Teacher,165843.85
+812,Female,Native American,36,Widowed,Doctorate,United States,Self-emp-inc,Software Consultant,48779.83
+813,Female,Black,40,Widowed,Master's Degree,United States,Self-emp-inc,Electrical Engineer,118853.22
+814,Female,White,32,Single,Master's Degree,United States,Local-gov,Research Assistant I,29995.63
+815,Female,Hispanic,41,Married,Master's Degree,United States,Without-pay,Assistant Media Planner,51349.48
+816,Female,Black,29,Widowed,Associate's Degree,United States,Private,Pharmacist,146874.37
+817,Female,White,75,Divorced,Master's Degree,United States,Self-emp-inc,Structural Engineer,150210.1
+818,Male,Asian,72,Divorced,Doctorate,United States,Local-gov,Speech Pathologist,79095.81
+819,Female,White,34,Divorced,Doctorate,United States,State-gov,Software Consultant,21937.42
+820,Female,Native American,31,Divorced,Master's Degree,United States,Self-emp-inc,Tax Accountant,165556.72
+821,Female,Hispanic,22,Married,Master's Degree,United States,Never-worked,Actuary,96097.45
+822,Male,Native American,37,Single,Doctorate,United States,Federal-gov,Business Systems Development Analyst,53995.92
+823,Bigender,Black,93,Widowed,Associate's Degree,United States,Federal-gov,Business Systems Development Analyst,81537.01
+824,Female,Asian,34,Divorced,Doctorate,United States,State-gov,Physical Therapy Assistant,196587.92
+825,Female,Native American,33,Single,Bachelor's Degree,United States,Private,Programmer III,73905.8
+826,Female,Black,96,Divorced,Doctorate,United States,State-gov,Research Nurse,107142.65
+827,Male,Hispanic,44,Divorced,Doctorate,United States,Local-gov,Accounting Assistant II,86732.76
+828,Male,White,49,Divorced,Bachelor's Degree,United States,Federal-gov,Actuary,195662.31
+829,Female,White,43,Widowed,Associate's Degree,United States,Self-emp-inc,Internal Auditor,73038.99
+830,Female,Asian,57,Widowed,Master's Degree,United States,Private,Analyst Programmer,78817.14
+831,Male,Hispanic,28,Widowed,Associate's Degree,United States,Without-pay,Assistant Professor,136386.51
+832,Male,Asian,20,Married,Bachelor's Degree,United States,Self-emp-not-inc,Account Coordinator,27087.15
+833,Male,Asian,85,Widowed,Associate's Degree,United States,Private,Director of Sales,129721.87
+834,Male,White,91,Divorced,Bachelor's Degree,United States,Without-pay,Assistant Manager,119432.7
+835,Female,White,68,Widowed,Bachelor's Degree,United States,Self-emp-inc,Quality Engineer,64355.27
+836,Male,White,61,Married,Master's Degree,United States,Self-emp-not-inc,Civil Engineer,108929.28
+837,Female,Asian,55,Widowed,Master's Degree,United States,Without-pay,Account Representative II,139015.29
+838,Female,White,98,Divorced,Doctorate,United States,Self-emp-not-inc,Associate Professor,162641.37
+839,Male,Native American,20,Widowed,Doctorate,United States,Private,Mechanical Systems Engineer,196862.66
+840,Male,Hispanic,49,Widowed,Doctorate,United States,State-gov,Senior Cost Accountant,165625.5
+841,Female,Hispanic,63,Married,Bachelor's Degree,United States,Never-worked,VP Product Management,116815.09
+842,Polygender,Black,89,Single,Doctorate,United States,Private,VP Marketing,59117.32
+843,Genderfluid,Hispanic,69,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Financial Analyst,112168.68
+844,Male,Hispanic,80,Married,Bachelor's Degree,United States,Self-emp-not-inc,Developer I,117137.55
+845,Genderfluid,Black,59,Divorced,Associate's Degree,United States,Never-worked,Product Engineer,27753.31
+846,Male,Hispanic,35,Married,Master's Degree,United States,Federal-gov,Account Coordinator,114640.87
+847,Polygender,Hispanic,42,Married,Bachelor's Degree,United States,Self-emp-inc,Geological Engineer,114436.5
+848,Female,Black,46,Divorced,Bachelor's Degree,United States,Local-gov,Statistician I,124685.75
+849,Male,Black,53,Widowed,Associate's Degree,United States,Never-worked,GIS Technical Architect,178479.19
+850,Female,Hispanic,32,Married,Associate's Degree,United States,Private,Quality Engineer,142285.85
+851,Female,Native American,83,Divorced,Master's Degree,United States,Never-worked,Senior Financial Analyst,109343.41
+852,Male,Native American,60,Divorced,Doctorate,United States,Private,Media Manager III,38473.51
+853,Male,Black,95,Divorced,Master's Degree,United States,Self-emp-not-inc,VP Sales,26424.23
+854,Male,Hispanic,82,Single,Bachelor's Degree,United States,Federal-gov,Junior Executive,97535.42
+855,Female,Asian,71,Married,Associate's Degree,United States,Never-worked,Environmental Tech,33718.99
+856,Male,White,55,Divorced,Associate's Degree,United States,Local-gov,VP Product Management,33117.74
+857,Female,Hispanic,50,Divorced,Doctorate,United States,Self-emp-inc,Clinical Specialist,70694.73
+858,Female,White,51,Single,Bachelor's Degree,United States,Never-worked,Mechanical Systems Engineer,174794.9
+859,Male,Black,67,Married,Doctorate,United States,Local-gov,Structural Analysis Engineer,78313.07
+860,Female,Asian,64,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Biostatistician IV,174512.32
+861,Male,Native American,91,Divorced,Doctorate,United States,Federal-gov,Analyst Programmer,101993.18
+862,Non-binary,Native American,72,Single,Doctorate,United States,Private,Civil Engineer,56209.83
+863,Female,Hispanic,53,Widowed,Bachelor's Degree,United States,Self-emp-inc,Research Assistant III,162664.55
+864,Polygender,Black,82,Widowed,Associate's Degree,United States,Never-worked,Chief Design Engineer,139112.38
+865,Female,Native American,29,Widowed,Doctorate,United States,Local-gov,Budget/Accounting Analyst II,98964.79
+866,Female,White,62,Single,Associate's Degree,United States,Self-emp-inc,Help Desk Operator,85195.02
+867,Male,Hispanic,40,Married,Doctorate,United States,Self-emp-not-inc,Teacher,35972.05
+868,Female,Hispanic,84,Widowed,Doctorate,United States,Self-emp-not-inc,Research Associate,41947.1
+869,Female,Asian,24,Single,Master's Degree,United States,Self-emp-not-inc,Registered Nurse,97651.37
+870,Female,Asian,36,Divorced,Doctorate,United States,Never-worked,Financial Advisor,25246.72
+871,Male,Black,33,Divorced,Master's Degree,United States,Never-worked,Web Designer IV,38952.96
+872,Male,Hispanic,59,Married,Associate's Degree,United States,Self-emp-not-inc,Assistant Manager,159996.82
+873,Male,Black,63,Widowed,Doctorate,United States,State-gov,Senior Cost Accountant,76435.63
+874,Male,Asian,82,Single,Master's Degree,United States,Without-pay,General Manager,138306.31
+875,Genderqueer,White,57,Widowed,Bachelor's Degree,United States,Private,Geologist I,92383.4
+876,Genderqueer,White,51,Widowed,Associate's Degree,United States,Never-worked,Marketing Manager,104740.76
+877,Male,Black,60,Single,Associate's Degree,United States,Self-emp-inc,Quality Control Specialist,95222.01
+878,Male,Native American,92,Single,Bachelor's Degree,United States,Federal-gov,Speech Pathologist,159630.12
+879,Female,Asian,62,Married,Master's Degree,United States,Without-pay,Senior Financial Analyst,87686.05
+880,Male,Black,22,Divorced,Doctorate,United States,Self-emp-not-inc,Account Representative II,50350.44
+881,Female,Asian,28,Married,Bachelor's Degree,United States,Without-pay,Payment Adjustment Coordinator,33838.05
+882,Female,White,50,Widowed,Associate's Degree,United States,Self-emp-not-inc,Staff Scientist,71022.83
+883,Male,Native American,75,Divorced,Master's Degree,United States,Self-emp-not-inc,Professor,141759.22
+884,Female,Native American,49,Married,Bachelor's Degree,United States,Local-gov,Budget/Accounting Analyst I,53597.77
+885,Male,White,56,Married,Associate's Degree,United States,Never-worked,Senior Financial Analyst,61586.4
+886,Male,Hispanic,68,Single,Bachelor's Degree,United States,Self-emp-inc,Research Associate,128111.52
+887,Female,Black,55,Married,Doctorate,United States,Private,Administrative Officer,110552.69
+888,Male,White,39,Married,Bachelor's Degree,United States,Private,Analog Circuit Design manager,58699.12
+889,Female,Black,32,Divorced,Bachelor's Degree,United States,Self-emp-inc,Actuary,135807.83
+890,Male,Native American,92,Widowed,Bachelor's Degree,United States,Never-worked,Human Resources Assistant IV,75921.81
+891,Male,Native American,59,Married,Associate's Degree,United States,Without-pay,Social Worker,108300.88
+892,Male,Hispanic,33,Widowed,Doctorate,United States,Federal-gov,Pharmacist,189272.05
+893,Female,Black,51,Single,Associate's Degree,United States,Private,Senior Financial Analyst,95570.51
+894,Male,Asian,56,Divorced,Master's Degree,United States,Local-gov,Social Worker,85659.4
+895,Genderqueer,Native American,86,Widowed,Bachelor's Degree,United States,Never-worked,Accountant II,66105.95
+896,Female,White,90,Divorced,Master's Degree,United States,Self-emp-not-inc,Operator,99478.11
+897,Female,Native American,90,Widowed,Bachelor's Degree,United States,Self-emp-inc,Occupational Therapist,81033.66
+898,Male,Hispanic,26,Widowed,Master's Degree,United States,Never-worked,Registered Nurse,199283.02
+899,Female,Hispanic,69,Divorced,Bachelor's Degree,United States,Self-emp-not-inc,Analog Circuit Design manager,153788.46
+900,Male,Hispanic,42,Widowed,Bachelor's Degree,United States,Self-emp-not-inc,Media Manager III,54331.64
+901,Genderfluid,Asian,40,Widowed,Master's Degree,United States,Self-emp-not-inc,Office Assistant I,138921.54
+902,Female,White,56,Married,Master's Degree,United States,Without-pay,Nurse Practicioner,84717.24
+903,Female,Asian,97,Single,Doctorate,United States,Without-pay,Account Executive,35468.9
+904,Male,Asian,45,Widowed,Master's Degree,United States,Self-emp-inc,Director of Sales,105661.36
+905,Male,Black,37,Divorced,Master's Degree,United States,Self-emp-not-inc,Senior Financial Analyst,123614.89
+906,Female,Asian,26,Widowed,Doctorate,United States,Federal-gov,Civil Engineer,92760.11
+907,Male,Asian,79,Married,Bachelor's Degree,United States,Self-emp-not-inc,Physical Therapy Assistant,156324.34
+908,Male,Black,50,Married,Associate's Degree,United States,Federal-gov,Developer III,49022.23
+909,Male,White,41,Divorced,Associate's Degree,United States,Federal-gov,Human Resources Manager,169238.95
+910,Male,Asian,43,Divorced,Master's Degree,United States,Federal-gov,Information Systems Manager,65693.18
+911,Female,Black,78,Divorced,Associate's Degree,United States,Private,Director of Sales,150724.86
+912,Female,White,86,Widowed,Associate's Degree,United States,Local-gov,Research Nurse,63810.07
+913,Female,Hispanic,45,Single,Doctorate,United States,State-gov,Administrative Assistant IV,147188.04
+914,Male,Black,92,Married,Doctorate,United States,Self-emp-inc,Account Coordinator,190021.87
+915,Female,Native American,22,Single,Master's Degree,United States,Self-emp-inc,Database Administrator III,142921.42
+916,Male,Black,98,Divorced,Master's Degree,United States,Private,Social Worker,100772.76
+917,Female,Hispanic,88,Married,Bachelor's Degree,United States,Federal-gov,Senior Cost Accountant,130722.02
+918,Male,Black,97,Divorced,Bachelor's Degree,United States,Local-gov,Biostatistician IV,145134.46
+919,Male,Asian,78,Widowed,Bachelor's Degree,United States,Federal-gov,Civil Engineer,75037.05
+920,Female,Native American,63,Married,Doctorate,United States,Local-gov,Financial Analyst,21530.51
+921,Female,White,55,Widowed,Bachelor's Degree,United States,Federal-gov,Dental Hygienist,36515.53
+922,Male,Asian,79,Single,Associate's Degree,United States,Self-emp-not-inc,VP Sales,189849.63
+923,Non-binary,Native American,40,Widowed,Bachelor's Degree,United States,Private,Developer III,130792.57
+924,Female,White,58,Divorced,Master's Degree,United States,Federal-gov,Statistician III,174948.99
+925,Male,Native American,85,Married,Bachelor's Degree,United States,State-gov,Dental Hygienist,74187.16
+926,Female,Black,77,Married,Master's Degree,United States,Private,Safety Technician I,126670.0
+927,Male,Asian,39,Single,Associate's Degree,United States,Self-emp-inc,GIS Technical Architect,147016.56
+928,Male,Native American,42,Widowed,Bachelor's Degree,United States,Never-worked,Assistant Media Planner,76502.05
+929,Male,Native American,92,Divorced,Doctorate,United States,Without-pay,Teacher,106616.7
+930,Male,Black,52,Divorced,Doctorate,United States,Local-gov,Recruiter,106058.77
+931,Female,Hispanic,60,Divorced,Master's Degree,United States,Self-emp-not-inc,Associate Professor,194793.2
+932,Male,Black,31,Single,Bachelor's Degree,United States,Without-pay,Paralegal,160268.37
+933,Male,Black,57,Single,Associate's Degree,United States,Without-pay,Health Coach IV,171907.04
+934,Male,Native American,18,Divorced,Bachelor's Degree,United States,Local-gov,Information Systems Manager,156804.61
+935,Female,White,74,Married,Bachelor's Degree,United States,Without-pay,Paralegal,197731.52
+936,Female,Hispanic,47,Widowed,Associate's Degree,United States,Private,Software Test Engineer II,132693.3
+937,Male,Black,20,Married,Master's Degree,United States,Private,Internal Auditor,30282.88
+938,Female,Native American,40,Widowed,Doctorate,United States,Federal-gov,Physical Therapy Assistant,172393.84
+939,Female,White,23,Single,Associate's Degree,United States,Self-emp-inc,Programmer Analyst III,121985.01
+940,Male,Native American,60,Married,Doctorate,United States,State-gov,Community Outreach Specialist,26832.58
+941,Female,Asian,41,Married,Bachelor's Degree,United States,Without-pay,Environmental Specialist,74941.57
+942,Female,Native American,33,Divorced,Associate's Degree,United States,Without-pay,Engineer IV,192603.88
+943,Male,Native American,52,Widowed,Master's Degree,United States,Private,Dental Hygienist,198724.42
+944,Male,Black,96,Divorced,Bachelor's Degree,United States,Without-pay,Accountant I,131016.63
+945,Female,White,31,Married,Doctorate,United States,State-gov,Director of Sales,158853.62
+946,Female,Black,85,Single,Associate's Degree,United States,Self-emp-inc,Administrative Assistant III,189232.62
+947,Female,White,68,Single,Bachelor's Degree,United States,Self-emp-not-inc,Developer II,126418.17
+948,Female,Native American,99,Married,Master's Degree,United States,Without-pay,VP Product Management,37337.65
+949,Female,White,68,Married,Bachelor's Degree,United States,Federal-gov,Chief Design Engineer,192915.6
+950,Female,White,46,Divorced,Bachelor's Degree,United States,Never-worked,Internal Auditor,69837.09
+951,Non-binary,White,26,Married,Associate's Degree,United States,Local-gov,Sales Associate,63888.0
+952,Female,Asian,75,Single,Associate's Degree,United States,Never-worked,Senior Sales Associate,65756.31
+953,Male,Native American,90,Married,Doctorate,United States,Self-emp-inc,Senior Developer,116165.71
+954,Female,White,19,Widowed,Master's Degree,United States,Local-gov,Human Resources Assistant III,115088.8
+955,Female,Black,70,Married,Associate's Degree,United States,Federal-gov,Statistician III,31566.85
+956,Genderqueer,Asian,60,Divorced,Doctorate,United States,Without-pay,Research Nurse,157697.77
+957,Female,Hispanic,75,Married,Associate's Degree,United States,Without-pay,Junior Executive,152670.53
+958,Polygender,Black,94,Divorced,Associate's Degree,United States,Self-emp-inc,Systems Administrator III,40274.76
+959,Male,Hispanic,94,Married,Doctorate,United States,Never-worked,Assistant Manager,106466.96
+960,Male,Black,82,Married,Associate's Degree,United States,Local-gov,Health Coach IV,160165.71
+961,Genderfluid,Asian,30,Single,Doctorate,United States,Local-gov,Assistant Professor,52729.15
+962,Female,Asian,46,Widowed,Associate's Degree,United States,Self-emp-inc,Administrative Officer,38725.2
+963,Male,Asian,76,Married,Bachelor's Degree,United States,Never-worked,Software Engineer II,82110.63
+964,Male,Asian,57,Married,Doctorate,United States,State-gov,Staff Accountant III,123981.47
+965,Female,Black,49,Married,Associate's Degree,United States,Never-worked,Media Manager IV,104443.17
+966,Male,Native American,25,Single,Doctorate,United States,Federal-gov,Software Engineer III,187988.59
+967,Female,Hispanic,73,Married,Doctorate,United States,Never-worked,Recruiting Manager,105108.44
+968,Bigender,White,63,Married,Associate's Degree,United States,Federal-gov,Senior Developer,55011.8
+969,Female,Hispanic,39,Widowed,Bachelor's Degree,United States,Private,Administrative Officer,166176.55
+970,Female,Native American,85,Married,Associate's Degree,United States,Federal-gov,Media Manager I,62358.49
+971,Female,Asian,31,Widowed,Associate's Degree,United States,Self-emp-not-inc,Quality Engineer,171282.85
+972,Male,Asian,85,Widowed,Bachelor's Degree,United States,Without-pay,Design Engineer,71210.27
+973,Female,Black,45,Married,Bachelor's Degree,United States,Self-emp-not-inc,Desktop Support Technician,21751.51
+974,Male,Black,52,Married,Doctorate,United States,Federal-gov,Business Systems Development Analyst,103944.27
+975,Male,Hispanic,39,Single,Doctorate,United States,Without-pay,Chemical Engineer,136206.29
+976,Female,Native American,95,Widowed,Doctorate,United States,State-gov,Compensation Analyst,103448.46
+977,Female,Black,31,Divorced,Doctorate,United States,Self-emp-inc,Paralegal,180516.41
+978,Male,Hispanic,53,Married,Bachelor's Degree,United States,Never-worked,Registered Nurse,138660.47
+979,Male,Native American,95,Divorced,Bachelor's Degree,United States,State-gov,Administrative Officer,67558.69
+980,Male,Black,61,Single,Bachelor's Degree,United States,Private,Programmer III,73801.49
+981,Female,Black,76,Single,Doctorate,United States,Private,Computer Systems Analyst I,128305.5
+982,Bigender,Black,23,Single,Associate's Degree,United States,Federal-gov,Financial Analyst,136884.95
+983,Female,White,25,Married,Associate's Degree,United States,Self-emp-inc,Occupational Therapist,54410.54
+984,Female,Black,30,Married,Associate's Degree,United States,Private,Safety Technician II,196362.24
+985,Male,Native American,90,Single,Associate's Degree,United States,Local-gov,Civil Engineer,119302.3
+986,Male,Black,77,Married,Bachelor's Degree,United States,Never-worked,Developer IV,177595.26
+987,Male,Hispanic,20,Widowed,Bachelor's Degree,United States,Federal-gov,Tax Accountant,41381.98
+988,Male,White,66,Widowed,Master's Degree,United States,Private,Programmer Analyst I,109393.28
+989,Male,Hispanic,39,Widowed,Bachelor's Degree,United States,Self-emp-inc,Legal Assistant,30646.71
+990,Female,Native American,83,Divorced,Bachelor's Degree,United States,Federal-gov,Nurse Practicioner,39834.63
+991,Female,Black,25,Widowed,Bachelor's Degree,United States,Federal-gov,Account Representative I,116922.49
+992,Male,Native American,86,Married,Associate's Degree,United States,Private,Recruiting Manager,115428.05
+993,Male,Black,80,Widowed,Master's Degree,United States,Private,Senior Developer,133558.37
+994,Female,Black,41,Married,Doctorate,United States,State-gov,Electrical Engineer,38588.0
+995,Female,Native American,62,Single,Bachelor's Degree,United States,Federal-gov,Technical Writer,135800.42
+996,Female,Asian,75,Married,Master's Degree,United States,Private,Automation Specialist II,49555.79
+997,Female,Hispanic,60,Single,Associate's Degree,United States,Private,Teacher,41730.41
+998,Genderfluid,Asian,57,Married,Associate's Degree,United States,Self-emp-inc,Associate Professor,77346.65
+999,Female,White,100,Married,Associate's Degree,United States,Local-gov,Food Chemist,163446.55
+1000,Male,Black,57,Widowed,Master's Degree,United States,State-gov,GIS Technical Architect,146924.78

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Machine Learning in Security Analysis: An Example (Part 3)</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><b>Part 3: Applying supervised learning algorithms</b></h2>
+<p>At this stage, we are going to apply a standard supervised learning algorithm,&nbsp;<i>logistic regression</i>, to the training and testing data.</p>
+<h4><span style="color: #990000;"><b>Building Training model:</b></span></h4>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>from sklearn.linear_model import LogisticRegression</p>
+<p>clf = LogisticRegression()</p>
+<p>clf.fit(X_train, y_train)</p>
+</div>
+<p>In the first line, we import the <em>sklearn.linear_model.LogisticRegression</em> class. Then, in the second line, we initialize the <em>LogisticRegression</em> object by invoking the constructor. In the third line, we feed <em>X_train</em> and <em>y_train</em> (i.e., the training set) into the <em>fit()</em> function, resulting in a trained classifier model, which is stored in the <em>clf</em> object. This classifier has taken the training data and used logistic regression (which we elaborate on further in the next section) to distill some generalizations about fraudulent and nonfraudulent transactions into a model.</p>
+<p></p>
+<h4><span style="color: #990000;"><b>Testing of the model:</b></span></h4>
+<p><span style="color: #000000;">To make predictions using this model, all we need to do now is to pass some unlabeled features into this classifier object&rsquo;s <em>predict()</em> function:</span></p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>y_pred = clf.predict(X_test)</p>
+</div>
+<p>Inspecting <em>y_pred</em>, we can see the label predictions made for each row in <em>X_test</em>. Note that at training time the classifier did not have any access to <em>y_test</em> at all; the predictions made, contained in <em>y_pred</em>, are thus purely a result of the generalizations learned from the training set. We use the <em>sklearn.metrics.accuracy_score()</em> function to get a feel of how good these predictions are:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>from sklearn.metrics import accuracy_score<br />print(accuracy_score(y_pred, y_test))</p>
+</div>
+<p>We obtain an accuracy score of 0.99992273816 which is pretty good. In our next week, we will learn more formal way to analyse the data and reporting the performance measures.</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

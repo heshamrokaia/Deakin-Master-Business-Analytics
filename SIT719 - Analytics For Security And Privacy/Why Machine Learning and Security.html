@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>Why Machine Learning and Security?</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p></p>
+<p>In recent years, the field of cybersecurity experienced several massive cyber-attacks and data breaches. Cyber-attacks have become so big that criminals these days are not content with regular impersonations and account take-overs, they target massive industrial security vulnerabilities and try to achieve maximum return of investment (ROI) from a single attack. Several Fortune 500 companies have fallen prey to sophisticated cyber-attacks, spearfishing attacks, zero-day vulnerabilities, and so on. Attacks on the internet of things (IoT) devices and the cloud have gained momentum. These cyber breaches seemed to outsmart human security operations center (SOC) analysts and machine learning methods are needed to complement human effort. More and more threat detection systems are now dependent on these advanced intelligent techniques and are slowly moving away from the signature-based detectors typically used in security information and event management (SIEM).</p>
+<p><em>&nbsp;</em>As cyberattacks grow in volume and complexity, Machine Learning and Artificial Intelligence (AI) are helping under-resourced security operations analysts stay ahead of threats.</p>
+<p>Kevin Skapinetz, the director of Strategy and Design for IBM Security highlights two major shortfalls of traditional security models:</p>
+<p><span style="color: #20124d;"><em>1. Traditional security models are rule-based. They are programmed for a pre-defined threat or attack. However, the problem is that recent day cyber-attackers are using advanced threat and attack models which are constantly changing. </em></span></p>
+<p><span style="color: #20124d;"><em>2. The second shortfall is related to scalability. The traditional security model is unable to scale at the size of modern organizational complexities. </em></span></p>
+<p>The next-generation defenses can resolve the above limitations by leveraging advanced analytics. Firstly, Machine learning and Artificial Intelligence-based analytics will not be programmed towards threat detection, rather it will analyze the data and identify the pattern to recognize the attack and misbehaviors. Secondly, it will be able to scale the solution in an automated manner.&nbsp;&nbsp;</p>
+<p>If you are interested to know how giant companies like MICROSOFT and SPLUNK are utilizing Machine Learning to analyze the security vulnerabilities, read the following blog post to learn about it.</p>
+<p><a href="https://builtin.com/artificial-intelligence/machine-learning-cybersecurity">https://builtin.com/artificial-intelligence/machine-learning-cybersecurity</a></p>
+<p><a href="https://builtin.com/artificial-intelligence/artificial-intelligence-cybersecurity">https://builtin.com/artificial-intelligence/artificial-intelligence-cybersecurity</a></p>
+<p>See the next page video from IBM security. It describes how advanced analytics can overcome cyber-security challenges and issues.&nbsp;&nbsp;</p>
+<p></p>
+<p></p>
+<p></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

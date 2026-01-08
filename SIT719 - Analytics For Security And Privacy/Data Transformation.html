@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Data Transformation</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p></p>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #990000;"><strong>Removing Duplicates</strong></span></h2>
+<p>Duplicate rows may be&nbsp;found in a DataFrame for any number of reasons. Here is an example:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>data = {"Name": ["Adrian", "Bob", "Liza", "Bob"],<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Age": [24, 28, 18, 28],<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Sex": ["Male", "Male", "Female", "Male"]}<br />df = pd.DataFrame(data)<br />print(df)</p>
+<p></p>
+</div>
+<p>Now if you check the data in the console, it will show:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p></p>
+<p>Name Age Sex<br />0 Adrian 24 Male<br />1 Bob 28 Male<br />2 Liza 18 Female<br />3 Bob 28 Male</p>
+</div>
+<p><em>drop_duplicates</em>&nbsp;returns only unique values. You can apply the following command:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>df = df.drop_duplicates()<br />print(df)</p>
+</div>
+<p>It will produce the below output:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>Name Age Sex<br />0 Adrian 24 Male<br />1 Bob 28 Male<br />2 Liza 18 Female</p>
+</div>
+<h2><span style="color: #990000;"><strong></strong></span></h2>
+<h2><span style="color: #990000;"><strong>Replacing Values:</strong></span></h2>
+<p>replace&nbsp;provides&nbsp;a simpler and more flexible way to modify a subset of values in an object. Let consider the above example. You want to replace the &ldquo;Male&rdquo; to &ldquo;M&rdquo;. Then the code will be:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>df=df.replace(to_replace ="Male", value ="M")</p>
+</div>
+<p>Similarly, you might want to replace the &ldquo;Female&rdquo; to &ldquo;F&rdquo; in the same way:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>df=df.replace(to_replace ="Female", value ="F")</p>
+</div>
+<p>The output will be as below. You can see that the &ldquo;Male&rdquo; and &ldquo;Female&rdquo; has been replaced by &ldquo;M&rdquo; and &ldquo;F&rdquo;, respectively.</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>Name Age Sex<br />0 Adrian 24 M<br />1 Bob 28 M<br />2 Liza 18 F</p>
+</div>
+<p></p>
+<h2><strong><span style="color: #990000;">Detecting and Filtering Outliers</span></strong></h2>
+<p>Filtering or transforming&nbsp;outliers is largely a matter of applying array operations. Consider a DataFrame with some normally distributed data:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>In [92]: data = pd.DataFrame(np.random.randn(1000, 4))</p>
+<p>&nbsp;In [93]: data.describe()</p>
+<p>Out[93]:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br />count&nbsp; 1000.000000&nbsp; 1000.000000&nbsp; 1000.000000&nbsp; 1000.000000<br />mean&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.049091&nbsp;&nbsp;&nbsp;&nbsp; 0.026112&nbsp;&nbsp;&nbsp; -0.002544&nbsp;&nbsp;&nbsp; -0.051827<br />std&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.996947&nbsp;&nbsp;&nbsp;&nbsp; 1.007458&nbsp;&nbsp;&nbsp;&nbsp; 0.995232 &nbsp;&nbsp;&nbsp;&nbsp;0.998311<br />min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -3.645860&nbsp;&nbsp;&nbsp; -3.184377&nbsp;&nbsp;&nbsp; -3.745356&nbsp;&nbsp;&nbsp; -3.428254<br />25%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -0.599807&nbsp;&nbsp;&nbsp; -0.612162&nbsp;&nbsp;&nbsp; -0.687373&nbsp;&nbsp;&nbsp; -0.747478<br />50%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.047101&nbsp;&nbsp;&nbsp; -0.013609&nbsp;&nbsp;&nbsp; -0.022158&nbsp;&nbsp;&nbsp; -0.088274<br />75%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.756646&nbsp;&nbsp;&nbsp;&nbsp; 0.695298&nbsp;&nbsp;&nbsp;&nbsp; 0.699046&nbsp;&nbsp;&nbsp;&nbsp; 0.623331<br />max&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.653656&nbsp;&nbsp;&nbsp;&nbsp; 3.525865&nbsp;&nbsp;&nbsp;&nbsp; 2.735527&nbsp;&nbsp;&nbsp;&nbsp; 3.366626</p>
+</div>
+<p>Suppose you wanted to find values in one of the columns exceeding 3 in absolute value:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>In [94]: col = data[2]</p>
+<p>In [95]: col[np.abs(col) &gt; 3]<br />Out[95]: <br />41 -3.399312<br />136 -3.745356<br />Name: 2, dtype: float64</p>
+</div>
+<p>Here is code to cap values outside&nbsp;the interval &ndash;3 to 3:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>In [97]: data[np.abs(data) &gt; 3] = np.sign(data) * 3<br />In [98]: data.describe()<br />Out[98]: <br /> 0&nbsp; 1 2 3<br />count 1000.000000 1000.000000 1000.000000 1000.000000<br />mean 0.050286 0.025567 -0.001399 -0.051765<br />std 0.992920 1.004214 0.991414 0.995761<br />min -3.000000 -3.000000 -3.000000 -3.000000<br />25% -0.599807 -0.612162 -0.687373 -0.747478<br />50% 0.047101 -0.013609 -0.022158 -0.088274<br />75% 0.756646 0.695298 0.699046 0.623331<br />max 2.653656 3.000000 2.735527 3.000000</p>
+</div>
+<p>You can see the max and min number is 3 and -3, respectively.&nbsp;The statement&nbsp;np.sign(data)&nbsp;produces 1 and &ndash;1 values based&nbsp;on whether the values in&nbsp;data&nbsp;are positive or negative.</p>
+<p></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Privacy in the Age of Social Media</h1>
+<p><img src="/content/enforced/753854-SIT719_TRI-2_2019/week_1/1.13/SIT719-1.13-PRIVACY-IN-THE-AGE-OF-SOCIAL-MEDIA.jpg" alt="futuristic smart phone and connection of world people, abstract image visual" title="futuristic smart phone and connection of world people, abstract image visual" /></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">&copy; Getty Images</a></address>
+<h5>Social media is changing the way we communicate and the way we are perceived.</h5>
+<hr />
+<h1>Privacy in the age of social media</h1>
+<div>
+<p>We go to social media sites to connect with our friends. But these sites are also in the business of connecting us to advertisers - sometimes whether we consent or not.</p>
+<p>In 2010, a <a href="http://search.proquest.com.ezproxy-f.deakin.edu.au/docview/758961464/fulltext/5BE19BD2C91F4827PQ/1?accountid=10445" target="_blank" rel="noopener noreferrer">Wall Street Journal investigation</a>&nbsp;revealed that apps on the social-networking site Facebook had been transmitting member&rsquo;s names and, sometimes their friends&rsquo; names, to web advertising and tracking companies.</p>
+<p>The investigation highlighted:</p>
+<ul>
+<li>the need for users to be vigilant about the privacy of their information on social media</li>
+<li>the complexities created as a result of the involvement of third parties that may compromise the agreements that social media networks may have with their members</li>
+<li>the challenges faced by the regulatory bodies when dealing with fully internet-based entities such as Facebook that operate outside of country-based jurisdictions</li>
+<li>the importance of the media in highlighting privacy breaches or the possibility of privacy breaches in a timely manner.</li>
+</ul>
+<p>Imagine you are a security consultant hired by a leading business to oversee the implementation of social media-based strategies, including the use of apps to generate a greater connection with their existing and potential customers.</p>
+<p>You can use the issues raised by the <a href="http://search.proquest.com.ezproxy-f.deakin.edu.au/docview/758961464/fulltext/5BE19BD2C91F4827PQ/1?accountid=10445" target="_blank" rel="noopener noreferrer">Facebook investigation</a>&nbsp;to advise your customer about the implications of using web apps.&nbsp;You can think about the policies and practices to put in place to avoid potential risks that include reputational damage, regulatory penalties and loss of trust.&nbsp;</p>
+<p>You can refer to the following links to study actions taken by the regulators of different countries with the aim of protecting their citizen&rsquo;s privacy.</p>
+<ul>
+<li>
+<p><a href="https://www.abc.net.au/news/2017-05-17/facebook-fined-$224,000-by-french-data-watchdog/8531918" target="_blank" rel="noopener noreferrer">French example</a>.</p>
+</li>
+<li>
+<p><a href="https://www.independent.co.uk/life-style/gadgets-and-tech/news/facebook-users-sue-site-over-data-collection-demand-compensation-for-privacy-breaches-10164481.html" target="_blank" rel="noopener noreferrer">UK example</a>.</p>
+</li>
+</ul>
+</div>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

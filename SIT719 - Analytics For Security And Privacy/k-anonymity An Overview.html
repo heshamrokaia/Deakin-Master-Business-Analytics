@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>k-anonymity: An Overview</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<h2>Introduction</h2>
+<p style="text-align: center;"><iframe src="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1545175&amp;type=lti&amp;rCode=DeakinUniversity-4674949" title="Anonymisation-Deidentification" allowfullscreen="allowfullscreen" allow="microphone *; camera *; autoplay *" height="405" width="720"></iframe></p>
+<p>k-anonymity protects the privacy of individual persons by pooling their attributes into groups of at least&nbsp;<em>k</em> people. The method is based on the assumption that we have a dataset that contains <em>N</em> entries. Each entry consists of a list of <em>D</em> attributes that contain (non-sensitive) information about a person, such as age, gender, zip code of residence, etc. These attributes are called "quasi-identifiers", as combining several of them into a "super-identifier" can often uniquely identify a person even in large datasets (e.g. the combination of gender, age and zip code might be so specific that only a single person in a dataset has a given combination). In addition, the model assumes that the dataset contains a single sensitive attribute that contains e.g. information about a person's income and that we want to protect. The method can also be generalized to datasets with more than one sensitive attribute or datasets where there's no clear distinction between quasi-identifiers and sensitive attributes.</p>
+<p>k-anonymity demands that we group individual rows/persons of our dataset into group of at least <em>k</em> rows/persons and replace the quasi-identifier attributes of these rows with aggregate quantities, such that it is no longer possible to read the individual values. This protects people by ensuring that an adversary who knows all values of a person's quasi-identifier attributes can only find out which group a person might belong to but not know if the person is really in the dataset.</p>
+<p></p>
+<h2>Definition of k-anonymity</h2>
+<p>A dataset is said to be k-anonymous if every combination of values for demographic columns in the dataset appears at least for k different records.</p>
+<p style="text-align: center;"><iframe src="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1545175&amp;type=lti&amp;rCode=DeakinUniversity-4674951" title="k-anonymity-2" allowfullscreen="allowfullscreen" allow="microphone *; camera *; autoplay *" height="405" width="720"></iframe></p>
+<p>For example, this dataset is 2-anonymous:</p>
+<p><img src="PastedImage_0xwkyeojnh8xb99lknolckkn2vcyce6c001119787938.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5></h5>
+<p>This one isn't:</p>
+<p><img src="PastedImage_xsibujsu8nb88ygxf40qmmfc10nm9y05001119787938.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5></h5>
+<p>Notice that we need every combination of values to appear at least k times. Thus, even if each individual value of each column appears 2 times in the following dataset, it's not 2-anonymous:</p>
+<p><img src="PastedImage_cj7dz0eylmt5ih5k8ji064lytnk41lbf001119787938.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5></h5>
+<p>The intuition is that when a dataset is k-anonymous for a sufficiently large k, the last requirement for a successful reidentification attack is broken. An attacker might find out the demographic information of their target using a secondary database, but then this demographic information will be linked to k different individuals, so it will be impossible to know which one is their info.</p>
+<h2 id="how-to-make-a-dataset-k-anonymous">How to make a dataset&nbsp;%3Cmath%20xmlns%3D%26quot%3Bhttp%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%26quot%3B%3E%3Cmi%3Ek%3C%2Fmi%3E%3C%2Fmath%3E-anonymous?</h2>
+<p>The two main building blocks used to transform a dataset into a k-anonymous table are generalization and suppression.</p>
+<p>Follow the next section <em>Link </em>to explore more on k-anonymity.</p>
+<p></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

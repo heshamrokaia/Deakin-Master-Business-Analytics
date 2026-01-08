@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Data Cleaning and Preparation</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;"></span></h2>
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p>During the course of doing data analysis and modeling, a significant amount of time is spent on data preparation: loading, cleaning, transforming, and rearranging. Such tasks are often reported to take up 80% or more of an analyst&rsquo;s time. Sometimes the way that data is stored in files or databases is not in the right format for a particular task. Many researchers choose to do ad hoc processing of data from one form to another using a general-purpose programming language, like Python, Perl, R, or Java. Fortunately, pandas, along with the built-in Python language features, provides you with a high-level, flexible, and fast set of tools to enable you to manipulate data into the right form.</p>
+<p></p>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #990000;"><strong>Handling Missing Data</strong></span></h2>
+<p>Missing data occurs&nbsp;commonly in many data analysis applications. For&nbsp;numeric data, pandas use the floating-point&nbsp;value&nbsp;NaN&nbsp;(Not a Number) to represent missing data.</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>import pandas as pd</p>
+<p>from numpy import nan as NA</p>
+<p>data = pd.Series([1, NA, 3.5, NA, 7])</p>
+</div>
+<p>&nbsp;Now if you check the data in the console, it will show:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>Out[20]:</p>
+<p>0&nbsp;&nbsp;&nbsp; 1.0</p>
+<p>1&nbsp;&nbsp;&nbsp; NaN</p>
+<p>2&nbsp;&nbsp;&nbsp; 3.5</p>
+<p>3&nbsp;&nbsp;&nbsp; NaN</p>
+<p>4&nbsp;&nbsp;&nbsp; 7.0</p>
+<p>dtype: float64</p>
+</div>
+<p></p>
+<p>Now to check the NaN values, use the following command in the console:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>&gt;&gt; data.isnull()</p>
+<p><em>Out[19]: </em></p>
+<p><em>0&nbsp;&nbsp;&nbsp; False</em></p>
+<p><em>1&nbsp;&nbsp;&nbsp;&nbsp; True</em></p>
+<p><em>2&nbsp;&nbsp;&nbsp; False</em></p>
+<p><em>3&nbsp;&nbsp;&nbsp;&nbsp; True</em></p>
+<p><em>4&nbsp;&nbsp;&nbsp; False</em></p>
+<p><em>dtype: bool</em></p>
+</div>
+<p>See the below table&nbsp;for a list of some functions related to missing data handling.</p>
+<p>&nbsp;<img src="PastedImage_v8p3elth7555u8cy6slggabmnsrc9ctp001117596298.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;" /></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h5>&nbsp;</h5>
+<h2>Filtering Out Missing Data</h2>
+<p>There are a few ways to&nbsp;filter out missing data. The&nbsp;<i>dropna</i>&nbsp;can be helpful. On a Series, it returns the Series with only the non-null data and index values. If we consider the above example, you can obtain the dataset <i>data</i> by filtering out the NaN values using the following code:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p>data.dropna()</p>
+<p>#It will show you the following output:</p>
+<p>Out[17]:</p>
+<p>0&nbsp;&nbsp;&nbsp; 1.0</p>
+<p>2&nbsp;&nbsp;&nbsp; 3.5</p>
+<p>4&nbsp;&nbsp;&nbsp; 7.0</p>
+<p>dtype: float64</p>
+</div>
+<h2></h2>
+<h2>Filling In Missing Data</h2>
+<p>Rather than filtering out&nbsp;missing data (and potentially discarding other data along with it), you may want to fill in the &ldquo;holes&rdquo; in any number of ways. For most purposes,&nbsp;the&nbsp;<em>fillna</em>&nbsp;method is the workhorse function to use. Calling&nbsp;<em>fillna</em>&nbsp;with a constant replaces missing values with that value:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p><em>data.fillna(0)</em></p>
+<p><span style="font-family: Lato, sans-serif; font-size: 1rem;">#&nbsp;</span>Here we have replaced with the value &lsquo;0&rsquo;. It will produce the following results:</p>
+<p>Out[23]:</p>
+<p>0&nbsp;&nbsp;&nbsp; 1.0</p>
+<p>1&nbsp;&nbsp;&nbsp; 0.0</p>
+<p>2&nbsp;&nbsp;&nbsp; 3.5</p>
+<p>3&nbsp;&nbsp;&nbsp; 0.0</p>
+<p>4&nbsp;&nbsp;&nbsp; 7.0</p>
+<p>dtype: float64</p>
+<p></p>
+</div>
+<p><i></i>With&nbsp;<em>fillna</em>&nbsp;you can decide the constant value in a more creative way. For example, you might pass the mean or median value of a Series:</p>
+<div style="background: #f8f8f8; padding: 12pt; border: 1pt solid #cccccc;">
+<p><em>data.fillna(data.mean())</em></p>
+<p># You get the output:</p>
+<p>&nbsp;Out[24]:</p>
+<p>0&nbsp;&nbsp;&nbsp; 1.000000</p>
+<p>1&nbsp;&nbsp;&nbsp; 3.833333</p>
+<p>2&nbsp;&nbsp;&nbsp; 3.500000</p>
+<p>3&nbsp;&nbsp;&nbsp; 3.833333</p>
+<p>4&nbsp;&nbsp;&nbsp; 7.000000</p>
+<p>dtype: float64</p>
+</div>
+<p><br /><i></i></p>
+<p><i></i></p>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

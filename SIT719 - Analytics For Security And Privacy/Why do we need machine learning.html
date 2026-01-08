@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><h1>Why do we need machine learning?</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p>Data is everywhere. At this very moment, thousands of systems are collecting records that make up the history of specific services, together with logs, user interactions, and many other context-dependent elements. We can say that a large amount of data from a variety of sources usually carries a lot of information. In order to extract and categorize the information, it's necessary to take an automated approach. Machine learning has opened the door of opportunities for generating value from data.</p>
+<p>&nbsp;Think of a cloudy day when the sky is full of dark clouds and thunderstorms. Looking at the cloudy sky, the first question came into your mind is whether it is going to rain soon! But are you really confident about it? How can you make sure whether it is going to rain or not? Based on your past experience and weather knowledge maybe you make a decision. Machine learning does the same. We use machine learning to learn based on historical data and predict the future. This is called predictive analysis. Machine Learning is also applied to other branches of analyses.&nbsp;</p>
+<p>Formally, Machine learning is a large branch of computer science (in particular, artificial intelligence), which aims to implement&nbsp;<strong>descriptive, Diagnostic, predictive, </strong><strong>and</strong><strong> prescriptive </strong><strong>analysis</strong>&nbsp;models of reality by exploiting data.</p>
+<p><img src="PastedImage_q8rdr9ut8slpfqpg3k78wpety7o2k4ds001117818016.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>Figure:&nbsp; Machine Learning analysis types [1]</p>
+<p>Machine learning became glorified in the 1990s, when researchers started using it to day-to-day life problems. In the early 2000s, the internet and digitization poured fuel on this fire, and over the years companies like Google, Amazon, Facebook, and Netflix started leveraging machine learning to improve human-computer interactions even further. Voice recognition and face recognition systems have become our go-to technologies. More recently, artificially intelligent home automation products, self-driving cars, and robot butlers have gained significant attention.</p>
+<p></p>
+<p>SAS is a trusted analytics powerhouse for organizations seeking immediate value from their data.&nbsp;Read why is Machine Learning important from the below link.</p>
+<p><a href="https://www.sas.com/en_au/insights/analytics/machine-learning.html">https://www.sas.com/en_au/insights/analytics/machine-learning.html</a>&nbsp;(Accessed online 03/03/2020)</p>
+<p>You will see industry sectors who are using the power of machine learning. Read and explore to learn some of these capabilities these individual industries are using. For example, in health-care, the advent of wearable devices and sensors that can use data to assess a patient's health in real-time.&nbsp;Did you find out what&nbsp;is happening in other industry sectors such as Financial Services, Government, Retail, Oil and Gas, Transportation, etc?&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script></p></body></html>

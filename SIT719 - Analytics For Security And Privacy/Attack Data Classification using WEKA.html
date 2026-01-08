@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head>
+<!-- ------------------------------------------- -->
+<body class="cloudFirst">
+<h1>Cyber-Security Datasets for Attack Classification&nbsp;</h1>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">&nbsp;</span></h2>
+<p>Advanced analytics and tools can provide actionable insights into the datasets related to cyber-security.&nbsp;</p>
+<p></p>
+<!-- ------------------------------------------- -->
+<h2><span style="color: #cf2a27;">KDD Datasets</span></h2>
+<p><span style="color: #000000;">During the last decade, anomaly detection has attracted the attention of many researchers to overcome the weakness of signature-based (labeled) IDSs in detecting novel attacks, and KDDCUP&rsquo;99 is the most widely used data set for the evaluation of these systems [1].</span></p>
+<p><span style="color: #000000;"></span></p>
+<h2><span style="color: #cf2a27;">NSL-KDD Datasets</span></h2>
+<p><span style="color: #000000;">NSL-KDD is a data set suggested to solve some of the inherent problems of the KDD'99 data set which are mentioned in [1]. Although, this new version of the KDD data set still suffers from some of the problems discussed by McHugh and may not be a perfect representative of existing real networks, because of the lack of public data sets for network-based IDSs, we believe it still can be applied as an effective benchmark data set to help researchers compare different intrusion detection methods. We have chosen this dataset as it is widely used and one of the benchmark datasets for intrusion detection developed so far. Consequently, the evaluation results of different&nbsp;analytical works will be consistent and comparable.</span></p>
+<p><span style="color: #cf2a27;"></span>Here, we have four types of attacks in the dataset.&nbsp;</p>
+<h4><span style="color: #000000;">1) Denial of Service Attack (DoS): </span></h4>
+<p><span style="color: #000000;">DoS is an attack in which the attacker makes some computing or memory resource too busy or too full to handle legitimate requests, or denies legitimate users access to a machine. </span></p>
+<h4><span style="color: #000000;">2) User to Root Attack (U2R):</span></h4>
+<p><span style="color: #000000;">U2R is a class of exploit in which the attacker starts out with access to a normal user account on the system (perhaps gained by sniffing passwords, a dictionary attack, or social engineering) and is able to exploit some vulnerability to gain root access to the system. </span></p>
+<h4><span style="color: #000000;">3) Remote to Local Attack (R2L): </span></h4>
+<p><span style="color: #000000;">R2L occurs when an attacker who has the ability to send packets to a machine over a network but who does not have an account on that machine exploits some vulnerability to gain local access as a user of that machine. </span></p>
+<h4><span style="color: #000000;">4) Probing Attack: </span></h4>
+<p><span style="color: #000000;">Probing attack is an attempt to gather information about a network of computers for the apparent purpose of circumventing its security controls.</span></p>
+<p><span style="color: #cf2a27;"></span>If you are interested to learn more regarding the following datasets, visit the below links:&nbsp;</p>
+<h2><span style="color: #cf2a27;">References</span></h2>
+<p>[1] M. Tavallaee, E. Bagheri, W. Lu, and A. Ghorbani, &ldquo;A Detailed Analysis of the KDD CUP 99 Data Set,&rdquo;&nbsp;<em>Submitted to Second IEEE Symposium on Computational Intelligence for Security and Defense Applications (CISDA)</em>, 2009.</p>
+<p>[2] NSL-KDD Datasets, Available Online&nbsp;<a href="https://www.unb.ca/cic/datasets/nsl.html">https://www.unb.ca/cic/datasets/nsl.html</a></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div contenteditable="true" aria-hidden="true" class="ephox-sloth-bin ephox-sloth-bin_89871422411584661746315" style="position: fixed; top: 0px; width: 100px; height: 100px; overflow: hidden; opacity: 0; left: -100000px;"><b><sub><span style="font-size: 25pt; line-height: 105%; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin;">Attack Data Classification using WEKA<o:p></o:p></span></sub></b></div>
+</body>
+<script defer type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+
+<script  type="text/javascript">
+function localFunction(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+  /* ------------------------------------------------ */  
+  /* -- START: PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  var p = Prism.languages;
+  var languagesArray = new Array();
+
+  // iterate over elements in Prism.languages
+  console.log("")
+  console.log("Iterating over Prism.languages object...");
+  for (var key in p) {
+    if (p.hasOwnProperty(key)) {
+      // if an element is a function, ignore it
+      if ( p[key] instanceof Function ) {
+        console.log("found function: " + key);
+      } else {
+        // otherwise if it's an object, count it as language
+        languagesArray.push(key);
+      }
+    }
+  }
+  console.log("");
+
+  var languagesString = "";
+  var counter = 0;
+  console.log("Found " + languagesArray.length + " languages in the Prism.languages object");
+  languagesArray.sort().forEach(function (language) {
+    languagesString += language;
+    if(++counter < languagesArray.length) {
+      languagesString += ", ";
+    }
+  });
+
+  console.log("List of languages available:");
+  console.log("--------------------------------------");
+  console.log(languagesString);
+  console.log("--------------------------------------");
+  /* -- END:   PRISM JS PRINT LANGUAGES TO CONSOLE -- */
+  /* ------------------------------------------------ */  
+
+  $('#viewTranscript').click(function(){
+    if($('#viewTranscript').text() == 'View transcript') {
+      $('#transcript-en').show();
+      $('#viewTranscript').text('Close transcript');
+    } else {
+      $('#transcript-en').hide();
+      $('#viewTranscript').text('View transcript');
+    }
+  });
+ 
+  /* Just need 3 things in the markup: 1. href="#video1", 2. class="transcript__timestamp" and 3. the timestamp value eg. 2:47  */
+ $(".transcript__timestamp").click(function(){
+
+    //collect video id and time attributes
+
+      //var thisID = $(this).attr('id');
+      var thisHref = $(this).attr('href');
+      //the href is an id but will strp the # of it in case that's not always what the id is. Thsi hash can be added back oin the global func
+      thisHref = thisHref.substring(1);
+      //console.log(thisHref);
+      var thisTimsStr = $(this).text();
+
+      //thisTimsStr may have extra text after the actual time so to make sure, it needs to be stripped out.
+      var n = thisTimsStr.indexOf(":")+3;
+      var stripped = thisTimsStr.substring(0, n);
+      //console.log('stripped '+ stripped);
+      //now convert to seconds
+      var split = stripped.split(':');
+      //console.log(split);
+      var thisTime = (split[0] * 60) + parseInt(split[1]);
+      console.log('thisHref is ' + thisHref + ' thisTime is ' + thisTime);
+      videoJumpToTime(thisHref,thisTime)
+  });
+
+MathJax.Hub.Config({
+
+  "HTML-CSS": {
+      scale: 100
+   }
+});
+ 
+}
+</script>
+</html>

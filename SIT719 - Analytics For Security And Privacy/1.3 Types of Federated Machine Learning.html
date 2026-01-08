@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>CloudFirst CloudDeakin Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/shared/HTML Templates/CloudFirst/styles/cloudfirst.css?v=20210913">
+    <script src="/content/deakinscripts/h5pResponsive.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/content/deakin-embedded-comments/embeddedComments.css?v=20201007">
+</head><body data-template-type="cloudFirst"><h3></h3>
+<h3>Types of Federated Machine Learning</h3>
+<div class="cf_instructions">Based on the various data distribution scenarios Federated Machine Learning can be classified into following types:&nbsp;</div>
+<ol>
+<li>Horizontal Federated Learning (HFL)</li>
+<li>Vertical Federated Learning (VFL)</li>
+<li>Federated Transfer Learning (FTL)</li>
+<li>Cross-silo Federated Learning&nbsp;</li>
+<li>Cross-device Federated Learning&nbsp;</li>
+</ol>
+<p>Let's understand them in detail in this section:</p>
+<h4 class="cf_instructions"><strong>Horizontal Federated Learning (HFL)</strong></h4>
+<p><span style="list-style-type: unset;">Horizontal Federated Learning (HFL), or sample-partitioned federated learning, is a type of federated learning in which participants share the same feature space but have different data samples</span><span style="list-style-type: unset;">.</span></p>
+<p><span style="list-style-type: unset;">Consider two hospitals located in different cities. Both institutions gather similar types of patient data, such as age, blood pressure, and diagnosis; however, each hospital maintains records for distinct groups of patients. Given that the features are consistent but the individuals vary, Federated Learning (HFL) enables them to collaboratively train a model without the need to share their raw data.</span></p>
+<ol></ol>
+<p><span style="list-style-type: unset;">Key Characteristics of HFL: </span></p>
+<ul>
+<li><span style="list-style-type: unset;">&nbsp;Offers the same features but caters to different users. </span></li>
+<li><span style="list-style-type: unset;">Ideal for organizations that have similar data structures but distinct user bases.&nbsp;</span></li>
+<li><span style="list-style-type: unset;">A central server typically manages the training process and consolidates model updates. </span></li>
+<li><span style="list-style-type: unset;">Improves privacy by keeping data local while still benefiting from collaborative learning.</span></li>
+</ul>
+<ol></ol>
+<p>HFL typically used in finance, healthcare and mobile applications. Google's keyboard suggestions on Android devices is a classic example.</p>
+<h4 class="cf_instructions"><strong>Vertical Federated Learning (VFL)</strong></h4>
+<p><span style="list-style-type: unset;">Vertical Federated Learning (VFL), also called feature-partitioned federated learning, is a collaborative machine learning approach where multiple parties possess different features related to the same set of users.</span></p>
+<p><span style="list-style-type: unset;">In the following example, we have two fictitious companies: a) Large, an online publisher for blogs, and b) StoneWater, a high street book retailer. Some of StoneWater's customers also work as curators at the blogging site.</span></p>
+<p><span style="list-style-type: unset;"><img src="1z5iduByFpgg8ToYG1maJkg_20250622101452929.webp" width="465" height="338"></span></p>
+<p><span style="list-style-type: unset;"></span></p>
+<p style="text-align: center;"><span style="list-style-type: unset;">Figure 10. 6: VFL Examples </span></p>
+<p><span style="list-style-type: unset;">Both companies collect different features from their customers. StoneWater captures information such as book 'Title,' 'Category,' and 'Author' from each purchase, while Large gathers data on customers' reading behavior. Although both companies have access to the same customers, StoneWater possesses information related to book purchases, while Large holds data on reading habits. </span><span style="list-style-type: unset;">The VFL (Vertical Federated Learning) model allows them to jointly train a machine learning model without ever sharing their raw data or revealing any sensitive information.</span></p>
+<p><span style="list-style-type: unset;">Key Characteristics of VFL: </span></p>
+<ul>
+<li><span style="list-style-type: unset;">The same users are involved, but they have different features.&nbsp;</span></li>
+<li><span style="list-style-type: unset;">Secure entity alignment is necessary to match users across different datasets. </span></li>
+<li><span style="list-style-type: unset;">Cryptographic techniques, such as homomorphic encryption, are often used to protect data during training. </span></li>
+<li><span style="list-style-type: unset;">This approach typically involves fewer participants compared to horizontal federated learning, but it offers richer feature sets for each user.</span><span style="list-style-type: unset;"></span></li>
+</ul>
+<p><span style="list-style-type: unset;">VFLs are typically used in healthcare and marketing, where various organisations can collaborate without compromising the user's privacy. </span></p>
+<h4><strong><span style="list-style-type: unset;">Cross-silo Federate Learning</span></strong></h4>
+<p style="text-align: justify;"><span style="list-style-type: unset;">Cross-silo federated learning is a collaborative machine learning method in which a select group of trusted organizations—such as hospitals, banks, or universities—train a shared model without sharing their raw data. </span></p>
+<p><span style="list-style-type: unset;">In cross-silo federated learning, a central server distributes an initial model to each participating organization, or "silo." Each silo then trains the model using its own local data. Instead of sharing the data itself, each organization sends back only model updates, such as gradients or parameters, to the server. The server aggregates these updates to enhance the global model. This process continues in cycles until the model converges. </span></p>
+<p><span style="list-style-type: unset;">Key Characteristics of Cross-silo Federated Learning</span></p>
+<ul>
+<li><span style="list-style-type: unset;">A limited number of reliable participants: This typically involves organizations such as hospitals, banks, or universities, all of which possess stable infrastructure and expansive datasets. </span></li>
+<li><span style="list-style-type: unset;">Data remains localized: Raw data stays within its designated silo. Only model updates—such as gradients or parameters—are exchanged, thus preserving privacy and ensuring compliance with regulations. </span></li>
+<li><span style="list-style-type: unset;">Centralized coordination: A central server usually oversees the training process, aggregating updates from each silo to enhance the global model. </span></li>
+<li><span style="list-style-type: unset;">High quality and volume of data: Each silo often contains rich, structured, and high-quality data that contributes to the development of more accurate models. </span></li>
+<li><span style="list-style-type: unset;">Secure communication protocols: Encryption and secure multi-party computation are frequently employed to safeguard model updates during transmission. </span></li>
+<li><span style="list-style-type: unset;">Periodic synchronization: Training occurs in rounds, with each silo updating the model locally before syncing with the central server. </span></li>
+<li><span style="list-style-type: unset;">Utilization of advanced aggregation techniques: Approaches such as Federated Averaging (FedAvg) are commonly used to effectively combine updates from different silos.&nbsp;</span></li>
+</ul>
+<h4><strong><span style="list-style-type: unset;">Cross-device Federated Learning</span></strong></h4>
+<p style="text-align: justify;"><span style="list-style-type: unset;">Cross-device federated learning is a form of federated learning where millions of personal devices—such as smartphones, tablets, or IoT gadgets—collaborate to train a shared machine learning model without transmitting their raw data to a central server. </span></p>
+<p style="text-align: justify;"><span style="list-style-type: unset;">In cross-device federated learning, each device begins by downloading the current global model. It then trains this model locally using its own data, which may include information such as keyboard usage, app behavior, or sensor readings. Rather than sending the data itself back to a central server, the device transmits only the model updates. The central server then aggregates updates from numerous devices to enhance the global model. </span></p>
+<p><span data-preserver-spaces="true">Key Characteristics of Cross-device Federated Learning:</span></p>
+<ul>
+<li style="list-style-type: disc;"><span data-preserver-spaces="true">Massive scale: Consists of thousands to millions of devices.</span></li>
+<li style="list-style-type: disc;"><span data-preserver-spaces="true">Unreliable participation: Devices may become inactive due to issues such as battery life, connectivity problems, or user engagement.&nbsp;&nbsp;</span></li>
+<li style="list-style-type: disc;"><span data-preserver-spaces="true">Privacy-first: It is particularly well-suited for handling sensitive on-device data, including text inputs and health metrics. </span></li>
+<li style="list-style-type: disc;"><span data-preserver-spaces="true">Low-bandwidth communication: The updates transmitted are small in size and are typically encrypted.&nbsp;&nbsp;</span><span data-preserver-spaces="true"></span></li>
+</ul>
+<h4 style="list-style-type: disc;"><strong><span data-preserver-spaces="true">Federated Transfer Learning (FTL)</span></strong></h4>
+<p style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Federated Transfer Learning (FTL) is a specialized type of federated learning, tailored for circumstances where participants possess different feature spaces and varying user sets, yet still aim to collaborate on training a machine learning model without sharing their raw data.</span> </span></p>
+<p style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">In Federated Transfer Learning (FTL), one party may possess a well-trained model based on a large dataset, while another party may have limited data but wishes to leverage that existing knowledge. Transfer learning allows the pre-trained model to be adapted for the new task or domain. This adaptation occurs in a federated setting, which means that each party keeps its data local and only shares encrypted model updates. A central server, or a decentralized protocol, then aggregates these updates to enhance the global model.</span> </span></p>
+<p style="text-align: justify;"><span data-preserver-spaces="true">Key Characteristics of FTL:</span></p>
+<ul>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Heterogeneous Data Distribution: Participants possess diverse feature spaces and user sets, resulting in datasets that do not align neatly in rows or columns. </span></span></li>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Knowledge Transfer Across Domains: FTL utilizes transfer learning to adapt a model trained in a data-rich domain to another domain with limited data, fostering collaboration even in situations of sparse or mismatched datasets. </span></span></li>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Privacy-Preserving Collaboration: Raw data remains local, and only encrypted model updates or intermediate representations are shared. This approach ensures compliance with data protection regulations. </span></span></li>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Secure Alignment Mechanisms: In cases where there is partial overlap in users or features, FTL employs techniques such as entity alignment or homomorphic encryption to securely match and learn from shared elements. </span></span></li>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Asymmetric Learning Capability: One party may provide more data or a pre-trained model, allowing the other to benefit from it—making FTL particularly suitable for partnerships characterized by imbalances. </span></span></li>
+<li style="text-align: justify;"><span data-preserver-spaces="true"><span style="list-style-type: unset;">Flexible Architecture: FTL can be implemented in either centralized or decentralized configurations, depending on the levels of trust and infrastructure available.</span> </span></li>
+</ul>
+<h3><span style="list-style-type: unset;">Comparison of FL Types: </span></h3>
+<p style="text-align: left;"><span style="list-style-type: unset;">Table 10. 2: A Comparison Between FL Types</span></p>
+<table style="width: 692pt;" width="1383" cellspacing="0" cellpadding="0" border="0"><colgroup><col style="width: 154px;" span="6" width="231"> </colgroup>
+<tbody>
+<tr style="height: 38.54pt;" height="77">
+<td style="height: 38.54pt; width: 115pt;" width="231" height="77">
+<p><strong>Feature</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p><strong>Horizontal Federated Learning (HFL)</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p><strong>Vertical Federated Learning (VFL)</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p><strong>Federated Transfer Learning (FTL)</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p><strong>Cross-Silo Federated Learning (CSFL)</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p><strong>Cross-Device Federated Learning (CDFL)</strong></p>
+</td>
+</tr>
+<tr style="height: 38.54pt;" height="77">
+<td style="height: 38.54pt; width: 115pt;" width="231" height="77">
+<p><strong>Data Structure</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Same feature space, different samples</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Same samples, different feature space</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Different samples, different feature space</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Same or different samples, large datasets</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Same feature space, different samples</p>
+</td>
+</tr>
+<tr style="height: 45.77pt;" height="92">
+<td style="height: 45.77pt; width: 115pt;" width="231" height="92">
+<p><strong>Participants</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Multiple organizations or devices</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Multiple organizations with complementary features</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Organizations with non-overlapping datasets</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Limited number of organizations (silos)</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Numerous edge devices (e.g., smartphones)</p>
+</td>
+</tr>
+<tr style="height: 24.09pt;" height="48">
+<td style="height: 24.09pt; width: 115pt;" width="231" height="48">
+<p><strong>Privacy</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Data remains local</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Data remains local</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Data remains local</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Data remains local</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Data remains local</p>
+</td>
+</tr>
+<tr style="height: 31.32pt;" height="63">
+<td style="height: 31.32pt; width: 115pt;" width="231" height="63">
+<p><strong>Collaboration</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Collaborative model training</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Collaborative model training</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Knowledge transfer across domains</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Collaborative model training</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Collaborative model training</p>
+</td>
+</tr>
+<tr style="height: 53pt;" height="106">
+<td style="height: 53pt; width: 115pt;" width="231" height="106">
+<p><strong>Aggregation</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Central server aggregates model updates</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Central server aggregates encrypted updates</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Central server aggregates intermediate representations</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Central server aggregates model updates</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Central server aggregates model updates</p>
+</td>
+</tr>
+<tr style="height: 31.32pt;" height="63">
+<td style="height: 31.32pt; width: 115pt;" width="231" height="63">
+<p><strong>Main Use Cases</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Healthcare, finance, mobile apps</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Finance and healthcare</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Healthcare, finance, retail</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Healthcare, finance, research</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Mobile apps, IoT networks, healthcare</p>
+</td>
+</tr>
+<tr style="height: 45.77pt;" height="92">
+<td style="height: 45.77pt; width: 115pt;" width="231" height="92">
+<p><strong>Advantages</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Robust models, privacy, scalability</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Comprehensive models, privacy, regulatory compliance</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Generalizable models, privacy, cross-domain learning</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Privacy, improved model performance, compliance</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Enhanced privacy, scalability, low latency</p>
+</td>
+</tr>
+<tr style="height: 60.22pt;" height="120">
+<td style="height: 60.22pt; width: 115pt;" width="231" height="120">
+<p><strong>Challenges</strong></p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Coordination, communication overhead</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>ID alignment, communication overhead, data heterogeneity</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Complexity, communication overhead, data heterogeneity</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Coordination, network overhead, data heterogeneity</p>
+</td>
+<td style="width: 115pt; text-align: center;" width="231">
+<p>Device heterogeneity, communication overhead, security</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="list-style-type: unset;"></span></p>
+<hr>
+<h3>References</h3>
+<p>1. <a href="https://openmined.org/blog/federated-learning-types/">https://openmined.org/blog/federated-learning-types/</a></p>
+<hr>
+<div><iframe src="/content/deakin-embedded-comments/embedded-comments-loader.html?v=20201006" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px;"></iframe> <!--FORUMVARIABLESTART-->
+<div style="display: none;" data-forumname="null"></div>
+<!--FORUMVARIABLEEND--></div>
+<div>
+<script type="text/javascript" src="https://s.brightspace.com/lib/jquery/2.2.4/jquery.min.js"></script>
+<script src="/shared/HTML Templates/CloudFirst/scripts/cloudfirst-v1.js?v=20210913"></script>
+<script type="text/javascript" src="/content/deakinscripts/moment/moment.2.21.js"></script>
+<script>
+		// Nav Button
+		$("body").append('<div style=" padding-top: 50px; padding-bottom: 50px; clear: both;"><hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;" /><p style="padding-bottom:5px;"></p><a title="Previous" class="navrep-button" style="float: left;" href="#" target="_parent"> <i class="fa fa-chevron-left"></i> Previous </a> <a title="Next" class="navrep-button" style="float: right;"  href="#" target="_parent"> Next <i class="fa fa-chevron-right"></i> </a></div>');
+		// Find Parent frame
+		var backLink = $('body .d2l-iterator-button-prev', window.parent.parent.document).attr('href');
+		var nextLink = $('body .d2l-iterator-button-next', window.parent.parent.document).attr('href');
+		// console.log('backLink > ', backLink);
+		// console.log('nextLink > ', nextLink);
+		// Apply to each button
+		$('.navrep-button:contains("Previous")').attr('href', backLink);
+		$('.navrep-button:contains("Next")').attr('href', nextLink);
+	</script>
+<script type="text/javascript" src="/content/deakin-embedded-comments/embeddedComments.js?v=20201007"></script>
+</div></body></html>
