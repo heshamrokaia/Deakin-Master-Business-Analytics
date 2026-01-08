@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body class="cloudFirst"><p></p>
+<p><img src="../images/Multivariate%20regression%20image%201.jpg" alt="Close-up of ADA compliant detectable walking surface also called: truncated domes ADA pad, bump pad, access tile" title="Close-up of ADA compliant detectable walking surface also called: truncated domes ADA pad, bump pad, access tile" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<h1>Multivariate regression</h1>
+<div>
+<p>Now, lets look at a multivariate example. In this example, we look at the X1 vs Y1 (feature vs class/target).</p>
+<p>Our data is stored in a csv file. You are encouraged to open this file in Excel and look at it.</p>
+<p>Download data file <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3822393" target="_self">data.xsxl</a>&nbsp;add it your&nbsp;<em>data store</em>&nbsp;and rename it.</p>
+<p>Open a new Jupyter notebook and save your new .py file in the same directory.</p>
+<p>We can now build our regression model. We proceed by dividing this original dataset into two parts:</p>
+<ul>
+<li>Training dataset: containing <span style="color: rgb(207, 42, 39);">67%</span> of original data</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Testing dataset: containing&nbsp; <span style="color: rgb(207, 42, 39);">33%</span> </span><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">of original data</span></li>
+</ul>
+<p>Why do we do this? So that we can effectively judge our model. We build our model using training data. Then we test its performance on the unseen(by the model) test data.</p>
+<p>For now, lets manually create the train/test split using <span style="color: rgb(207, 42, 39);">67% </span>training data and <span style="color: rgb(207, 42, 39);">33%&nbsp;</span>testing data.</p>
+<h4 id="code-example-1">Code example# 1</h4>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(df.iloc[:,0:-1], df.iloc[:,-1], test_size=0.33, random_state=42)
+print("Train shape: ",X_train.shape)
+print("Test shape: ",,X_test.shape)</code></pre>
+<p>The output would look like this:</p>
+<pre>Train shape:  (514, 8)
+Test shape:  (254, 8)</pre>
+</div>
+</div>
+<h4 id="code-example-1">Code example# 2</h4>
+<div>
+<div>
+<pre><code class="language-Python">print(type(X))
+print(type(y))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">&lt;type 'numpy.ndarray'&gt;
+&lt;type 'numpy.ndarray'&gt;</code></pre>
+</div>
+</div>
+<span style="font-size: 15.2px;"><br></span></div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p><script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

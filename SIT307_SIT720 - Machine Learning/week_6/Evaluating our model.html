@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"><link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"></head><body class="cloudFirst"><p><img src="../images/Linear%20Regression%20in%20Python%20image%201.jpg" alt="Climbing Athletic woman climbing indoors, view from the back" title="Climbing Athletic woman climbing indoors, view from the back" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Linear Regression in Python</h1>
+</div>
+<div>
+<p>In this practical, you will apply regularised linear and logistic regression models to datasets.</p>
+<h3>The effects of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;on polynomial regression</h3>
+<p>We’ll start by doing polynomial regression. Let’s start by setting up the environment.</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+</code></pre>
+</div>
+</div>
+<p>Download the <a href="../poly_data.csv?isCourseFile=true" target="_blank" rel="noopener">poly_data.csv</a>&nbsp;data file used in the code. Add it to your data store and rename it if needed. Let’s read in the data from our data file and preview it.</p>
+<div>
+<div>
+<pre><code class="language-Python">data = pd.read_csv('data/poly_data.csv')
+
+rows, cols = data.shape
+
+print("Data has {} rows with  {} columns".format(rows, cols))
+data.head()
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Data has 60 rows with  2 columns
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>Which displays data such as:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>y</th>
+<th>x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1.065763</td>
+<td>1.047198</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1.006086</td>
+<td>1.117011</td>
+</tr>
+<tr>
+<th>2</th>
+<td>0.695374</td>
+<td>1.186824</td>
+</tr>
+<tr>
+<th>3</th>
+<td>0.949799</td>
+<td>1.256637</td>
+</tr>
+<tr>
+<th>4</th>
+<td>1.063496</td>
+<td>1.326450</td>
+</tr>
+</tbody>
+</table>
+<h4 id="code-example-2">Code example 2</h4>
+<p>Let’s plot it to see how it looks like.</p>
+<div>
+<div>
+<pre><code class="language-Python"># Separate the data into features and response.
+predictors = ['x']
+response = ['y']
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python"># Visualize the data
+plt.plot(data[predictors], data[response], '.')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter plot of our data')
+plt.show()
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Text(0.5,1,'Scatter plot of our data')
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/Linear%20Regression%20in%20Python%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;A scatter plot of our data</h5>
+<p>Now that we have visualised the data, the next step is to fit a model. At this point, you should be able to look at this data and answer the following questions:</p>
+<ul>
+<li>is there a correlation between&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>y</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y\)"}</annotation></semantics></math>?</li>
+<li>is the correlation linear or non-linear?</li>
+</ul>
+<span style="font-family: Lato, sans-serif; font-size: 0.95rem;">In this case, we have a non-linear correlation between&nbsp;&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;and&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>y</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">. The data looks like a sine curve. To keep things very simple, we start with a normal linear regression model.</span><br>
+<h4 id="code-example-3">Code example 3</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Lets fit a linear regression model to this data
+from sklearn.linear_model import LinearRegression
+
+lr1 = LinearRegression()
+lr1.fit(data[predictors], data[response])
+y_pred = lr1.predict(data[predictors])
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python">#Evaluate our model with mean square error
+mse1 = np.mean((y_pred - data[response])**2)
+print("Model MSE: {}".format(mse1[0]))
+plt.plot(data['x'], data['y'], '.', data['x'], y_pred, '-')
+plt.show()
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Model MSE: 0.0546719266491
+
+[&lt;matplotlib.lines.Line2D at 0x7f1d9aa72390&gt;,
+&lt;matplotlib.lines.Line2D at 0x7f1d9aa72890&gt;]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/Linear%20Regression%20in%20Python%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure<strong>.</strong>&nbsp;Our scatter plot with linear regression applied</h5>
+<p>The blue dots are our data, the yellow line is the fitted model with simple linear regression. Is this model over-fitting or under-fitting?</p>
+<h3 id="linear-regression-with-polynomial-features-polynomial-regression">Linear regression with polynomial features (polynomial regression)</h3>
+<p>For linear regression, our hypothesis function was in the form&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(h(x)=wx+b\)"}</annotation></semantics></math>.&nbsp;</p>
+<p>We have to use polynomial regression to get a better fit. For this, we have to generate extra features as powers of feature&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>.&nbsp;So our final model will be of the form&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msup><mo>+</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−<!-- − --></mo><mn>1</mn></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−<!-- − --></mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯<!-- ⋯ --></mo><mo>+</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup><mo>+</mo><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(h(x)=w_{n}x^{n}+w_{n-1}x^{n-1}+\cdots+w_{2}x^{2}+wx+b\)"}</annotation></semantics></math></p>
+<p>We can use the same Linear Regression from&nbsp;<em>Scikit learn</em>&nbsp;for this, but we now have to generate the features as powers of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>.&nbsp;</p>
+<h4 id="code-example-4">Code example 4:</h4>
+<p>Lets generate a model with&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi><mo>=</mo><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(n=5\)"}</annotation></semantics></math>&nbsp;(features until&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mi>x</mi><mn>5</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x^5\)"}</annotation></semantics></math>)&nbsp;</p>
+<div>
+<div>
+<pre><code class="language-Python">#We are going to add columns to our exiting data frame
+
+#To generate a name starting with a character and ending with a number, lets try this:
+print("x_%d"%5)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs:</p>
+<div>
+<div>
+<pre><code class="language-Python">x_5
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>Here, “%d” (as found in coding languages C, C++, Matlab) stands for&nbsp;<em>digit</em>, and is replaced by the value following % after the quotes. We can now generate column names and columns in our dataframe as:</p>
+<div>
+<div>
+<pre><code class="language-Python">for i in range(2,6):
+   colname = "x_%d"%i
+   data[colname] = data.x**i
+
+data.head()
+</code></pre>
+</div>
+</div>
+<p>Which displays data such as:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>y</th>
+<th>x</th>
+<th>x_2</th>
+<th>x_3</th>
+<th>x_4</th>
+<th>x_5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>1.065763</td>
+<td>1.047198</td>
+<td>1.096623</td>
+<td>1.148381</td>
+<td>1.202581</td>
+<td>1.259340</td>
+</tr>
+<tr>
+<th>1</th>
+<td>1.006086</td>
+<td>1.117011</td>
+<td>1.247713</td>
+<td>1.393709</td>
+<td>1.556788</td>
+<td>1.738948</td>
+</tr>
+<tr>
+<th>2</th>
+<td>0.695374</td>
+<td>1.186824</td>
+<td>1.408551</td>
+<td>1.671702</td>
+<td>1.984016</td>
+<td>2.354677</td>
+</tr>
+<tr>
+<th>3</th>
+<td>0.949799</td>
+<td>1.256637</td>
+<td>1.579137</td>
+<td>1.984402</td>
+<td>2.493673</td>
+<td>3.133642</td>
+</tr>
+<tr>
+<th>4</th>
+<td>1.063496</td>
+<td>1.326450</td>
+<td>1.759470</td>
+<td>2.333850</td>
+<td>3.095735</td>
+<td>4.106339</td>
+</tr>
+</tbody>
+</table>
+<p>This matrix is the extended version of the original data, suitable for performing polynomial regression. Remember all we did was take numbers in <math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>to power&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2,3,4\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(5\)"}</annotation></semantics></math>.&nbsp;</p>
+<p>to generate the new features.</p>
+<h4 id="code-example-5">Code example 5</h4>
+<p>Let’s fit the model and check the fit.</p>
+<div>
+<div>
+<pre><code class="language-Python">predictors = data.columns.values[1:]
+lr2 = LinearRegression()
+lr2.fit(data[predictors], data[response])
+y_pred2 = lr2.predict(data[predictors])
+
+#Evaluate our model with mean square error
+mse2 = np.mean((y_pred2 - data[response])**2)
+print("Model MSE: {}".format(mse2[0]))
+
+plt.plot(data['x'], data['y'], '.', data['x'], y_pred2, '-')
+plt.show()
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Model MSE: 0.0169762265929
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/Linear%20Regression%20in%20Python%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Linear regression with polynomial features</h5>
+<p>You can also print the coefficients in&nbsp;&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mn>5</mn></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>5</mn></mrow></msup><mo>+</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mn>4</mn></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>4</mn></mrow></msup><mo>+</mo><mo>⋯<!-- ⋯ --></mo><mo>+</mo><msub><mi>w</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup><mo>+</mo><mi>w</mi><mi>x</mi><mo>+</mo><mi>b</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(h(x)=w_{5}x^{5}+w_{4}x^{4}+\cdots+w_{2}x^{2}+wx+b\)"}</annotation></semantics></math>&nbsp;</p>
+<p>by calling the attribute&nbsp;<em>coef</em>:</p>
+<div>
+<div>
+<pre><code class="language-Python">print(lr2.coef_)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">[[-5.11776235  4.72461232 -1.92856217  0.33473526 -0.02065326]]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-6">Code example 6:</h4>
+<p>Lets generate a model with features until&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>15</mn></mrow></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x^{15}\)"}</annotation></semantics></math>&nbsp;</p>
+<div>
+<div>
+<pre><code class="language-Python">for i in range(2,16):
+   colname = "x_%d"%i
+   data[colname] = data.x**i
+
+data.head()</code></pre>
+</div>
+</div>
+<p>Fit the model and check the fit:</p>
+<div>
+<div>
+<pre><code class="language-Python">predictors = data.columns.values[1:]
+lr3 = LinearRegression()
+lr3.fit(data[predictors], data[response])
+y_pred3 = lr3.predict(data[predictors])
+
+#Evaluate our model with mean square error
+mse3 = np.mean((y_pred3 - data[response])**2)
+print("Model MSE: {}".format(mse3))
+plt.plot(data['x'], data['y'], '.', data['x'], y_pred3, '-')
+plt.show()
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Model MSE: y    0.014352
+dtype: float64
+[&lt;matplotlib.lines.Line2D at 0x7f1e1503d0d0&gt;,
+&lt;matplotlib.lines.Line2D at 0x7f1e1503d510&gt;]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="File_4462f93ddd80434880a0a7f44ba33e64_image.png" width="482" height="353"></p>
+<h5>Figure.&nbsp;Model with more features</h5>
+<p>Lets see the coefficients again:</p>
+<div>
+<div>
+<pre><code class="language-Python">print(lr3.coef_)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">
+[[ 9.73644025e+02 -1.10259891e+03 -4.82636085e+01  1.01428676e+03
+  -4.54613050e+02 -7.08990734e+02  1.12914080e+03 -7.95836619e+02
+   3.49506331e+02 -1.03969293e+02  2.14209993e+01 -3.02509204e+00
+   2.80268374e-01 -1.53749631e-02  3.79005355e-04]]</code></pre>
+</div>
+</div>
+</blockquote>
+<p>Is this model under-fitting or over-fitting? Lets check the MSE of each of our models. Lets also check the value of our the coefficients:</p>
+<p>The MSE of each of the 3 models is:</p>
+<h4 id="code-example-7">Code example 7</h4>
+<div>
+<div>
+<pre><code class="language-Python">print("MSE Simple LR: {}".format(mse1[0]))
+print("MSE Polynomial LR with power = 5:  {}".format(mse2[0]))
+print("MSE Polynomial LR with power = 15: {}".format(mse3[0]))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">MSE Simple LR: 0.05467192664907909
+MSE Polynomial LR with power = 5:  0.01697622659290215
+MSE Polynomial LR with power = 15: 0.014351902278257937
+</code></pre>
+</div>
+</div>
+</blockquote>
+<div>
+<div>
+<pre><code class="language-Python">print("Coefficients Simple LR: {}".format(lr1.coef_))
+print()
+print("Coefficients Polynomial LR with power = 5:  {}".format(lr2.coef_))
+print()
+print("Coefficients Polynomial LR with power = 15: {}".format(lr3.coef_))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Coefficients Simple LR: [[-0.61957457]]
+
+Coefficients Polynomial LR with power = 5:  [[-5.11776235  4.72461232 -1.92856217  0.33473526 -0.02065326]]
+
+Coefficients Polynomial LR with power = 15: [[ 9.73644025e+02 -1.10259891e+03 -4.82636085e+01  1.01428676e+03
+  -4.54613050e+02 -7.08990734e+02  1.12914080e+03 -7.95836619e+02
+   3.49506331e+02 -1.03969293e+02  2.14209993e+01 -3.02509204e+00
+   2.80268374e-01 -1.53749631e-02  3.79005355e-04]]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="observations">Observations:</h4>
+<ul>
+<li>MSE decreases with increasing model complexity</li>
+<li>Size of coefficients, in general, increasing model complexity</li>
+</ul>
+<p>What does a large coefficient signify? It means that we’re putting a lot of emphasis on that feature, i.e. the particular feature is a good predictor for the outcome.</p>
+<h3 id="l2-regularised-linear-regression"><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;Regularised linear regression</h3>
+<p>As you know, a regulariser prevents over-fitting by restricting the feature weights from taking very large values.&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;regularised regression modifies the objective function as:</p>
+<blockquote>
+<p>Objective_fn = Regression_Loss_Function + lambda * (sum of square of coefficients)</p>
+</blockquote>
+<p>So, when lambda = 0, the objective becomes the same as the simple linear regression. When lambda = infinity, coefficients will be zero. Why?&nbsp;<br><em>Because of infinite weightage on square of coefficients.</em></p>
+<p>When 0 &lt; lambda &lt; infinity, the magnitude of lambda will decide what weights to be given to each feature.&nbsp;</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;regularisation is also called&nbsp;<em>Ridge regression</em>. The <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" target="_blank" rel="noopener noreferrer">Scikit-learn documentation</a>&nbsp;provides more information.</p>
+<p><strong>Note:</strong>&nbsp;In general literature, the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;penalty is called&nbsp;<em>lambda</em>, but in Ridge regression, the parameter is called&nbsp;<em>alpha</em>.</p>
+<h4 id="code-example-8">Code example 8</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.linear_model import Ridge
+
+#call the ridge regression model with penalty (lambda) = 0.003
+ridgelr = Ridge(alpha=0.003) # alpha in the function represents lambda
+
+#Fit our data
+ridgelr.fit(data[predictors], data[response])
+
+# Do a prediction
+y_pred4 = ridgelr.predict(data[predictors])
+
+#Evaluate our model with mean square error
+mse4 = np.mean((y_pred4 - data[response])**2)
+plt.plot(data['x'], data['y'], '.', data['x'], y_pred4, '-')
+plt.show()
+print()
+print("Model MSE: {}".format(mse4[0]))
+print()
+print("Model Coeff: {}".format(ridgelr.coef_))
+
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Model MSE: 0.015319161587829666
+
+Model Coeff: [[-9.38462028e-01 -7.82157736e-01  1.16538733e-01  8.73012725e-01
+   5.44327890e-01 -7.04789892e-01 -8.25282409e-01  1.34943344e+00
+  -7.59190225e-01  2.18233625e-01 -3.04411100e-02  3.46090967e-04
+   5.08771211e-04 -6.66996145e-05  2.80697549e-06]]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="File_be18a1df9d304ad799e8db3a32aa61c1_image.png" width="447" height="325"></p>
+<h5>Figure.&nbsp;With Ridge regulariser: lambda = 0.003</h5>
+<p>Now let us check the shape of y_pred4</p>
+<div>
+<div>
+<pre><code class="language-Python">y_pred4.shape
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">(60, 1)
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="your-turn">Your turn</h4>
+<p>Try changing the penalty (lambda value in our discussions, but “alpha=” in scikit-learn) as the following cases: .001,.003,.01,.03,1,3,5,10,30</p>
+<p>As the penalty increases, the weights of coefficients should decrease. The model starts under-fitting when training error (MSE) starts increasing sufficiently, when penalty &gt; 1 in this case.</p>
+<h3><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;Regularised Linear Regression</h3>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;regularisation or LASSO is another regulariser which is of the form:</p>
+<blockquote>
+<p>Objective_fn = Regression_Loss_Function + alpha * (sum of absolute value of coefficients)</p>
+</blockquote>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;regularisation works similar to<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;but here it tries to make the weights of unimportant features to be zero. Hence this is also a form of feature selection.</p>
+<p>As with the previous example, we will import Lasso from scikit-learn. The <a href="http://scikit-learn.org/stable/modules/linear_model.html#lasso" target="_blank" rel="noopener noreferrer">Scikitlearn documentation</a>&nbsp;provides more details.</p>
+<p>We will run a&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;regularisation initially with penalty = 0.01. To be safer, we also specify&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mn>10</mn><mn>5</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10^5\)"}</annotation></semantics></math>&nbsp;iterations for the Lasso algorithm to ensure it converges.</p>
+<h4 id="code-example-9">Code example 9</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.linear_model import Lasso
+
+#call the lasso regression model with penalty (alpha) = 0.01
+# we also specify the max number of iterations as 10^5
+lassoreg = Lasso(alpha=0.01, max_iter=100000) # alpha in the function represents lambda 
+
+#Fit our data
+lassoreg.fit(data[predictors], data[response])
+
+# Do a prediction
+y_pred5 = lassoreg.predict(data[predictors])
+
+#Evaluate our model with mean square error
+mse5 = np.mean((y_pred5 - data['y'])**2)
+
+plt.plot(data['x'], data['y'], '.', data['x'], y_pred5, '-')
+plt.show()
+print()
+print ("Model MSE: {}".format(mse5))
+print()
+print("Model Coeff: {}".format(lassoreg.coef_))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Model MSE: 0.016489981168475613
+
+Model Coeff: [ 0.00000000e+00  0.00000000e+00  0.00000000e+00 -4.17937751e-03
+ -3.75600052e-03  2.59803210e-04  8.48182829e-05  8.73340926e-06
+  6.72863048e-07  2.49206509e-08 -3.96051840e-09 -1.49720339e-09
+ -4.29890443e-10 -1.32609247e-10 -4.17620418e-11]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="File_fb99e2b900b84370ac194c086e4896f7_image.png" width="516" height="366"></p>
+<h5>Figure.&nbsp;With Lasso: lambda = 0.01</h5>
+<p>You will immediately notice that the model is under-fitting. A Lasso penalty of .01 is too high, there are only 2 non-zero coefficients.</p>
+<p>This is a simplified version of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\) "}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math>&nbsp;regularisation in Linear regression. For further reading and code, you can refer to <a href="https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-ridge-lasso-regression-python/" target="_blank" rel="noopener noreferrer">this tutorial</a>.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>DOWNLOADS</h3>
+<ul>
+<li><a href="../resources/Linear%20Regression%20in%20Python_cubed_model.pdf" target="_blank" rel="noopener noreferrer">FULL TABLE OF X CUBED MODEL OUTPUT</a> PDF</li>
+</ul>
+</div>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p><script>
+function localProc(){
+  console.log("ready!");
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

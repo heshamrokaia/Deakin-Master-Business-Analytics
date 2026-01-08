@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><address><img src="../images/Using%20the%20NumPy%20Package%20image%201.jpg" alt="A pile of rocks stacked on the beach. " title="A pile of rocks stacked on the beach. " style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;" data-d2l-editor-default-img-style="true"></address><address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<h1>Using the NumPy Package</h1>
+<p><span style="font-size: 16px;">You have already explored the basics of using the NumPy library. Let’s extend this to create vectors and matrices and then perform some common linear algebra operations on these data.</span></p>
+<p><span style="font-size: 16px;">Before we start, let’s setup our Python environment. Copy the code and run it. We can import our packages and then, add them to our python environment. We will use two main libraries:</span></p>
+<ul>
+<li style="font-size: 16px;"><span style="font-size: 16px;">NumPy - for vectors, matrices, random numbers, and linear algebra functions</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">matplotlib - for plotting</span><span style="font-size: 16px;"></span></li>
+</ul>
+<h4 id="code-example-1"><span style="font-size: 16px;">Code example 1</span></h4>
+<p><span style="font-size: 16px;">We do that with the following Python code:</span></p>
+<p><strong><span style="font-size: 16px;">Import python library</span></strong></p>
+<pre class="line-numbers d2l-code"><code class="language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt</code></pre>
+<h4 id="code-example-3"><span style="font-size: 16px;">Code example 2</span></h4>
+<p><span style="font-size: 16px;">Let’s create a vector and a matrix. We use&nbsp;<em>np.array</em>&nbsp;function to create a vector/array from a list of numbers:</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">x = np.array([1,2,3])
+print('An example of vector is:')
+print(x)
+A = np.array([(1,2),(3,4)])
+print('An example of matrix is:')
+print(A)</code></pre>
+<p><span style="font-size: 14px;">The output will look like this:</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">A = np.zeros([3,3])
+print('An example of all zero matrix is:')
+print(A)
+
+A = np.ones([3,3])
+print('An example of all one matrix is:')
+print(A)
+
+A = np.identity(3)
+print('An example of an identity matrix is:')
+print(A)</code></pre>
+<p><span style="font-size: 16px;">This outputs the following. As you can see, the NumPy library can help automate the creation of specific types of matrices.</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">An example of all zero matrix is:
+[[0. 0. 0.]
+[0. 0. 0.]
+[0. 0. 0.]]
+An example of all one matrix is:
+[[1. 1. 1.]
+[1. 1. 1.]
+[1. 1. 1.]]
+An example of an identity matrix is:
+[[1. 0. 0.]
+[0. 1. 0.]
+[0. 0. 1.]]</code></pre>
+<p><span style="font-size: 16px;">You can also create a matrix with random numbers if needed.</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">B = np.random.randn(4,3)
+print('An example of a random matrix is:')
+print(B)</code></pre>
+<p><span style="font-size: 16px;">Here’s what the output&nbsp;<em>may</em>&nbsp;look like. As its a matrix with random numbers your individual elements may be different to what’s given below:</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">An example of a random matrix is:
+[[ 1.10808491 -0.57351362  1.64344163]
+ [ 0.16306238 -0.57848446  1.34708602]
+ [ 0.57971464  0.59613719 -0.94570683]
+ [ 1.3847897  -1.91214193 -0.05571648]]</code></pre>
+<h2 id="your-task">Activity</h2>
+<p><span style="font-size: 14px;">Make sure that you have experimented with all the individual Python coding examples that we have in this lesson, and that you are confident in how NumPy works.</span></p>
+<p><span style="font-size: 14px;">We will continue the coding we started here in the next step, extending it with matrix operations.</span></p>
+<h2></h2>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button  navrep-button-prev" target="_parent" title="Previous"> &lt; Previous</a> <a href="#" class="navrep-button navrep-button-next" target="_parent" title="Next">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

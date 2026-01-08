@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Logistic%20regression%20in%20python%20image%201.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Logistic regression in python</h1>
+</div>
+<div>
+<p>Logistic regression is much simpler.</p>
+<p>Don’t forget to clear the last Python program and restart the kernel so your old code doesn’t get mixed up with your new code.</p>
+<h3 id="solver-error-note">‘Solver error’ note:</h3>
+<p>Coders don’t necessarily commit rules to memory. Most coders will look up the documentation or do an internet search looking for solutions to problems. Different versions of code will use different syntax or parameters - that’s normal. Sometimes a new version of a language will ‘break’ old code. That’s when you need to resort to reading the free manual (rtfm) online.</p>
+<p>If you get a&nbsp;<strong>‘solver’</strong>&nbsp;error (or 500 solver errors) please read the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank" rel="noopener noreferrer">scikitdocumentation</a>&nbsp;on Logistic Regression.</p>
+<p>It’s always good practice to read the documentation if your code is throwing errors.</p>
+<p>In this case, go to the documentation and look up the ‘solver’ parameter. Read it carefully. The answer is there.</p>
+<h3 id="hints">Hints</h3>
+<p>You can try different options and evaluate, e.g. using cross-validation, to see which option is good for a particular dataset. There is no clear answer but reading the manual may help.</p>
+<p>As parameters of the model are estimated via many iterations (runs) (not just one run like the linear regression), the parameters can’t be exactly the same for different runs, therefore, we can’t expect to get exactly the same result from different runs.</p>
+<h3 id="regularised-logistic-regression">Regularised Logistic Regression</h3>
+<p>Download the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3822504" target="_self">train_wbcd.csv</a> and <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3822503" target="_self">test_wbcd.csv</a> data to use in the code. Add it to your data store and rename it if need be. Let’s read in the data from our data file and preview it.</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.model_selection import train_test_split
+import pandas as pd
+train_data=pd.read_csv("train_wbcd.csv")
+test_data=pd.read_csv("test_wbcd.csv")
+train_data.head()</code></pre>
+<h2>Outputs:</h2>
+<p><img src="File_e24e40fe62c745ef96114e2c456d368a_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<h2></h2>
+</div>
+</div>
+<p>We will&nbsp; separate trainin and test datasets into feature and class/target:</p>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn import preprocessing
+le = preprocessing.LabelEncoder()
+train_data=train_data.dropna()
+test_data=test_data.dropna()
+# Encode “diagnosis” to numerical values
+train_data['Diagnosis'] = le.fit_transform(train_data['Diagnosis'].values)#[1 if each == 'M' else 0 for each in train_data['Diagnosis']]
+test_data['Diagnosis'] = le.fit_transform(test_data['Diagnosis'].values)
+X_train=train_data.iloc[:,2:]
+y_train=train_data.iloc[:,1]
+X_test=test_data.iloc[:,2:]
+y_test=test_data.iloc[:,1]
+print("Train: ",train_data.shape)
+print("Test: ",test_data.shape)</code></pre>
+<blockquote>Output:
+<pre>Train:  (98, 32)
+Test:  (19, 32)</pre>
+</blockquote>
+</div>
+<h3 id="regularisation-using-l1-or-l2">Regularisation using&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_1\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>L</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(L_2\)"}</annotation></semantics></math></h3>
+<p>You can perform regularised logistic regression by specifying two arguments in the function call:</p>
+<ul>
+<li>penalty: this takes values&nbsp;<em>l1</em>&nbsp;for lasso and&nbsp;<em>l2</em>&nbsp;for ridge regression</li>
+<li>C: this is the inverse of regularisation parameter alpha or lambda. smaller values specify stronger regularisation.</li>
+</ul>
+<p>You can refer to the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html" target="_blank" rel="noopener noreferrer">documentation</a>&nbsp;for more detailed information</p>
+<p>Let’s try with lambda = 0.1. So we have to set C = 1/0.1</p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+lambda_val = 0.1
+#Initialize the Logitic regression model with l2 penalty
+lr = LogisticRegression(C=1/lambda_val, penalty='l2')
+lr.fit(X_train, y_train)
+y_predict = lr.predict(X_test)
+
+#Evaluate our model
+model_acc = accuracy_score(y_predict, y_test)
+print("Model Accuracy is: {}".format(model_acc))
+
+print("Model Coeff: {}".format(np.append(lr.intercept_, lr.coef_)))</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre>Model Accuracy is: 0.8421052631578947
+Model Coeff: [-2.09591812e-01 -1.36143322e+00 -1.93491426e-01 -2.79837963e+00
+  1.95546835e-01  1.98797637e-02  1.35146931e-01  1.98252590e-01
+  8.30398315e-02  4.02839523e-02  6.79710848e-04 -5.90609905e-02
+ -5.65538428e-01  3.53512360e-01 -1.70845489e-01  1.67219624e-03
+  3.13233944e-02  4.93710303e-02  1.26797117e-02 -4.97858708e-05
+  2.74919020e-03 -1.62003805e+00  1.29460052e+00  1.59354847e+00
+ -1.84185366e-02  3.88048222e-02  3.95983998e-01  5.25059609e-01
+  1.65867274e-01  8.30782040e-02  2.55845262e-02]</pre>
+</div>
+</div>
+</blockquote>
+<p>You can change the penalty to ‘l1’ for lasso regularisation.</p>
+<p>Now as an exercise let’s do the following. For a list of l1 and l2 penalty scores, lets calculate the average accuracy over 500 runs of L1 and L2 regularised Logistic regression.</p>
+<p>Let’s begin by defining a function that takes in data and penalty types and values. For a fixed number of runs (‘trials’), the data is randomly split 70/30 as train/test. The average test accuracy is calculated.</p>
+<h4 id="code-example-5">Code example 5</h4>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">def runLRmodel(trials, data, label, penalty_type, penalty_score):
+
+   model_acc     = 0
+   model_weights = np.zeros([1,31])
+
+   for i in range(0,trials):
+      Dtrain, Dtest = train_test_split(train_data, test_size=0.3)
+      lr = LogisticRegression(C=1/penalty_score, penalty=penalty_type, solver='liblinear')
+      lr.fit(Dtrain.iloc[:,2:], Dtrain[label])
+      y_predict = lr.predict(Dtest.iloc[:,2:])
+      model_acc += accuracy_score(y_predict, Dtest[label])
+      model_weights += np.append(lr.intercept_, lr.coef_)
+
+   model_acc /= trials
+   model_weights /= trials
+
+   return np.round(model_acc, decimals=2), np.round(model_weights,decimals=2)</code></pre>
+</div>
+</div>
+<p>Lets now try to find the best&nbsp;<em>lambda</em>&nbsp;value from 500 random splits of our data.</p>
+<h4 id="code-example-6">Code example 6</h4>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">lambda_vals = [.0001,.0003,.001,.003,.01,.03,.1,.3,1,3,5,10]
+l2_acc = np.zeros(len(lambda_vals))
+index = 0
+#L2 regularization
+for l in lambda_vals:
+   l2_acc[index], w = runLRmodel(500,train_data, 'Diagnosis', 'l2', np.float(l))
+   index += 1
+
+print("Acc: {}".format(l2_acc))
+# penalty at which validation accuracy is maximum
+max_index_l2  = np.argmax(l2_acc)
+best_lambda = lambda_vals[max_index_l2]
+print("Best Lambda: {}".format(best_lambda))</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Acc: [0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.94 0.94 0.93 0.93]
+Best Lambda: 0.0001
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-7">Code example 7</h4>
+<p>Now find the best&nbsp;<em>alpha</em>&nbsp;value from 500 random splits of our data.</p>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">alpha_vals = [.0001,.0003,.001,.003,.01,.03,.1,.3,1,3,5,10]
+l1_acc = np.zeros(len(alpha_vals))
+index = 0
+#L2 regularization
+for l in alpha_vals:
+   l1_acc[index], w = runLRmodel(500,train_data, 'Diagnosis', 'l1', np.float(l))
+   index += 1
+
+print("Acc: {}".format(l1_acc))
+# penalty at which validation accuracy is maximum
+max_index_l1  = np.argmax(l1_acc)
+best_alpha = alpha_vals[max_index_l1]
+print("Best Alpha: {}".format(best_alpha))</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Acc: [0.95 0.95 0.96 0.96 0.96 0.95 0.96 0.96 0.94 0.92 0.92 0.91]
+Best Alpha: 0.001
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-8">Code example 8</h4>
+<p>We now plot the average model accuracy with respect to the parameters&nbsp;<em>alpha</em>&nbsp;and&nbsp;<em>lambda</em>. Also, we mark the best values of alpha and lambda.</p>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">#plot the accuracy curve
+plt.plot(range(0,len(lambda_vals)), l2_acc, color='b', label='L2')
+plt.plot(range(0,len(lambda_vals)), l1_acc, color='r', label='L1')
+#replace the x-axis labels with penalty values
+plt.xticks(range(0,len(lambda_vals)), lambda_vals, rotation='vertical')
+
+#Highlight the best values of alpha and lambda
+plt.plot((max_index_l2, max_index_l2), (0, l2_acc[max_index_l2]), ls='dotted', color='b')
+plt.plot((max_index_l1, max_index_l1), (0, l1_acc[max_index_l1]), ls='dotted', color='r')
+
+#Set the y-axis from 0 to 1.0
+axes = plt.gca()
+axes.set_ylim([0, 1.0])
+
+plt.legend(loc="lower left")
+plt.show()</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div></div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="File_f6f2c8ef7a354dc8b140bfda0dd933ff_image.png" width="438" height="350"></p>
+<h5>Figure.</h5>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

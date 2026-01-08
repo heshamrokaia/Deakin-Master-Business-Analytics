@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><p><img src="../images/Data%20size%20and%20regression%20error%20image%201.jpg" alt="Fractal element with connected lines and dots. Virtual background communication or particle compounds. Minimalist style concentric circle. Digital data visualization. Lines plexus. Vector illustration" title="Fractal element with connected lines and dots. Virtual background communication or particle compounds. Minimalist style concentric circle. Digital data visualization. Lines plexus. Vector illustration" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Data size and regression error</h1>
+</div>
+<div>
+<p>What is the effect of&nbsp;<em>data size</em>&nbsp;on prediction performance? Lets find out.</p>
+<p>To make life easier, lets define a function which will take the following input:</p>
+<ul>
+<li>model to use: Linear regression in our case</li>
+<li>training data</li>
+<li>testing data</li>
+<li>training sizes: the different sizes of training data to use</li>
+</ul>
+<p>The model is trained on different sizes of training data, and each time it’s tested on the fixed testing data. Model weights and MSE for each training size is recorded and returned.</p>
+<h4 id="code-example-1">Code example#1</h4>
+<p>Following on from the previous code from the previous step, let’s add some code to plot the change in MSE with training data of different sizes.</p>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">def getErrorwithSize(model, train_sizes, X, y):
+    
+    model_mse   = np.zeros(len(train_sizes))  # storing model accuracy
+    model_wts   = np.zeros([len(train_sizes), 4]) # storing model weights
+    
+    #Train our model with increasing data for each iteration
+    for size in train_sizes:   
+        Xsubtrain = X[0:size,:]
+        ysubtrain = y[0:size]
+        model.fit(Xsubtrain, ysubtrain)
+        Xtest=X[size:,:]
+        ytest=y[size:]
+        # Test our model on fixed test set
+        ypredicts = model.predict(Xtest)    
+        
+        index              = (size//10)-1        
+        model_mse[index]  = np.mean((ypredicts - ytest)**2)
+        model_wts[index,:] = np.append(model.intercept_, model.coef_)  
+    
+    return model_mse, model_wts
+</code></pre>
+</div>
+</div>
+<p>There should be no output from this piece of code.</p>
+<h4 id="code-example2">Code example#2</h4>
+<p>We can now plot the change in model mse with respect to the increasing size of training data.</p>
+<div>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">data_size = np.arange(10,df_adver.shape[0]-10,10) # training size from 10 to number of samples-10
+my_model = LinearRegression()
+model_mse, model_wts=getErrorwithSize(my_model, data_size,df_adver.iloc[:,0:-2].values, df_adver.iloc[:,-2].values)
+print(f"MSE ={model_mse.min():.2f}")
+plt.plot(data_size,model_mse,'o-')
+plt.ylabel("MSE")
+plt.xlabel("Data size")
+plt.show()
+</code></pre>
+<p>The output would look like this:</p>
+<p><img src="File_9edc446f8d064c07bba1c581757330bd_image.png" width="417" height="415" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+</div>
+<p></p>
+<p></p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul>
+<li><a href="https://github.com/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb" target="_blank" rel="noopener noreferrer">TUTORIAL: LINEAR REGRESSION</a>Another Python Notebook Demonstrating Linear Regression</li>
+</ul>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%201.jpg" alt="Blue glowing vibrant bubbles abstract background Blue glowing vibrant bubbles, computer generated abstract background" title="Blue glowing vibrant bubbles abstract background Blue glowing vibrant bubbles, computer generated abstract background" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Python Practical: independent and correlated data</h1>
+</div>
+<div>
+<p>It’s time to try another practical Python demonstration.</p>
+<p>Open your Jupyter Notebook via the Anaconda Navigator or the <a href="https://youtu.be/LrMOrMb8-3s?t=255" target="_blank" rel="noopener noreferrer">command line</a>. Copy the example code into your Jupyter Notebook and Run it after copying each section of code. Try to understand what each part of the code is doing as you go.</p>
+<p>In this practical, we will learn how to generate data from a specified distribution in one and more dimensions. For demonstration purposes, we will use a normal distribution with a given&nbsp;<em>mean</em>&nbsp;and&nbsp;<em>standard deviation</em>. When generating data in more than one dimension, we will consider two scenarios:</p>
+<ol>
+<li>generate data from each dimension independently,</li>
+<li>generate data from different dimensions such that dimensions of data are correlated up to a specified value.</li>
+</ol>
+<p>Let’s start with a single dimension (1D) space.</p>
+<h3 id="d-case">1D Case</h3>
+<p>The following code is written to generate the samples from a one dimensional normal distribution with mean zero (0) and standard deviation one (1). The data&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>&nbsp;follows a normal distribution specified by density function:&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><msqrt><mo stretchy="false">(</mo></msqrt><mn>2</mn><mi>π<!-- π --></mi><mo stretchy="false">)</mo></mrow></mfrac><mtext>exp</mtext><mrow><mo>(</mo><mo>−<!-- − --></mo><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac><mo>)</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f(x)=\frac{1}{\sqrt(2\pi)}\text{exp}\left(-\frac{x^2}{2}\right)\)"}</annotation></semantics></math>&nbsp;</p>
+<p>In this example, we:</p>
+<ul>
+<li>Generate samples from a 1D Gaussian distribution with mean zero and standard deviation one</li>
+<li>From the generated samples, we empirically compute the mean, standard deviation; also plot the histogram</li>
+<li>Store the data to a file “normalData1.csv” writing each sample in a separate line.</li>
+</ul>
+<p>Lets start by initialising the necessary variables.</p>
+<p><strong>Note</strong>:</p>
+<blockquote>
+<p>When working with random numbers (i.e. using np.random function), the numbers generated by Python (or any other language) are pseudo-random (the values are computed using a deterministic algorithm and probability plays no real role).&nbsp;<strong>For debugging purposes, to get a repeatable sequence of random numbers, we have to set the seed of random number generation to a specific number.</strong></p>
+</blockquote>
+<h4 id="code-example-1">Code example #1</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# import the necessary modules here 
+# to save us from writing some very complex maths code
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
+
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python">
+# For repeatability of results we'll use the same seed
+#  to produce a (fairly) random number
+np.random.seed(1)
+
+
+# define the parameters of  the Gaussian probability distribution to try
+# a lower value of 0 and upper value of 1 gives the standard normal curve
+mu = 0.0
+sigma = 1.0
+
+numDims = 1   # variable that holds the number of dimensions
+numSamples = 1000    # variable that holds the number of samples
+
+</code></pre>
+</div>
+</div>
+<p>We now generate a matrix X = [numSamples x numDims] of random numbers taken from a standard Gaussian distribution. Then, print the mean and sample deviation of each dimension.</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# generate the samples from the Gaussian distribution
+X = np.random.normal(mu,sigma,[numSamples,numDims])
+
+
+# compute the mean and standard deviation of the generated samples
+empiricalMean   = np.mean(X)
+empiricalStdDev = np.std(X)
+
+print("empirical mean    = ", empiricalMean)
+print("empirical std dev = ", empiricalStdDev)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">empirical mean    =  0.03881247615960185
+empirical std dev =  0.9810041339322116
+</code></pre>
+</div>
+</div>
+<p>Now lets plot the histogram of our data. It should look like a standard normal distribution reflecting the standard lower value of mu = 0 and an upper value of sigma = 1.</p>
+<h4 id="code-example-2">Code example #2</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# plot the histogram of the data (easy to see in 1 dimension)
+numBins = 30
+freq, bins, ignored = plt.hist(X, numBins, density=True)
+
+
+#print bins
+plt.bar(bins[:numBins], freq)
+plt.show()
+
+print(len(freq))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<p class="centerImage"><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<div>
+<div>
+<pre><code class="language-Python">30
+</code></pre>
+</div>
+</div>
+<h5></h5>
+<p>As a last step, lets save the data we created to a csv file.</p>
+<h4 id="code-example-3">Code example #3</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# store the data in a csv file
+my_dataframe = pd.DataFrame(X) #converting numpy to dataframe
+my_dataframe.to_csv("normalData1.csv")
+# check that the file has been created in the local folder
+
+# end of task-1
+
+</code></pre>
+</div>
+</div>
+<h3 id="d-case-uncorrelated-data">2D case: uncorrelated data</h3>
+<p>Use a new cell in Jupyter for this code. In this example, we generate the samples from a two dimensional normal distribution with mean&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mi>T</mi></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\left[0,0\right]^T\)"}</annotation></semantics></math>&nbsp;and covariance matrix&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">I</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\textbf{I}_{2\times2}\)"}</annotation></semantics></math>.&nbsp; The data&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\textbf{x}=[x_1,x_2]\)"}</annotation></semantics></math>&nbsp;follows a normal distribution specified by density function:&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>π<!-- π --></mi></mrow></mfrac><mtext>exp</mtext><mrow><mo>(</mo><mo>−<!-- − --></mo><mfrac><mrow><msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>T</mi></msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow></mrow><mn>2</mn></mfrac><mo>)</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f(\textbf{x})=\frac{1}{2\pi}\text{exp}\left(-\frac{\textbf{x}^T\textbf{x}}{2}\right)\)"}</annotation></semantics></math>.</p>
+<p>In the following code we:</p>
+<ul>
+<li>generate samples from a 2D Gaussian distribution with zero mean vector and identity covariance.</li>
+<li>empirically compute the mean and covariance; then plot the data.</li>
+<li>store the data to a file “normalData2.csv” writing each 2D sample in a separate line.</li>
+</ul>
+<h4 id="code-example-4">Code example #4</h4>
+<p>Lets start by initialising the necessary variables.</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# For repeatability of results
+np.random.seed(1)
+
+
+# define the parameters of a Gaussian distribution
+numDims = 2
+mu = np.tile(0.0,numDims)
+
+covmat = np.identity(numDims)
+numSamples = 10000
+
+</code></pre>
+</div>
+</div>
+<p>We can generate a (2D in this case) multivariate Gaussianas as follows:</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# generate samples from 2D normal distribution
+X = np.random.multivariate_normal(mu,covmat,numSamples)
+print("matrix size =" , np.shape(X))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">matrix size = (10000, 2)
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python">
+# visualize the data
+fig, ax = plt.subplots()
+ax.plot(X[:,0],X[:,1], '.')
+ax.set_xlabel('Dim 1')
+ax.set_ylabel('Dim 2')
+ax.set_title('Scatterplot of the two dimensions')
+ax.axis('equal')
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">(-4.04766798811529, 4.559345566815589, -3.8253155037953013, 4.400761642087505)
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h4 id="code-example-5">Code example #5</h4>
+<p>We can now verify the mean and standard deviation for each of the dimensions we created:</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# compute the mean and standard deviation of the generated samples
+empirical_Mean = X.mean(0)
+empirical_CovMat = np.cov(X.T)# X.T is the transpose of X as cov function requires data on columns
+print("Empirical mean       = ", empirical_Mean)
+print("Empirical Covariance = ", empirical_CovMat)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">Empirical mean       =  [0.01764318 0.00156489]
+Empirical Covariance =  [[ 1.01075632 -0.01609859]
+ [-0.01609859  0.9892676 ]]
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-6">Code example #6</h4>
+<p>Finally, lets plot a 2D histogram for our generated data. Does it relate with the scatter plot above?</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# plot the histogram of the data
+numBins = 40
+plt.hist2d(X[:,0],X[:,1], bins=numBins)
+plt.colorbar()
+plt.show()
+
+
+#store the data in a csv file
+my_dataframe = pd.DataFrame(X) #converting numpy to dataframe
+my_dataframe.to_csv("normalData2.csv")
+
+# end of task-2
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<p class="centerImage"><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h3 id="d-case-correlated-data">2D case: correlated data</h3>
+<ul>
+<li>Generate samples from a 2D Gaussian distribution with zero mean vector and arbitrary covariance.</li>
+<li>empirically compute the mean and covariance</li>
+<li>Plot the data.</li>
+<li>store the data to a file “normalData3.csv” writing each 2D sample in a separate line.</li>
+</ul>
+<h4 id="code-example-7">Code example #7</h4>
+<p>The following code is written to generate the samples from a two dimensional normal distribution with mean&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mrow><mo>[</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>]</mo></mrow><mi>T</mi></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\left[0,0\right]^T\)"}</annotation></semantics></math>&nbsp;and covariance matrix&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi mathvariant="normal">Σ<!-- Σ --></mi><mo>=</mo><mrow><mo>[</mo><mtable columnalign="center center" rowspacing="4pt" columnspacing="1em"><mtr><mtd><mn>1</mn></mtd><mtd><mi>ρ<!-- ρ --></mi></mtd></mtr><mtr><mtd><mi>ρ<!-- ρ --></mi></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\Sigma=\left[\begin{array}{cc}1 &amp; \rho\\\rho &amp; 1\end{array}\right]\)"}</annotation></semantics></math>.&nbsp; The data&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\textbf{x}=[x_1,x_2]\)"}</annotation></semantics></math>&nbsp;follows a normal distribution specified by density function:&nbsp;</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mrow><mo>(</mo><mn>2</mn><mi>π<!-- π --></mi><mo>)</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mi>D</mi><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></mrow></msup><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mi mathvariant="normal">Σ<!-- Σ --></mi><msup><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mn>1</mn><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mn>2</mn></mrow></msup></mrow></mfrac><mtext>exp</mtext><mrow><mo>(</mo><mo>−<!-- − --></mo><mfrac><mrow><msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mi>T</mi></mrow></msup><msup><mi mathvariant="normal">Σ<!-- Σ --></mi><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>1</mn></mrow></msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow></mrow><mn>2</mn></mfrac><mo>)</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f(\textbf{x})=\frac{1}{\left(2\pi\right)^{D/2}|\Sigma|^{1/2}}\text{exp}\left(-\frac{\textbf{x}^{T}\Sigma^{-1}\textbf{x}}{2}\right)\)"}</annotation></semantics></math>&nbsp;with<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>D</mi><mo>=</mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(D=2\)"}</annotation></semantics></math>.</p>
+<p>Again, we start by initializing the necessary variables:</p>
+<h4 id="code-example-8">Code example #8</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# import the necessary modules here
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd# For repeatability of results
+np.random.seed(1)
+
+
+# define the parameters of Gaussian
+numDims = 2
+mu = np.tile(0.0,numDims)
+rho = 0.7
+covmat = [[1,rho],[rho,1]]
+print(covmat)
+numSamples = 10000
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">[[1, 0.7], [0.7, 1]]
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-9">Code example #9</h4>
+<p>We can generate samples from a 2D normal distribution using the code:</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# generate samples from 2D normal distribution
+X = np.random.multivariate_normal(mu,covmat,numSamples)
+print("matrix size =" , np.shape(X))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">matrix size = (10000, 2)
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-10">Code example #10</h4>
+<p>Lets plot the data for visualization purposes.</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# visualize the data
+plt.plot(X[:,0],X[:,1], '.')
+plt.axis('equal');
+plt.show()
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<p class="centerImage"><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h4 id="code-example-11">Code example #11</h4>
+<p>Now, lets calculate the empirical mean and standard deviation</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# compute the mean and standard deviation of the generated samples
+empirical_Mean = X.mean(0)
+empirical_CovMat = np.cov(X.T)# X.T is the transpose of X as cov function requires data on columns
+print("empirical mean = ", empirical_Mean)
+print("empirical Covariance = ", empirical_CovMat)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">empirical mean =  [-0.01687229 -0.01566013]
+empirical Covariance =  [[0.99603632 0.71075273]
+ [0.71075273 1.01902971]]
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-12">Code example #12</h4>
+<p>Lets plot the histogram for the data. How will it be related to the scatterplot?</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# plot the histogram of the data
+numBins = 40
+plt.hist2d(X[:,0],X[:,1], bins=numBins)
+plt.colorbar()
+plt.show()
+
+
+#store the data in a csv file
+my_dataframe = pd.DataFrame(X) #converting numpy to dataframe
+my_dataframe.to_csv("normalData3.csv")
+
+# end of task-3
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<p class="centerImage"><img src="../images/Python%20Practical-%20independent%20and%20correlated%20data%20image%206.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

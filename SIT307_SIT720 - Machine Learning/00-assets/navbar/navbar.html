@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html><head>
+<!--
+  Version:    1.0.3
+    - Added JQuery UI ToolTips
+    - Added colour themes
+
+  Version:    1.0.4 
+    - Made keyboard accessible
+    - Fix sub-module bug
+
+  Version:    1.0.5
+    - Added preloader
+    - Made navBar viewable when embedded in a page in the page edit mode
+    - Made the navBar file editable in navBar file edit mode
+    - Fixed efficiency of D2L Api Calls - scrape topicId from parent page url to filter, and use 'get all' call as a fallback
+    
+  Version:    1.0.6
+    – Externalized preloader css
+    – Changed preloader wrapper from <p> to <div>
+    – Moved topicId efficiency scrape of v1.0.5 from navbar.html to navbar.js
+    – Changed #preloader to .preloader in navbar.html
+    – Removed student and super-student role checks in checkNavBarLoaded() in navbar.html
+    – The following hides at top of document.ready() in navbar.js:
+
+      $(“#editModeDiv”).hide();
+      $(“#adminMessageInfo”).hide();
+      now hidden immediately after rendering in navbar.html to avoid any delay:
+      <script>
+      $(“#editModeDiv”).hide();
+      $(“#adminMessageInfo”).hide();
+      </script>
+
+    - Added user configurable show/hide navBar in EDIT MODE
+    - Fixed inefficient loading of navbar in EDIT MODE (now scrape topic id)
+    - Split display of navBar in EDIT/NEWLY CREATED page mode
+
+  Version:    1.0.7
+    - Allow navBar wrapping option (user configurable)
+    - Upgrade navbar configuration (edit) page
+    - Dismissable info/warning/error messages
+
+  Version:    1.0.8
+    - Tidied up navBar loading from external site:
+      + Fixed navBar loading in edit mode when loading navBar from an external site
+      + Added conditional check to see if embedded navBar is coming from the same unit site, the lst unit site or another external unit site and added conditional messages in edit mode to that effect
+      + Fixed exit conditions in navbar html
+    - Improved logging by adding a unique logging id that's prepended to every console.log() for each request (helps when navbar is loaded more than once into a page)
+    - Externalized "includedResources" to admin edit page options
+    - Fixed rendering of <table> classes and <td> class for selected items in navbar table - quotes were out of place (javascript)
+    - Fixed allowWrapping bug (wasn't taking account of skipped rows in renderTable())
+    - Fixed empty first <tr> being added
+    - Fixed 'any' includedResource links not working
+    - Updated preloader with new version
+
+  Version:    1.0.9
+    - Added optional '< Back' and 'Next >' buttons in navBar
+    - Added allowWrappingIFRAME parameter to override 'userAllowWrapping' admin edit mode settings
+    - Added loadNavInEditModeIFRAME parameter to override 'userLoadNavEditMode' admin edit mode settings
+    - Added showBackNextButtonsIFRAME parameter to override 'userIncludeBackNextBtns' admin edit mode
+    - Updated preloader with new version
+    - Enclosed navbar-v1.0.9.js file in {} block to avoid variable clashes
+    - Added color theme 'nikeri' to make compatible with oneDeakin template
+    - Changed default color theme from 'grey' to match template's color theme
+    - Changed color theme css to more closely match oneDeakin colors
+    - Fixed bug (?) in setPageEditMode() and setNewPageEditMode() where parent.window.location.href was returning about:srcDoc instead of https://d2l.deakin.edu.au/d2l/le/content/707725/contentfile/6559908/EditFile?fm=0 for example. I don't know if this was a D2L/browser change recently, but it's always safe to use parent.parent.window.location.href, since the 'EditFile' url is always top of the tree.
+-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?version=202001061835" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/tools/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/tools/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.structure.css">
+	<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/tools/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.theme.css">
+	<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/navbar/css/navbar-v1.0.9.css">
+  <link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/navbar/css/navbar-preloader-v1.0.9.css">
+
+	<script>
+  var versionNbr = "1.0.9";
+  // generate a unique id that we can prepend to every console.log. This way if we have more than one navbar embedded in a page, we can differentiate logging between the two
+  // From: https://gist.github.com/gordonbrander/2230317
+  function uid() {
+    let a = new Uint32Array(3);
+    window.crypto.getRandomValues(a);
+    let b = (Array.from(a).map(A => A.toString(36)));
+    b = "" + b;
+    return "" + b.substring(0,4);
+    //return '_' + Math.random().toString(36).substr(2, 9);
+  };
+
+  // extend console.log to prepend a unique id to every console.log()
+  // From: https://javascript.plainenglish.io/lets-extend-console-log-8641bda035c3
+  var LOG_PREFIX = "navbar-v" + versionNbr + " id=" + uid();
+  var log = console.log;
+  console.log = function(){
+    // 1. Convert args to a normal array
+    var args = Array.from(arguments);
+    // OR you can use: Array.prototype.slice.call( arguments );
+    // 2. Prepend log prefix log string
+    args.unshift("[" + LOG_PREFIX + "]:");
+    // 3. Pass along arguments to console.log
+    log.apply(console, args);
+  }
+  // console.log("Unique logging id for this request: [" + LOG_PREFIX + "]");
+
+
+		// var timerStart = performance.now();
+		// override values in navbar-v1.x.x.js
+		// includedResources can be any of 'any', 'file' and 'html'
+		includedResources = "";
+		// logging used by navbar-v1.0.9.js
+		debug = false;
+		debugWrap = false;
+		logEditMode = false;
+		// logging used by lst-d2l-api-v1.0.9.js
+		logGeneral = false;
+		logModules = false;
+		// logging used by both navbar-v1.0.9.js and lst-d2l-api-v1.0.9.js
+    logTimings = false;
+    logToolTips = false;
+		// log this page
+		var logMainPage = false;
+
+		// override default orange color theme
+		// available colors are: black, blue, burgundy, chocolate (default), green, grey, lightblue, orange, pink, purple, red, teal, turquoise
+		colorTheme = "";
+
+    console.log("Running navBar version: [" + versionNbr + "]");
+		
+		var windowLocationHref = window.location.href;
+		var parentWindowLocationHref = parent.window.location.href;
+		var grandParentWindowLocationHref = parent.parent.window.location.href
+		var topicId = "";
+
+		// logMainPage && console.log("MAIN PAGE: window.location.href: [" + windowLocationHref + "]");
+		// logMainPage && console.log("MAIN PAGE: parent.window.location.href: [" + parentWindowLocationHref + "]");
+		// logMainPage && console.log("MAIN PAGE: parent.parent.window.location.href: [" + grandParentWindowLocationHref + "]");
+
+
+		regexNBviewMode = /\bd2l\/{1}le\/{1}content\/{1}\d+\/viewContent\/{1}\d+\/View/g;   // match forward slash followed by n digit number
+    regexNBeditMode = /\bd2l\/{1}le\/{1}content\/{1}\d+\/contentfile\/{1}\d+\/EditFile/g;   // match forward slash followed by n digit number
+
+		var matchesArrayNB = [];
+
+
+		matchesArrayNB = grandParentWindowLocationHref.match(regexNBviewMode);
+
+		if(matchesArrayNB == null) {
+		  logMainPage && console.log("MAIN PAGE: could not match url on '/d2l/le/content/' in view mode");
+      matchesArrayNB = grandParentWindowLocationHref.match(regexNBeditMode);
+      if(matchesArrayNB == null) {
+        logMainPage && console.log("MAIN PAGE: could not match url on '/d2l/le/content/' in edit mode");
+      } else if (matchesArrayNB.length == 1 ) { // what we expect
+        logMainPage && console.log("MAIN PAGE: Match found for url on '/d2l/le/content/' in edit mode");
+          matchesArrayNB = matchesArrayNB[0].split("/");
+          topicId = matchesArrayNB[matchesArrayNB.length - 2];
+          logMainPage && console.log("MAIN PAGE: topicId (scraped from url) is: [" + topicId + "] (edit mode)");
+      } else {
+        logMainPage && console.log("MAIN PAGE: Regex error: We were expecting either /d2l/le/content/[n-digit-number] or d2l/le/content/[n-digit-number] but didn't get it");
+      }
+
+		} else if (matchesArrayNB.length == 1 ) { // what we expect
+		  logMainPage && console.log("MAIN PAGE: Match found for url on '/d2l/le/content/' in view mode");
+		    matchesArrayNB = matchesArrayNB[0].split("/");
+		    topicId = matchesArrayNB[matchesArrayNB.length - 2];
+		    logMainPage && console.log("MAIN PAGE: topicId (scraped from url) is: [" + topicId + "] (view mode)");
+		} else {
+		  logMainPage && console.log("MAIN PAGE: Regex error: We were expecting either /d2l/le/content/[n-digit-number] or d2l/le/content/[n-digit-number] but didn't get it");
+		}
+
+    // get the navBar html file location to report on below
+    navBarUrl = window.location.href;
+    navBarUrlArray = navBarUrl.split("https://d2l.deakin.edu.au");
+    logMainPage && console.log("MAIN PAGE: navBarUrlArray length: " + navBarUrlArray.length);
+    if(navBarUrlArray !== null && navBarUrlArray.length == 2) {
+      navBarUrl = navBarUrlArray[1];
+    } else {
+      navBarUrl = "Could not find location of navBar file";
+    }
+
+	</script>
+	<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/overrides/api-versions.js"></script>
+	<script src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/d2l-api/lst-d2l-api-v1.0.9.js"></script>
+	<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+	<script src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/tools/jquery-ui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/navbar/js/navbar-v1.0.9.js"></script>
+<!-- START PRELOADER: To remove it, delete this section -->
+</head><body><div class="preLoader">
+<div id="mainPreloaderMessage">Loading navigation bar ...</div>
+<br><img src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/navbar/images/loading-icon.gif"></div>
+<p>
+<script>
+var navBarElement = null;
+var navBarElementName = "td1-1";
+var timerInterval = 250;
+var nbrIntervals = 0;
+var maxIntervals = 60; // try loading navbar for 30 seconds otherwise give up
+
+// See: https://awik.io/check-if-element-is-inside-viewport-with-javascript/
+function checkNavBarLoaded() {
+
+  logMainPage && console.log("MAIN PAGE: checkNavBarLoaded(): start");
+	nbrIntervals++;
+
+
+  // exit condition 0
+  if( grandParentWindowLocationHref.indexOf("NewFile?") > -1) {
+    // logMainPage && console.log("NEW PAGE MODE grandParentWindowLocationHref: [" + grandParentWindowLocationHref + "]");
+    $(".preLoader").hide();
+    if(navBarEmbeddedInMyUnitSite === true) {
+      $(".navBar").html("<div id='navbarNotLoaded' class='navbarNotLoadedNewPage'><i class='fa fa-exclamation-triangle newPage'></i> This is a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar. It will not be displayed in NEWLY CREATED PAGE MODE. Save your page to view the navbar. You should edit the navBar file separately to configure it.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span>&nbsp;<strong>Current configurable options are:</strong> ● Set colour theme ● Load/don't load navBar in EDIT MODE ● Allow navBar wrapping ● Resource types to include in navBar ('html', 'file' or 'any') ● Include 'Back' and 'Next' buttons</span></div>");
+    } else {
+      if(navBarEmbeddedInSebeLstUnitSite === true) {
+        $(".navBar").html("<div id='navbarNotLoaded' class='navbarNotLoadedNewPage'><i class='fa fa-exclamation-triangle newPage'></i> This is a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar. It will not be displayed in NEWLY CREATED PAGE MODE. Save your page to view the navbar.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in the central <span style='color: chocolate; font-weight: 600;'>SEBE LST unit site</span> - configuration options will be limited to iFrame parameters in your main page in which the navBar is embedded</span></div>");      
+      } else {
+        $(".navBar").html("<div id='navbarNotLoaded' class='navbarNotLoadedNewPage'><i class='fa fa-exclamation-triangle newPage'></i> This is a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar. It will not be displayed in NEWLY CREATED PAGE MODE. Save your page to view the navbar.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in an <span style='color: forestgreen; font-weight: 600;'>external unit site</span>. If you have access to that unit site, you may edit the navBar to configure your options there.</span></div>");    
+      } 
+    }
+    logMainPage && console.log("---------> MAIN PAGE: Exit condition 0");
+    clearInterval(loadTimer);
+    return;
+  }
+
+  // exit condition 1
+  if(typeof role === 'undefined' || role === null) {
+    logMainPage && console.log("MAIN PAGE: Role is undefined !");
+    $(".preLoader").hide();
+    $(".navBar").html("<span id='navbarNotLoaded'>Could not find user's role. Not showing navigation bar.</span>");
+    logMainPage && console.log("---------> MAIN PAGE: Exit condition 1");
+    clearInterval(loadTimer);
+    return;
+  }
+
+	if(role !== 'Student' && role !== 'Super Student'){
+		$("#mainPreloaderMessage").html("Loading navigation bar. Trying another " + (maxIntervals - nbrIntervals) + " times");
+	}
+
+	// exit condition 2: user opted not to show the navbar in edit mode, show message and exit
+  if(userLoadNavEditMode == false) {
+  	if (grandParentWindowLocationHref.indexOf("EditFile?") > -1 || grandParentWindowLocationHref.indexOf("NewFile?") > -1) {
+  		logMainPage && console.log("YOUR IN EDIT MODE - HIDING PRELOADER");
+  		$(".preLoader").hide();
+      if(navBarEmbeddedInMyUnitSite === true) {
+  		  $(".navBar").html("<span id='navbarNotLoaded'><i class='fa fa-info-circle editPage2'></i> You are currently viewing a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE. You should edit the navBar file separately to configure it.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span>&nbsp;<strong>Current configurable options are:</strong> ● Set colour theme ● Load/don't load navBar in EDIT MODE (currently false) ● Allow navBar wrapping ● Resource types to include in navBar ('html', 'file' or 'any') ● Include 'Back' and 'Next' buttons</span>");
+      } else {
+        if(navBarEmbeddedInSebeLstUnitSite === true) {
+          $(".navBar").html("<span id='navbarNotLoaded'><i class='fa fa-info-circle editPage2'></i> You are currently viewing a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in the central <span style='color: chocolate; font-weight: 600;'>SEBE LST unit site</span> - configuration options will be limited to iFrame parameters in this main page in which the navBar is embedded</span></span>");    
+        } else {
+          $(".navBar").html("<span id='navbarNotLoaded'><i class='fa fa-info-circle editPage2'></i> You are currently viewing a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE. You should edit the navBar file separately to configure it.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in an <span style='color: forestgreen; font-weight: 600;'>external unit site</span>. If you have access to that unit site, you may edit the navBar to configure your options there.</span></span>");      
+        }      
+      }
+      logMainPage && console.log("---------> MAIN PAGE: exit condition 2 - userLoadNavEditMode: " + userLoadNavEditMode);
+  		clearInterval(loadTimer);
+  		return;
+  	}
+  }
+  
+
+	// exit condition 3
+	if(nbrIntervals > maxIntervals) {
+		logMainPage && console.log("MAIN PAGE: Gave up trying to load navbar...");
+		$(".preLoader").hide();
+
+    if(typeof role === 'undefined' || role === null || role === 'Student' || role === 'Super Student'){
+     $(".navBar").html("<span id='navbarNotLoaded'>Could not load navbar</span>");
+    } else {
+      $(".navBar").html("<span id='navbarNotLoaded'>Could not load navbar <span class='versionNbr'>version " + versionNbr + "</span> - is this a newly created page? You'll need to name and save the page first.<br/>Otherwise check that you don't have more than one module with the same name or that your page is not the same name as another module name.</span>");
+    }
+    logMainPage && console.log("---------> MAIN PAGE: Exit condition 3");
+  	clearInterval(loadTimer);
+  	return;
+	}
+
+  navBarElement = document.getElementById(navBarElementName);
+  if(navBarElement === null) {
+  	if(nbrIntervals%10 === 0) {
+    	logMainPage && console.log("MAIN PAGE: Element '" + navBarElementName + "' not yet loaded - showing preloader. Will try another " + (maxIntervals - nbrIntervals) + " times");
+    }
+    return false;
+  } else {
+  	// exit condition 4: we're in view mode or user opted to show navbar in edit mode
+    logMainPage && console.log("MAIN PAGE: Element '" + navBarElementName + "' is loaded and viewable on the screen");
+    if(typeof loadTimer !== 'undefined' && loadTimer !== null && loadTimer !== "") {
+      logMainPage && console.log("MAIN PAGE: + Clearing timer and hiding preloader");
+      logMainPage && console.log("---------> MAIN PAGE: exit condition 4 - userLoadNavEditMode: " + userLoadNavEditMode);
+      clearInterval(loadTimer);
+      $('.preLoader').hide();
+      logMainPage && console.log("MAIN PAGE: cleared timer and hid preloader");
+      if (grandParentWindowLocationHref.indexOf("EditFile?") > -1 || grandParentWindowLocationHref.indexOf("NewFile?") > -1) {
+      	$(".navBar").addClass("editMode");
+        logMainPage && console.log("MAIN PAGE: we're in edit/new page mode, so appending messages to navBar");
+        if(navBarEmbeddedInMyUnitSite === true) {
+          $(".navBar").append("<div id='editModeNavBarMessage'><i class='fa fa-info-circle editPage4'></i> You are currently viewing <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE. You should edit the navBar file separately to configure it.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span>&nbsp;<strong>Current configurable options are:</strong> ● Set colour theme ● Load/don't load navBar in EDIT MODE (currently true) ● Allow navBar wrapping ● Resource types to include in navBar ('html', 'file' or 'any') ● Include 'Back' and 'Next' buttons</div>");
+        } else {
+          if(navBarEmbeddedInSebeLstUnitSite === true) {
+            $(".navBar").append("<div id='editModeNavBarMessage'><i class='fa fa-info-circle editPage4'></i> You are currently viewing a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in the central <span style='color: chocolate; font-weight: 600;'>SEBE LST unit site</span> - configuration options will be limited to iFrame parameters in this main page in which the navBar is embedded</span></div>");  
+          } else {
+            $(".navBar").append("<div id='editModeNavBarMessage'><i class='fa fa-info-circle editPage4'></i> You are currently viewing a place-holder for <span class='versionNbr'>version " + versionNbr + "</span> of the embedded navBar in EDIT MODE. You should edit the navBar file separately to configure it.&nbsp;<strong>Location: </strong><span style='color: royalblue;'>" + navBarUrl + "</span><br/><strong>Note: </strong><span>The navBar appears to be hosted in an <span style='color: forestgreen; font-weight: 600;'>external unit site</span>. If you have access to that unit site, you may edit the navBar to configure your options there.</span></div>");       
+          }        
+        }
+      } else {
+        logMainPage && console.log("MAIN PAGE: we're in view mode");
+      	$(".navBar").removeClass("editMode");      	
+      }
+    } else {
+      logMainPage && console.log("MAIN PAGE: Element '" + navBarElementName + "' not yet shown on screen");
+    }
+  }
+}
+
+loadTimer = setInterval(checkNavBarLoaded, timerInterval);
+
+</script>
+</p>
+<div id="editModeDiv"><!-- -------------------------- -->
+<div class="adminModeHeader">Navigation Bar Administrator Mode</div>
+<div class="adminModeText">You are currently running <span class="versionNbr">version 1.0.9</span> of the navBar.<br>You can customize the settings for the navBar using the fields below.<br><span style="color: firebrick; font-weight: 800;">NOTE:</span>These settings can be overridden by any of the following iFrame parameters: [colorThemeIFRAME, loadNavInEditModeIFRAME, allowWrappingIFRAME, includedResourcesIFRAME, showBackNextButtonsIFRAME]</div>
+<p>&nbsp;</p>
+<div class="adminModeHeader">Settings</div>
+<br>
+<div class="adminModeSettingsHeader">Color Theme</div>
+<div class="inputVariableHeading">Enter the colour theme for the Nav Bar - optional (choose one of the available values listed below):</div>
+<br>
+<div id="userColorTheme" class="inputValueBox">lightblue</div>
+<br>
+<div class="description">
+<div class="hint"><strong>Hint:</strong> This field sets the colour theme for the navbar. Choose one of the available selections (see image below)<br><br><img src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/navbar/images/available-colour-themes.png" alt="Available colour themes" title="Available colour themes" style="max-width: 100%; margin-left: auto; margin-right: auto; display: block; float: none !important;" data-d2l-editor-default-img-style="true"></div>
+<div class="hint"><strong>Default value: </strong>If this field is empty, improperly formatted or has a bad value, its default value is 'grey'.</div>
+<div class="hint"><strong>Available values: </strong>black, blue, burgundy, chocolate, green, grey, lightblue, orange, pink, purple, red, teal, turquoise</div>
+<div class="hint"><strong><span class="variableReference">Variable Reference: </span></strong>pageColourTheme</div>
+</div>
+<br><br><!-- -------------------------- -->
+<div class="adminModeSettingsHeader">Page Edit-Mode</div>
+<div class="inputVariableHeading">Do you wish to load the navBar in page EDIT MODE - optional (true/false):</div>
+<br>
+<div id="userLoadNavEditMode" class="inputValueBox">false</div>
+<br>
+<div class="description">
+<div class="hint"><strong>Hint:</strong> This field determines whether the navbar is loaded in EDIT MODE in a page in which it is embedded (not this page!) <span style="color: firebrick; font-weight: 800;"><br>NOTE:</span> <span style="color: tomato; font-weight: 800;">If you opt to show the navBar in page EDIT MODE, there will be a minimal lag in loading the page in edit mode in the order of 0.01-0.3 seconds. If you opt not to show it, you will see a place-holder (with the same dimensions) instead of the navbar</span></div>
+<div class="hint"><strong>Default value: </strong>If this field is empty, improperly formatted or has a bad value, its default value is false.</div>
+<div class="hint"><strong>Available values: </strong>true or false</div>
+<div class="hint"><strong><span class="variableReference">Variable Reference: </span></strong>userLoadNavEditMode</div>
+</div>
+<br><br><!-- -------------------------- -->
+<div class="adminModeSettingsHeader">NavBar Wrapping</div>
+<div class="inputVariableHeading">Allow wrapping - optional (true/false):</div>
+<br>
+<div id="userAllowWrapping" class="inputValueBox">true</div>
+<br>
+<div class="description">
+<div class="hint"><strong>Hint:</strong> When set to true, allows wrapping of the navBar once the window size reaches a small enough value</div>
+<div class="hint"><strong>Default value: </strong>If this field is empty, improperly formatted or has a bad value, its default value is true.</div>
+<div class="hint"><strong>Available values: </strong>true or false</div>
+<div class="hint"><strong><span class="variableReference">Variable Reference: </span></strong>userAllowWrapping</div>
+</div>
+<br><br><!-- -------------------------- -->
+<div class="adminModeSettingsHeader">Included Resources</div>
+<div class="inputVariableHeading">The types of topics to include in the navbar - optional (one of 'any', 'file' or 'html'):</div>
+<br>
+<div id="userIncludedResources" class="inputValueBox">html</div>
+<br>
+<div class="description">
+<div class="hint"><strong>Hint:</strong>This field sets the types of resources to include in the navbar, and can be one of 'any', 'file' or 'html'. Note that setting it to anything other than 'html' means that the user will lose the navBar in the other activity types once they click on that activity type within a html page with the navBar included.</div>
+<div class="hint"><strong>html: </strong>Shows only html pages listed within your module as navBar elements</div>
+<div class="hint"><strong>file: </strong>Shows only html pages AND files (e.g. pdf files) listed within your module as navBar elements</div>
+<div class="hint"><strong>any: </strong>Shows only html pages, files (e.g. pdf files) and other activity types such as discussions, submission folders etc listed within your module as navBar elements</div>
+<div class="hint"><strong>Default value: </strong>If this field is empty, improperly formatted or has a bad value, its default value is 'html'.</div>
+<div class="hint"><strong>Available values: </strong>any, file or html</div>
+<div class="hint"><strong><span class="variableReference">Variable Reference: </span></strong>userIncludedResources</div>
+</div>
+<br><br><!-- -------------------------- -->
+<div class="adminModeSettingsHeader">Include 'Back' and 'Next' buttons</div>
+<div class="inputVariableHeading">Do you want to include the 'Back' and 'Next' buttons in the navbar? - optional (true or false):</div>
+<br>
+<div id="userIncludeBackNextBtns" class="inputValueBox">true</div>
+<br>
+<div class="description">
+<div class="hint"><strong>Hint:</strong>This field sets whether or not you want to include the 'Back' and 'Next' buttons at either end of the navbar.</div>
+<div class="hint"><strong>Default value: </strong>If this field is empty, improperly formatted or has a bad value, its default value is true.</div>
+<div class="hint"><strong>Available values: </strong>true or false</div>
+<div class="hint"><strong><span class="variableReference">Variable Reference: </span></strong>userIncludeBackNextBtns</div>
+</div>
+<br><br><!-- -------------------------- -->
+<div class="adminModeHeader">End settings</div>
+</div>
+<div id="navBar1" class="navBar"></div>
+<div id="adminMessageInfo" class="adminMessage"></div>
+<p>
+<script>
+  $("#editModeDiv").hide();
+  $("#adminMessageInfo").hide();
+</script>
+</p></body></html>

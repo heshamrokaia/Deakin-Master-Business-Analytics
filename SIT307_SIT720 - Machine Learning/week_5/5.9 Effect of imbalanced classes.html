@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Effect%20of%20imbalanced%20classes%20image%201.jpg" alt="hot keys for Anomaly Detection" title="hot keys for Anomaly Detection" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Effect of imbalanced classes</h1>
+</div>
+<div>
+<p>One problem that can occur in machine learning is datasets where the total number of one class of data (i.e. positive outcomes) is far less than the total number of another class of data (i.e. negative) outcomes.</p>
+<p>This problem is very common in practice and can be detected in various disciplines including fraud detection, anomaly detection, medical diagnosis, etc.</p>
+<p>As you know most machine learning algorithms work best when the number of instances of each classes are roughly equal. When the number of instances of one class far exceeds the other, problems arise.</p>
+<h4 id="example">Example:</h4>
+<p>When developing a breast cancer diagnosis model, imbalanced class problem is encountered because the risk of a female being diagnosed with breast cancer (by their&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>85</mn><mi>t</mi><mi>h</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(85th\)"}</annotation></semantics></math>&nbsp;birthday) is&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>&nbsp;in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>8</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(8\)"}</annotation></semantics></math>.&nbsp;This means that a representative training set will have&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>7</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(7\)"}</annotation></semantics></math>&nbsp;</p>
+<p>times more instances in negative class than the positive class (see figure below).</p>
+<p class="centerImage"><img src="../images/Effect%20of%20imbalanced%20classes%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Sample imbalance class distribution. Almost&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>900</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(900\)"}</annotation></semantics></math>&nbsp;negative samples vs. almost&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>100</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(100\)"}</annotation></semantics></math>&nbsp;positive samples.</h5>
+<p>So what are the possible solutions to overcome this problem?</p>
+<h3 id="solutions">Solutions</h3>
+<p>We have two approaches to follow. First, we can perform some actions on the data itself. Alternatively, we can improve our algorithm to be able to handle such phenomenon. Let’s look at these two approaches</p>
+<h4 id="at-the-data-level-re-sampling">At the data level: (Re-Sampling)</h4>
+<ul>
+<li><em>over-sampling</em>&nbsp;the data from minority class</li>
+<li><em>under-sampling</em>&nbsp;the data from majority class.</li>
+</ul>
+<p>Two obvious solutions based on data manipulation which suggests that we can sample more data points from the minority class in order to cover the difference. Or we can under-sample the majority class in order to make them have an equal effect on the algorithm.</p>
+<h4 id="at-the-algorithmic-level">At the algorithmic level:</h4>
+<ul>
+<li>adjusting the costs</li>
+<li>adjusting the decision threshold.</li>
+</ul>
+<p>From an algorithmic point of view, we may want to adjust some costs on the points we are observing from the majority class in order to dampen their effect. Also we can manually define some thresholds to cope with the unbalanced data.</p>
+<h3 id="issues-of-imbalanced-classes">Issues of imbalanced classes</h3>
+<p>Now, let us have a close look on possible issues of imbalanced classes.</p>
+<ul>
+<li><strong>Problem-1:</strong>&nbsp;Since the test data contains only few samples from the minority class, even a&nbsp;<em>dumb classifier</em>&nbsp;that always classifies an instance to the majority class will get very high accuracy!</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">This problem is dealt with by using&nbsp;</span><em style="font-family: Lato, sans-serif; font-size: 0.95rem;">other evaluation metrics</em><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;in place of accuracy.</span></li>
+<li><strong>Problem-2:</strong>&nbsp;When doing random subsampling, it is possible that class proportion is not maintained in an individual partition. In fact, we may not sample even one instance from the minority class.</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">This problem can be solved using&nbsp;</span><em style="font-family: Lato, sans-serif; font-size: 0.95rem;">Stratified Sampling</em><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">.</span></li>
+</ul>
+<p>But always remember:</p>
+<ul>
+<li>Any pre-processing over an entire data set (e.g. feature selection, or feature extraction)&nbsp;<em>must not use</em>&nbsp;the information that you are trying to predict (e.g. labels).</li>
+<li>During the training process, you must&nbsp;<em>not use</em>&nbsp;any information that is&nbsp;<em>not available</em>&nbsp;during the training process.</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;"><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Example: I was building a cancer prognosis model to predict whether a patient will survive&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>&nbsp;</span></span>year from diagnosis or not? By mistake, I used the cause of death field as one of the features. Clearly, this information is not available at the prediction time.</li>
+<li>If you&nbsp;<em style="font-family: Lato, sans-serif; font-size: 0.95rem;">modify</em><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;your model again and again by looking at how it performs on a specified test set, then you may be&nbsp;</span><em style="font-family: Lato, sans-serif; font-size: 0.95rem;">overfitting</em><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;on the test set.</span></li>
+</ul>
+<h2 id="your-task" style="display: inline !important;">Activity</h2>
+<p>Can you give an example of a real world problem that would probably have imbalanced data?</p>
+<p>Share your example in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2000572" target="_top">discussion forum</a>.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

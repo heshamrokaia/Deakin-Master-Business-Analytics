@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p></p>
+<div>
+<h1>KNN algorithm and its variants</h1>
+</div>
+<div>
+<p>A useful technique can be to assign weights to the contribution of data point neighbours so the nearer neighbours contribute more to the average than more distant ones.</p>
+<p>This is useful for both classification and regression.</p>
+<p>The basic idea is to label the test data point is the same as the nearest neighbour (NN). The following figure illustrates this concept. If a black circle as a&nbsp;<em>test point</em>&nbsp;falls into a region in which the closest point is a black ellipse with class label of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>,&nbsp;&nbsp;based on the nearest neighbour, we are going to label this new sample as class&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>.</p>
+<p class="centerImage"><img src="../images/KNN%20algorithm%20and%20its%20variants%20image%201.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure&nbsp;KNN intuition.</h5>
+<p>But also&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math>&nbsp;in KNN can vary. Lets say someone would like to check&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math>&nbsp;nearest neighbours (KNN) of the test point in order to make a decision. You can label a test instance to the&nbsp;<em>same as the majority label of the K-nearest neighbours</em>. The figure below is an example a of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>3</mn><mo>−<!-- − --></mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(3-\)"}</annotation></semantics></math>NN classification.</p>
+<p class="centerImage"><img src="../images/KNN%20algorithm%20and%20its%20variants%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>3</mn><mo>−<!-- − --></mo><mi>N</mi><mi>N</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(3-NN\)"}</annotation></semantics></math>&nbsp;classification.</h5>
+<p>As you can see in the figure, a new test point falls into the scope of two training points from class&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>&nbsp;and one from class&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>.&nbsp;Obviously you will trust the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>&nbsp;class due to majority and label the point as&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>.</p>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

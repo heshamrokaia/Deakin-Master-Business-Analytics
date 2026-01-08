@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><p><img src="../images/Evaluating%20our%20model%20image%201.jpg" alt="curved flyovers and multi lane highways in Shanghai" title="curved flyovers and multi lane highways in Shanghai" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Evaluating our model</h1>
+</div>
+<div>
+<p>We can see that there is some discrepancy between the&nbsp;<em>truth</em>&nbsp;and the&nbsp;<em>predictions</em>. How can we measure this&nbsp;<em>discrepancy</em>? Can we get a&nbsp;<em>numerical estimate</em>&nbsp;for this discrepancy?</p>
+<h4 id="code-example-1">Code example #1</h4>
+<h2 id="Feature-correlation-between-the-features-and-classes-using-Heatmap">Feature correlation between the features and classes using Heatmap</h2>
+<p>How features correlated with each other and with the target. For example target/class Sales correlation between different feature sets.</p>
+<pre class="line-numbers d2l-code"><code class="language-python">sns.set(rc={'figure.figsize':(8,8)})
+sns.heatmap(df_adver.iloc[:,0:-1].corr().round(2), square=True, cmap='RdYlGn', annot=True)</code></pre>
+<p>The output would look like this:</p>
+<p><img src="File_f88fa6308fc94c2cb1ab959eca1ee5c9_image.png" width="456" height="458" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h1></h1>
+<p>One measure that gives the deviation from the truth is the&nbsp;<em>mean square error</em>. As we have introduced this week,&nbsp;<em>Mean Square Error</em> (MSE) measures how well our prediction fits the true data. If the prediction = truth,&nbsp;&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>M</mi><mi>S</mi><mi>E</mi><mo>=</mo><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(MSE=0\)"}</annotation></semantics></math>.</p>
+<h4 id="code-example-1">Code example #2</h4>
+<p>Following on from the advertising python code that you have tested and saved, let’s find the MSE of this model.</p>
+<div>
+<div>
+<pre><code>mse = np.mean((ypredicts - ytest) ** 2)
+
+print ("MSE: {}".format(mse))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code>MSE: 2.55796592546
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-2">Code example #3</h4>
+<p>The model weights and intercepts can also be retrieved:</p>
+<div>
+<div>
+<pre><code>print (my_model.intercept_)
+print (my_model.coef_)
+
+zipped_list =  (zip(feature_cols, my_model.coef_))
+print(list(zipped_list))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code>3.0451422090371167
+[ 0.04704868  0.17968299 -0.00300557]
+[('TV', 0.047048680822289274), ('Radio', 0.17968298889993575), ('Newspaper', -0.0030055651568066805)]
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

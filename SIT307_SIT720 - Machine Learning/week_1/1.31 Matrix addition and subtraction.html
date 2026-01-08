@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SEBE Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address><address><img src="../images/Matrix%20addition%20and%20subtraction%20image%201.jpg" alt="Hand of a student doing math Math is one of the more difficult matters. This picture shows the hand of a student while she does her algebra exercises" title="Hand of a student doing math Math is one of the more difficult matters. This picture shows the hand of a student while she does her algebra exercises" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;" data-d2l-editor-default-img-style="true"></address>
+<div>
+<h1>Matrix addition and subtraction</h1>
+</div>
+<div>
+<p><span style="font-size: 16px;">In the previous topic, you setup your Python environment and started creating vectors and matrices. This topic is about matrix operations and how they can be implemented in Python using the NumPy library.</span></p>
+<h3 id="adding-or-subtracting-a-scalar-value-to-a-matrix"><span style="font-size: 16px;">Adding or subtracting a scalar value to a matrix</span></h3>
+<p><span style="font-size: 16px;">Consider a small matrix&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">,&nbsp;of dimension&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2\times 2\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;.&nbsp;&nbsp;In other words a matrix which contains two (2) rows&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>×<!-- × --></mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\times\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;two (2) columns. Let&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}\)"}</annotation></semantics></math><span style="font-size: 16px;">.</span></p>
+<p><span style="font-size: 16px;">Consider adding a scalar value (e.g. 3) to the matrix&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">.</span></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>A</mi><mo>+</mo><mn>3</mn><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>+</mo><mn>3</mn><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub><mo>+</mo><mn>3</mn></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub><mo>+</mo><mn>3</mn></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub><mo>+</mo><mn>3</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"A+3=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}+3 =\begin{bmatrix} a_{11}+3 &amp; a_{12}+3 \\ a_{21}+3 &amp; a_{22}+3 \end{bmatrix}"}</annotation></semantics></math></p>
+<p><span style="font-size: 16px;">The same basic principle holds true for&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi><mo>−<!-- − --></mo><mn>3</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A-3\)"}</annotation></semantics></math><span style="font-size: 16px;">.</span></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>A</mi><mo>−<!-- − --></mo><mn>3</mn><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>−<!-- − --></mo><mn>3</mn><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub><mo>−<!-- − --></mo><mn>3</mn></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub><mo>−<!-- − --></mo><mn>3</mn></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub><mo>−<!-- − --></mo><mn>3</mn></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub><mo>−<!-- − --></mo><mn>3</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"A-3=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}-3 =\begin{bmatrix} a_{11}-3 &amp; a_{12}-3 \\ a_{21}-3 &amp; a_{22}-3 \end{bmatrix}"}</annotation></semantics></math></p>
+<p><span style="font-size: 16px;">Notice that we add (or subtract) the scalar value to each element in the matrix&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">.&nbsp;</span></p>
+<p><span style="font-size: 16px;">The matrix can be of any dimension.</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">A = np.array([(1,2),(3,4)])
+print("Before matrix adding")
+print(A)
+print("After matrix adding with 3")
+print(A+3)
+</code></pre>
+<pre class="line-numbers d2l-code"><code class="language-python">Before matrix adding
+[[1 2]
+ [3 4]]
+After matrix adding with 3
+[[4 5]
+ [6 7]]</code></pre>
+<h3 id="adding-or-subtracting-two-matrices"><span style="font-size: 16px;">Adding or subtracting two matrices</span></h3>
+<p><span style="font-size: 16px;">Consider two matrices</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A=\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;and&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>B</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(B=\begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix}\)"}</annotation></semantics></math><span style="font-size: 16px;">.&nbsp; To find the result of&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi><mo>−<!-- − --></mo><mi>B</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A-B\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;,&nbsp;simply subtract each element of&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;with the corresponding element of&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>B</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(B\)"}</annotation></semantics></math><span style="font-size: 16px;">:</span></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>A</mi><mo>−<!-- − --></mo><mi>B</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>−<!-- − --></mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub><mo>−<!-- − --></mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub><mo>−<!-- − --></mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub><mo>−<!-- − --></mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub><mo>−<!-- − --></mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"A -B = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} - \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix} = \begin{bmatrix} a_{11}-b_{11} &amp; a_{12}-b_{12} \\ a_{21}-b_{21} &amp; a_{22}-b_{22} \end{bmatrix}"}</annotation></semantics></math></p>
+<p><span style="font-size: 16px;">Addition works exactly the same way:</span></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi><mo>+</mo><mi>B</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A + B = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} + \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \end{bmatrix} = \begin{bmatrix} a_{11}+b_{11} &amp; a_{12}+b_{12} \\ a_{21}+b_{21} &amp; a_{22}+b_{22} \end{bmatrix}\)"}</annotation></semantics></math></p>
+<p><span style="font-size: 16px;">An important point to know about matrix addition and subtraction is that it is only defined when&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;and&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>B</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(B\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;are of the&nbsp;<em>same size</em>. Here, both are&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2 \times 2\)"}</annotation></semantics></math><span style="font-size: 16px;">.&nbsp;&nbsp;Since operations are performed element by element, these two matrices must be&nbsp;<em>conformable</em>; and for addition and subtraction that means they must have the same numbers of rows and columns.</span></p>
+<p><span style="font-size: 16px;">It helps to be&nbsp;<em>explicit</em>&nbsp;about the dimensions of matrices for checking conformability. Writing the equations in the following manner helps:</span></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><msub><mi>A</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>B</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mrow></msub><mo>=</mo><msub><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>11</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>12</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>21</mn></mrow></msub></mtd><mtd><msub><mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub><mo>+</mo><msub><mi>b</mi><mrow class="MJX-TeXAtom-ORD"><mn>22</mn></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"A_{2 \times 2} + B_{2 \times 2}= \begin{bmatrix} a_{11}+b_{11} &amp; a_{12}+b_{12} \\ a_{21}+b_{21} &amp; a_{22}+b_{22} \end{bmatrix}_{2 \times 2}"}</annotation></semantics></math></p>
+<p><span style="font-size: 16px;">Notice that the result of a matrix addition or subtraction operation is always of the same dimension as the two operands.</span></p>
+<h4 id="code-example-2"><span style="font-size: 16px;">Code example 2</span></h4>
+<p><span style="font-size: 16px;">Let’s see how this is done in Python.</span></p>
+<p><span style="font-size: 16px;">Let’s define another matrix,&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>B</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(B\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;that is also&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2\times 2\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;and add to&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>A</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(A\)"}</annotation></semantics></math><span style="font-size: 16px;">.</span><span style="font-size: 16px;"></span><span style="font-size: 16px;"></span></p>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">A = np.identity(2)
+B = np.random.randn(2,2)
+print(B)</code></pre>
+<p><span style="font-size: 16px;">As matrix&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>B</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(B\)"}</annotation></semantics></math><span style="font-size: 16px;">&nbsp;contains random elements, your output may be different to what is displayed below:</span></p>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">[[-0.53202029 -0.67608684]
+[-0.31786067  0.90893483]]</code></pre>
+</div>
+<p><span style="font-size: 16px;">Let’s add the two matrices together and see what the result looks like.</span></p>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">result = A + B
+result</code></pre>
+</div>
+<p><span style="font-size: 16px;">Again, your output may be different to what is displayed below. But it should be a matrix of size&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn><mo>×<!-- × --></mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2\times 2\)"}</annotation></semantics></math><span style="font-size: 16px;">.&nbsp;</span></p>
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">array([[ 0.46797971, -0.67608684],
+[-0.31786067,  1.90893483]])</code></pre>
+</div>
+<h2 id="your-task"><span style="font-size: 16px;">Activity</span></h2>
+<p><span style="font-size: 16px;">Make sure that you have experimented with all the individual Python coding examples in this lesson and that you are confident in how to code these basic matrix operations.</span></p>
+<div>
+<div>
+<p><span style="font-size: 16px;">We will continue the coding we started here in the next step as well, extending it with more matrix operations.</span></p>
+</div>
+</div>
+<h2></h2>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button  navrep-button-prev" target="_parent" title="Previous"> &lt; Previous</a> <a href="#" class="navrep-button navrep-button-next" target="_parent" title="Next">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p>
+</div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div></body></html>

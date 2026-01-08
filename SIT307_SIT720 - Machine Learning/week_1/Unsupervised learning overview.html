@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body><p><img src="../images/Unsupervised%20learning%20overview%20image%201.jpg" alt="High angle view of a crowded square" title="High angle view of a crowded square" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<h5>Template for all occasions</h5>
+<hr>
+<div>
+<h1>Unsupervised learning overview</h1>
+</div>
+<div>
+<p>This brief introduction will give you an overview of the material we will cover in weeks 3 and 4.</p>
+<p>The main question in unsupervised learning is&nbsp;<em>How do you find the underlying structure of a dataset which is unlabelled?</em>&nbsp;How does an algorithm learn patterns from (unlabelled) data&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\((x_1, ...,x_n)\)"}</annotation></semantics></math>.</p>
+<p>In other words, can a machine algorithm learn from very large sets of data without additional information about the data? Can it find patterns and relationships, make sense of data and make decisions or predictions?</p>
+<p>For example, if you had lots of data on all the ways people move around a city: long trips, short trips, time of day, vehicle type, direction of travel etc in a mixed up dataset without labels, would machine learning be able to make sense of it and tell you when to leave home to get to work on time?</p>
+<p>Popular approaches in unsupervised learning are:</p>
+<ul>
+<li>clustering (similarity-based), density estimation</li>
+<li>factor analysis</li>
+</ul>
+<h3 id="clustering">Clustering</h3>
+<p><em>Clustering</em>&nbsp;is the process of grouping similar points together. The goal of this unsupervised machine learning technique is to find relative similarities in the data points. But why do we need to perform this task? Because it will give us insight into underlying patterns or different groups within the dataset(s).</p>
+<p>Let’s consider an example. The unlabelled data points (before clustering) are shown at the top of the following figure.</p>
+<p class="centerImage"><img src="../images/Unsupervised%20learning%20overview%20image%202.png" alt="" title="" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-performing-clustering-on-unlabelled-data-resulting-in-extracting-2-clusters-3-clusters-and-4-clusters" style="text-align: center;">Figure. Performing clustering on unlabelled data, resulting in extracting 2 clusters, 3 clusters and 4 clusters.</h5>
+<p>By performing clustering based on the similarities and correlations, we might find 2 clusters in these data points. For example, we might determine trips around the city of less than 25 km and more than 25 km. This creates two groups. The art is in working out if 25 km is a good cut-off point. Is it useful?</p>
+<p>Perhaps it would be more useful to extract more clusters.</p>
+<p>We can perform the clustering in a way that results in more than two clusters. Let’s say 3 or even 4 clusters. We might have a cluster of trips that are more than 1 km and less than 10 km. Then perhaps the machine might overlay that with a cluster of pedestrian data. Would that be useful? How could you make it better?</p>
+<p>Since the data is&nbsp;<em>unlabelled</em>&nbsp;in clustering problems, based on the features and the&nbsp;<em>expectation of the user</em>&nbsp;from the behaviour of the data, we can look for any number of clusters.</p>
+<p>Say my expectation is that most trips in the city are less than 10 km. If the algorithm presents me with a cluster that contains trips of less than 15 metres, is that useful? It depends on what I’m trying to find out. Perhaps I would change that parameter.</p>
+<h3 id="a-real-world-example">A real-world example</h3>
+<p>The popular entertainment company Netflix opened a competition for the best collaborative filtering algorithm to <a href="https://en.wikipedia.org/wiki/Netflix_Prize" target="_blank" rel="noopener noreferrer" title="">predict user ratings for films</a>. They provided a training data set of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>100</mn><mo>,</mo><mn>480</mn><mo>,</mo><mn>507</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(100,480,507\)"}</annotation></semantics></math>&nbsp;movie ratings that&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>480</mn><mo>,</mo><mn>189</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(480,189\)"}</annotation></semantics></math>&nbsp;users gave to&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>17</mn><mo>,</mo><mn>770</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(17,770\)"}</annotation></semantics></math>&nbsp;movies.&nbsp;</p>
+<p>This competition was a real “Movie Recommendation Problem”. They were expecting contestants to predict movie ratings for users.</p>
+<p>The winning Bellkor solution won the small team 1 million dollars&nbsp;from Netflix.</p>
+<p>In such problems there are no labels available for data points. That is why we are categorizing such problems as unsupervised learning.</p>
+<p class="centerImage"><img src="../images/Unsupervised%20learning%20overview%20image%203.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-sample-rankings-for-random-movies-the-question-marks-are-representing-the-rankings-which-are-required-to-be-predicted-by-unsupervised-learning-algorithms">Figure. Sample rankings for random movies. The question marks are representing the rankings which are required to be predicted by unsupervised learning algorithms.</h5>
+<p>Generally, the potential tasks for ML unsupervised learning are:</p>
+<ul>
+<li>information retrieval</li>
+<li>data compression (reduction)</li>
+<li>anomaly detection</li>
+<li>data understanding and visualization</li>
+</ul>
+<p>We will cover some of these tasks later in this Unit.</p>
+<h2 id="your-task">Activity</h2>
+<p>Do some research and provide a real-life example from machine learning that uses unsupervised learning. Justify why it classifies as unsupervised learning and not supervised learning.</p>
+<p>Share your response in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_self">Student Discussion</a>.</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<!-- ------------------------------------ -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div></body></html>

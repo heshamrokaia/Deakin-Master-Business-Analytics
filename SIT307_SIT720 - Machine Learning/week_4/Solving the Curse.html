@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Solving%20the%20Curse%20image%201.jpg" alt="CMYK Color Spheres Against Monochrome Spheres, Stand Out Concept" title="CMYK Color Spheres Against Monochrome Spheres, Stand Out Concept" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Solving the Curse&nbsp;</h1>
+</div>
+<div>
+<p>In some problems, there are too many variables. But, are all variables important? If not, then some of them are irrelevant for our purpose and can be removed.</p>
+<p>If all variables are numeric, what if they are correlated? If they are exactly the same, this means redundancy! Can we group them together?</p>
+<p>The ‌Curse of Dimensionality calls for&nbsp;<em>Dimensionality Reduction</em>. Dimensionality reduction refers to the process of converting a set of data having vast dimensions into data with fewer dimensions while still making sure that it conveys similar information concisely.</p>
+<p>Let’s look at an example of dimensionality reduction.</p>
+<h3 id="example-1">Example 1</h3>
+<p>As you can see in the following figure, we have a 2D data.</p>
+<p class="centerImage"><img src="../images/Solving%20the%20Curse%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-representation-of-a-sample-data-in-2d">Figure. Representation of a sample data in 2D</h5>
+<p>We can take a subset of this data such as&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>Z</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(Z\)"}</annotation></semantics></math>&nbsp;which looks like this:&nbsp;</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>X</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em 0.4em" columnspacing="1em"><mtr><mtd><mn>1.19</mn></mtd><mtd><mn>1.19</mn></mtd></mtr><mtr><mtd><mn>1.23</mn></mtd><mtd><mn>1.23</mn></mtd></mtr><mtr><mtd><mn>2.43</mn></mtd><mtd><mn>2.43</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"X = \begin{bmatrix} 1.19 &amp; 1.19\\[0.3em] 1.23 &amp; 1.23\\[0.3em] 2.43 &amp; 2.43 \end{bmatrix}"}</annotation></semantics></math></p>
+<p>At first glance, the first thing comes to mind is the first and second features of these data points are the same. So why not just to use only one of these features? Well, this is the whole concept of dimensionality reduction. As you saw in the above figure, we can transform this data points on the red arrow as the only dimension. For this we define a projection vector such as:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em" columnspacing="1em"><mtr><mtd><mn>0.5</mn></mtd></mtr><mtr><mtd><mn>0.5</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\begin{bmatrix} 0.5 \\[0.3em] 0.5 \\[0.3em] \end{bmatrix}\)"}</annotation></semantics></math></p>
+<p>then by multiplying data points and projection vector we will have:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em" columnspacing="1em"><mtr><mtd><mn>1.19</mn><mo>,</mo><mn>1.19</mn></mtd></mtr></mtable><mo>]</mo></mrow><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em" columnspacing="1em"><mtr><mtd><mn>0.5</mn></mtd></mtr><mtr><mtd><mn>0.5</mn></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mn>1.19</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\begin{bmatrix} 1.19, 1.19 \\[0.3em] \end{bmatrix} \begin{bmatrix} 0.5 \\[0.3em] 0.5 \\[0.3em] \end{bmatrix} = 1.19"}</annotation></semantics></math></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em" columnspacing="1em"><mtr><mtd><mn>1.23</mn><mo>,</mo><mn>1.23</mn></mtd></mtr></mtable><mo>]</mo></mrow><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em" columnspacing="1em"><mtr><mtd><mn>0.5</mn></mtd></mtr><mtr><mtd><mn>0.5</mn></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mn>1.23</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\begin{bmatrix} 1.23, 1.23 \\[0.3em] \end{bmatrix} \begin{bmatrix} 0.5 \\[0.3em] 0.5 \\[0.3em] \end{bmatrix} = 1.23"}</annotation></semantics></math></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em" columnspacing="1em"><mtr><mtd><mn>2.43</mn><mo>,</mo><mn>2.43</mn></mtd></mtr></mtable><mo>]</mo></mrow><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em" columnspacing="1em"><mtr><mtd><mn>0.5</mn></mtd></mtr><mtr><mtd><mn>0.5</mn></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mn>2.43</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\begin{bmatrix} 2.43, 2.43 \\[0.3em] \end{bmatrix} \begin{bmatrix} 0.5 \\[0.3em] 0.5 \\[0.3em] \end{bmatrix} = 2.43"}</annotation></semantics></math></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mo stretchy="false">⇒<!-- ⇒ --></mo><msup><mi>X</mi><mrow class="MJX-TeXAtom-ORD"><mi class="MJX-variant" mathvariant="normal">′<!-- ′ --></mi></mrow></msup><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><mn>1.19</mn></mtd></mtr><mtr><mtd><mn>1.23</mn></mtd></mtr><mtr><mtd><mn>2.43</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\Rightarrow X^{\prime} = \begin{bmatrix} 1.19\\ 1.23 \\ 2.43 \\ \end{bmatrix}"}</annotation></semantics></math></p>
+<p>So&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msup><mi>X</mi><mrow class="MJX-TeXAtom-ORD"><mi class="MJX-variant" mathvariant="normal">′<!-- ′ --></mi></mrow></msup><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><mn>1.19</mn></mtd></mtr><mtr><mtd><mn>1.23</mn></mtd></mtr><mtr><mtd><mn>2.43</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(X^{\prime} = \begin{bmatrix} 1.19\\ 1.23 \\ 2.43 \\ \end{bmatrix}\)"}</annotation></semantics></math>&nbsp;</p>
+<p>is the projected data into a single dimension (the red arrow in the figure). As a result we reduced one dimension of this 2D data.</p>
+<p>If you notice the formation of the data, you can see that&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em" columnspacing="1em"><mtr><mtd><mn>0.5</mn></mtd></mtr><mtr><mtd><mn>0.5</mn></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\begin{bmatrix} 0.5 \\[0.3em] 0.5 \\[0.3em] \end{bmatrix}\)"}</annotation></semantics></math>&nbsp;is also the&nbsp;<em>direction of maximum variance in data</em>!. We will later use this fact in other methods.</p>
+<p>As opposed to the previous example, what if the data is not exactly on the red arrow? Is the direction of maximum data variance the same?</p>
+<h3 id="example-2">Example 2</h3>
+<p>The following figure is an example where data points lie on a noisy line.</p>
+<p class="centerImage"><img src="../images/Solving%20the%20Curse%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure--example-of-data-points-lie-on-a-noisy-line">Figure. Example of data points lie on a noisy line.</h5>
+<p>As you can see in the figure, the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>u</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(u_1\)"}</annotation></semantics></math>&nbsp;dimension vector, points towards the direction of the highest variance and the<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>u</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(u_2\)"}</annotation></semantics></math>&nbsp;dimension vector, points towards the highest variance in the subspace,&nbsp;<em>orthogonal</em>&nbsp;to the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>u</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(u_1\)"}</annotation></semantics></math>&nbsp;vector. Thus, projecting onto&nbsp;<em>maximum variance direction </em>(<em><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>u</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(u_1\)"}</annotation></semantics></math></em>)&nbsp;in the figure above) means capturing more variance and results in capturing more information to analyse.</p>
+<h3 id="example-3">Example 3</h3>
+<p>There are also some examples in which the points lie on noisy curves and shapes (see the following figure).</p>
+<p class="centerImage"><img src="../images/Solving%20the%20Curse%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-example-of-data-points-lie-on-a-noisy-curve">Figure. Example of data points lie on a noisy curve.</h5>
+<p>In this unit, we will confine ourselves to&nbsp;<em>linear dimensionality</em>&nbsp;reduction problems only. There are also machine learning methods that can deal with nonlinear problems as well (such as kernel principal component analysis).</p>
+<h2 id="your-task">Activity</h2>
+<p>Search for some real world examples where two variables have linear or noisy-linear relationships. Which dimensions do you think you should select to reduce dimensionality?</p>
+<p>Share your response in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener">discussion forum</a>.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

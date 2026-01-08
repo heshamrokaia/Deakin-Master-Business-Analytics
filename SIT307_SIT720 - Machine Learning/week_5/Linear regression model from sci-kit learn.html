@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><p><img src="../images/Linear%20regression%20model%20from%20sci-kit%20learn%20image%201.jpg" alt="Black and White Swirl Shaped Lines Illusion Made of Paper Roll Close-up View, Selective Focus." title="Black and White Swirl Shaped Lines Illusion Made of Paper Roll Close-up View, Selective Focus." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Linear regression model from sci-kit learn</h1>
+</div>
+<div>
+<p>To fit the multivariate regression, we use <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" target="_blank" rel="noopener noreferrer">LinearRegression()</a>&nbsp;from scikit learn package as:</p>
+<p>This again is an extension of the code you started in the previous step.</p>
+<p>Download the data <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3822457" target="_self">Advertising.csv</a> for this experiment</p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.linear_model import LinearRegression
+
+my_model = LinearRegression()
+
+#fit the model using our data
+my_model.fit(Xtrain, ytrain)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-5">Code example 5</h4>
+<p>Now that we have built our model, lets see how it performs with our test dataset</p>
+<div>
+<div>
+<pre><code class="language-Python">ypredicts = my_model.predict(Xtest)
+
+print("The predicted Y1:")
+print(ypredicts)
+print("The true Y1:")
+print(ytest)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">The predicted sales:
+[ 9.5143544  18.29202877 19.27094064  8.88723582 10.11361706  9.96041972
+ 15.62706788 23.1587013  12.03845031  9.72212471 18.63809455 10.10099867
+ 16.48589616 18.12468609 15.64364266  5.30523275 15.12744231 10.25358725
+ 10.09006252 12.44362791 14.3210309  13.3616908  15.08443331 17.32769433
+ 11.18435749 14.4341081  10.57847377 13.65085298 17.24682604 18.30648623
+  7.42659652 14.39756088  7.52782982 12.20541805 14.08031808 24.73378746
+ 20.09744782 12.3485591  16.40555117 12.5803357  10.85519521 14.21321462
+  6.62420582 24.08691176 18.72317811 20.7349155   9.90581943 17.13834561
+ 18.98753788  6.02878648 12.27110367  8.5198605   4.49610391 18.42872767
+ 16.46701074  5.46575208  8.33322951 13.02457489 23.73586521 15.48426632]
+
+The true sales:
+[10.9 19.2 20.1 10.4 11.4 10.3 13.2 25.4 10.9 10.1 16.1 11.6 16.6 19.
+ 15.6  3.2 15.3 10.1  7.3 12.9 14.4 13.3 14.9 18.  11.9 11.9  8.  12.2
+ 17.1 15.   8.4 14.5  7.6 11.7 11.5 27.  20.2 11.7 11.8 12.6 10.5 12.2
+  8.7 26.2 17.6 22.6 10.3 17.3 15.9  6.7 10.8  9.9  5.9 19.6 17.3  7.6
+  9.7 12.8 25.5 13.4]
+</code></pre>
+</div>
+</div>
+<p></p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul>
+<li>
+<p style="display: inline !important;">T<a href="https://github.com/justmarkham/DAT4/blob/master/notebooks/08_linear_regression.ipynb" target="_blank" rel="noopener noreferrer">UTORIAL: LINEAR REGRESSION</a></p>
+Another Python Notebook demonstrating linear regression</li>
+</ul>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/SVM%20in%20Python%20-%20RBF%20kernel%20image%201.jpg" alt="Magnified cell surface." title="Magnified cell surface." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>SVM in Python - RBF kernel</h1>
+</div>
+<div>
+<p>This is the final step in the series of practicals you have implemented to explore SVMs.</p>
+<p>In this practical you will be using a RBF kernel.</p>
+<p><strong>Important:</strong>&nbsp;please ensure that you have implemented all the previous steps before you continue because some of the initial setup was done previously.</p>
+<h3 id="the-rbf-kernel">The RBF kernel</h3>
+<p>You can specify RBF Kernel using two parameters&nbsp;<em>C</em>&nbsp;and&nbsp;<em>gamma</em>.</p>
+<p>Intuitively, the gamma parameter defines how far the influence of a single training example reaches, with low values meaning ‘far’ and high values meaning ‘close’. The gamma parameters can be seen as the inverse of the radius of influence of samples selected by the model as support vectors.</p>
+<p>The C parameter trades off misclassification of training examples against simplicity of the decision surface. A low C makes the decision surface smooth, while a high C aims at classifying all training examples correctly by giving the model freedom to select more samples as support vectors.</p>
+<p>For this dataset, let's look at the influence of gamma. You can set gamma as 10, 100, 1000 and see the differences to the decision surface and accuracy.</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python"># data x,y from previous exmaple <br>svc_model = svm.SVC(kernel='rbf', gamma=1e2)
+
+svc_model.fit(x,y)
+plot_estimator(svc_model, x, y)
+plt.title('RBF kernel')
+#Training accuracy:
+print("Training accuracy: {}".format(metrics.accuracy_score(ytrain, svc_model.predict(Xtrain))))
+print("Testing accuracy : {}".format(metrics.accuracy_score(ytest, svc_model.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Training accuracy: 0.8875
+Testing accuracy : 0.85
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20RBF%20kernel%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Results of the RBF kernel</h5>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python">#plotting support vectors
+plot_estimator(svc_model, x, y)
+plt.scatter(svc_model.support_vectors_[:, 0], svc_model.support_vectors_[:, 1], s=100, marker='*', edgecolors='g', zorder=10)
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20RBF%20kernel%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Plot of the support vectors</h5>
+<h2 id="your-task">Activity</h2>
+<p>What is the purpose of using the RBF kernel? Share your feedback and experiences in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_self">discussion forum</a>.</p>
+<p>If you would like to investigate further you will notice there are several documents attached below. Feel free to explore and extend your knowledge if you wish.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul>
+<li>
+<h5 style="display: inline !important;">ANOTHER SVM EXAMPLE WITH IRIS DATASET</h5>
+</li>
+</ul>
+<ul>
+<li><a href="http://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf" target="_blank" rel="noopener noreferrer">SVM LECTURE NOTES</a>Title: An Idiot's guide to Support vector machines (SVMs)</li>
+<li><a href="https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/" target="_blank" rel="noopener noreferrer">UNDERSTANDING SUPPORT VECTOR MACHINE ALGORITHM FROM EXAMPLES (ALONG WITH CODE)</a>Sunil Ray 20017, Analytics Vidya, blog post, viewed 16 August 2018</li>
+</ul>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

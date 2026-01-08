@@ -1,0 +1,134 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;" data-new-gr-c-s-check-loaded="8.912.0" data-gr-ext-installed=""><div>
+<h1>Bootstrap estimation</h1>
+</div>
+<div>
+<p>The video above explores how bootstrap sampling works.</p>
+<p>A&nbsp;<em>bootstrap sample</em>&nbsp;is a smaller sample that is generated (bootstrapped) from a larger sample. It uses a resampling method found in statistics. In many cases bootstrap can result in less variance and more accurate results.</p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=a7391f98-7a2b-4535-ab69-afe70122a050&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">SPEAKER: In this tutorial, I'll be going to show you how bootstrap sampling works. A bootstrap sample is a smaller sample that is bootstrapped from a larger sample. Bootstrapping is a type of resampling from a single original sample, where large numbers of smaller samples of the same size are repeatedly drawn with replacement. So as we said, bootstrap is a resampling method from statistics. It is also often used to get error bars or confidence intervals on estimates. So basically, we are using bootstrapping in order to reduce the variance. Bootstrap samples are generated as follows. First we have a data set with N data instances.
+<p class="transcript__para">Then we create and basically a resampling a version of this dataset by randomly drawing N times with replacement. So this provides a bootstrap sample. Remember, the key point in here is this resampling is with replacement. Then we can estimate any quantity repeatedly for many such bootstrap samples. Because now we have N different bootstrap samples. And we can estimate whatever quantity we want by merging these final values out of each bootstrap sample. Consider this example. We have a training sample like this-- Z equals Z1 to ZN. The first bootstrap sample, we call it Z star 1. The second one is Z star 2. And the last one is Z star [? P. ?] So these are called bootstrap samples.</p>
+<p class="transcript__para">And they are independently drawn but with replacements out of this main data. Now we can run whatever quantity or measurement we would like to run on the main data on these bootstrap samples independently. After finding these quantities for each of these bootstrapped samples, we can manage to merge these bootstrap replications into one final value. It has been proven bootstrap in many cases can result in less variance and more accurate results, can consider the most simple case, which we can just return the mean of these bootstrap replications as the final value. So this was a simple example of bootstrap sampling.</p>
+</article>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

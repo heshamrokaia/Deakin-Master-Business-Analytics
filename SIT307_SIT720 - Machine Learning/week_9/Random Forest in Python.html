@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Random%20Forest%20in%20Python%20image%201.jpg" alt="Swimmers splashing in water" title="Swimmers splashing in water" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Random Forest in Python</h1>
+</div>
+<div>
+<p>We will now fit the same titanic dataset (from the previous lesson) using <a href="http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html" target="_blank" rel="noopener noreferrer">random forest classifier</a>. This model uses an ensemble of decision trees to learn. We can set the number of decision trees (n_estimators) and the depth of the tree (max_depth) among other options.</p>
+<p>We use a value of n_estimators=300, max_depth=3, and see that it outperforms decision trees. You can change these values and observe how it affects model accuracy.</p>
+<h4 id="code-example-1">Code example #1</h4>
+<h2>Data preparation</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">import pandas as pd
+df=pd.read_csv("data/HR-Employee-Attrition.csv")
+df.head()</code></pre>
+<p>Output:</p>
+<p><img src="File_3af7c243c9fe44f9bb7c3367fe7a9d23_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<h3 id="Class-balance-checking">Class balance checking</h3>
+<h4 id="code-example-2">Code example #2</h4>
+<pre class="line-numbers d2l-code"><code class="language-python">import seaborn as sns
+sns.countplot(x='Attrition', data=df)</code></pre>
+<p>Outout:</p>
+<p><img src="File_ba59b84fb2824826a9b79b364d77749d_image.png" width="414" height="304" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h3 id="Removing-unnecessary">Removing unnecessary features and class/target convert to integer</h3>
+<pre class="line-numbers d2l-code"><code class="language-javascript">df.drop(['EmployeeCount', 'EmployeeNumber', 'Over18', 'StandardHours'], axis="columns", inplace=True)
+categorical_col = []
+for column in df.columns:
+    if df[column].dtype == object and len(df[column].unique()) &lt;= 50:
+        categorical_col.append(column)
+        
+df['Attrition'] = df.Attrition.astype("category").cat.codes</code></pre>
+<p>Output:</p>
+<p><img src="File_c7ceab687e4f47a8938873286034d8f5_image.png" width="770" height="247" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h3 id="Train-and-test-data-separation">Train and test data separation</h3>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.model_selection import train_test_split
+
+X = df.drop('Attrition', axis=1)
+y = df.Attrition
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)</code></pre>
+<p></p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul>
+<li><a href="https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/" target="_blank" rel="noopener noreferrer">COMPLETE GUIDE TO MODELLING USING TREES</a></li>
+</ul>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

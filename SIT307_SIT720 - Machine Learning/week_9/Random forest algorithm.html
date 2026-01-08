@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Random%20forest%20algorithm%20image%201.jpg" alt="Aerial photo of uk woodland in autumn An aerial photo of UK woodland in autumn showing a large group of deciduous trees in various states of shedding. Colours range from green to deep red." title="Aerial photo of uk woodland in autumn An aerial photo of UK woodland in autumn showing a large group of deciduous trees in various states of shedding. Colours range from green to deep red." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Random forest algorithm</h1>
+</div>
+<div>
+<p>Based on the bagging decision tree idea, we can define a new method called a&nbsp;<em>random forest</em>.</p>
+<p>The random forest classifier creates a set of decision trees from randomly selected subsets of the training dataset. It then aggregates the votes from different decision trees to decide the final class of the test objects.</p>
+<p>The difference between the random forest algorithm and the decision tree algorithm is that in the random forest algorithm, the processes of finding the root node and splitting the feature nodes will run randomly.</p>
+<p>Random forest builds on the idea of&nbsp;<em>bagging</em>. Each tree is built from&nbsp;<em>a bootstrap sample</em>&nbsp;of data. Node splits are calculated from&nbsp;<em>random feature&nbsp;</em>subsets to make sure each of the trees is as independent as possible. Then we randomly pull out a subset and try work with the subset. Whenever it needs to split to from the tree, based on the best feature, we choose the best feature from the subset. Ultimately you have to do these steps&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math>&nbsp;times, where&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math>&nbsp;is the number of the trees.</p>
+<p>If you are wondering whether this model increases the bias, you are right. It does! It uses subsets of features in different independent trees so it is likely to slightly increase the model bias.</p>
+<p>A useful rule of thumb states that the number of features is:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><msub><mi>m</mi><mrow class="MJX-TeXAtom-ORD"><mi>t</mi><mi>r</mi><mi>y</mi></mrow></msub><mo>=</mo><msqrt><mi>N</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mtext>&nbsp;</mtext><mi>o</mi><mi>f</mi><mtext>&nbsp;</mtext><mi>f</mi><mi>e</mi><mi>a</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>e</mi><mi>s</mi></msqrt></mstyle><annotation encoding="latex">{"version":"1.1","math":"m_{try} = \sqrt{Number \ of \ features}"}</annotation></semantics></math></p>
+<p>In random forest:</p>
+<ul>
+<li>all trees are&nbsp;<em>fully grown</em>&nbsp;with no pruning</li>
+<li>we are dealing with two parameters:</li>
+<ul>
+<li>number of trees (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">);&nbsp;</span><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Remember if you raise this value too much and make too many trees, you are likely get trapped in the overfitting problem!</span></li>
+</ul>
+</ul>
+<ul>
+<ul>
+<li>number of features&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>m</mi><mrow class="MJX-TeXAtom-ORD"><mi>t</mi><mi>r</mi><mi>y</mi></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(m_{try}\)"}</annotation></semantics></math></li>
+</ul>
+</ul>
+<span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Let&nbsp;&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math>&nbsp;be the number of trees to build.
+<h3 id="training">Training</h3>
+<p>For each of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math>&nbsp;iterations&nbsp;(<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>T</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(T\)"}</annotation></semantics></math>&nbsp;is the number of trees you may like to build):</p>
+<ol>
+<li>select a new bootstrap sample from the training set</li>
+<li>build an un-pruned tree on this bootstrap sample</li>
+<li>at each internal node of the tree, randomly select&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>m</mi><mrow class="MJX-TeXAtom-ORD"><mi>t</mi><mi>r</mi><mi>y</mi></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(m_{try}\)"}</annotation></semantics></math>&nbsp;features and determine the best split using only these features.
+<h3 id="testing">Testing</h3>
+<p>You can easily output overall prediction as a mean (or majority vote) from all individually trained trees.</p>
+<p>Now let’s look at the error rate. In random forest, the error rate depends on:</p>
+<ul>
+<li>Correlation between trees (<em>lower is better</em>)</li>
+<li>Strength of single trees (<em>higher is better</em>)</li>
+<li>Increasing number of features for each split:
+<ul>
+<li>Increases correlation</li>
+<li>Increases strength of single trees</li>
+</ul>
+</li>
+</ul>
+<p>As you can see, like most concepts in machine learning there is a trade-off here. By using more features in creating the trees you are increasing the strength of single trees and increasing the correlation among the trees!</p>
+<h1 id="your-task"><span style="color: rgb(96, 56, 255);">Activity</span></h1>
+<p>Watch this video about random forests and its applications.</p>
+<p></p>
+<div>
+<p class="centerVideo"><iframe width="648" height="364" src="https://www.youtube.com/embed/D_2LkhMJcfY?wmode=opaque" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p></p>
+</li>
+</ol>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

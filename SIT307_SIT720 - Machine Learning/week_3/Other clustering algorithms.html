@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body style="font-family: verdana, sans-serif;font-size: 10px;color: #202122;"><p><img src="../images/Other%20clustering%20algorithms%20image%201.jpg" alt="Light spinning in circles Motion blur of light making circular pattern, black and white" title="Light spinning in circles Motion blur of light making circular pattern, black and white" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address><hr>
+<blockquote>
+<h1 paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{18}" paraid="1736640809" xml:lang="EN-US" style="text-align: center;"><span xml:lang="EN-US" data-contrast="auto" style="color: rgb(96, 56, 255);">&nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 210, 237);"> This module is optional for SIT307 students. </span></span></h1>
+<h1 paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{18}" paraid="1736640809" xml:lang="EN-US" style="text-align: center;"><span xml:lang="EN-US" data-contrast="auto" style="color: rgb(96, 56, 255);">SIT720 student must complete this module.&nbsp;</span></h1>
+</blockquote>
+<div>
+<h1>Other clustering algorithms</h1>
+</div>
+<div>
+<p>Kmeans is one of the most popular clustering methods in machine learning but it is not the only clustering algorithm.</p>
+<p>In the category of&nbsp;<em>Flat Clustering</em>&nbsp;where the goal of the algorithm is to create clusters that are coherent internally but clearly different from each other, there are two more clustering methods:</p>
+<ul>
+<li>Kmeans (as we know)</li>
+<li>Hierarchical clustering</li>
+<li>DBSCAN (density based)</li>
+<li>Shape-based&nbsp; Clustering</li>
+</ul>
+<p>If you’re interesting in extending your knowledge there are articles attached below on DBSCAN and Spectral clustering.</p>
+<h3 id="hierarchical-clustering">Hierarchical clustering</h3>
+<p>There is another type of clustering algorithms called&nbsp;<em>hierarchical clustering</em>. These algorithms find clusters that have a predetermined order.</p>
+<p>There are two types of <a href="https://www.tutorialspoint.com/machine_learning_with_python/machine_learning_with_python_clustering_algorithms_hierarchical.htm" target="_blank" rel="noopener">hierarchical clustering</a>: one of them is a bottom-up approach and the other is top-down:</p>
+<ul>
+<li><strong>Agglomerative clustering (bottom-up):</strong><br>A “bottom up” approach in which each observation starts in its own cluster, and pairs of clusters are merged as one moves up the hierarchy.</li>
+<li><strong>Divisive clustering (top-down):</strong><br>A “top down” approach in which all observations start in one cluster, and splits are performed as one moves down the hierarchy.</li>
+</ul>
+<p>In this type of clustering, you end up with an hierarchical tree diagram or <a href="http://www.nonlinear.com/support/progenesis/comet/faq/v2.0/dendrogram.aspx" target="_blank" rel="noopener noreferrer">dendrogram</a>. Cutting the tree at a different height will produce a selected precision of clustering.</p>
+<p>Let’s look at this more closely.</p>
+<h4 id="agglomerative-clustering">Agglomerative clustering</h4>
+<p>Consider the following figure as an example. At the bottom of the tree, at the starting point each of the characters&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(p,q,r,s,t\)"}</annotation></semantics></math>&nbsp;</p>
+<p>are assigned into a single separate cluster.</p>
+<p class="centerImage"><img src="../images/Other%20clustering%20algorithms%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Agglomerative Clustering</h5>
+<p>As we go up to the higher levels, the closest characters are formed another cluster. i.e.&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi><mo>,</mo><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(s,t\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>p</mi><mo>,</mo><mi>q</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(p,q\)"}</annotation></semantics></math>.&nbsp;At the next level we can notice&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>r</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(r,s,t\)"}</annotation></semantics></math>&nbsp;are making a cluster. And finally at the top of the tree, all the characters are in one single cluster&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>p</mi><mo>,</mo><mi>q</mi><mo>,</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo>,</mo><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(p,q,r,s,t\)"}</annotation></semantics></math>.&nbsp;</p>
+<p>So in In Agglomerative or bottom-up clustering method we assign each observation to its own cluster. Then, compute the similarity (e.g., distance) between each of the clusters and join the two most similar clusters. We do this until we get to the top of the tree. Cutting the tree at a given height will give a partitioning clustering at a selected precision. If you cut the tree at deeper levels, you will get more clusters than cutting in the tree in higher levels.</p>
+<p>But the question which arises here is:</p>
+<blockquote>
+<p>How to find the closest cluster pairs? i.e. how to find the distance between two sub-clusters in the middle of the tree?</p>
+</blockquote>
+<p>For example what is the distance of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi><mo>,</mo><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(s,t\)"}</annotation></semantics></math>&nbsp;cluster and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>p</mi><mo>,</mo><mi>q</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(p,q\)"}</annotation></semantics></math>&nbsp;cluster? We are mentioning four possible ways you can use for finding the distances:</p>
+<ol>
+<li>Single-link: the distance between&nbsp;<strong>closest</strong>&nbsp;points</li>
+<li>Complete-link: the distance between the&nbsp;<strong>furthest</strong>&nbsp;points</li>
+<li>Centroid: the distance between the&nbsp;<strong>Centroids</strong></li>
+<li>Average-link: the average distance between&nbsp;<strong>pairs of elements</strong>&nbsp;from across cluster pairs</li>
+</ol>
+<h4 id="divisive-clustering">Divisive clustering</h4>
+<ul>
+<li>Similar to Agglomerative clustering in this method all data instances are put in the same cluster</li>
+<li>For splitting, we can use any clustering algorithm that produces at least two clusters (e.g. Kmeans)</li>
+<li>The process is continued until each data instance is separate and assigned to its own cluster</li>
+</ul>
+<p class="centerVideo"><video title="hierarchical" width="400" height="300" controls="controls">
+	<source src="../Hierarchical.mp4" type="video/mp4">
+</video></p>
+<h1></h1>
+<br><hr>
+<h1 class="centerVideo"><span xml:lang="EN-US" data-contrast="auto" style="color: rgb(96, 56, 255);">DBSCAN (Density-Based Spatial Clustering of Applications with Noise) </span></h1>
+<p paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{25}" paraid="1581032435" xml:lang="EN-US"><span xml:lang="EN-US" data-contrast="auto">DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a clustering algorithm that clusters certain items in a group based on a given data point.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:257}">&nbsp;</span></p>
+</div>
+<div>
+<p paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{32}" paraid="650592154" xml:lang="EN-US"><span xml:lang="EN-US" data-contrast="auto">For this, we need to set a minimum number of data points (minPts) and a distance (dis). Because these parameters are user-defined, the resulting cluster is dependent on them.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:257}">&nbsp;</span></p>
+</div>
+<div>
+<ol>
+<li paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{39}" paraid="845743317" xml:lang="EN-US"><span xml:lang="EN-US" data-contrast="auto">Calculate the distance from each point in the dataset to every other point. A point is considered a "core point" if it has at least the same number of data points within the defined distance.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:257}"> </span></li>
+<li paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{39}" paraid="845743317" xml:lang="EN-US">Data points which cannot be considered core points but are under the defined distance of the core point are called border points. All other points are regarded as "noise."<span data-ccp-props="{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;201341983&quot;:0,&quot;335551550&quot;:1,&quot;335551620&quot;:1,&quot;335559685&quot;:720,&quot;335559737&quot;:0,&quot;335559738&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259,&quot;335559991&quot;:360}" style="font-family: Lato, sans-serif; font-size: 1rem;"> </span></li>
+<li paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{39}" paraid="845743317" xml:lang="EN-US">The next step is to combine all core and border points within dis of each other into a single cluster. <span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}" style="font-family: Lato, sans-serif; font-size: 1rem;">&nbsp;</span></li>
+</ol>
+</div>
+<div>
+<p paraeid="{cea270c0-c947-4fec-8680-496cb70e8713}{102}" paraid="863863016" xml:lang="EN-US"><span xml:lang="EN-US" data-contrast="auto">We keep repeating the above steps until we reach the&nbsp;</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559685&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}">&nbsp;</span></p>
+</div>
+<p class="centerVideo"><video title="DBSCAN" width="400" height="300" controls="controls">
+	<source src="../DBSCAN_3.mp4" type="video/mp4">
+</video></p>
+<h1></h1>
+<p></p>
+<hr>
+<h1><span style="color: rgb(96, 56, 255);">Shape-based clustering, VAT, iVAT</span></h1>
+<p><strong>VAT </strong>is a visualization technique that transforms the distance matrix of a dataset into a visual representation in the form of a re-ordered matrix. The re-ordering is done in such a way that the dissimilarities between the data points are emphasized in a way that reveals the underlying clustering structure of the data. If the data has a clear clustering structure, then the re-ordered matrix will exhibit block-like structures along the diagonal, indicating the presence of clusters.</p>
+<p><strong>iVAT </strong>is an extension of VAT that involves repeatedly applying the VAT algorithm to the re-ordered matrix in order to refine the clustering structure. The iVAT algorithm iteratively computes the VAT on the re-ordered matrix until a stable clustering structure is obtained. This can help to identify the optimal number of clusters in the data.</p>
+<p>Both VAT and iVAT are useful tools for exploratory data analysis, allowing data analysts to gain insight into the underlying structure of the data and to identify the appropriate number of clusters for subsequent clustering algorithms.</p>
+<p><span style="color: rgb(96, 56, 255);">References:</span></p>
+<ol>
+<li>Bezdek, James C., and Richard J. Hathaway. "VAT: A tool for visual assessment of (cluster) tendency." Proceedings of the 2002 International Joint Conference on Neural Networks. IJCNN'02 (Cat. No. 02CH37290). Vol. 3. IEEE, 2002.</li>
+<li>Havens, Timothy C., and James C. Bezdek. "An efficient formulation of the improved visual assessment of cluster tendency (iVAT) algorithm." IEEE Transactions on Knowledge and Data Engineering 24.5 (2011): 813-822.</li>
+</ol>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<h4 id="reference">Reference</h4>
+<p>Erman, Nusa &amp; Korosec, Ales &amp; Suklan, Jana. (2015). ‘Performance Of Selected Agglomerative Hierarchical Clustering Methods’.&nbsp;<em>Innovative Issues and Approaches in Social Sciences</em>. 8. 180-204. 10.12959/issn.1855-0541.IIASS-2015-no1-art11.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul>
+<li>
+<h5 style="display: inline !important;"><a href="https://www.youtube.com/watch?v=5E097ZLE9Sg" target="_blank" rel="noopener noreferrer">HOW DOES THE DBSCAN ALGORITHM WORK?</a> This youtube video describes the algorithm and its capabilities</h5>
+</li>
+<li>
+<h5 style="display: inline !important;"><a href="https://www.youtube.com/watch?v=zkgm0i77jQ8" target="_blank" rel="noopener noreferrer">SPECTRAL CLUSTERING AND HOW IT WORKS.</a> This is a youtube video by the University of Illinois</h5>
+</li>
+</ul>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

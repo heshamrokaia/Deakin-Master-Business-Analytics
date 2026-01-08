@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body><p><img src="../images/Model%20evaluation%20image%201.jpg" alt="girl in a classroom standing in front of a chalkboard looking at a double helix model with a magnify" title="girl in a classroom standing in front of a chalkboard looking at a double helix model with a magnify" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Model evaluation</h1>
+</div>
+<div>
+<p>In machine learning problems, we should always evaluate a model to determine if it will do an excellent job of predicting the labels on new and future test data.</p>
+<p>Because future instances have unknown label values, we need to check the accuracy of a machine learning model on test data with correct labels that we already know. We use this assessment as a proxy for predictive accuracy on future data (which is unknown to us!).</p>
+<p>For this purpose we need to:</p>
+<ul>
+<li>randomly split examples into a&nbsp;<em>training dataset</em>&nbsp;and&nbsp;<em>test dataset</em></li>
+<li>use the training dataset to&nbsp;<em>learn a model</em>.</li>
+<li><em>evaluate the model</em>&nbsp;using the test dataset and a measurement (such as the accuracy of prediction)</li>
+<li>repeat for different random splits and then&nbsp;<em>average the results</em>.</li>
+<li>check the accuracy of results and try again (iterate) until the model makes useful predictions</li>
+</ul>
+<p class="centerImage"><img src="../images/Model%20evaluation%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-as-the-number-of-training-examples-grows-we-can-design-a-more-accurate-classifier">Figure. As the number of training examples grows, we can design a more accurate classifier.</h5>
+<h2></h2>
+<div>
+<h1>Model selection</h1>
+</div>
+<div>
+<p>One of the most challenging tasks in the assessment of machine learning models is to find the&nbsp;<em>BEST</em>&nbsp;model or best fit hypothesis.</p>
+<p>As we discussed earlier in our ‘trips around the city’ example, there are many ways of grouping and combining data and many ways to adjust the model’s controls (parameters and hyper-parameters). This will vary a model’s fitness to the data.</p>
+<p>There is&nbsp;<em>no easy way</em>&nbsp;to know if a certain model will offer the best fit. There is so much data and so many possible features that we can’t be sure which model to choose. That’s why we have to try many different models.</p>
+<h3 id="trying-out-models">Trying out models</h3>
+<p>If you remember the clustering problem we discussed previously, we are not sure about the exact number of clusters, so we cannot know the best or most accurate or most useful model. The models we choose will have a direct effect on the quality of the output.</p>
+<p class="centerImage"><img src="../images/Model%20selection%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-the-clustering-problem-and-the-challenges-in-model-selection">Figure. The clustering problem and the challenges in model selection.</h5>
+<p>There are many effective ways that people approach this problem:</p>
+<ul>
+<li>look at averaged evaluation scores on many random test datasets</li>
+<li>cross-validation, that is train using one dataset and test on another, try rotating them and test again, for example if you have datasets A, B and C try AIC, BIC etc.</li>
+</ul>
+<p>This additional <a href="https://www.youtube.com/watch?v=FeKSQy5t_TI" target="_blank" rel="noopener noreferrer">Model Evaluation</a>&nbsp;video gives another explanation of the process of finding a best fit model.</p>
+<h3 id="over-fitting">Over-fitting</h3>
+<table>
+<tbody>
+<tr>
+<td><strong>⚠ Caution ⚠</strong></td>
+<td>Sometimes when a model learns the details and noise within a training dataset the knowledge can negatively impact the performance of the model on a new dataset. In machine learning, we call this *Over-fitting*. In other words, designing a model to suit the training dataset can result in poor performance on evaluation or new data.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="your-task">Activity</h2>
+<p>Perform your own exploration of model evaluation and try to understand the differences between training, validation and test datasets. This additional <a href="https://www.youtube.com/watch?v=Zi-0rlM4RDs" target="_blank" rel="noopener noreferrer">video</a>&nbsp;might be helpful.</p>
+<p>For another explanation of <a href="https://www.youtube.com/watch?v=-JopeGg60QY" target="_blank" rel="noopener noreferrer">overfitting</a>&nbsp;you might like to watch this excellent additional video.</p>
+<p>Discuss your understanding in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener">Student Discussion</a></p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

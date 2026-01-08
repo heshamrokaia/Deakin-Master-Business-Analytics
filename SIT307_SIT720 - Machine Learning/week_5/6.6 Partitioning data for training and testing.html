@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><div>
+<h1>Partitioning data for training and testing</h1>
+</div>
+<div>
+<p>You have covered a lot of ground on how to&nbsp;<em>assess a trained model</em>. Let’s now investigate the details on&nbsp;<em>model selection</em>. The first question that might come to mind might be the limitations of using only a single training/testing set.</p>
+<ul>
+<li>A single training set may be affected by some&nbsp;<em>outlier instances</em>&nbsp;(i.e. noisy observations).</li>
+<li>To get a&nbsp;<em>reliable estimate</em>&nbsp;of model performance (accuracy), we need a large test set. Why? Because&nbsp;<em>variance</em>&nbsp;of such an estimate is low.</li>
+<li>However, we know that the&nbsp;<em>larger</em>&nbsp;the size of the training set, the&nbsp;<em>more accurately</em>&nbsp;the model can be learnt.</li>
+<li>Multiple training/test splits allow us to re-use same data for both training and evaluation in different splits.</li>
+</ul>
+<p>We usually work with 3 methods for splitting data:</p>
+<ul>
+<li>random subsampling</li>
+<li>stratified sampling</li>
+<li>cross validation.</li>
+</ul>
+<p>Lets start with Random sub-sampling.</p>
+<h3 id="sub-sampling">Sub-sampling</h3>
+<p>Instead of using a single split, a more reliable estimate of model performance can be obtained by&nbsp;<em>random sub-sampling</em>. Random sub-sampling repeatedly partitions the data into random training and test sets in a specified ratio.</p>
+<p class="centerImage"><img src="../images/Partitioning%20data%20for%20training%20and%20testing%20image%201.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5><strong>Figure. Sub-sampling.</strong></h5>
+<p>As you can see in the figure, We train the model with each training set and estimate an accuracy using the corresponding test set. We finally average the accuracies to get an averaged estimate.</p>
+<h3 id="stratified-sampling">Stratified Sampling</h3>
+<p>Stratified sampling is a probability sampling technique in which we divide the entire data into different&nbsp;<em>subgroups</em>&nbsp;or strata, then randomly select the final subjects proportionally from the different strata. When using randomly selecting training (or validation) sets, class proportions may differ between training and test splits.</p>
+<p>Stratified sampling ensures that class proportions are maintained in each random set. The figure below shows how Stratified Sampling works. As you can see it first separates (stratifies) instances by class label, then randomly selects instances from each class.</p>
+<p class="centerImage"><img src="../images/Partitioning%20data%20for%20training%20and%20testing%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"><br><strong></strong></p>
+<h5><strong>Figure. Stratified Sampling by 50/50 stratified split.</strong></h5>
+<p>The figure below illustrates another example of Class-wise random selection in a specified split ratio. In the left image we can see 2 samples are selected from the red class and 1 from blue class. Same as the right image which shows a ratio of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn><mo>:</mo><mn>2</mn><mo>:</mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1:2:1\)"}</annotation></semantics></math>&nbsp;</p>
+<p>for blue, red, and green respectively.</p>
+<p class="centerImage"><img src="../images/Partitioning%20data%20for%20training%20and%20testing%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"><br><strong></strong></p>
+<h5><strong>Figure. Class-wise random selection in specified split ratio.</strong></h5>
+<h3 id="cross-validation">Cross-validation</h3>
+<p>Another method for partitioning data which is even more popular among researchers is&nbsp;<em>Cross-validation</em>. This is a technique to evaluate models by partitioning the original sample into a&nbsp;<em>training set</em>&nbsp;to train the model, and a&nbsp;<em>test set</em>&nbsp;to evaluate it.</p>
+<p>The main idea is to partition training data into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;equal sized sub-samples. Then&nbsp;<em>iteratively</em>&nbsp;leave one sub-sample out for the test set, train on the rest of the sub-samples. The following figure, illustrates this process.</p>
+<p class="centerImage"><img src="../images/Partitioning%20data%20for%20training%20and%20testing%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"><br><strong></strong></p>
+<h5><strong>Figure. Cross validation, partitioning data into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=5\)"}</annotation></semantics></math>&nbsp;</strong><strong>equal sized subsamples.</strong></h5>
+<p>Now suppose we have&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1000</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1000\)"}</annotation></semantics></math>&nbsp;instances, and we want to estimate accuracy using cross-validation. Lets define&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;to be&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=5\)"}</annotation></semantics></math>.</p>
+<p>At first iteration, we are going to leave out the first sub-sample (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_1\)"}</annotation></semantics></math>)&nbsp;for testing, so we will use&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>2</mn></msub><mo>,</mo><msub><mi>S</mi><mn>3</mn></msub><mo>,</mo><msub><mi>S</mi><mn>4</mn></msub><mo>,</mo><msub><mi>S</mi><mn>5</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_2,S_3,S_4,S_5\)"}</annotation></semantics></math>&nbsp;for training the model. After training the model with&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>2</mn></msub><mo>,</mo><msub><mi>S</mi><mn>3</mn></msub><mo>,</mo><msub><mi>S</mi><mn>4</mn></msub><mo>,</mo><msub><mi>S</mi><mn>5</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_2,S_3,S_4,S_5\)"}</annotation></semantics></math>,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>1</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_1\)"}</annotation></semantics></math>&nbsp;will be used to calculate the accuracy of the trained model. We save this accuracy for the first iteration.</p>
+<p>In the second iteration<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_2\)"}</annotation></semantics></math>&nbsp;will be used for testing and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>1</mn></msub><mo>,</mo><msub><mi>S</mi><mn>3</mn></msub><mo>,</mo><msub><mi>S</mi><mn>4</mn></msub><mo>,</mo><msub><mi>S</mi><mn>5</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_1,S_3,S_4,S_5\)"}</annotation></semantics></math>&nbsp;sub-samples are used for training the model. Again the accuracy on test data which is&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>S</mi><mn>2</mn></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S_2\)"}</annotation></semantics></math>,&nbsp;&nbsp;will be saved. We will keep doing this for&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=5\)"}</annotation></semantics></math>&nbsp;times.</p>
+<p>The final accuracy will be the average of these 5 obtained accuracies. We call this way of data partitioning, k-fold cross-validation. In k-fold cross-validation, the original sample is randomly partitioned into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;equal size sub-samples. Of the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;sub-samples, a single sub-sample is retained as the validation data for testing the model, and the remaining&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>−<!-- − --></mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k-1\)"}</annotation></semantics></math>&nbsp;sub-samples are used as training data. The following figure illustrates how this procedure works.</p>
+<p class="centerImage"><img src="../images/Partitioning%20data%20for%20training%20and%20testing%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"><br><strong></strong></p>
+<h5><strong>Figure. 5-fold cross validation.</strong></h5>
+<p>So, to conclude:</p>
+<ul>
+<li>When using subsamples, we call it k-fold cross-validation.</li>
+<li>In special cases, when&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;is&nbsp;<em><em>equal to the number of instances&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(n\)"}</annotation></semantics></math>,&nbsp;&nbsp;</em></em>
+<ul>
+<li>we call it as&nbsp;<em>leave-one-out</em>&nbsp;cross validation scheme.</li>
+<li>Cross-validation makes efficient use of the available data for testing.</li>
+</ul>
+</li>
+</ul>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=cace04fa-7ec4-4afb-8132-afe70122a098&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">
+<p class="transcript__para">SPEAKER: In this tutorial, we're going to show you different methods of partitioning for test and train data. The first method is random sampling. In this method, you should repeatedly partition the data into random training and test sets in a specified ratio. As you can see in this figure, we are randomly separating or partitioning this data into train and test sets. Also, we are always following a specified ratio.</p>
+<p class="transcript__para">Then we train the model with each training set and estimate an accuracy using the corresponding test set. And finally, we average the accuracies to get an average estimate. The next method is stratified sampling. In a stratified sampling, we are randomly selecting training or validation sets. Class properties may differ between training and test [? displays. ?] Stratified sampling ensures that class proportions are maintained in each random set. As you can see in here, we have three data points. Of course, there are training data points in class blue and six in class red.</p>
+<p class="transcript__para">So as we sample these data points for training set, you choose one from the blue set and two from the red set, and this selection is based on the ratio in the data set. Consider this three-class problem. You're choosing one from the blue class and two from the red class and one from the green class. Again, the reason is the stratified sampling ensures that the class proportions are maintained in each random set. The last method is called cross-validation, which is kind of the more popular method in machine learning. In cross-validation, we are partitioning data into equal size sub-samples. Then iteratively, we leave one sample out for the test set and we train on the rest of the data.</p>
+<p class="transcript__para">As you can see in here, this is our train data. We partitioned this into five equal sized partitions. Then we are selecting each of them for the test data at each iteration, and the rest is going to be used for training data. As you can see in here, here's the number of iteration. First, the train data from S2 to S5, and the test, that is S1, which has been left out, and the accuracy is 110 over 200. In the next one, we'll leave out the partition number 2, and we are training with partition number 1, 3, 4, and 5. Again, the accuracy is 170 over 200.</p>
+<p class="transcript__para">If you keep doing this until the last iteration, we leave the last partition as 5 if you're going to train with S1 to S4, and then we find the accuracy. Now by averaging on the value of accuracies, we're going to have the final value of accuracy for our model.</p>
+</article>
+<h2 id="your-task">Activity</h2>
+<p>You have learned about three partitioning methods. Which of these you think will help you more for training and evaluation on your models and why?</p>
+<p>Share your thoughts in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2000572" target="_top" class="kalmod-7432443-2">discussion forum</a>.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

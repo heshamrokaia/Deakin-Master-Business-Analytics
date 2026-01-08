@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><h2 id="Random-data-into-pandas-dataframe">Data wrangling</h2>
+<p><span style="font-size: 16px;">Data wrangling is the procedure of acquiring, analysing, and manipulating raw data into a suitable format for faster processing and evaluation.</span><br><span style="font-size: 16px;">Data wrangling can be divided into the following section:</span></p>
+<ul style="list-style-type: disc;">
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data loading and saving</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data exploration</span></li>
+<li style="font-size: 16px; font-weight: bold; color: rgb(0, 111, 191);"><span style="color: rgb(0, 111, 191);"><strong><span style="font-size: 16px;">Data encoding , distribution and&nbsp; </span></strong></span><span style="font-size: 16px;">Scaling</span><span style="font-size: 16px;"></span></li>
+</ul>
+<h2 id="Categorical-value-encoding">Categorical value encoding</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.preprocessing import LabelEncoder
+label_encoder = LabelEncoder()
+integer_encoded = label_encoder.fit_transform(df2["Types"])
+df2["interger label"]=integer_encoded</code></pre>
+<p>The output of this code is as follows:</p>
+<h2>Before</h2>
+<p></p>
+<p><img src="../week_1/File_2b93d729df46479ab696c8fb3a527350_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2></h2>
+<h2>After</h2>
+<p></p>
+<p><img src="../week_1/File_07906a5112ee4e5ea0d83dba60a54046_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Data-distribution">Data distribution</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">import matplotlib.pyplot as plt
+df2[['TV', 'Radio', 'Newspaper', 'Sales']].hist()
+plt.tight_layout()
+plt.show()</code></pre>
+<p></p>
+<p>The output of this code is as follows:</p>
+<p></p>
+<p><img src="../week_1/File_9b5dbb1d72ef4f798aa54215bc2ecdbf_image.png" width="416" height="300" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Scaling">Scaling</h2>
+<p><strong>Before scaling mean value of each feature</strong></p>
+<pre class="line-numbers d2l-code"><code class="language-python">print("--------------------------")
+print(df2[['TV', 'Radio', 'Newspaper', 'Sales']].mean())
+print("STD:")
+print("--------------------------")
+print(df2[['TV', 'Radio', 'Newspaper', 'Sales']].std(ddof=0))</code></pre>
+<p></p>
+<p><img src="../week_1/File_9ce65df8700441159887f4d9e6b1102f_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+<h2><strong>After scaling the mean value of each feature</strong><strong></strong></h2>
+<pre class="line-numbers d2l-code"><code class="language-python">df3=df2.copy()
+df3[['TV', 'Radio', 'Newspaper', 'Sales']]=(df3[['TV', 'Radio', 'Newspaper', 'Sales']]-df3[['TV', 'Radio', 'Newspaper', 'Sales']].mean())
+/df3[['TV', 'Radio', 'Newspaper', 'Sales']].std(ddof=0)
+print("--------------------------")
+print(df3[['TV', 'Radio', 'Newspaper', 'Sales']].mean())
+print("STD:")
+print("--------------------------")
+print(df3[['TV', 'Radio', 'Newspaper', 'Sales']].std(ddof=0))
+
+df3[['TV', 'Radio', 'Newspaper', 'Sales']].hist()
+plt.tight_layout()
+plt.show()</code></pre>
+<p><img src="../week_1/File_292aa47e612844278cea386556f2551d_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p><img src="../week_1/File_bf095b7d4009498687440da337f3aa8d_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr>
+<div style="padding-top: 20px;"></div>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;">&lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

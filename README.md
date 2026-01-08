@@ -48,6 +48,7 @@
 - [SIT742 - Modern Data Science](SIT742%20-%20Modern%20Data%20Science)
 - [SIT764 - Project Analysis and Design](SIT764%20-%20Project%20Analysis%20and%20Design)
 - [SIT103_SIT772 - Database Fundamentals](SIT103_SIT772%20-%20Database%20Fundamentals)
+- [SIT307_SIT720 - Machine Learning](SIT307_SIT720%20-%20Machine%20Learning)
 
 ## Edith Cowan University
 

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html><head></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Forms%20of%20Supervised%20Learning%20image%201.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Forms of Supervised Learning</h1>
+</div>
+<div>
+<p>The majority of&nbsp;<em>practical</em>&nbsp;machine learning applications use&nbsp;<em>supervised learning</em>.</p>
+<p>In supervised learning, the data used to&nbsp;<em>train</em>&nbsp;the algorithm is already labeled with correct answers. In other words, you make an algorithm based on the known relationship between the input and output. From this, you develop a mapping function from the input variable&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>&nbsp;to the output variable&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>y</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y\)"}</annotation></semantics></math>.</p>
+<p>Instead of finding patterns based on&nbsp;<em>similarity only</em>, we can learn a&nbsp;<em>direct mapping or function</em>&nbsp;between feature vector&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_i\)"}</annotation></semantics></math>&nbsp;and the output (target or label)<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_i\)"}</annotation></semantics></math>&nbsp;such that,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><mi>h</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_i=h(x_i)\)"}</annotation></semantics></math>.</p>
+<p>Thus, supervised learning is the task of&nbsp;<em>estimating a function</em>&nbsp;from labelled training data.</p>
+<p>Training data for supervised learning is arranged in the following form:&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">{</mo><msub><mrow class="MJX-TeXAtom-ORD"><mi>x</mi></mrow><mi>i</mi></msub><mo>,</mo><msub><mi>y</mi><mi>i</mi></msub><mo fence="false" stretchy="false">}</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\{{x}_i, y_i\}\)"}</annotation></semantics></math>,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(i=1,...,n\)"}</annotation></semantics></math>.</p>
+<p>For each data point&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_i\)"}</annotation></semantics></math>&nbsp;there is an&nbsp;<em>output&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_i\)"}</annotation></semantics></math>.</em>This means there is a&nbsp;<em>significant advantage</em>&nbsp;over unsupervised learning because you already know what you’re going to get. This means you can test your algorithm to make sure it’s giving you usable outputs.</p>
+<p>Supervised learning can appear in many forms:</p>
+<ul>
+<li>Regression problems
+<ul>
+<li>Linear Regression (linear model)</li>
+<li>Support Vector Machines (both linear and nonlinear)</li>
+<li>Decision Trees (nonlinear)</li>
+<li>Random Forest (nonlinear)</li>
+</ul>
+</li>
+<li>Classification problems<br>
+<ul>
+<li>Logistic Regression (linear model)</li>
+<li>Support Vector Machines (both linear and nonlinear)</li>
+<li>Decision Trees (nonlinear)</li>
+<li>Random Forest (nonlinear)</li>
+<li>Neural Networks: Perceptron and Multi-layer Perceptron (nonlinear)</li>
+</ul>
+</li>
+<li>Ranking problems</li>
+</ul>
+<p>Let’s see some examples.</p>
+<h4 id="example-1">Example 1</h4>
+<p>The following figure illustrates a regression problem about the sale of Yogurt with seasonal temperature. Let’s estimating the relationships among the feature variables (e.g. the sale of frozen yogurt and its temperature).</p>
+<p class="centerImage"><img src="../images/Forms%20of%20Supervised%20Learning%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Yogurt sale with season temperature.</h5>
+<h4 id="example-2">Example 2</h4>
+<p>The following is another example of regression, where we look to find relationships among feature variables. The figure illustrates sample data for GoPro stock price against date. Imagine the amount of money you could earn by intelligently predicting prices in the stock market!</p>
+<p class="centerImage"><img src="../images/Forms%20of%20Supervised%20Learning%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. goPro stock price with time.</h5>
+<h4 id="example-3">Example 3</h4>
+<p>The following familiar figure illustrates the classic classification problem for classifying two types of data. As you can see, sometimes we can successfully find a linear boundary and sometimes we have to search for a more complex boundary.</p>
+<p class="centerImage"><img src="../images/Forms%20of%20Supervised%20Learning%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Linear boundary vs nonlinear boundary for classification.</h5>
+<h2 id="your-task">Activity</h2>
+<p>Is it possible to generate classification output from regression output? How? What about generated regression value from a classification model?</p>
+<p>Share your answers in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2000313" target="_top">discussion forum</a>.</p>
+<p><em></em>&nbsp;</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p><script>
+function localProc(){
+  console.log("ready!");
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

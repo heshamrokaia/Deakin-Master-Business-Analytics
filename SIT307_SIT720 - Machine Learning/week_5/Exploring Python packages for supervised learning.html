@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Exploring%20Python%20packages%20for%20supervised%20learning%20image%201.jpg" alt="Rear view of computer programmers using laptop at office desk" title="Rear view of computer programmers using laptop at office desk" width="617" height="411"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Exploring Python packages for supervised learning</h1>
+</div>
+<div>
+<p>Let’s move from the theoretical to the practical and see how we can work with supervised learning packages of Python.</p>
+<p>In this example, you will learn how to fit a linear regression model to a regression dataset. You will also study the behaviour of the linear regression model.</p>
+<h3 id="linear-regression">Linear Regression</h3>
+<p>Our initial objective is:</p>
+<ul>
+<li>write a program to read the provided regression dataset and split it into training and test sets in ratio of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>70</mn><mo>:</mo><mn>30</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(70:30\)"}</annotation></semantics></math>&nbsp;</li>
+<li>write code for a linear regression model to estimate regression weights and visualise it.</li>
+</ul>
+<br style="font-size: 0.95rem;">
+<p>For this exercise, we will use linear regression to predict profits from a food truck franchise in cities. The data is stored in ‘data/data.xlsx’.</p>
+<p>Download the data file <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3822393" target="_self">data.xlsx </a>and add it to your <em>data</em>&nbsp;store and rename it.</p>
+<p>The first column is the population of a city and the second column is the profit of a food truck in that city. A negative value for profit indicates a loss.You are encouraged to take a look at the raw data. Our objective is to predict the profit, given the population of a city. A natural question is:</p>
+<blockquote style="font-size: 0.95rem;">
+<p>how can we measure the performance of our learning model? For linear regression, we measure the deviation in prediction from the truth using ‘mean square error’ (MSE). We shall see how the size of data affects MSE.</p>
+</blockquote>
+<h4 id="code-example-1">Code example #1</h4>
+<p>Let’s begin by importing the necessary libraries. We’re going to use lumpy, pandas and matplotlib for this exercise.</p>
+<div style="font-size: 0.95rem;">
+<pre class="line-numbers d2l-code"><code class="language-python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns</code></pre>
+</div>
+<div style="font-size: 0.95rem;">
+<div>
+<pre class="line-numbers d2l-code"><code class="language-python">df=pd.read_excel("data/data.xlsx")
+df.head()</code></pre>
+<p>The output would look like this:</p>
+<p><img src="File_701cc49235084e7f90350e62d0850052_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+</div>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div style="font-size: 0.95rem;"></div>
+<h4 id="code-example-2">Code example #2</h4>
+<h2 id="Data-type-and-null-value-checking">Data type and null value checking</h2>
+<div style="font-size: 0.95rem;">
+<pre class="line-numbers d2l-code"><code class="language-python">df.info()</code></pre>
+<p>The output would look like this:</p>
+<p><img src="File_1a799f49af4040c098b4fadf3ae9bad1_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<h4 id="code-example-2">Code example #3</h4>
+<h2>Feature vs class/target Data distribution and density.</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">f = plt.figure(figsize=(14,6))
+ax = f.add_subplot(221)
+sns.violinplot(x='X1', y='Y1',data=df,palette='Wistia',ax=ax)
+ax.set_title('Violin plot of Y1 vs X1')
+
+ax = f.add_subplot(222)
+sns.violinplot(x='X2', y='Y1',data=df,palette='magma',ax=ax)
+ax.set_title('Violin plot of Y1 vs X2');
+ax = f.add_subplot(223)
+sns.violinplot(x='X3', y='Y1',data=df,palette='Wistia',ax=ax)
+ax.set_title('Violin plot of Y1 vs X3')
+
+ax = f.add_subplot(224)
+sns.violinplot(x='X4', y='Y1',data=df,palette='magma',ax=ax)
+ax.set_title('Violin plot of Y1 vs X4');
+plt.tight_layout()</code></pre>
+<p>The output would look like this:</p>
+<h2><img src="File_a17e53d312c44936a8b8f615674338d9_image.png" width="718" height="310" style="display: block; margin-left: auto; margin-right: auto;"></h2>
+<h4 id="code-example-2">Code example #4</h4>
+<p>Scatter plot X1 vs Y1 (feature-1 vs class/target)</p>
+<pre class="line-numbers d2l-code"><code class="language-python">plt.scatter(df["X1"],df["Y1"])
+plt.xlabel("X1")
+plt.ylabel("Y1")</code></pre>
+<p>The output would look like this:</p>
+<p><img src="File_30e4a88d683049079fb8adf949a55eaa_image.png" width="388" height="289"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>To be continue...</p>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p>
+</div>
+</div></body></html>

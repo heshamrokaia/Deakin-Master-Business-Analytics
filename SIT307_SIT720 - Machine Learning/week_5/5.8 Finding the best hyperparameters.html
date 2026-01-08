@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body style="font-family: verdana, sans-serif;font-size: 10px;color: #202122;"><p><img src="../images/Finding%20the%20best%20hyperparameters%20image%201.jpg" alt="Arial view of a carpark" title="Arial view of a carpark" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Finding the best hyperparameters</h1>
+</div>
+<p></p>
+<p>In machine learning, a&nbsp;<em>hyperparameter</em>&nbsp;is a parameter whose value is set before the learning process begins.</p>
+<p>This means the value of a hyperparameter in a model cannot be estimated from data. They are often used in processes to help estimate model parameters.</p>
+<p>In this lesson we are addressing the following questions:</p>
+<ul>
+<li><strong>What is hyperparameter?</strong></li>
+<li><strong>Why do we need to have hyperparameters?</strong></li>
+<li><strong>How to find the best hyperparameter for a specific model?</strong></li>
+</ul>
+<p>Hyperparameters can often be set using heuristics Often they are tuned for a given predictive modelling problem. To search for the best hyperparameters, we need to partition training data into separate&nbsp;<em>training</em>and&nbsp;<em>validation</em>&nbsp;sets.</p>
+<p class="centerImage"><img src="../images/Finding%20the%20best%20hyperparameters%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Training set, validation set and test set.</h5>
+<p>We already know about&nbsp;<em>training</em>&nbsp;and&nbsp;<em>test</em>&nbsp;data. But what is a&nbsp;<em>validation set</em>?</p>
+<blockquote>
+<p>A validation set is a sample of data used to provide an unbiased evaluation of a model fit on the training dataset while tuning model hyperparameters.</p>
+</blockquote>
+<p>The validation set is used to evaluate a given model and also to fine-tune the model hyperparameters. So, given a choice of hyperparameter values, you use the training set to train the model. But, how do you set the values for the hyperparameters? That’s what the validation set is for. You can use it to evaluate the performance of your model for different combinations of hyperparameter values (e.g. by means of a grid search process) and keep the best trained model.</p>
+<p>However the test set allows you to compare different models in an unbiased way, by basing your comparisons in data that were not use in any part of your training/hyperparameter selection process.</p>
+<p>Here is another example. Remember Kmeans in course 2? The number of clusters (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>),&nbsp;is a hyperparameter. Because this value is&nbsp;<em>set before the learning</em>&nbsp;begins.</p>
+<p>But, how can we find the best hyperparameter?</p>
+<ul>
+<li>First, we need to decide a possible range for hyperparameters.&nbsp;<br>For example, a bounded interval such as&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\([0,1]\)"}</annotation></semantics></math></li>
+<li>We then define a&nbsp;<em>search grid</em>&nbsp;within the specified range.<br>For example, we might like to select these values&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">{</mo><mn>0</mn><mo>,</mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>3</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>2</mn></mrow></msup><mo>,</mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>1</mn></mrow></msup><mo>,</mo><mn>1</mn><mo fence="false" stretchy="false">}</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\{0,10^{-3}, 10^{-2}, 10^{-1}, 1\}\)"}</annotation></semantics></math>&nbsp;for as hyperparameters in order to evaluate the model with them.</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Next, we train a model using each hyperparameter value from the search grid and assess its performance on a validation set (separated from the training set).</span></li>
+<li>Finally, we compute the performance on the validation set for each hyperparameter value and select the one with the best performance. Once the model is working with the best hyperparameter we defined it’s ready to be tested on separate test data.</li>
+</ul>
+<p><strong style="font-family: Lato, sans-serif; font-size: 1rem;">Note:</strong><span style="font-family: Lato, sans-serif; font-size: 1rem;"><span style="font-family: Lato, sans-serif; font-size: 1rem;">&nbsp;In the above example we only considered 4 cases to evaluate as a hyperparameter in the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\([0,1]\)"}</annotation></semantics></math>&nbsp;interval. In this continuous space, we may lose many other good options by restricting the search to this degree. We can extend the grids for search to very small continuous values such as&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">{</mo><mn>0</mn><mo>,</mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>5</mn></mrow></msup><mo>,</mo><mn>2</mn><mo>×<!-- × --></mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>5</mn></mrow></msup><mo>,</mo><mn>3</mn><mo>×<!-- × --></mo><msup><mn>10</mn><mrow class="MJX-TeXAtom-ORD"><mo>−<!-- − --></mo><mn>5</mn></mrow></msup><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mn>0.99999</mn><mo>,</mo><mn>1</mn><mo fence="false" stretchy="false">}</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\{0,10^{-5},2\times10^{-5},3\times 10^{-5},...,0.99999,1\}\)"}</annotation></semantics></math>.&nbsp; This will result in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>100000</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(100000\)"}</annotation></semantics></math>&nbsp;</span></span>possible values for the hyperparameter. It is obvious in this case we will be more accurate in finding the best value of the hyperparamter but this kind of grid-searching can be extremely computationally expensive (i.e. may take your machine a long time to run). A grid-search will build a model on each possible value for hyperparameter.</p>
+<h3 id="internal-cross-validation">Internal cross-validation</h3>
+<p>All the techniques that we previously discussed for&nbsp;<em>model assessment</em>&nbsp;are applicable for training/validation set splitting:</p>
+<ul>
+<li>Random subsampling</li>
+<li>Stratified subsampling</li>
+<li>Cross-validation</li>
+</ul>
+<p>We are still assessing how a particular hyperparameter is doing on the validation set. Remember, this step is&nbsp;<em>internal</em>&nbsp;to the learning process and&nbsp;<em>different</em>&nbsp;from model assessment on the test data.</p>
+<p>Let us examine how an internal cross-validation works. Instead of using a single validation set, we can use cross-validation within a training set to select the best set of hyperparameters. So basically it is exactly the same as the one we saw for test/train partitioning. However, in here we partition the data into training/validation sets. The following figure illustrates this process.</p>
+<p class="centerImage"><img src="../images/Finding%20the%20best%20hyperparameters%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5><br>Figure. Internal cross-validation within a training set.</h5>
+<p>Lets work on another example of that.</p>
+<p></p>
+<ul>
+<li>Say, we want to do&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10\)"}</annotation></semantics></math>-fold Cross-validation to estimate the model performance of Elastic Net model.</li>
+<li>We can divide the data into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10\)"}</annotation></semantics></math>&nbsp;equal subsamples and then&nbsp;<em>train the model</em>&nbsp;using 9 subsamples and test the model using the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn><mi>t</mi><mi>h</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10th\)"}</annotation></semantics></math>&nbsp;subsample. We repeat this&nbsp;&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10\)"}</annotation></semantics></math>-times using each subsample for the test purpose and all other subsamples for the training.</li>
+<li>In the above&nbsp;<em>train the model</em>&nbsp;step, best hyperparameter can be selected using an&nbsp;<em>internal cross-validation</em>. If we want to use&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(5\)"}</annotation></semantics></math>-fold cross-validation for this. Then for each possible hyperparameter set, we compute&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(5\)"}</annotation></semantics></math>-fold cross validation (CV) accuracy and select the best hyperparameter set.</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">So in this example, we have an external&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;-fold cross-validation for partitioning training/testing. Also we ran a</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(5\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">-fold cross-validation for partitioning training/validation inside the training set for finding the best hyperparameters.</span></li>
+</ul>
+<p><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Remember that we can select the best hyperparameter set by searching/or optimizing over all possible values. Let us show you 3 possible ways to navigate the hyperparameter space:</span></p>
+<ul style="font-size: 0.95rem;">
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">Grid-search (not so efficient). This is what we are using and explaining!</span></li>
+<li>Random search (efficient in certain scenarios) [Bergstra et al. (JMLR 2012)</li>
+<li>Bayesian optimization (efficient in general) [Snoek et al. (2012)]</li>
+</ul>
+<p></p>
+<p>For better understanding, you can read this article on <a href="https://www.geeksforgeeks.org/hyperparameters-optimization-methods-ml/" target="_blank" rel="noopener noreferrer" title="">hyperparameter tuning</a>.</p>
+<h2 id="your-task">Activity</h2>
+<p>For any given application, list the criteria that will help you to decide whether you will use Grid-search or go for an alternative (e.g. Bayesian optimization)</p>
+<p>Share in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2000572" target="_top">discussion forum</a>.</p>
+<p></p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<p><span face="Lato, sans-serif" style="font-family: Lato, sans-serif;"><span style="font-size: 15.2px;">&nbsp;</span></span></p>
+<h4 id="references" style="display: inline !important;">References</h4>
+<p>Pham, V n.d., <a href="https://www.geeksforgeeks.org/hyperparameters-optimization-methods-ml/" target="_blank" rel="noopener">Bayesian Optimization for Hyperparameter Tuning</a>, viewed 25 July 2018.</p>
+<p></p>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p><script>
+function localProc(){
+  console.log("ready!");
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>
