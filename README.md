@@ -34,6 +34,7 @@
 - [MIS780 - Advanced Artificial Intelligence For Business](MIS780%20-%20Advanced%20Artificial%20Intelligence%20For%20Business)
 - [MIS781 - Business Intelligence And Database](MIS781%20-%20Business%20Intelligence%20And%20Database)
 - [MIS782 - Value Of Information](MIS782%20-%20Value%20Of%20Information)
+- [MIS784 - Marketing Analytics](MIS784%20-%20Marketing%20Analytics)
 - [SIT104 - Introduction to Web Development](SIT104%20-%20Introduction%20to%20Web%20Development)
 - [SIT113 - Cloud Computing and Virtualisation](SIT113%20-%20Cloud%20Computing%20and%20Virtualisation)
 - [SIT151 - Game Fundamentals](SIT151%20-%20Game%20Fundamentals)
