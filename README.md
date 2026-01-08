@@ -31,6 +31,7 @@
 - [MIS772 - Predictive Analytics](MIS772%20-%20Predictive%20Analytics)
 - [MIS775 - Decision Modelling For Business Analytics](MIS775%20-%20Decision%20Modelling%20For%20Business%20Analytics)
 - [MIS779 - Decision Analytics In Practice](MIS779%20-%20Decision%20Analytics%20In%20Practice)
+- [MIS780 - Advanced Artificial Intelligence For Business](MIS780%20-%20Advanced%20Artificial%20Intelligence%20For%20Business)
 - [MIS781 - Business Intelligence And Database](MIS781%20-%20Business%20Intelligence%20And%20Database)
 - [MIS782 - Value Of Information](MIS782%20-%20Value%20Of%20Information)
 - [SIT104 - Introduction to Web Development](SIT104%20-%20Introduction%20to%20Web%20Development)
