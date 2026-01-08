@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"><script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><h1>Regression trees</h1>
+<p>After partitioning the feature space, we can fit a simple model in each sub-region&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><msub><mi>R</mi><mn>2</mn></msub><mo>,</mo><mo>…<!-- … --></mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_1, R_2, \dots\)"}</annotation></semantics></math>. What does this look like in practice?</p>
+<p>Let’s start by looking at the&nbsp;<em>principles</em>&nbsp;of how this works. It may be helpful to read the text here before reviewing the video above for a practical example of how regression trees can be used.</p>
+<p>Decision trees that use a&nbsp;<em>regression model</em>&nbsp;are called&nbsp;<em>regression trees</em>. We can alternately fit a&nbsp;<em>classification model</em>. Such decision trees are called&nbsp;<em>classification trees</em>. Usually, extremely simple models such as&nbsp;<em>majority (classification)</em>&nbsp;or&nbsp;<em>mean (regression)</em>&nbsp;are used.</p>
+<p>Let’s start with the procedure:</p>
+<ol>
+<li>We divide the feature space, i.e., the set of possible values for&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mo>…<!-- … --></mo><mo>,</mo><msub><mi>x</mi><mi>d</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_1,\dots ,x_d\)"}</annotation></semantics></math>&nbsp;into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>J</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(J\)"}</annotation></semantics></math>&nbsp;distinct and non-overlapping regions&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><mo>…<!-- … --></mo><mo>,</mo><msub><mi>R</mi><mi>J</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_1,\dots,R_J\)"}</annotation></semantics></math>.</li>
+<li>For every instance that falls into region&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mi>j</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_j\)"}</annotation></semantics></math>&nbsp;we make the same prediction, which is simply the&nbsp;<em>mean</em>&nbsp;(or mode) of response values for the training observations in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mi>j</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_j\)"}</annotation></semantics></math>.&nbsp;</li>
+</ol>
+<p><span style="font-size: 15.2px;">How do we perform these actions? The overall goal of regression trees is to find regions&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mn>1</mn></msub><mo>,</mo><msub><mi>R</mi><mn>2</mn></msub><mo>,</mo><mo>…<!-- … --></mo><mo>,</mo><msub><mi>R</mi><mi>J</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_1,R_2,\dots,R_J\)"}</annotation></semantics></math>&nbsp;that minimize the training error:</span></p>
+<div><span style="font-size: 15.2px;"><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>J</mi></mrow></munderover><munder><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>∈<!-- ∈ --></mo><msub><mi>R</mi><mi>j</mi></msub></mrow></munder><mo stretchy="false">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−<!-- − --></mo><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^<!-- ^ --></mo></mover></mrow><mrow class="MJX-TeXAtom-ORD"><msub><mi>R</mi><mi>j</mi></msub></mrow></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\sum_{j=1}^{J} \sum_{i \in R_j} (y_i - \hat{y}_{R_j})^2"}</annotation></semantics></math>&nbsp;</span><span style="font-size: 15.2px;"><span style="font-size: 15.2px;">where&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^<!-- ^ --></mo></mover></mrow><mrow class="MJX-TeXAtom-ORD"><msub><mi>R</mi><mi>j</mi></msub></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\hat{y}_{R_j}\)"}</annotation></semantics></math>&nbsp;is the&nbsp;<em>mean</em>&nbsp;of the target values of the training instances in the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>j</mi><mo>−<!-- − --></mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(j-\)"}</annotation></semantics></math></span></span>th region.
+<p>Let’s say we have&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>J</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(J\)"}</annotation></semantics></math>&nbsp;regions. The formula states that for every point in the region&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>R</mi><mi>j</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(R_j\)"}</annotation></semantics></math>&nbsp;find the difference value of the prediction and true output&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>i</mi></msub><mo>−<!-- − --></mo><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^<!-- ^ --></mo></mover></mrow><mrow class="MJX-TeXAtom-ORD"><msub><mi>R</mi><mi>j</mi></msub></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_i - \hat{y}_{R_j}\)"}</annotation></semantics></math>.&nbsp; Obviously we would like to minimize this problem so that we have regions that result in less error. Once again we have an&nbsp;<em>optimisation problem</em>&nbsp;to solve.</p>
+<p>How do we find the solution? Unfortunately, it is&nbsp;<em>computationally infeasible</em>&nbsp;to consider every possible partition of the feature space into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>J</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(J\)"}</annotation></semantics></math>&nbsp;regions. How big would the space of possibilities become in this case?</p>
+<p>For this reason, we take a&nbsp;<em>top-down</em>, greedy approach that is known as&nbsp;<em>recursive binary splitting</em>. Rather than using a&nbsp;<em>brute-force</em>&nbsp;solution, we would like to work in a&nbsp;<em>heuristic</em>&nbsp;way.</p>
+<h3 id="solution">Solution</h3>
+<p>Let us now explain the way this heuristic method works:</p>
+<ol>
+<li><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">We first select a feature&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>j</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_j\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;and&nbsp;</span><em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">a threshold&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(s\)"}</annotation></semantics></math>&nbsp;s</em><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">uch that splitting the feature space into the regions&nbsp;&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">{</mo><mi>x</mi><mo fence="false" stretchy="false">|</mo><msub><mi>x</mi><mi>j</mi></msub><mo>≤<!-- ≤ --></mo><mi>s</mi><mo fence="false" stretchy="false">}</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\{x \vert x_j \leq s \}\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;and&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">{</mo><mi>x</mi><mo fence="false" stretchy="false">|</mo><msub><mi>x</mi><mi>j</mi></msub><mo>&gt;<!-- > --></mo><mi>s</mi><mo fence="false" stretchy="false">}</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\{x \vert x_j \gt s \}\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;leads to&nbsp;the best possible reduction&nbsp;in training error. So we are not going into the joint space of all features, but we work on a independent feature form such as&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>j</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_j\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;with a threshold&nbsp;</span><em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;"><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(s\)"}</annotation></semantics></math>.&nbsp;</em></li>
+<li>Next, we&nbsp;<em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">repeat the process</em><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">, looking for the&nbsp;</span><em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">best feature</em><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;and the&nbsp;</span><em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">best threshold</em><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;in order to&nbsp;</span><em style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">split</em><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;the data further to minimize the error in each of the resulting regions.</span></li>
+<li>However, this time,&nbsp;<em>instead</em>&nbsp;of splitting the entire feature space, we only split one of the two previously identified regions.</li>
+<li>The splitting process continues until a&nbsp;<em>stopping criterion</em>&nbsp;is reached. For example, we may continue until&nbsp;<em>no region contains more than five instances</em>&nbsp;or the nodes are getting too pure or sparse.</li>
+</ol>
+<h3>Prediction</h3>
+<p>We predict the response for a given test instance using the&nbsp;<em>mean</em>&nbsp;(or mode) of the training instances in the region where the test observation falls.</p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=f24b096c-8267-4d90-84b0-afe70122a056&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">SPEAKER: In this tutorial, we're going to show a very simple example of regression tree. Regression tree may be considered as a variant of decision trees designed to approximate real valued functions instead of being used for classification methods. Consider this dataset. This x is years. It's indicating the number of years the player has had experience of playing. As for this one, this is the number of hits the player had in the last year of his career. Also, the data points itself are colour coded. It means the red colours are indicating high salary. And the blue colours are showing low salaries. Now we can construct a decision tree on this dataset, which could be something like this.
+<p class="transcript__para">It says if years of experience is less than 4.5 years, return a value of 5.11. Then when we insert this value in this equation, and we find the value of salary. Remember this value is just a simple mean of the points, or the data points, which are partitioned into this region. What if the years of experience is more than 4.5 years? Now we have to check the number of the hits. If it is more than 117.5, you're going to insert this value in this equation, which is 6.74, which the amount of money is more than $800,000.</p>
+<p class="transcript__para">But if the number of the hits are less than this value, we are going to return 6 as the value to be inserted in this equation.</p>
+<p class="transcript__para">So as you can see, we partitioned the data into three regions. The first region, R1, is when the years of experience is less than 4.5 years. And this is this region. So if you take any new point in this region, you are going to return the mean value of these data points as the salary of this new point. The second region is when the years of experience is more than 4.5, but the number of the hits are less than 117.5, which is this region, R2. But the last region are the players who has more than 4.5 years of experience. Also, they have hits more than 117.5. And so this is the last region.</p>
+<p class="transcript__para">So this was a simple example of regression tree. Remember, we can use more complicated things rather than just having a mean of these values in each region, like having a regression line, or even median of the points, or more complex algorithms.</p>
+</article>
+<h2 id="your-task">Activity</h2>
+<p>Watch this interesting video on Regression Trees.</p>
+<p></p>
+<div>
+<p class="centerVideo"><iframe src="https://www.youtube.com/embed/w4MnOA14pYs?wmode=opaque" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" width="648" height="364" frameborder="0"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p>Share your feedback in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2003939" target="_top" class="kalmod-7432494-3">discussion forum</a>. Is the video clear?</p>
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body><p><img src="../images/Vectors%20image%201.jpg" alt="Abstract wavy background with text place. Technology modern template in light blue and gray tones. Vector waving line art concept for sci-tech design. Futuristic wave pattern." title="Abstract wavy background with text place. Technology modern template in light blue and gray tones. Vector waving line art concept for sci-tech design. Futuristic wave pattern." width="555" height="370"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1><span style="color: rgb(69, 0, 219);">Vectors</span></h1>
+</div>
+<div>
+<p>It’s outside the scope of this Unit to teach you maths skills but we will quickly do some revision of some mathematical concepts.</p>
+<p>Vectors are a fundamental element of linear algebra and mathematics. They are also widely-used in machine learning algorithms.</p>
+<h3 id="why-know-the-maths">Why know the maths?</h3>
+<p>Understanding the mathematics allows you to select the best models for a task. It will support your decisions and provide the expertise to perform useful adjustments. Knowing how the maths operates within the models gives specialists the skill to manipulate data and extract the best information.</p>
+<p>You can develop machine learning without in-depth knowledge of vectors, matrices and probability but it will be harder to get the best outcomes. Even though the various pre-programmed modules conceal some of the maths (we’ll start using modules later this week) if you understand how they work, you will have more control of your results.</p>
+<p>Remember, there is no exam in this Unit. You are not expected to perform mathematical tasks under pressure.</p>
+<h3 id="feature-vectors">Feature vectors</h3>
+<p>Why are we using vectors? In this unit, you will notice that most of the time a&nbsp;<em>data instance</em>&nbsp;is represented by a&nbsp;<em>vector</em>, more precisely, by a&nbsp;<strong>feature vector</strong>.</p>
+<p>Text documents, images, audio files, etc. are examples of data objects. Computation on these data objects can be performed using their vector representation.</p>
+<h3 id="what-is-a-vector">What is a vector?</h3>
+<p>Visually, a vector quantity has both magnitude and direction but it is really a series of related numbers. Their role in ML is about relationships between data objects. The following is an illustration of a sample vector. Note the relationship between the visual representation and the matrix representation of the relationship between inputs and outputs.</p>
+<p class="centerImage"><img src="../images/Vectors%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Description of vector.</h5>
+<p></p>
+</div>
+<div>
+<h1>Vector operations</h1>
+</div>
+<div>
+<p>There are three main operations in vectors. As we’ve seen vectors can be represented as a one column matrix.</p>
+<ol>
+<li>Transpose</li>
+<li>Add</li>
+<li>Inner product</li>
+</ol>
+<p>Let’s start by taking two simple matrices&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>y</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y\)"}</annotation></semantics></math>:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\textbf{x} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}"}</annotation></semantics></math></p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">y</mtext></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\textbf{y} = \begin{bmatrix} y_{1} \\ y_{2} \\ \vdots \\ y_{n} \end{bmatrix}"}</annotation></semantics></math></p>
+<p>How are these three operations implemented?</p>
+<h3 id="transpose">Transpose</h3>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>T</mi></msup><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub><mo>,</mo><mo>…<!-- … --></mo><mo>,</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\textbf{x}^T = \begin{bmatrix} x_{1}, x_{2}, \ldots, x_{n} \end{bmatrix}"}</annotation></semantics></math></p>
+<h3 id="add">Add</h3>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo>+</mo><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">y</mtext></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>1</mn></mrow></msub></mtd></mtr><mtr><mtd><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msub><mi>x</mi><mi>n</mi></msub><mo>+</mo><msub><mi>y</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></msub></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\textbf{x} + \textbf{y} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}+\begin{bmatrix} y_{1} \\ y_{2} \\ \vdots \\ y_{n} \end{bmatrix} = \begin{bmatrix} x_1+y_{1} \\ x_2+y_{2} \\ \vdots \\ x_n+y_{n} \end{bmatrix}"}</annotation></semantics></math></p>
+<h3 id="inner-product">Inner product</h3>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>T</mi></msup><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">y</mtext></mrow><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>y</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msub><mi>x</mi><mi>n</mi></msub><msub><mi>y</mi><mi>n</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\textbf{x}^T \textbf{y} = x_1y_1 + x_2y_2+...+x_ny_n"}</annotation></semantics></math></p>
+<h3 id="magnitude-of-a-vector">Magnitude of a vector</h3>
+<p>How do we compute the magnitude of a vector or its length geometrically?</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">l</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">t</mi><mi mathvariant="normal">h</mi></mrow><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">(</mtext></mrow><mi>x</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><msqrt><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></msqrt></mstyle><annotation encoding="latex">{"version":"1.1","math":"\mathrm{length}(\textbf(x)) = \sqrt{x_1^2 + x_2^2 + ... + x_n^2}"}</annotation></semantics></math></p>
+<p>The above length is also called&nbsp;&nbsp;<strong>2-norm</strong>&nbsp;of a vector.</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><msub><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mn>2</mn></msub><mo>=</mo><msqrt><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></msqrt></mstyle><annotation encoding="latex">{"version":"1.1","math":"||\textbf{x}||_2 = \sqrt{x_1^2+...+x_n^2}"}</annotation></semantics></math></p>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div></body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><h2 id="Random-data-into-pandas-dataframe">Data wrangling</h2>
+<p><span style="font-size: 16px;">Data wrangling is the procedure of acquiring, analysing, and manipulating raw data into a suitable format for faster processing and evaluation.</span><br><span style="font-size: 16px;">Data wrangling can be divided into the following section:</span></p>
+<ul style="list-style-type: disc;">
+<li style="font-size: 16px; color: rgb(0, 111, 191); font-weight: bold;"><strong><span style="font-size: 16px; color: rgb(0, 111, 191);">Data loading and saving</span></strong></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data exploration</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data processing, such as missing value handling, encoding categorical values</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data distribution</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Scaling</span><span style="font-size: 16px;"></span></li>
+</ul>
+<h2 id="Random-data-into-pandas-dataframe">Random data into pandas dataframe</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.randint(0,2000,size=(10, 6)), columns=list('ABCDEF'))
+df.head()</code></pre>
+<p>The output of this code is as follows:</p>
+<p></p>
+<p><img src="File_49a7e5508f5e44a2adda31be395711e9_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="Saving-dataframe">Saving dataFrame</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">df.to_csv("df.csv",index=None)</code></pre>
+<p></p>
+<hr>
+<div style="padding-top: 20px;"></div>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;">&lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

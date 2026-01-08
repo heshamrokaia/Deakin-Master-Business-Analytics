@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/KNN%20in%20Python%20image%201.jpg" alt="social network 3d people symbols and connections" title="social network 3d people symbols and connections" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>KNN in Python</h1>
+</div>
+<div>
+<p>The&nbsp;<em>K Nearest Neighbour</em>&nbsp;(KNN) algorithm as one of the most interesting and powerful machine learning methods.</p>
+<p>In this practical, you will apply them to classification problems that are possibly non-linearly separable.</p>
+<p>We begin by importing the necessary libraries.</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">import numpy as np
+import matplotlib.pyplot as plt
+</code></pre>
+</div>
+</div>
+<p>For this practical, we will use the simple but extremely popular Iris data set. This dataset contains 50 samples of iris flower varieties (Iris setosa, Iris virginica and Iris versicolor). Each row contains four features: the length and the width of the sepals and petals in centimetres. This data is commonly use to build classification models that take these four measurements as input and predict the species of Iris flower (setosa/virginica/versicolor). You can read more about the dataset here:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Iris_flower_data_set" target="_blank" rel="noopener noreferrer">Wikipedia entry</a></li>
+<li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html" target="_blank" rel="noopener noreferrer">sklearn.datasets page for Iris</a></li>
+</ul>
+<p>The Sklearn package contains a few <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html" target="_blank" rel="noopener">toy datasets</a>&nbsp;that can be used to quickly test your classification/regression model.</p>
+<h4 id="code-example-2">Code example 2</h4>
+<p>We can import the iris dataset from this package using the following code:</p>
+<div>
+<div>
+<pre><code class="language-Python"># Import the Iris data set 
+from sklearn import datasets
+iris = datasets.load_iris()
+
+# divide this data into features and labels
+X = iris.data
+y = iris.target
+
+print ("X is of type: {}".format(type(X)))
+print ("y is of type: {}".format(type(y)))
+
+# How does our data look
+#print first 5 rows of X
+print ("First 5 rows of our data: {}".format(X[:5,:]))
+
+#print the unique labels in y
+print ("unique labels: {}".format(np.unique(y)))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">X is of type: &lt;class 'numpy.ndarray'&gt;
+y is of type: &lt;class 'numpy.ndarray'&gt;
+First 5 rows of our data: [[5.1 3.5 1.4 0.2]
+[4.9 3.  1.4 0.2]
+[4.7 3.2 1.3 0.2]
+[4.6 3.1 1.5 0.2]
+[5.  3.6 1.4 0.2]]
+unique labels: [0 1 2]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-3">Code example 3</h4>
+<p>For the purpose of easy visualisation using 2 dimensional plots, we drop the last 2 columns of X.</p>
+<div>
+<div>
+<pre><code class="language-Python">X = X[:,:2] # Use only the first 2 columns. This is for easy plotting/visualisation
+#print first 5 rows of X
+print ("First 5 rows of our data: {}".format(X[:5,:]))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">First 5 rows of our data:
+[[5.1 3.5]
+[4.9 3. ]
+[4.7 3.2]
+[4.6 3.1]
+[5. 3.6]]
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>Let’s split our data into 80% training and 20% testing. We will train the model using training data and visualise the decision boundaries. We will then test the model performance (in this case, let’s just look at accuracy) using our testing data.</p>
+<p>When using <span style="color: #2b78e4;"><strong>train_test_split</strong></span>, if you want the dataset to be partitioned in the same way each time you run the cell, you have to set a “random_state” variable. This is for repeatability. In other words, specifying the random state allows you to get the same training and testing set each time.</p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.model_selection import train_test_split
+
+#Split the data into 80% Training and 20% Testing sets
+Xtrain, Xtest, ytrain, ytest = train_test_split(X,y, test_size=0.2, random_state=42)
+
+print (Xtrain.shape)
+print (ytrain.shape)
+print (Xtest.shape)
+print (ytest.shape)
+
+Xtrain[:5,:] # first 5 rows of training data
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">(120, 2)
+(120,)
+(30, 2)
+(30,)
+
+Out[8]:
+
+array([[4.6, 3.6],
+      [5.7, 4.4],
+      [6.7, 3.1],
+      [4.8, 3.4],
+      [4.4, 3.2]])
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h3 id="advanced-visualisation-this-step-is-optional">Advanced Visualisation (This step is optional)</h3>
+<p>If you are particularly interested advance visualisation you will enjoy this.</p>
+<p>Now we need to define a function to plot the true data points and the calculated decision boundaries of a given classifier model (also called an estimator). You don’t need to understand the implementation of this step. Please note that this visualisation is for:</p>
+<ul>
+<li>Two dimensional data</li>
+<li>Data having 3 labels or less.</li>
+</ul>
+<p>The function argument takes a training classifier, data matrix as a numpy array, label vector as numpy array. You should include this function in your code since we are going to use this for plotting later.</p>
+<h4 id="code-example-5">Code example 5</h4>
+<div>
+<div>
+<pre><code class="language-Python">from matplotlib.colors import ListedColormap
+
+# We define a colormap with three colors, for three labels our data
+cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
+
+def plot_estimator(estimator, X, y):
+    '''
+    This function takes a model (estimator), 
+    '''
+    estimator.fit(X, y)
+    # Determine the maximum and minimum mesh as a boundary
+    x_min, x_max = X[:, 0].min() - .1, X[:, 0].max() + .1
+    y_min, y_max = X[:, 1].min() - .1, X[:, 1].max() + .1
+    # Generating the points on the mesh
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
+                         np.linspace(y_min, y_max, 100))
+    # Make predictions on the grid points
+    Z = estimator.predict(np.c_[xx.ravel(), yy.ravel()])
+
+    # for color
+    Z = Z.reshape(xx.shape)
+    plt.figure()
+    plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
+
+    # Original training sample
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold)
+    plt.axis('tight')
+    plt.axis('off')
+    plt.tight_layout()
+    plt.show()
+</code></pre>
+</div>
+</div>
+<h3 id="k-nearest-neighbor-classifier">k-Nearest Neighbor Classifier</h3>
+<p>We will now use a <span style="color: #2b78e4;"><strong>KNN classifier</strong></span>. We specify the number of nearest neighbours as input.</p>
+<h4 id="code-example-6">Code example 6</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
+
+# Build a kNN using 5 neighbor nodes
+knn_model = KNeighborsClassifier(n_neighbors=5)
+
+#Fit the model using our training data
+knn_model.fit(Xtrain, ytrain)
+
+# Training Accuracy:
+knn_acc = metrics.accuracy_score(ytrain, knn_model.predict(Xtrain))
+print ("KNN Training Accuracy: {}".format(knn_acc))
+
+# Visualize the decision bounday. The points represent the true data. 
+plot_estimator(knn_model, Xtrain, ytrain)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">KNN Training Accuracy: 0.8333333333333334
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/KNN%20in%20Python%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;True data</h5>
+<p>In this plot, the points represent the true data, the decision boundary is plotted as a background colour. We can immediately see that one class is linearly separable from the rest. Lets now look at the testing accuracy:</p>
+<h4 id="code-example-7">Code example 7</h4>
+<div>
+<div>
+<pre><code class="language-Python">#Testing Accuracy:
+knn_acc_test = metrics.accuracy_score(ytest, knn_model.predict(Xtest))
+print ("KNN Testing Accuracy: {}".format(knn_acc_test))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">KNN Testing Accuracy: 0.8
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

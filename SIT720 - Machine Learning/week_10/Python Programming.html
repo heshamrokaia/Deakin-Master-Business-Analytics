@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"><link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.6.1/fonts.css"></head><body class="cloudFirst"><p><img src="../images/Python%20Programming%20image%201.jpg" alt="Connecting dots and lines, illustration" title="Connecting dots and lines, illustration" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Python Programming</h1>
+</div>
+<div>
+<p>In this section, you will first look at how to implement the humble perceptron. We will use this to fit a linearly separable dataset. When the dataset is not linearly separable, this model fails, as we will see from our experiment.</p>
+<h2 id="perceptron-and-mlp-in-python">Perceptron and MLP in Python</h2>
+<p>We then use some example code to construct a Multilayer Perceptron Network. We begin by importing the necessary libraries:</p>
+<h4 id="code-example-1">Code example #1</h4>
+<div>
+<div>
+<pre><code class="language-Python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+</code></pre>
+</div>
+</div>
+<h3 id="visualization-helper-optional">Visualization Helper (optional)</h3>
+<p>We define a function that will help us with plotting a decision boundary. Please note that this will work only for 2D data. As noted above, this section is optional.</p>
+<h4 id="code-example-2">Code example #2</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Helper function to plot a decision boundary.
+# If you don't fully understand this function don't worry, it just generates the contour plot below.
+def plot_decision_boundary(pred_func, X, y):
+    # Set min and max values and give it some padding
+    x_min, x_max = X[:, 0].min() - .5, X[:, 0].max() + .5
+    y_min, y_max = X[:, 1].min() - .5, X[:, 1].max() + .5
+    h = 0.01
+    # Generate a grid of points with distance h between them
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+    # Predict the function value for the whole gid
+    Z = pred_func(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+    # Plot the contour and training examples
+    plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral, alpha=0.5)
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Spectral, s=42)
+</code></pre>
+</div>
+</div>
+<p>Let’s start by reading in the first set of data from the data folder as: “data1.csv”. We then print out the first few lines to see what the data looks like:</p>
+<p>Please <a href="../data1.csv?isCourseFile=true" target="_blank" rel="noopener">data1.csv</a>&nbsp;dataset, rename and store in a suitable location.</p>
+<h4 id="code-example-3">Code example #3</h4>
+<div>
+<div>
+<pre><code class="language-Python">data1 = pd.read_csv('data/data1.csv')
+data1.head()
+</code></pre>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x1</th>
+<th>x2</th>
+<th>label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>3.222080</td>
+<td>2.051604</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>0.633193</td>
+<td>0.211618</td>
+<td>0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>1.776411</td>
+<td>1.628939</td>
+<td>1</td>
+</tr>
+<tr>
+<th>3</th>
+<td>0.210951</td>
+<td>0.419750</td>
+<td>0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>0.894606</td>
+<td>0.808269</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Lets split it into 80% training and 20% testing data</p>
+<h4 id="code-example-4">Code example #4</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.model_selection import train_test_split
+
+feat_cols = ['x1', 'x2']
+
+Dtrain, Dtest = train_test_split(data1, test_size=0.2, random_state=42)
+
+Xtrain = Dtrain[feat_cols].values
+Xtest  = Dtest[feat_cols].values
+
+ytrain = Dtrain['label'].values
+ytest  = Dtest['label'].values
+</code></pre>
+</div>
+</div>
+<h3 id="perceptron-classifier">Perceptron classifier</h3>
+<p>Perceptron is a simple neural network used for binary classification. It has only one layer with single node.</p>
+<p>The documentation for perceptron in scikit-learn is available <a href="http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Perceptron.html" target="_blank" rel="noopener noreferrer">here</a></p>
+<p>Training a perceptron involves finding a separating hyperplance for the 2 classes. To recap from the lesson:</p>
+<blockquote>
+<p>Find the weight vector&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">w</mtext></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\textbf{w}\)"}</annotation></semantics></math>&nbsp;so that the Perceptron correctly classify&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2\)"}</annotation></semantics></math>classes, given sample training data</p>
+</blockquote>
+<p class="centerImage"><img src="../images/Python%20Programming%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure A two (2) class problem.</h5>
+<p>Training data&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>D</mi><mo>=</mo><mo fence="false" stretchy="false">{</mo><mo stretchy="false">(</mo><msub><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>t</mi></msub><mo>,</mo><msub><mi>y</mi><mi>t</mi></msub><mo stretchy="false">)</mo><mo fence="false" stretchy="false">}</mo><mo>,</mo><mtext>&nbsp;</mtext><mtext>&nbsp;</mtext><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(D = \{(\textbf{x}_t,y_t)\},\ \ t=1,...,n\)"}</annotation></semantics></math>&nbsp;</p>
+<p>where:</p>
+<ul>
+<li><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>t</mi></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>t</mi><mn>1</mn></mrow></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>t</mi><mi>M</mi></mrow></msub><mo stretchy="false">)</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\textbf{x}_t = (x_{t1},...,x_{tM})\)"}</annotation></semantics></math>&nbsp;is the input vector at time&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>t</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(t\)"}</annotation></semantics></math></li>
+<li><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>t</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mo>+</mo><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mo>−<!-- − --></mo><mo stretchy="false">)</mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_t = (+/-)1\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;is the desired output</span></li>
+</ul>
+<h4 id="code-example-5">Code example #5</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python">from sklearn.linear_model import perceptron
+from sklearn import metrics
+
+# Create the perceptron object (net)
+# set random_state for repeatability of results
+p = perceptron.Perceptron(random_state=42)
+
+p.fit(Xtrain, ytrain)
+predicts = p.predict(Xtest)
+print("Testing accuracy {}".format(metrics.accuracy_score(ytest, predicts)))
+</code></pre>
+</div>
+</div>
+<p>Output</p>
+<div>
+<div>
+<pre><code class="language-Python">Testing accuracy 0.8
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-6">Code example #6</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python"># Visualize the decision boundary
+plot_decision_boundary(lambda x: p.predict(x), Xtrain, ytrain)
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/Python%20Programming%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. A simple decision boundary</h5>
+<p>Let us now use another dataset and see how the perceptron classifier performs. This data is not linearly separable, and hence our perceptron should have low accuracy.</p>
+<p>Please <a href="../data2.csv?isCourseFile=true" target="_blank" rel="noopener">data2.csv</a>&nbsp;data set, rename and store in a suitable location.</p>
+<h4 id="code-example-7">Code example #7</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python">data2 = pd.read_csv('data/data2.csv')
+data2.head()
+</code></pre>
+</div>
+</div>
+<table style="font-size: 0.95rem;">
+<thead>
+<tr>
+<th></th>
+<th>x1</th>
+<th>x2</th>
+<th>label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>-0.382891</td>
+<td>-0.090840</td>
+<td>1</td>
+</tr>
+<tr>
+<th>1</th>
+<td>-0.020962</td>
+<td>-0.477874</td>
+<td>1</td>
+</tr>
+<tr>
+<th>2</th>
+<td>-0.396116</td>
+<td>-1.289427</td>
+<td>0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>-0.618130</td>
+<td>-0.063837</td>
+<td>1</td>
+</tr>
+<tr>
+<th>4</th>
+<td>0.703478</td>
+<td>-0.187038</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="code-example-8">Code example #8</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python"># Split the  data into training and testing
+Dtrain2, Dtest2 = train_test_split(data2, test_size=0.2, random_state=42)
+
+Xtrain2 = Dtrain2[feat_cols].values
+Xtest2  = Dtest2[feat_cols].values
+
+ytrain2 = Dtrain2['label'].values
+ytest2  = Dtest2['label'].values
+</code></pre>
+</div>
+</div>
+<p>Here, we see that the data is not linearly separable. Our perceptron model should return poor results</p>
+<h4 id="code-example-9">Code example #9</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python">p.fit(Xtrain2, ytrain2)
+predicts2 = p.predict(Xtest2)
+print("Testing accuracy {}".format(metrics.accuracy_score(ytest2, predicts2)))
+</code></pre>
+</div>
+</div>
+<blockquote style="font-size: 0.95rem;">
+<p>Output</p>
+<div>
+<div>
+<pre><code class="language-Python">Testing accuracy 0.65
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-10">Code example #10</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python"># Visualize the decision boundary
+plot_decision_boundary(lambda x: p.predict(x), Xtrain2, ytrain2)
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../week10CodeEx10.png" alt="Output of data2" title="Output of data2" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. A decision boundary that will need refining</h5>
+<p>As expected, we have very low accuracy. When we look at the data, we understand that we need a non-linear decision boundary. We now need a multi-layer perceptron network.</p>
+<h3 id="multilayer-perceptron-classifier">Multilayer Perceptron Classifier</h3>
+<p>The Multilater Perceptron Classifier is available only on the development version of scikit-learn. We are using the stable version of scikit-learn, so we will not have Python’s <a href="http://scikit-learn.org/dev/modules/generated/sklearn.neural_network.MLPClassifier.html" target="_blank" rel="noopener noreferrer">MLPClassifier</a></p>
+<p>There is a thread of stackoverflow that proposes a <a href="https://stackoverflow.com/questions/34016238/sklearn-import-mlpclassifier-fails" target="_blank" rel="noopener noreferrer">fix</a>.</p>
+<p>We proceed to build our own neural network from scratch.</p>
+<p>Let’s now build a 3-layer neural network with one input layer, one hidden layer, and one output layer. The number of nodes in the input layer is determined by the dimensionality of our data, 2.</p>
+<p>Similarly, the number of nodes in the output layer is determined by the number of classes we have, also 2.</p>
+<p>The architecture looks something like this:</p>
+<p class="centerImage"><img src="../images/Python%20Programming%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Nodes in a neural network</h5>
+<p>We being by initializing the following parameters:</p>
+<ul style="font-size: 0.95rem;">
+<li>number of training examples</li>
+<li>number of input nodes</li>
+<li>number of output nodes</li>
+<li>learning rate of our model</li>
+<li>regularization parameter (to prevent overfitting)</li>
+</ul>
+<h4 id="code-example-11">Code example #11</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python">num_examples = len(Xtrain2) # training set size
+nn_input_dim = 2 # input layer dimensionality
+nn_output_dim = 2 # output layer dimensionality
+
+# Gradient descent parameters (I picked these by hand)
+epsilon = 0.01 # learning rate for gradient descent
+reg_lambda = 0.01 # regularization strength
+</code></pre>
+</div>
+</div>
+<h4 id="neural-network-code-optional">Neural Network code (Optional)</h4>
+<p>We now code neural network from scratch. To build the model, we first do a forward pass and use the prediction error to update the weights during backward pass. The final weights are learnt using gradient descent optimization. As noted above, this step is optional.</p>
+<h4 id="code-example-12">Code example #12</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python">
+# This function learns parameters for the neural network and returns the model.
+# - nn_hdim: Number of nodes in the hidden layer
+# - num_passes: Number of passes through the training data for gradient descent
+# - print_loss: If True, print the loss every 1000 iterations
+def build_model(X, y, nn_hdim, num_passes=20000):
+    
+    # Initialize the parameters to random values. We need to learn these.
+    np.random.seed(0)
+    W1 = np.random.randn(nn_input_dim, nn_hdim) / np.sqrt(nn_input_dim)
+    b1 = np.zeros((1, nn_hdim))
+    W2 = np.random.randn(nn_hdim, nn_output_dim) / np.sqrt(nn_hdim)
+    b2 = np.zeros((1, nn_output_dim))
+
+    # This is what we return at the end
+    model = {}
+    
+    # Gradient descent. For each batch...
+    for i in range(0, num_passes):
+
+        # Forward propagation
+        z1 = X.dot(W1) + b1
+        a1 = np.tanh(z1)
+        z2 = a1.dot(W2) + b2
+        exp_scores = np.exp(z2)
+        probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+
+        # Backpropagation
+        delta3 = probs
+        delta3[range(num_examples), y] -= 1
+        dW2 = (a1.T).dot(delta3)
+        db2 = np.sum(delta3, axis=0, keepdims=True)
+        delta2 = delta3.dot(W2.T) * (1 - np.power(a1, 2))
+        dW1 = np.dot(X.T, delta2)
+        db1 = np.sum(delta2, axis=0)
+
+        # Add regularization terms (b1 and b2 don't have regularization terms)
+        dW2 += reg_lambda * W2
+        dW1 += reg_lambda * W1
+
+        # Gradient descent parameter update
+        W1 += -epsilon * dW1
+        b1 += -epsilon * db1
+        W2 += -epsilon * dW2
+        b2 += -epsilon * db2
+        
+        # Assign new parameters to the model
+        model = { 'W1': W1, 'b1': b1, 'W2': W2, 'b2': b2}
+    
+    return model
+
+
+# Helper function to predict an output (0 or 1)
+def predict(model, x):
+    W1, b1, W2, b2 = model['W1'], model['b1'], model['W2'], model['b2']
+    # Forward propagation
+    z1 = x.dot(W1) + b1
+    a1 = np.tanh(z1)
+    z2 = a1.dot(W2) + b2
+    exp_scores = np.exp(z2)
+    probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+    return np.argmax(probs, axis=1)
+
+
+# Build a model with a 3-dimensional hidden layer
+model = build_model(Xtrain2, ytrain2, 3)
+
+print("Training accuracy: {}".format(metrics.accuracy_score(ytrain2, predict(model,Xtrain2) )))
+print("Testing accuracy : {}".format(metrics.accuracy_score(ytest2, predict(model,Xtest2) )))
+</code></pre>
+</div>
+</div>
+<blockquote style="font-size: 0.95rem;">
+<p>Output</p>
+<div>
+<div>
+<pre><code class="language-Python">Training accuracy: 0.9375
+Testing accuracy : 0.75
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-13">Code example #13</h4>
+<div style="font-size: 0.95rem;">
+<div>
+<pre><code class="language-Python"># Plot the decision boundary
+plot_decision_boundary(lambda x: predict(model, x), Xtrain2, ytrain2)
+plt.title("Decision Boundary")
+</code></pre>
+</div>
+</div>
+<blockquote style="font-size: 0.95rem;">
+<p>Output</p>
+<div>
+<div>
+<pre><code class="language-Python">Text(0.5,1,'Decision Boundary')
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/Python%20Programming%20image%206.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Applying decision boundaries</h5>
+<p>If you increase the hidden layer size, you will notice the change in the decision boundary. What is an ideal value of number of hidden nodes for this data? When does the model start to overfit?</p>
+<h2 id="your-task">Activity</h2>
+<p>Make sure that you have experimented with all the individual Python coding examples that we have in this lesson.</p>
+<p>Feel free to share your feedback and experiences in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniversity-2003941" target="_top">discussion forum</a>.</p>
+<p>If you are having any technical issues with the Python coding examples, you may use the <a href="/d2l/le/1030403/discussions/List" target="_blank" rel="noopener">troubleshooting forum</a>&nbsp;for assistance.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+</div>
+<ul role="complementary" style="list-style-type: none;">
+<li><a href="http://neuralnetworksanddeeplearning.com/about.html" target="_blank" rel="noopener noreferrer">NEURAL NETWORKS AND DEEP LEARNING</a> eBook on deep learning in Python</li>
+<li><a href="https://www.analyticsvidhya.com/blog/2018/05/essentials-of-deep-learning-trudging-into-unsupervised-deep-learning/" target="_blank" rel="noopener noreferrer">DEEP LEARNING TUTORIALS</a></li>
+</ul>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p><script>
+function localProc(){
+  console.log("ready!");
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

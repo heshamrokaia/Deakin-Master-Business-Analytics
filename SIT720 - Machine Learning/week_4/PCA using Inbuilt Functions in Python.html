@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/PCA%20using%20Inbuilt%20Functions%20in%20Python%20image%201.jpg" alt="Rows in Rice Field" title="Rows in Rice Field" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>PCA using Inbuilt Functions in Python</h1>
+</div>
+<div>
+<p>Here we demonstrate how to use the inbuilt function&nbsp;<em>PCA()</em>&nbsp;in the sklearn.decomposition package.</p>
+<p>We start by reading in a data file that contains 5 dimensions or features, download <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3832654" target="_blank" rel="noopener">this CSV</a>, add it to your data store and rename it. As with the previous example, we normalise the data, perform PCA and measure the reconstruction error in the recovered data.</p>
+<p>Lets begin by reading the given data.</p>
+<h4 id="code-example-1">Code example #1</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Read the data
+
+import pandas as pd<br>data = pd.read_csv('data/train_wbcd.csv').dropna()
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code>(98,32)
+</code></pre>
+</div>
+</div>
+<h3 id="step-1-data-normalization">Step 1: Data Normalization</h3>
+<p>Our data consists of <span style="color: rgb(205, 32, 38);">98</span> data points and <span style="color: rgb(205, 32, 38);">32</span> dimensions (features). Next step is to normalise the data. We use the inbuilt function called <a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html" target="_blank" rel="noopener noreferrer">scale() function</a>&nbsp;from sklearn.preprocessing to do this.</p>
+<h4 id="code-example-2">Code example #2</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+#normalize our data
+data_norm=data.copy()<br>mu = data_norm.iloc[:,2:].mean(axis=0) # mean of each col<br>sigma = data_norm.iloc[:,2:].std(axis=0) &nbsp;# std dev of each col<br>data_norm.iloc[:,2:]=(data_norm.iloc[:,2:]-mu)/sigma
+
+</code></pre>
+</div>
+</div>
+<h3 id="step-2-implement-pca">Step 2: Implement PCA</h3>
+<p>We use the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html" target="_blank" rel="noopener noreferrer">inbuilt function</a>&nbsp;to perform PCA. Here, n_components specify the number of principal components to use. We start by using all the principal components.</p>
+<h4 id="code-example-3">Code example #3</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+#perform PCA using sklearn PCA implementation
+
+from sklearn.decomposition import PCA<br>pca = PCA(n_components=2)<br>Xnorm=data_norm.iloc[:,2:].copy().values<br>pca.fit(Xnorm)
+
+</code></pre>
+</div>
+</div>
+<div>
+<h4 id="dimensionality-reduction-how-to-choose-the-dimensions-to-keep">Dimensionality Reduction: How to choose the dimensions to keep</h4>
+<p>To put it differently, how can we choose the number of principal components to retain? We can decide this by looking the variance captured by each principle component.</p>
+<h4 id="code-example-4">Code example #4</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+#The amount of variance that each PC explains
+#The amount of variance that each PC explains<br>var= pca.explained_variance_ratio_<br>print(var)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">[0.50414964 0.16306662]
+</code></pre>
+</div>
+</div>
+<p>Here, we see that the first component captures around <span style="color: rgb(153, 0, 6);">50.41%</span> variance, second component captures around <span style="color: rgb(153, 0, 6);">16.31%</span></p>
+<p>variance and so on. To make it much easier, we can calculate the cumulative variance:</p>
+<h4 id="code-example-5">Code example #5</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+#Cumulative Variance explains
+var1=np.cumsum(np.round(pca.explained_variance_ratio_, decimals=4)*100)<br>print(var1)<br>plt.plot(var1)<br>plt.xlabel("Principal components")<br>plt.ylabel("Variance captured")
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">[50.41 66.72]
+Text(0, 0.5, 'Variance captured')
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="File_d04950eecdca44c6b0f53ffdab4ba66a_image.png" width="510" height="380" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h5></h5>
+<p>So, if k is the number of principal components, we see that&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=1\)"}</annotation></semantics></math> captures around 50.41% variance,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=2\)"}</annotation></semantics></math>&nbsp;(the first&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(2\)"}</annotation></semantics></math> components together) capture around 66.72% variance and so on. Since&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=2\)"}</annotation></semantics></math> captures more than 60% variance in our data, lets add the third component.</p>
+<h4 id="code-example-6">Code example #6</h4>
+<div>
+<div>
+<pre><code class="language-Python">pca = PCA(n_components=3)<br>Zred = pca.fit_transform(Xnorm)<br>print(Zred.shape)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">(98,3)
+</code></pre>
+</div>
+</div>
+<h3 id="step-3-measuring-reconstruction-error">Step 3: Measuring ‘reconstruction error’</h3>
+<p>We can recreate our original data (Xrec) from the reduced data (Zred) using the inverse_transform() function, and calculate the reconstruction error as before.</p>
+<h4 id="code-example-7">Code example #7</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Reconstruct our data
+Xrec = pca.inverse_transform(Zred)
+print(Xrec.shape)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">(98, 30)
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-8">Code example #8</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Measure the reconstruction error
+rec_error = np.linalg.norm(Xnorm-Xrec, 'fro')/np.linalg.norm(Xnorm, 'fro')
+print(rec_error)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">0.4859375839859015
+</code></pre>
+</div>
+</div>
+<h4 id="influence-of-dimensionality-reduction-on-reconstruction-error">Influence of Dimensionality Reduction on Reconstruction error</h4>
+<p>Let us see how dropping the dimensionality of data affects the reconstruction error. We perform PCA using increasing number of principal components, and measure the reconstruction error in each case.</p>
+<h4 id="code-example-9">Code example #9</h4>
+<div>
+<div>
+<pre><code class="language-Python"># vary principal components from 1 to 5<br>n_comp = range(1,nDims+1)<br>print(n_comp)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">[1 to 31]
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-10">Code example #10</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Initialize vector of rec_error
+rec_error = np.zeros(len(n_comp)+1)
+
+for k in n_comp:
+    pca = PCA(n_components=k)
+    Zred = pca.fit_transform(Xnorm)
+    Xrec = pca.inverse_transform(Zred)
+    rec_error[k] = np.linalg.norm(Xnorm-Xrec, 'fro')/np.linalg.norm(Xnorm, 'fro')
+    # print("k={}, rec_error={}".format(k, rec_error[k]))
+
+rec_error = rec_error[1:] #we started recording from index 1, so drop index 0
+
+
+#Visualize the change in error
+plt.plot(n_comp,rec_error)
+plt.xlabel('No of principal components (k)')
+plt.ylabel('Reconstruction Error')
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">k=1, rec_error=0.7041664292871995
+k=2, rec_error=0.5768741133033028
+k=3, rec_error=0.4859375839859015
+k=4, rec_error=0.42116146026231194
+k=5, rec_error=0.36045374675457575
+k=6, rec_error=0.30913128269060297
+k=7, rec_error=0.27125793238867757
+k=8, rec_error=0.23850958714153778
+k=9, rec_error=0.20993574805189139
+k=10, rec_error=0.18009067168555537
+k=11, rec_error=0.15895469219138864
+k=12, rec_error=0.14204872660421053
+k=13, rec_error=0.12491660595890769
+k=14, rec_error=0.10762651261855655
+k=15, rec_error=0.09293005293332164
+k=16, rec_error=0.08154504058386751
+k=17, rec_error=0.07229131841987832
+k=18, rec_error=0.06475153142280245
+k=19, rec_error=0.05717366047807598
+k=20, rec_error=0.04920331546237984
+k=21, rec_error=0.0414355944971561
+k=22, rec_error=0.03500391231126629
+k=23, rec_error=0.029208658945960503
+k=24, rec_error=0.023546878335901463
+k=25, rec_error=0.01776517524045024
+k=26, rec_error=0.012569695037471464
+k=27, rec_error=0.005900246502294497
+k=28, rec_error=0.003314694313492582
+k=29, rec_error=0.0014227150677471412
+k=30, rec_error=9.424658158893498e-16
+
+Text(0, 0.5, 'Reconstruction Error')
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="File_ecd4d774e0ec488d84adde4fb2f85a10_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<h1><span style="color: rgb(96, 56, 255);"></span></h1>
+<h1 id="your-task"><span style="color: rgb(96, 56, 255);">Activity</span></h1>
+<p>You are now be able to understand:</p>
+<ul>
+<li>How to perform PCA on any data</li>
+<li>Decide the number of principal components to keep for dimensionality reduction</li>
+<li>Calculate the reconstruction error of our data after PCA.</li>
+</ul>
+<p>Make sure that you have experimented with all the individual Python coding examples that we have in this lesson, and that you are confident in how they work.</p>
+<p>For consolidating your idea, download one of the <a href="https://archive.ics.uci.edu/ml/index.php" target="_blank" rel="noopener noreferrer">publicly available data sets</a>&nbsp;here and practice.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p>
+</div></body></html>

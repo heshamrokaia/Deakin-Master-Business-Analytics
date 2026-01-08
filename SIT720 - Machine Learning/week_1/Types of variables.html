@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body><p><img src="../images/Types%20of%20variables%20image%201.jpg" alt="Website programming, source code close-up. Innovative startup project. Computer program preview." title="Website programming, source code close-up. Innovative startup project. Computer program preview." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Types of variables</h1>
+</div>
+<div>
+<p>You installed Python Anaconda in the previous step. It’s time to start some coding.</p>
+<p>Once again, if you are experienced you might want to skim the introductory programming steps. To get ahead, go to the Week 2 Python exercises, read some of <a href="https://rl.talis.com/3/deakin/items/1932D3EB-2CDC-01AE-AA10-604ECAFC26D6.html" target="_blank" rel="noopener noreferrer">The elements of statistical learning</a>&nbsp;or reinforce your own learning by helping less experienced students in the Comments here or on the discussion forum.</p>
+<p>If you haven’t installed Python and an Integrated Development Environment (IDE) yet, you can use this <a href="https://www.python.org/shell/" target="_blank" rel="noopener noreferrer">online IDE</a>&nbsp;for experimenting with these basic coding examples but you will need to install Anaconda soon. Instructions are in the previous step.</p>
+<p>Let’s start by exploring some basic features of Python programming. Don’t worry if you are completely new to this.</p>
+<hr>
+<h3 id="the-traditional-hello-world">The traditional ‘Hello world’</h3>
+<p>Run the following&nbsp;<em>cell</em> in your Python IDE (i.e. Jupyter Notebook, which is contained within Anaconda).</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">print("Hello, World!")
+print('Hello, World!')
+</code></pre>
+</div>
+</div>
+<p>Successful execution of the code will generate the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Hello, World!
+Hello, World!
+</code></pre>
+</div>
+</div>
+<p>Is there any difference in the output? So it’s possible to say the&nbsp;<em>same thing</em>&nbsp;in different ways. Now it’s your turn to code.</p>
+<p><strong>Write a Python code that will print your name.</strong></p>
+<hr>
+<h3 id="inserting-comments">Inserting Comments</h3>
+<p>You should insert comments to improve the readability of your program and to remind you what each line of code does. You might think you’ll remember but you won’t. There are three ways to insert comments.</p>
+<p><strong>Run the following cell. Will it give you any output?</strong></p>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python"># This is a one-line comment
+
+'''
+This is a 
+multi-line comment
+'''
+
+"""
+This is also a
+multi-line comment
+"""
+print("I don't see any comments")
+</code></pre>
+</div>
+</div>
+<p>Successful execution of the code will generate the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">I don't see any comments
+</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="variables">Variables</h3>
+<p>Variable are containers. They’re like a bowls or cups. You can put a variety of things in them, but the bowl doesn’t change. Variable names in Python can contain letters and numbers. You don’t need to explicitly define the&nbsp;<em>type</em>&nbsp;of variable. But you can inspect the variable type using the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>t</mi><mi>y</mi><mi>p</mi><mi>e</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(type()\)"}</annotation></semantics></math>&nbsp;</p>
+<p>command. Run the code below.</p>
+<h4 id="code-example-3">Code example 3</h4>
+<div>
+<div>
+<pre><code class="language-Python">x = 10
+type(x)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">int
+</code></pre>
+</div>
+</div>
+<p><strong>Assign a floating point number (eg. 1.3) and then a string (eg. “hello”) for&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x\)"}</annotation></semantics></math>&nbsp;</strong></p>
+<p><strong>and run the above code. Observe the output.</strong></p>
+<hr>
+<h3 id="lists">Lists</h3>
+<p><em>List</em>&nbsp;is the most versatile and common data type in Python. Lists can contain values of different types. The syntax for creating lists in Python is list_name = [item_0, item_1, …, item_n].&nbsp;<strong>Try the following code:</strong></p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre><code class="language-Python">mylist = [1, 5, 2.57, 'abc', 4.09]
+print(type(mylist))   # prints the type
+print(mylist)   # prints the entire list
+print("Length of the list is: ", len(mylist))
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">&lt;class 'list'&gt;
+[1, 5, 2.57, 'abc', 4.09]
+Length of the list is:  5
+</code></pre>
+</div>
+</div>
+<p>List indexing starts from&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>&nbsp;and ends with&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>−<!-- − --></mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(-1\)"}</annotation></semantics></math>.&nbsp;The index of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>−<!-- − --></mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(-1\)"}</annotation></semantics></math>&nbsp;</p>
+<p>represents the last element.</p>
+<p><strong>Experiment with the following code:</strong></p>
+<h4 id="code-example-5">Code example 5</h4>
+<div>
+<div>
+<pre><code class="language-Python"># indexing
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+
+print(numbers[0])
+print(numbers[3])
+print(numbers[-1])    # last element
+print(numbers[-2])    # can you guess the result?
+</code></pre>
+</div>
+</div>
+<p>Your output will look similar to what’s below:</p>
+<div>
+<div>
+<pre><code class="language-Python">1
+4
+8
+7
+</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="tuple-data-type">Tuple data type</h3>
+<p>A tuple is like a list, but the items cannot be changed once initiated. Indexing rules are similar to lists.</p>
+<p><strong>Syntax</strong>: tuple_name = (item_1, item_2, …., item_n)</p>
+<p><strong>Try the following code:</strong></p>
+<h4 id="code-example-6">Code example 6</h4>
+<div>
+<div>
+<pre><code class="language-Python">states = ('VIC', 'NSW', 'QLD', 'WA', 'ACT', 'NT', 'TAS', 'SA')
+print(type(states))
+print(states)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">&lt;class 'tuple'&gt;
+('VIC', 'NSW', 'QLD', 'WA', 'ACT', 'NT', 'TAS', 'SA')
+</code></pre>
+</div>
+</div>
+<p>If you executed all this code (Code examples 1 to 6) within a single instance (or cell) of the IDE Jupyter notebook, all previously declared variables are still accessible to new code. So, let’s try to use the previously declared list&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(numbers\)"}</annotation></semantics></math>&nbsp;with the new tuple&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(states\)"}</annotation></semantics></math>&nbsp;we declared just now.</p>
+<p class="note2">If the previous sentence made no sense to you, then consider taking some beginners lessons in Python and programming concepts. We have collected a range of resources for you. Try one of the beginner items in the <a href="https://rl.talis.com/3/deakin/lists/61C9F91F-A76D-C71F-2F68-60252F7AE953.html" target="_blank" rel="noopener noreferrer">Resources</a>&nbsp;list. <a href="https://safarijv.auth0.com/authorize?client_id=UtNi1m1IRXgzYFIwZrhSxell9EDRaL2v&amp;response_type=code&amp;connection=Deakin&amp;redirect_uri=https://www.safaribooksonline.com/complete/auth0-oauth2/&amp;state=/library/view/-/9781491919521/?ar">“Head first Python”</a><a href="https://learning.oreilly.com/library/view/head-first-python/9781491919521/?ar=" target="_blank" rel="noopener noreferrer">&nbsp;</a>is a visual learning online text course (so install Anaconda first) while <a href="https://www.datacamp.com/courses/intro-to-python-for-data-science" target="_blank" rel="noopener noreferrer">Datacamp</a>&nbsp;is an interactive real-time learning method.</p>
+<p><strong>Try the following code.</strong>&nbsp;In this we will change both the value of the list&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi><mi>u</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>r</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(numbers\)"}</annotation></semantics></math>&nbsp;and the tuple&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>e</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(states\)"}</annotation></semantics></math>.&nbsp;</p>
+<h4 id="code-example-7">Code example 7</h4>
+<div>
+<div>
+<pre><code class="language-Python">numbers[2] = 32.56
+#states[2] = 'Idontknow'
+print(numbers)
+print(states)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">[1, 2, 32.56, 4, 5, 6, 7, 8]
+('VIC', 'NSW', 'QLD', 'WA', 'ACT', 'NT', 'TAS', 'SA')
+</code></pre>
+</div>
+</div>
+<p><strong>Try uncommenting the second line and running it. What’s the output?</strong></p>
+<hr>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Dictionaries are similar to lists, except that each element is a key-value pair. The syntax for dictionaries is {key1 : value1, …}.</p>
+<p>Note that the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>v</mi><mi>a</mi><mi>l</mi><mi>u</mi><mi>e</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(values\)"}</annotation></semantics></math>&nbsp;can be of any type, even another dictionary. You can access and manipulate the values of a dictionary using its&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mi>e</mi><mi>y</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(keys\)"}</annotation></semantics></math>.</p>
+<p><strong>Try the following code:</strong></p>
+<h4 id="code-example-8">Code example 8</h4>
+<div>
+<div>
+<pre><code class="language-Python">dict = {} 
+dict['one'] = "This is one" 
+dict[2] = "This is two" 
+
+print(dict['one'])
+print(dict)
+dict['one'] = "One has changed"
+print(dict['one'])
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">This is one
+{'one': 'This is one', 2: 'This is two'}
+One has changed
+</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="strings">Strings</h3>
+<p>Strings are used to store text and have the same indexing rules as lists and tuples. Let’s try an example.</p>
+<p><strong>Run the code below:</strong></p>
+<h4 id="code-example-9">Code example 9</h4>
+<div>
+<div>
+<pre><code class="language-Python">str = "Monty Python and the flying circus!"
+
+print(str)          # Prints complete string 
+print(str[0])       # Prints first character of the string 
+print(str[2:5])     # Prints characters starting from 3rd to 5th 
+print(str[2:])      # Prints string starting from 3rd character 
+print(str * 2)      # Prints string two times
+print(str + "TEST") # Prints concatenated string 
+</code></pre>
+</div>
+</div>
+<p>The numbers relate to the index of the letters. The index is the numerical position of characters in the string starting at 0. In this example, index 0 = M.</p>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Monty Python and the flying circus!
+M
+nty
+nty Python and the flying circus!
+Monty Python and the flying circus!Monty Python and the flying circus!
+Monty Python and the flying circus!TEST
+</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="slicing-with-lists-and-strings">Slicing with Lists and Strings</h3>
+<p>You can extract a part of a list/string using the syntax [start:stop], which extracts characters between index start and stop.</p>
+<h4 id="code-example-10">Code example 10</h4>
+<div>
+<div>
+<pre><code class="language-Python"># slicing
+l = [1, 2, 3, 4, 5, 6, 7, 8]
+s = "This is a string."
+
+print(l[2:5])
+print(s[0:6])
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">[3, 4, 5]
+This i
+</code></pre>
+</div>
+</div>
+<p>You can define a step for slicing as in [start:stop:step]. Lets examine what it does:</p>
+<h4 id="code-example-11">Code example 11</h4>
+<div>
+<div>
+<pre><code class="language-Python"># [start:stop:step]
+print(s[2:10:1])
+print
+
+# These two are equal
+print(s[0:10:2])
+print(s[:10:2])
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">is is a 
+
+Ti sa
+Ti sa
+</code></pre>
+</div>
+</div>
+<p>Slicing can be a negative value as well. Try the following example:</p>
+<h4 id="code-example-11-1">Code example 11</h4>
+<div>
+<div>
+<pre><code class="language-Python">print(s[10:2:-1])
+print
+
+# reversing a list or string
+print(s[::-1])
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">s a si s
+
+.gnirts a si sihT
+</code></pre>
+</div>
+</div>
+<p><strong>Define a string with value equal to “Python is fun!”.</strong>&nbsp;How can you print every third character of this string?</p>
+<h2 id="your-task">Activity</h2>
+<p>We’ve covered a lot of ground in this lesson. Make sure that you have experimented with all the individual learning activities. Run the code yourself so that you are confident in how Python variables work.</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_LiveRegion" aria-live="assertive" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_HoverRegion" style="background-color: white;">
+<div style="line-height: 0;"></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div>
+<div class="MJX_ToolTip" style="background-color: white;">
+<div></div>
+</div></body></html>

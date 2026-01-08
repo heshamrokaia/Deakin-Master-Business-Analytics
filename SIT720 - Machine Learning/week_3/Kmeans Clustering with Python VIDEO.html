@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"><link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body class="cloudFirst"><h1>Kmeans Clustering with Python</h1>
+<div>
+<p>K-means clustering is a method for finding clusters and cluster centres in a set of unlabelled data.</p>
+<p>Watch the video and follow the Python code to understand how to implement KMeans clustering using the Scikit learn package.</p>
+<p>Intuitively, we can think of a cluster as comprising a group of data points whose distances within the cluster are small compared with the distances to points outside of the cluster.</p>
+<p>The Scikit learn package contains an <a href="http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html" target="_blank" rel="noopener noreferrer">implementation for KMeans</a>.</p>
+<h2>KMeans</h2>
+<p><img src="File_d55bfee446fb4ef295950c50271275a5_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<h2 class="centerImage">Load CSV file for KMeans clustering</h2>
+<p>Download &nbsp;<a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3833845" target="_blank" rel="noopener">digitdata0.csv</a> and <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=content&amp;rcode=DeakinUniversity-3833846" target="_blank" rel="noopener">digitData1.csv</a></p>
+<pre class="line-numbers d2l-code"><code class="language-python">import pandas as pd
+import numpy as np
+digit_zero=pd.read_csv("data/digitData0.csv",header=None)
+digit_one=pd.read_csv("data/digitData1.csv",header=None)
+digit_zero.shape
+digit_zero.head()</code></pre>
+<p>The output of the code is as follows:</p>
+<p><img src="File_b24b4a46e0924770b488d68935e205f9_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<h2 id="Seperating-feature-set-and-creating-a-ground-truth-for-clustering-model">Merge two data frames and rename the header name&nbsp;</h2>
+<pre class="line-numbers d2l-code d2l-code-dark"><code class="language-python">Feature_set=pd.concat([digit_zero,digit_one],join="inner")
+</code></pre>
+<p></p>
+<p></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<h3 id="Creating-target-as-a-ground-truth-of-KMean-clustering">Target as a ground truth of KMean clustering</h3>
+<pre class="line-numbers d2l-code"><code class="language-python">cols=["feature_"+str(i+1) for i in range(Feature_set.shape[1]-1)]
+cols.append("Target")
+Feature_set.columns=cols
+
+Feature_set.head()</code></pre>
+<p>The output of the above code:</p>
+<p><img src="File_106a03d8b42d4da290ec4c7ed5191ab9_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<p class="centerImage"></p>
+<h2 id="How-to-define-number-of-cluter,K?">How to define a number of clusters, K?</h2>
+<p><strong><span style="color: rgb(32, 33, 34);"><em>Elbow method</em></span></strong><br><span style="color: rgb(32, 33, 34);">The elbow method shows the optimum k value from a range of values using distance metrics.</span></p>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+
+from yellowbrick.cluster import KElbowVisualizer
+
+X=Feature_set.iloc[:,0:-1]
+y=Feature_set.iloc[:,-1]
+
+# Instantiate the clustering model and visualizer
+model = KMeans()
+visualizer = KElbowVisualizer(
+    model, k=(2,12), metric='distortion', timings=False
+) #distortion same as Euclidean distance
+
+visualizer.fit(X)        # Fit the data to the visualizer
+visualizer.show() </code></pre>
+<p class="centerImage">The output of the above code is as follows:</p>
+<p class="centerImage"><img src="File_36e1ac52be244b90bc418b01d94666f4_image.png" width="588" height="404"></p>
+<p>To be continue..</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p><script>
+function localProc(){
+  console.log("ready!");
+}
+</script></p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

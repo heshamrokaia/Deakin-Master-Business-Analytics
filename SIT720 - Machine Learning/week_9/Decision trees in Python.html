@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Decision%20trees%20in%20Python%20image%201.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<h1>Decision trees in Python</h1>
+<div>
+<p>Decision tree learning uses a decision tree as a predictive model which maps&nbsp;<em>observations</em>&nbsp;about an item to&nbsp;<em>conclusions</em>&nbsp;about the item’s target value. It is one of the predictive modelling approaches used in statistics, data mining and machine learning.</p>
+<p>In this practical, we will use the <a href="http://scikit-learn.org/stable/" target="_blank" rel="noopener noreferrer">sklearn library</a>&nbsp;and the popular&nbsp;<em>Titanic dataset</em>&nbsp;that predicts whether a passenger survived. We use a cleaned up and reduced version of the original dataset.</p>
+<p>As the&nbsp;<a href="https://en.wikipedia.org/wiki/Decision_tree_learning">wikipedia page on&nbsp;<em>Decision tree learning</em></a>&nbsp;defines it:</p>
+<blockquote>
+<p>Tree models where the target variable can take a finite set of values are called classification trees. In these tree structures,&nbsp;<em>leaves</em>&nbsp;represent class labels and&nbsp;<em>branches</em>&nbsp;represent conjunctions of features that lead to those class labels. Decision trees where the target variable can take continuous values (typically real numbers) are called regression trees.</p>
+</blockquote>
+<p>Please <a href="https://cloudstor.aarnet.edu.au/plus/s/W5FHmp5043fpNli/download" target="_blank" rel="noopener noreferrer">download the&nbsp;Titanic_cleaned_data.csv</a>&nbsp;dataset, rename and store in a suitable location.</p>
+<p>Lets start by importing the libraries</p>
+<h4 id="code-example-1">Code example #1</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn import tree
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+</code></pre>
+</div>
+</div>
+<p>Our cleaned up dataset is in the data directory:</p>
+<h4 id="code-example-2">Code example #2</h4>
+<div>
+<div>
+<pre><code class="language-Python">titanic_df = pd.read_csv("data/Titanic_cleaned_data.csv")
+titanic_df.head()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/Decision%20trees%20in%20Python%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<br>
+<p>Which displays data such as:&nbsp;</p>
+<p>In this data, the features are:</p>
+<ul>
+<li>Survived: 0=died, 1=survived (response variable)</li>
+<li>Pclass: 1=first class, 2=second class, 3=third class</li>
+<li>Sex: 0=female, 1=male</li>
+<li>Age: numeric value</li>
+<li>Embarked: C or Q or S - binary values for port of embarking.</li>
+</ul>
+<h4 id="code-example-3">Code example #3</h4>
+<p>We now split our data into features (X) and response (y)</p>
+<div>
+<div>
+<pre><code class="language-Python"># define X and y
+feature_cols = ['Pclass', 'Sex', 'Age', 'Embarked_Q', 'Embarked_S']
+X = titanic_df[feature_cols]
+y = titanic_df.Survived
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-4">Code example #4</h4>
+<p>Lets split the data into 70% training and 30% testing. The random_state argument takes in an integer value. This is for repeatability of results.</p>
+<div>
+<div>
+<pre><code class="language-Python">Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, test_size=0.3, random_state=42)
+</code></pre>
+</div>
+</div>
+<p>We use the <a href="http://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html" target="_blank" rel="noopener noreferrer">DecisionTreeClassifier</a>&nbsp;in sklearn to fit a decision tree to our data. We specify the maximum depth of the tree to be constructed as 5, initially.</p>
+<h4 id="code-example-5">Code example #5</h4>
+<div>
+<div>
+<pre><code class="language-Python"># fit a classification tree with max_depth=5
+from sklearn.tree import DecisionTreeClassifier
+treeclf = DecisionTreeClassifier(max_depth=5, random_state=1)
+
+# Fit our training data
+treeclf.fit(Xtrain, ytrain)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=5,
+           max_features=None, max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, presort=False, random_state=1,
+           splitter='best')
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>Lets look at our training and testing accuracy:</p>
+<h4 id="code-example-6">Code example #6</h4>
+<div>
+<div>
+<pre><code class="language-Python">print("Training accuracy: {}".format(accuracy_score(ytrain, treeclf.predict(Xtrain))))
+print("Testing accuracy : {}".format(accuracy_score(ytest, treeclf.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Training accuracy: 0.852327447833
+Testing accuracy : 0.772388059701
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h3 id="impact-of-tree-depth-on-accuracy">Impact of tree depth on accuracy</h3>
+<p>Lets do a 10-fold cross validation to find the average accuracy. We will use the cross_validation library from sklearn to help us with this.</p>
+<h4 id="code-example-7">Code example #7</h4>
+<div>
+<div>
+<pre><code class="language-Python"># use crossvalidation to get avg accuracy
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(treeclf, Xtrain, ytrain, cv=10, scoring='accuracy')
+print("Accuracy for each fold: {}".format(scores))
+print("Mean Accuracy: {}".format(np.mean(scores)))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Accuracy for each fold: [0.75 0.77777778 0.87096774 0.87096774 0.79032258 0.75806452 &gt;0.79032258 0.72580645 0.79032258 0.88709677]
+Mean Accuracy: 0.801164874552
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>To plot effect of tree-size on accuracy, we build 10 decision trees each with corresponding&nbsp;<code>max_depth = 1,2,3...,10</code>. We do a 10-fold cross-validation for each tree, and get the mean accuracy.</p>
+<h4 id="code-example-8">Code example #8</h4>
+<div>
+<div>
+<pre><code class="language-Python">from sklearn.model_selection import validation_curve
+
+# depth takes values from 1 to 10
+max_depth_range = range(1, 11)
+
+# do 10-fold cross-validation for each value in max_depth_range and return the accuracy scores. 
+train_scores, valid_scores = validation_curve( treeclf, Xtrain, ytrain, param_name="max_depth", param_range=max_depth_range,
+    cv=10, scoring="accuracy")
+
+#Size of train_scores will be: length of parameter (max_depth_range) X number of folds
+print(train_scores.shape)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">   (10, 10)
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-9">Code example #9</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Mean accuracy score for each value of max-depth
+mean_train_score = np.mean(train_scores, axis=1)
+mean_val_score   = np.mean(valid_scores, axis=1)
+
+plt.plot(max_depth_range, mean_train_score, color="blue", linewidth=1.5, label="Training")
+plt.plot(max_depth_range, mean_val_score, color="red", linewidth=1.5, label="Validation")
+plt.legend(loc="upper left")
+plt.xlabel("Tree-depth")
+plt.ylabel("Model Accuracy")
+plt.title("Accuracy comparison of training/validation set")
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">   Text(0.5,1,'Accuracy comparison of training/validation set')
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/Decision%20trees%20in%20Python%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>FIgure: plot that results from using the overfit approach</h5>
+<p>From the plot, we can see that as the depth of the tree increases, the decision tree starts to overfit. The best value of max_depth is 3.</p>
+<h4 id="code-example-10">Code example #10</h4>
+<div>
+<div>
+<pre><code class="language-Python">treeclf = DecisionTreeClassifier(max_depth=3)
+treeclf.fit(Xtrain,ytrain)
+print("Training accuracy: {}".format(accuracy_score(ytrain, treeclf.predict(Xtrain))))
+print("Testing accuracy : {}".format(accuracy_score(ytest, treeclf.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Output:</p>
+<div>
+<div>
+<pre><code class="language-Python">   Training accuracy: 0.829855537721
+   Testing accuracy : 0.805970149254
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p>To visualize the decision tree, you can use the code available in <a href="http://scikit-learn.org/stable/modules/tree.html" target="_blank" rel="noopener noreferrer">scikit learn documentation for decision tree</a>. However, you will have to install graphviz, pydot and pyparsing modules using the “pip install” command.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<h4 id="reference">Reference</h4>
+<p>Wikipedia contributors 2018, <a href="https://en.wikipedia.org/w/index.php?title=Decision_tree_learning&amp;oldid=856803699" target="_blank" rel="noopener noreferrer">Decision tree learning</a>. In Wikipedia, The Free Encyclopedia, viewed 6 September 2018.</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<div>
+<h3>SEE ALSO</h3>
+<ul>
+<li><a href="https://nbviewer.jupyter.org/github/justmarkham/DAT8/blob/master/notebooks/17_decision_trees.ipynb" target="_blank" rel="noopener noreferrer">DECISION TREES IN PYTHON</a></li>
+</ul>
+</div>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;"></div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

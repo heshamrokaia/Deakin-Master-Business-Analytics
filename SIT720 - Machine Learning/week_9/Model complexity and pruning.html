@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Model%20complexity%20and%20pruning%20image%201.jpg" alt="Pruning roses Pruning rose bushes with secateurs." title="Pruning roses Pruning rose bushes with secateurs." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Model complexity and pruning</h1>
+</div>
+<div>
+<p><em>Pruning</em>&nbsp;is a technique that reduces the size of decision trees by removing sections of tree that provide little power to classify instances.</p>
+<p>The tree-building process that we described in previous steps may produce good predictions on the training set, but it’s likely to&nbsp;<em>overfit</em>&nbsp;the data, leading to poor&nbsp;<em>generalization performance</em>.</p>
+<ul>
+<li>A tree that has a&nbsp;<em>large</em>&nbsp;number of regions may have only few data points per region resulting in&nbsp;<em>high variance</em>.</li>
+<li>On the other hand, having a&nbsp;<em>small</em>&nbsp;number of regions may result in&nbsp;<em>high bias</em>.</li>
+<li>One possible alternative is to grow a large tree, and then&nbsp;<em>prune it back</em>in order to obtain a subtree.</li>
+</ul>
+<p>Generally there are several ways of pruning trees:</p>
+<ul>
+<li>Pre-pruning (forward pruning)</li>
+<li>Post-pruning (backward pruning)</li>
+</ul>
+<h3 id="pre-pruning">Pre-pruning</h3>
+<p>In pre-pruning, we decide during the building process when to&nbsp;<em>stop adding nodes</em>&nbsp;(eg. by looking at entropy).</p>
+<p>Let’s say we are splitting nodes by checking the amount of entropy reduction when we select different features. We can stop splitting nodes when the entropy reduction is not significant. By using this method we are eliminating an unnecessary complexity on the model. However, this may be problematic.</p>
+<p>Sometimes attributes individually do not contribute much to a decision, but&nbsp;<em>combined</em>, they may have a significant impact.</p>
+<p>Let’s discuss another model which can handle this problem.</p>
+<h3 id="post-pruning">Post-pruning</h3>
+<p>Post-pruning waits until the full decision tree has been built and then prunes the attributes by&nbsp;<em>subtree Replacement</em>. Consider the selected subtree (in red) in the figure below. We can easily replace an entire subtree with a single region or node. We need to check that this reproduces the smallest error.</p>
+<p class="centerImage"><img src="../images/Model%20complexity%20and%20pruning%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Post-pruning. Source (<a href="http://www.saedsayad.com/decision_tree_overfitting.htm" target="_blank" rel="noopener noreferrer">Sayad 2018</a>)</h5>
+<p>Check which subtree removal introduces the smallest error and replace it with a single leaf node.</p>
+<p>As the figure shows, you wait until the full decision tree has been built, then go for subtrees and check whether you can replace it with a single node or feature, while incurring only a small amount of change in Entropy.</p>
+<p>If yes, trim the tree. If not, you should keep that subtree because it probably has useful information.</p>
+<h2 id="your-task">Activity</h2>
+<p>Can you identify any relationships between the need for pruning and over-fitting?</p>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<h4 id="references">References</h4>
+<p>Sayad, S 2018, <a href="http://www.saedsayad.com/decision_tree_overfitting.htm" target="_blank" rel="noopener noreferrer">Decision Tree - Overfitting</a>, viewed 4 September 2018.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

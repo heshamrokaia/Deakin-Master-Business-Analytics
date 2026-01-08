@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"><script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Theory%20of%20KNN%20image%201.jpg" alt="Singled Out Group of Table Tennis Balls bouncing. The One orange ball is higher than the white balls." title="Singled Out Group of Table Tennis Balls bouncing. The One orange ball is higher than the white balls." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Theory of KNN</h1>
+</div>
+<div>
+<p>But lets have a close look into KNN. Assume an arbitrary data point is represented as:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mspace linebreak="newline"></mspace><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mo>=</mo><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>d</mi></msub><mo stretchy="false">]</mo><mo>∈<!-- ∈ --></mo><mtext>&nbsp;</mtext><msup><mi>R</mi><mi>d</mi></msup><mspace linebreak="newline"></mspace></mstyle><annotation encoding="latex">{"version":"1.1","math":"\\ \textbf{x} = [x_1,x_2,...,x_d] \in \ R^d \\"}</annotation></semantics></math>&nbsp;</p>
+<p>Recall the Euclidean distance between data points:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mspace linebreak="newline"></mspace><mi>d</mi><mi>i</mi><mi>s</mi><mi>t</mi><mo stretchy="false">(</mo><msub><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>i</mi></msub><mo>,</mo><msub><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="bold">x</mtext></mrow><mi>j</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msqrt><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>r</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>d</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>r</mi></mrow></msub><mo>−<!-- − --></mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mi>r</mi></mrow></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></msqrt><mspace linebreak="newline"></mspace></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\\ dist(\textbf{x}_i,\textbf{x}_j) = \sqrt{\sum_{r=1}^{d} (x_{ir} - x_{jr})^2} \\\)"}</annotation></semantics></math></p>
+<p>For finding the majority of decisions based on the close training points, you need to perform average or mean in continuous cases and you need to find the&nbsp;<em>mode</em>&nbsp;of the class labels in discrete format. To summarise:</p>
+<ul>
+<li><strong>Continuous valued target function</strong>:<br><strong>Mean value</strong>&nbsp;of the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;nearest training examples</li>
+<li><strong style="font-family: Lato, sans-serif; font-size: 0.95rem;">Discrete class label</strong><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">:</span></li>
+</ul>
+<strong style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Mode of the class labels</strong><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;of the&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;nearest training examples</span><br style="font-size: 0.95rem;">
+<p>There is another concept partially related to KNN which is called a&nbsp;&nbsp;<em>Voronoi Diagram</em>. In mathematics, a Voronoi diagram is partitioning of a plane into regions based on distance to points in a specific subset of the plane. Have a look at the following figure.</p>
+<p class="centerImage"><img src="../VornoiDiagram.png" alt="Vornoi Diagram" title="Vornoi Diagram" width="409" height="202"></p>
+<p class="centerImage">Figure.&nbsp;Voronoi diagram.</p>
+<p class="centerImage">As a Voronoi diagram, you can see it is based on closest neighbours; the same concept as KNN. Also clearly the data is not linearly separable and it results in complex boundaries and decision rules. Remember that the decision surface is formed by the training examples.</p>
+<p>Imagine a scenario in which we are performing&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>10</mn><mo>−<!-- − --></mo><mi>N</mi><mi>N</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(10-NN\)"}</annotation></semantics></math>&nbsp;(10&nbsp;<em>Nearest Neighbours</em>), and the only real close points are&nbsp;&nbsp;points. The other&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>6</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(6\)"}</annotation></semantics></math>&nbsp;neighbours we are going to analyse are not really related to this point. The final result actually could be misleading!</p>
+<p>But, what if we assign a different weights to distances of data points? So the question here is what is a&nbsp;&nbsp;<em>distance-weighted</em>&nbsp;nearest neighbour algorithm?</p>
+<p>Basically we can&nbsp;<em>assign</em>&nbsp;weights to the neighbours based on their&nbsp;<em>distance</em>f rom the test point. For example, weight may be inverse square of the distances.</p>
+<p>This means the&nbsp;<em>higher the distance</em>&nbsp;of the neighbour, the&nbsp;<em>lower its weight</em>. All training points may influence a particular instance. This method is also known as&nbsp;<em>Shepard’s method</em>.</p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=f3828c64-922e-438b-ba89-afe70122a078&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">
+<p class="transcript__para">SPEAKER: In this tutorial, we're going to explain to you about the k-nearest neighbour classification. As the first step, we have an arbitrary data point, which is represented as vector x, which has d dimensions, x-1 to x-d. If you remember, the Euclidean distance between two data points, which is defined something like this, in k-nearest neighbour classification when a new point comes in, you're going to find the labels of the k nearest or closest neighbours to this data point. In case we're dealing with discrete class labels, if you're going to use them mode of the class labels of k-nearest training examples. For example, in here we have three data points from class red and we have one from class blue.</p>
+<p class="transcript__para">So the final decision for the label of this point is red. On the other hand, when we're dealing with continuous value target functions you're going to need to return the mean value of the k-nearest training examples as the final value for our test point. Also, there is another way of using KNN, or k-nearest neighbour, which is called distance-weighted nearest neighbour algorithm. So in this method, we are assigned weights to the neighbours based on their distance from the test point. For example, weight may be inverse square of the distances, which means the higher the distance, the lower is weight. Consider this image.</p>
+<p class="transcript__para">We have one test point, and we have three close data from the red class, and we have six in here, which is twice of these points, but they are in class blue. So what do you think you should return as a class label of this data point? In ordinary KNN, or k-nearest neighbour, we're going to return blue. Of course, if k, the number of neighbours, is 10 or 9 because we have 9 neighbours right now. But this method, which is also called Shepard's method, believes that we should return red because as we said, the higher the distance, the lower is weight. So the influence of these points are much lower than these points.</p>
+<p class="transcript__para">So we're going to return the class level red for this data point. So all training points may influence a particular instance, but in this method based on the distance, we're going to put some weights on these data points. So this model is also known as Shepard's method. It has been proved that this method can be more accurate than KNN in some test cases.</p>
+</article>
+<h2 id="your-task">Activity</h2>
+<p>The following video explores Voronoi diagrams further:</p>
+<div style="font-size: 0.95rem;">
+<p class="centerVideo"><iframe id="ytplayer" src="https://www.youtube.com/embed/b_uvofsYl9s?modestbranding=1&amp;rel=0&amp;start=0&amp;wmode=opaque" type="text/html" frameborder="0"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p></p>
+<p>Can we use other distance metrics in KNN? Please share your answers in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener" class="kalmod-7432491-4">Student Discussion</a>.</p>
+<span face="Lato, sans-serif" style="font-family: Lato, sans-serif;"><span style="font-size: 15.2px;"><br></span></span></div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

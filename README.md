@@ -43,6 +43,7 @@
 - [SIT708 - Mobile Systems Development](SIT708%20-%20Mobile%20Systems%20Development)
 - [SIT718 - Real World Analytics](SIT718%20-%20Real%20World%20Analytics)
 - [SIT719 - Analytics For Security And Privacy](SIT719%20-%20Analytics%20For%20Security%20And%20Privacy)
+- [SIT720 - Machine Learning](SIT720%20-%20Machine%20Learning)
 - [SIT725 - Software Engineering](SIT725%20-%20Software%20Engineering)
 - [SIT737 - Service Oriented Architectures and Technologies](SIT737%20-%20Service%20Oriented%20Architectures%20and%20Technologies)
 - [SIT740 - Research and Development in Information Technology](SIT740%20-%20Research%20and%20Development%20in%20Information%20Technology)

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Preliminaries%20image%201.jpg" alt="An intricate arrangement of multi colored lines and dots" title="An intricate arrangement of multi colored lines and dots" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Preliminaries</h1>
+</div>
+<div>
+<p>The goal of PCA is to take&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(n\)"}</annotation></semantics></math>&nbsp;data points in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>d</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(d\)"}</annotation></semantics></math>&nbsp;dimensions, which may be correlated, and summarises them by a new set of uncorrelated axes.</p>
+<p>The uncorrelated axes are called&nbsp;<em>principal components</em>&nbsp;or principal axes. These axes are&nbsp;<em>linear combinations</em>&nbsp;of the original&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>d</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(d\)"}</annotation></semantics></math>&nbsp;dimensions. The first&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;components capture as much of the variation (or variance) among the data points as possible.</p>
+<p>But first, lets see how to define variance across each variable.</p>
+<h3 id="variance-across-each-variable">Variance across each variable</h3>
+<p>Data is represented as a cloud of points in a multidimensional space with one axis for each of the variables. The centroid of the points is defined by the mean of each variable. The variance of each variable&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>j</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(j\)"}</annotation></semantics></math>&nbsp;&nbsp;is the average squared deviation of its&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(n\)"}</annotation></semantics></math>&nbsp;values around the mean of that variable:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−<!-- − --></mo><mn>1</mn></mrow></mfrac><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mi>x</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>j</mi></mrow></msub><mo>−<!-- − --></mo><msub><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">¯<!-- ¯ --></mo></mover></mrow><mi>j</mi></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"C_{jj} = \frac{1}{n-1}\sum_{i=1}^{n} (x_{ij} - \bar{x}_j)^2"}</annotation></semantics></math></p>
+<h3 id="covariances-among-variables">Covariances among variables</h3>
+<p>To put it simply,&nbsp;<em>covariance</em>&nbsp;is a measure of how changes in one variable are associated with changes in a second variable. Degree to which the variables are linearly correlated is represented by their&nbsp;<em>co-variances</em>:</p>
+<p><img src="../images/Preliminaries%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h3 id="covariance-matrix">Covariance Matrix</h3>
+<p>The covariance matrix is a matrix that contains&nbsp;<em>variances</em>&nbsp;of all variables on the diagonal and&nbsp;<em>co-variances</em>&nbsp;among all pairs of variables in the off-diagonal entries. It can be written as:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>C</mi><mo>=</mo><mrow class="MJX-TeXAtom-ORD"><mo maxsize="1.623em" minsize="1.623em">(</mo></mrow><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−<!-- − --></mo><mn>1</mn></mrow></mfrac><mrow class="MJX-TeXAtom-ORD"><mo maxsize="1.623em" minsize="1.623em">)</mo></mrow><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−<!-- − --></mo><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">¯<!-- ¯ --></mo></mover></mrow><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−<!-- − --></mo><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">¯<!-- ¯ --></mo></mover></mrow><msup><mo stretchy="false">)</mo><mi>T</mi></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"C = \Big( \frac{1}{n-1}\Big)\sum_{i=1}^{n} (x_i - \bar{x})(x_i - \bar{x})^T"}</annotation></semantics></math></p>
+<p>Let us say&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−<!-- − --></mo><mrow class="MJX-TeXAtom-ORD"><mover><mi>x</mi><mo stretchy="false">¯<!-- ¯ --></mo></mover></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(y_i = x_i - \bar{x}\)"}</annotation></semantics></math>, and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mrow><mo>[</mo><mtable rowspacing="0.7em 0.7em 0.7em" columnspacing="1em"><mtr><mtd><msubsup><mi>y</mi><mn>1</mn><mi>T</mi></msubsup></mtd></mtr><mtr><mtd><mo>⋮<!-- ⋮ --></mo></mtd></mtr><mtr><mtd><msubsup><mi>y</mi><mi>n</mi><mi>T</mi></msubsup></mtd></mtr></mtable><mo>]</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\begin{bmatrix} y_1^T \\[0.3em] \vdots\\[0.3em] y_n^T\\[0.3em] \end{bmatrix}\)"}</annotation></semantics></math>, then&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>C</mi><mo>=</mo><mrow class="MJX-TeXAtom-ORD"><mo maxsize="1.623em" minsize="1.623em">(</mo></mrow><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−<!-- − --></mo><mn>1</mn></mrow></mfrac><msup><mi>Y</mi><mi>T</mi></msup><mi>Y</mi><mrow class="MJX-TeXAtom-ORD"><mo maxsize="1.623em" minsize="1.623em">)</mo></mrow></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(C = \Big(\frac{1}{n-1} Y^T Y \Big)\)"}</annotation></semantics></math></p>
+<h3 id="pca-decorrelation">PCA: decorrelation</h3>
+<p>The main objective of PCA is to rigidly&nbsp;<em>rotate</em>&nbsp;the axes of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>t</mi><mo>−<!-- − --></mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(t-\)"}</annotation></semantics></math>dimensional axes to a&nbsp;<em>new set of axes</em>&nbsp;(called principal axes) that have the following properties:</p>
+<ul>
+<li>Ordered such that principal axis- captures&nbsp;<em>the highest variance</em>, axis-2 captures&nbsp;<em>the next highest variance</em>, …. , and axis<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>−<!-- − --></mo><mi>d</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(-d\)"}</annotation></semantics></math>&nbsp; has the&nbsp;<em>lowest variance</em></li>
+<li>Covariance among each pair of the principal axes is&nbsp;<em>zero</em>&nbsp;(the principal axes are uncorrelated i.e. they are orthogonal to each other). This is called&nbsp;<em>decorrelation</em>&nbsp;property</li>
+</ul>
+<h1 id="your-task"><span style="color: rgb(96, 56, 255);">Activity</span></h1>
+<p>Watch the following video to explore these concepts further. Share any feedback or questions in the discussion forum.</p>
+<p></p>
+<div>
+<p class="centerVideo"><iframe width="648" height="365" src="https://www.youtube.com/embed/FgakZw6K1QQ?wmode=opaque" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p>
+</div></body></html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css" type="text/css"><link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/Using%20PCA%20to%20Remove%20Correlation%20in%20Data%20image%201.jpg" alt="bisazza background texture - mosaic of marble tiles XXXL orthogonal arranged" title="bisazza background texture - mosaic of marble tiles XXXL orthogonal arranged" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Curse of Dimensionality</h1>
+<pre class="line-numbers d2l-code"><code class="language-python">import matplotlib.pyplot as plt
+import seaborn as sns
+def euclidean_distance(p1, p2):
+    p1, p2 = np.array(p1), np.array(p2) #Ensure p1/p2 are NumPy Arrays
+    return np.sqrt(np.sum(np.square(p2-p1)))
+%matplotlib inline
+sns.set_style('darkgrid')
+avg_distances = []
+for n in range(2, 100):
+    avg_distances.append(np.mean([euclidean_distance(np.random.randint(low=-100, high=100, size=n), [0 for i in range(n)]) for p in range(500)]))
+plt.figure(figsize=(10,10))
+plt.plot(range(2,100), avg_distances,'bs-')
+plt.plot( np.diff(avg_distances),'ro-')
+plt.xlabel('Number of dimensions')
+plt.ylabel('Euclidean Distance')
+plt.show()</code></pre>
+<p>Curse of dimensionality:</p>
+<p><img src="File_f56348d943dc4361b28bea4e1322350f_image.png" width="543" height="507" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h1></h1>
+<h1>Using PCA to Remove Correlation in Data</h1>
+<div id="comments-link-heading"></div>
+</div>
+<div>
+<p>As a first step, let's try to apply PCA in removing correlations from simple 2D data. This data has one direction of large variation and one of smaller variation.</p>
+<p>Let’s assume our data is stored in the file <a href="../data.csv" target="_blank" rel="noopener">data.csv</a>. Let's read this and plot it.</p>
+<h4 id="code-example-1">Code example #1</h4>
+<p>We do that with the following Python code:</p>
+<div>
+<div>
+<pre><code class="language-Python">data = pd.read_csv('data/data.csv', delimiter=",", header=None).values
+print(data.shape)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">(50, 2)
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-2">Code example #2</h4>
+<p>Let’s visualise this data.</p>
+<div>
+<div>
+<pre><code class="language-Python">plt.plot(data[:,0],data[:,1], '.', markersize=14)
+plt.axis('equal');
+plt.title('Original Data')
+plt.show()
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<p class="centerImage"><img src="../images/Using%20PCA%20to%20Remove%20Correlation%20in%20Data%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5></h5>
+<p>We can see that two columns in data are correlated. Our goal is to remove this correlation by projecting (representing) this data onto a new set of axis (principal components).</p>
+<p>We now proceed with Implementing PCA using the following steps:</p>
+<ol>
+<li>normalise the data</li>
+<li>compute the covariance matrix of data</li>
+<li>compute the eigenvectors (U) and eigenvalues (S) of the covariance matrix.</li>
+</ol>
+<h3 id="step-1-normalising-the-data">Step 1: Normalising the data</h3>
+<p>But first, before doing PCA, we have to normalise the data. For this we subtract mean value of each feature from the dataset, and scaling each dimension so that they are in the same range.</p>
+<h4 id="code-example-3">Code example #3</h4>
+<div>
+<div>
+<pre><code class="language-Python">mu = data.mean(axis=0) # mean of each col
+sigma = data.std(axis=0)  # std dev of each col
+
+Xnorm = (data - mu)/sigma
+print (Xnorm[0:5,:])
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    [[-0.52327626 -1.59279926]
+     [ 0.46383434  0.84036357]
+     [-1.14836881 -0.58315168]
+     [-1.05407533 -1.27072671]
+     [-0.98397954 -0.81658765]]
+</code></pre>
+</div>
+</div>
+<h3 id="step-2-calculate-the-covariance-matrix-of-normalised-data">Step 2: Calculate the covariance matrix of normalised data</h3>
+<p>If&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>m</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(m\)"}</annotation></semantics></math>&nbsp;is the number of training data, calculate the covariance matrix as:&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>∑<!-- ∑ --></mo><mo>=</mo><mfrac><mn>1</mn><mi>m</mi></mfrac><mi>X</mi><mi>n</mi><mi>o</mi><mi>r</mi><msup><mi>m</mi><mrow class="MJX-TeXAtom-ORD"><mi>T</mi></mrow></msup><mi>X</mi><mi>n</mi><mi>o</mi><mi>r</mi><mi>m</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\sum=\frac{1}{m}Xnorm^{T}Xnorm\)"}</annotation></semantics></math></p>
+<h4 id="code-example-4">Code example #4</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Covariance matrix of normalized data
+m = len(Xnorm)
+covmat = np.dot(Xnorm.T, Xnorm)/m 
+print(covmat)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    [[1.        0.7355261]
+     [0.7355261 1.       ]]
+</code></pre>
+</div>
+</div>
+<h3 id="step-3-calculate-the-eigenvectors-and-eigenvalues-of-the-covariance-matrix">Step 3: Calculate the eigenvectors and eigenvalues of the covariance matrix</h3>
+<p>Now, compute the eigenvalues (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>S</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S\)"}</annotation></semantics></math>)&nbsp;and eigenvectors (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>)&nbsp;of this covariance matrix. The eigenvectors (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>)&nbsp;</p>
+<p>become the principal components. We use <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linalg.eig.html#numpy.linalg.eig" target="_blank" rel="noopener noreferrer">linalg.eig()</a>&nbsp;function from numpy: to compute the eigenvalues and eigenvectors of a square array.</p>
+<h4 id="code-example-5">Code example #5</h4>
+<div>
+<div>
+<pre><code class="language-Python">S,U = np.linalg.eig(covmat)
+
+print('Eigen values: {}'.format(S))
+print('Eigen vectors:')
+print(U)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    Eigen values: [1.7355261 0.2644739]
+    Eigen vectors:
+    [[ 0.70710678 -0.70710678]
+     [ 0.70710678  0.70710678]]
+</code></pre>
+</div>
+</div>
+<p>Here, the first column represents the first eigen-vector U1, and the second column represents U2. These are the principal components. Notice that eigenvalues S1 and S2 are arranged in decreasing order: S1 &gt; S2. Hence U1 is the direction that captures maximum variation in our given data. U2 is the next direction of variation.</p>
+<h3 id="what-does-pca-offer">What does PCA offer?</h3>
+<p>So now we found out the principal components (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>)&nbsp;the set of axis that capture the maximum variation in data. What can we do this this now?</p>
+<p>We can do the following: 1.&nbsp;<strong>Decorrelation</strong>: Project our data onto&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>&nbsp;to get decorrelated data 2.&nbsp;<strong>Dimensionality Reduction</strong>: Reduce&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>&nbsp;to contain only those axis that contain maximum information. Project our data onto this reduced&nbsp;</p>
+<p>to get new data with reduced dimensionality.</p>
+<h4 id="decorrelation">Decorrelation</h4>
+<h4 id="code-example-6">Code example #6</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+# Z contains uncorrelated data  
+Z = np.dot(Xnorm,U)
+
+</code></pre>
+</div>
+</div>
+<p>Lets visualize the data before and after PCA.</p>
+<div>
+<div>
+<pre><code class="language-Python">
+# 2 plots in one row
+fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(18,5))  # added size of each figs (width, height)
+fig.subplots_adjust(wspace=0.2) # leave some space between figs
+
+
+# plot for original data 
+axs[0].scatter(data[:,0], data[:,1])
+axs[0].set_title("Original Data")
+
+
+# plot for uncorrelated data after PCA
+axs[1].scatter(Z[:,0], Z[:,1])
+axs[1].set_title("Data after PCA")
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    Text(0.5,1,'Data after PCA')
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/Using%20PCA%20to%20Remove%20Correlation%20in%20Data%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h4 id="dimensionality-reduction">Dimensionality Reduction</h4>
+<p>To reduce the dimensionality of our 2D data to 1D, we remove the principle component that captures the&nbsp;<em>least</em>&nbsp;variation. Our principle components, which are the eigen vectors of the covariance matrix are: U[:,0] and U[:,1]. By projecting our data Xnorm onto just U[:,0], we get a reduced Z in 1D.</p>
+<p>In general, we decide to keep&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;eigenvectors in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>U</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(U\)"}</annotation></semantics></math>&nbsp;that captures maximum variation. Then our reduced data Znorm becomes:&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mtext>Xnorm</mtext><mrow class="MJX-TeXAtom-ORD"><mi>M</mi><mo>×<!-- × --></mo><mi>M</mi></mrow></msub><mo>×<!-- × --></mo><msub><mtext>Ureduced</mtext><mrow class="MJX-TeXAtom-ORD"><mi>M</mi><mo>×<!-- × --></mo><mi>k</mi></mrow></msub><mo>=</mo><msub><mtext>Z</mtext><mrow class="MJX-TeXAtom-ORD"><mi>M</mi><mo>×<!-- × --></mo><mi>k</mi></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\text{Xnorm}_{M\times M} \times \text{Ureduced}_{M\times k}=\text{Z}_{M\times k}\)"}</annotation></semantics></math></p>
+<p>In this case,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi><mo>=</mo><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k=1\)"}</annotation></semantics></math>.</p>
+<h4 id="code-example-7">Code example #7</h4>
+<div>
+<div>
+<pre><code class="language-Python">k = 1 # number of principal components to retain
+
+Ured =  U[:,0:k] # choose the first k principal components
+
+#project our data Xnorm onto Ured
+Zred = np.dot(Xnorm,Ured) 
+
+print(Zred.shape)
+print(Ured.shape)
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    (50, 1)
+    (2, 1)
+</code></pre>
+</div>
+</div>
+<h4 id="code-example-8">Code example #8</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+
+#recover our Xnorm data from Zred
+Xrec = np.dot(Zred, Ured.T)
+print(Xrec.shape)
+
+
+#Visualize the recovered data
+fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(18,5))  # added size of each figs (width, height)
+fig.subplots_adjust(wspace=0.2) # leave some space between figs
+
+
+# plot for Xnorm 
+axs[0].scatter(Xnorm[:,0], Xnorm[:,1])
+axs[0].set_title("Normalised Original Data")
+
+
+# plot for Xrec
+axs[1].scatter(Xrec[:,0], Xrec[:,1])
+axs[1].set_title("Recovered data after dimensionality reduction")
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    (50, 2)
+
+    Text(0.5,1,'Recovered data after dimensionality reduction')
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/Using%20PCA%20to%20Remove%20Correlation%20in%20Data%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h3 id="measuring-reconstruction-error">Measuring ‘reconstruction error’</h3>
+<p>How much information did we lose after dimensionality reduction? To measure this, we calculate the&nbsp;<em>reconstruction error</em>&nbsp;of our data. Reconstruction error, is calculated as the square root of sum of squared errors of each data point. Essentially, this becomes the distance between the original data point and the reconstructed data point.</p>
+<p>For a better visualisation consider the figure below. The blue dots are the original data points, and the red dots are the reconstructed data points after dimensionality reduction using PCA. The dotted lines shows the distance between each original and reconstructed data point. So reconstruction error becomes the sum of these distances.</p>
+<p class="centerImage"><img src="../images/Using%20PCA%20to%20Remove%20Correlation%20in%20Data%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+&gt;
+<h5>Figure. title</h5>
+<h4 id="math-formula">Math formula</h4>
+<p>In mathematical terms, given our data Xnorm (MxN matrix) and reconstructed data Xrec (MxN matrix), where&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>M</mi><mo>=</mo><mn>50</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(M=50\)"}</annotation></semantics></math>&nbsp;data points and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>N</mi><mo>=</mo><mn>2</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(N = 2\)"}</annotation></semantics></math>&nbsp;dimensions, the reconstruction error is calculated as:&nbsp;&nbsp;</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mtext>Reconstruction Error</mtext><mo>=</mo><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>M</mi></mrow></munderover><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>N</mi></mrow></munderover><mo stretchy="false">(</mo><msub><mtext>Xnorm</mtext><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>j</mi></mrow></msub><mo>−<!-- − --></mo><msub><mtext>Xrec</mtext><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>j</mi></mrow></msub><msup><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mn>2</mn></mrow></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\text{Reconstruction Error}=\sum_{i=1}^{M}\sum_{j=1}^{N}(\text{Xnorm}_{ij}-\text{Xrec}_{ij})^{2}\)"}</annotation></semantics></math></p>
+<h4 id="frobenius-norm">Frobenius Norm</h4>
+<p>To make this error term between&nbsp;&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>,&nbsp;</p>
+<p>we divide it by the Frobenius norm of the original data Xnorm. Frobenius norm of a matrix is defined as the square root of the sum of the absolute squares of its elements.</p>
+<p>You can get a <a href="http://mathworld.wolfram.com/FrobeniusNorm.html" target="_blank" rel="noopener noreferrer">formal definition</a> or <a href="https://www.youtube.com/watch?v=yJh8l9HKMGY" target="_blank" rel="noopener">watch a video illustrating a simple example</a>&nbsp;if you need more information.</p>
+<p>In python, frobenius norm is implemented in linear algebra package of numpy. You can call it using linalg.norm(, 'fro')</p>
+<h4 id="code-example-9">Code example #9</h4>
+<div>
+<div>
+<pre><code class="language-Python">rec_err = np.linalg.norm(Xnorm-Xrec, 'fro')/np.linalg.norm(Xnorm, 'fro')
+print("The reconstruction error is: {}".format(rec_err))
+
+</code></pre>
+</div>
+</div>
+<p>The output would look like this:</p>
+<div>
+<div>
+<pre><code class="language-Python">    The reconstruction error is: 0.36364398984
+</code></pre>
+</div>
+</div>
+<h1 id="your-task"><span style="color: rgb(96, 56, 255);">Activity</span></h1>
+<p>Make sure that you have experimented with all the individual Python coding examples that we have in this lesson, and that you are confident in how they work.</p>
+<p></p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

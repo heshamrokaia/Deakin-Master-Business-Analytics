@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><p><img src="../images/Function%20image%201.jpg" alt="Robotic arm with pencil, 3D rendering isolated on white background" title="Robotic arm with pencil, 3D rendering isolated on white background" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Function</h1>
+</div>
+<div>
+<p>Functions store blocks of code so you can call them by name.</p>
+<p>Going back to our algorithm example, ‘washingup’ was a function we called and so was ‘stop cooking’.</p>
+<p>An argument is a value that you can use within the function. In the ‘washing up’ function, an argument might be (dirtything) and the value of of the variable dirtything would have been ‘bowl’.</p>
+<p>In Python it would look like this. Try it in your Jupyter Notebook:</p>
+<pre><code class="language-Python"># first we create a function about washing up
+def washingup(dirtything):
+      print("We need to wash the", dirtything)
+
+# then we define the dirty thing in the variable dirtything
+dirtything = 'bowl'
+# then we call the function with the argument dirtything
+cookingstep = washingup(dirtything)
+</code></pre>
+<h3 id="syntax">Syntax</h3>
+<p>A function in Python is defined using the keyword&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>d</mi><mi>e</mi><mi>f</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(def\)"}</annotation></semantics></math>,&nbsp;followed by the function name and function arguments within parentheses (), and ends with a colon&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo>:</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(:\)"}</annotation></semantics></math></p>
+<p>The functional Python code follow, with one additional level of indentation. This is the&nbsp;<em>function body</em>. It is recommended to use “docstring” for your functions. Docstring explains what the function does.</p>
+<p>Lets look at an example:</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">def func1(s):
+    """
+    THIS BIT IS CALLED DOCSTRING similar to comments to document the code
+    This function prints a string 's' and returns (tells us) the number of characters in it.
+    """ 
+  
+    print("Number of characters in the string: ", len(s))
+    return 2*len(s) 
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python">a = func1("test function")
+print(a)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Number of characters in the string:  13  
+26
+</code></pre>
+</div>
+</div>
+<p>Use the&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(return\)"}</annotation></semantics></math>&nbsp;keyword for functions that return a value. A function can also return multiple values using tuples.</p>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python">def powers(x):
+    """
+    Return a few powers of x.
+    """
+    xs = x**2
+    xc = x**3
+    xf = x**4
+    return xs, xc, xf
+</code></pre>
+</div>
+</div>
+<div>
+<div>
+<pre><code class="language-Python">print(powers(3))
+
+y1,y2,y3 = powers(2)
+print(y2)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">  (9, 27, 81)
+  8
+</code></pre>
+</div>
+</div>
+<h3 id="anonymous-functions">Anonymous Functions</h3>
+<p>Anonymous functions are defined by the keyword&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>l</mi><mi>a</mi><mi>m</mi><mi>b</mi><mi>d</mi><mi>a</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(lambda\)"}</annotation></semantics></math>&nbsp;in Python. Functions&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>g</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(g\)"}</annotation></semantics></math>&nbsp;in the cell below basically do the same thing. But&nbsp;<strong></strong><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>g</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(g\)"}</annotation></semantics></math>&nbsp;is an anonymous function.</p>
+<h4 id="code-example-3">Code example 3</h4>
+<div>
+<div>
+<pre><code class="language-Python"># define a function
+def f(x):                 
+    return x**2.          # x to the power of 2 - the function give us x squared
+
+# use an anonymous function instead
+g = lambda x: x**2.  # x to the power of 2 - in other words x squared
+
+print(f(8))   # call the f function and ask for the square of 8
+print(g(8))  # call the g anonymous function and ask for the square of 8
+</code></pre>
+</div>
+</div>
+<p>You will get the following output. As you can see both functions return the same value.</p>
+<div>
+<div>
+<pre><code class="language-Python">  64.0
+  64.0
+</code></pre>
+</div>
+</div>
+<p>The following Python code is another interesting example of how powerful functions can be. Increment means increase or add.</p>
+<p>In the cell below, we used anonymous function n_increment(). We create new functions by passing&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(n\)"}</annotation></semantics></math>&nbsp;to n_incremenet(). For example&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f5\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mn>9</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(f9\)"}</annotation></semantics></math>&nbsp;are functions that add 5 and 9 to their inputs respectively.</p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre><code class="language-Python"># define a function that gives us back an anonymous function
+def n_increment(n): 
+    return lambda x: x+n
+
+add5 = n_increment(5)
+add9 = n_increment(9)
+
+print(add5(2), add9(2))
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">  7 11
+</code></pre>
+</div>
+</div>
+<h1 id="your-task"><span style="color: rgb(96, 56, 255);">Activity</span></h1>
+<p>Explore all the examples demonstrated in this lesson. Change some of the code and see how they work. Did they confirm your understanding or were you confused?</p>
+<p>Discuss these ideas the in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener">Student Discussion</a>.</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

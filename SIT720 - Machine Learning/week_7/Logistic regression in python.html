@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css" type="text/css"></head><body class="cloudFirst"><p><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%201.jpg" alt="Black and White Striped Torus Abstract Background" title="Black and White Striped Torus Abstract Background" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>SVM in Python - Polynomial kernel</h1>
+</div>
+<div>
+<p>In the previous code we implemented an SVM with a linear kernel. In this practical, you will apply a polynomial kernel.</p>
+<p>As we have seen, a Linear kernel gave us a linear decision boundary: the separation boundary is a straight line between the two categories. What do you think a polynomial kernel will produce?</p>
+<h3 id="regularisation-with-svm">Regularisation with SVM</h3>
+<p>In order to facilitate the visualisation, let’s consider the Iris data set Class 1 and Class 2 samples. These two types are not linearly separable , so we will see something more interesting. Here we use the <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.in1d.html" target="_blank" rel="noopener noreferrer">in1d function in numpy</a>&nbsp;to do this easily.</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">
+import numpy as np
+from sklearn.model_selection import train_test_split
+# Import data and modules
+import pandas as pd
+import numpy as np
+from sklearn import datasets
+iris = datasets.load_iris()
+
+# We'll use the petal length and width only for this analysis
+X = iris.data
+y = iris.target
+
+X = X[:,:2] # Use only the first 2 columns. This is for easy plotting/visualisation
+x, y = X[np.in1d(y, [1, 2])], y[np.in1d(y, [1, 2])]
+
+#Split the data into 80% Training and 20% Testing sets
+Xtrain, Xtest, ytrain, ytest = train_test_split(x,y, test_size=0.2, random_state=42)
+
+print(Xtrain.shape)
+print(ytrain.shape)
+print(Xtest.shape)
+print(ytest.shape)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">(80, 2)
+(80, )
+(20, 2)
+(20, )
+</code></pre>
+</div>
+</div>
+</blockquote>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Fit SVM using linear kernel on training data
+from matplotlib.colors import ListedColormap
+
+# We define a colormap with three colors, for three labels our data
+cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
+
+def plot_estimator(estimator, X, y):
+    '''
+    This function takes a model (estimator),
+    '''
+    print()
+    estimator.fit(X, y)
+    # Determine the maximum and minimum mesh as a boundary
+    x_min, x_max = X[:, 0].min() - .1, X[:, 0].max() + .1
+    y_min, y_max = X[:, 1].min() - .1, X[:, 1].max() + .1
+    # Generating the points on the mesh
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
+    np.linspace(y_min, y_max, 100))
+    # Make predictions on the grid points
+    Z = estimator.predict(np.c_[xx.ravel(), yy.ravel()])
+
+    # for color
+    Z = Z.reshape(xx.shape)
+    plt.figure()
+    plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
+
+    # Original training sample
+    plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold)
+    plt.axis('tight')
+    plt.axis('off')
+    plt.tight_layout()
+# Fit SVM using linear kernel on training data
+from sklearn import svm
+from sklearn import metrics
+import matplotlib.pyplot as plt
+svc_model = svm.SVC(kernel='linear')
+svc_model.fit(Xtrain, ytrain)
+
+#Training/Testing Accuracy:
+svc_acc = metrics.accuracy_score(ytrain, svc_model.predict(Xtrain))
+print("SVM Training Accuracy: {}".format(svc_acc))
+plot_estimator(svc_model,x,y)
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">SVM Training Accuracy: 0.7125
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Note the training accuracy</h5>
+<h4 id="code-example-3">Code example 3</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Plotting support vectors
+plot_estimator(svc_model,x,y)
+plt.scatter(svc_model.support_vectors_[:, 0], svc_model.support_vectors_[:, 1], s=100, marker='*', edgecolors='g', zorder=10)
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Support vectors</h5>
+<div>
+<div>
+<pre><code class="language-Python">#Testing Accuracy:
+svc_acc_test = metrics.accuracy_score(ytest, svc_model.predict(Xtest))
+print("SVM Testing Accuracy: {}".format(svc_acc_test))
+</code></pre>
+</div>
+</div>
+<p>SVM Testing Accuracy: 0.7</p>
+<h3 id="the-effect-of-the-c-parameter-on-svm">The effect of the C parameter on SVM</h3>
+<p>C is 1 by default and it’s a reasonable default choice. If you have a lot of noisy observations you should decrease it. It corresponds to regularise more the estimation. It is similar to the L2 regularization parameter.</p>
+<p>A good discussion on this is available <a href="http://stats.stackexchange.com/questions/31066/what-is-the-influence-of-c-in-svms-with-linear-kernel" target="_blank" rel="noopener noreferrer">here</a>. You are highly encouraged to read it.</p>
+<p>Lets start with a high&nbsp;<em>C value</em>. This corresponds to a high penalty for misclassification. Hence the learnt margin will be narrow, resulting in a small number of support vectors.</p>
+<h4 id="code-example-4">Code example 4</h4>
+<div>
+<div>
+<pre><code class="language-Python">svc_model = svm.SVC(kernel='linear', C=1e2)
+svc_model.fit(Xtrain, ytrain)
+plot_estimator(svc_model, Xtrain, ytrain)
+print("Data has a total of {} support vectors".format(svc_model.support_vectors_.shape[0]))
+
+#Training accuracy:
+print("Training accuracy: {}".format(metrics.accuracy_score(ytrain, svc_model.predict(Xtrain))))
+print("Testing accuracy : {}".format(metrics.accuracy_score(ytest, svc_model.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Data has a total of 55 support vectors
+Training accuracy: 0.725
+Testing accuracy : 0.7
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%204.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Note the number of support vectors__</h5>
+<h4 id="code-example-5">Code example 5</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Plotting support vectors
+plot_estimator(svc_model,x,y)
+plt.scatter(svc_model.support_vectors_[:, 0], svc_model.support_vectors_[:, 1], s=100, marker='*', edgecolors='g', zorder=10)
+plt.title('High C values: small number of support vectors')
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Note the number of support vectors</h5>
+<p>If we have a low C value, we get no regularization, a low penalty for misclassification. Hence we find a larger margin with more support vectors.</p>
+<h4 id="code-example-6">Code example 6</h4>
+<div>
+<div>
+<pre><code class="language-Python">svc_model = svm.SVC(kernel='linear', C=1e-2)
+
+svc_model.fit(Xtrain, ytrain)
+print("Data has a total of {} support vectors".format(svc_model.support_vectors_.shape[0]))
+
+plot_estimator(svc_model, x, y)
+
+#Training accuracy:
+print("Training accuracy: {}".format(metrics.accuracy_score(ytrain, svc_model.predict(Xtrain))))
+print("Testing accuracy : {}".format(metrics.accuracy_score(ytest, svc_model.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Data has a total of 76 support vectors
+Training accuracy: 0.7
+Testing accuracy : 0.65
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%206.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;How many are support vectors?</h5>
+<h4 id="code-example-7">Code example 7</h4>
+<div>
+<div>
+<pre><code class="language-Python"># Plotting support vectors
+plot_estimator(svc_model,x,y)
+plt.scatter(svc_model.support_vectors_[:, 0], svc_model.support_vectors_[:, 1], s=100, marker='*', edgecolors='g', zorder=10)
+plt.title('Low C values: high number of support vectors')
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%207.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Almost all are support vectors</h5>
+<p>Notice that the decision boundary changes for the model, decreasing the testing accuracy. Also now almost all the points become support vectors. This is one of the issues with a small sample data.</p>
+<p>You can experiment by changing C and observing its effect on the decision boundary and testing accuracy.</p>
+<p>In sklearn, <a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVC.html" target="_blank" rel="noopener noreferrer">LinearSVC</a>&nbsp;there is another implementation of Linear kernel. It has more flexibility in terms of parameters. The default usage is as:</p>
+<h4 id="code-example-8">Code example 8</h4>
+<div>
+<div>
+<pre><code class="language-Python">svc_model = svm.LinearSVC()
+plot_estimator(svc_model, Xtrain, ytrain)
+plt.title('Linear SVC Kernel')
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%208.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Notice any differences</h5>
+<h3 id="svm-with-polynomial-kernel">SVM with Polynomial Kernel</h3>
+<p>Here, you fit a polynomial kernel with varying degrees. The degree of the polynomial kernel can be specified using the “degree” parameter.</p>
+<p>You can experiment by changing this parameter. Observe the change in the decision boundary. A degree &gt; 4 will take longer.</p>
+<h4 id="code-example-9">Code example 9</h4>
+<div>
+<div>
+<pre><code class="language-Python">svc_model = svm.SVC(kernel='poly', degree=2)
+
+svc_model.fit(Xtrain,ytrain)
+plot_estimator(svc_model, Xtrain, ytrain)
+plt.title('Polynomial kernel')
+
+#Training accuracy:
+print("Training accuracy: {}".format(metrics.accuracy_score(ytrain, svc_model.predict(Xtrain))))
+print("Testing accuracy : {}".format(metrics.accuracy_score(ytest, svc_model.predict(Xtest))))
+</code></pre>
+</div>
+</div>
+<blockquote>
+<p>Outputs :</p>
+<div>
+<div>
+<pre><code class="language-Python">Training accuracy: 0.7125
+Testing accuracy : 0.7
+</code></pre>
+</div>
+</div>
+</blockquote>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%209.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure.&nbsp;Polynomial kernel</h5>
+<h4 id="code-example-10">Code example 10</h4>
+<div>
+<div>
+<pre><code class="language-Python">#plotting support vectors
+plot_estimator(svc_model, x, y)
+plt.scatter(svc_model.support_vectors_[:, 0], svc_model.support_vectors_[:, 1], marker='*', s=100, edgecolors='g', zorder=10)
+plt.title('Polynomial kernel')
+plt.show()
+</code></pre>
+</div>
+</div>
+<p class="centerImage"><img src="../images/SVM%20in%20Python%20-%20Polynomial%20kernel%20image%2010.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h2 id="your-task">Activity</h2>
+<p>Did you read the discussion on the <a href="http://stats.stackexchange.com/questions/31066/what-is-the-influence-of-c-in-svms-with-linear-kernel" target="_blank" rel="noopener noreferrer">influence of c in SVMS</a>. What is the most valuable information you gained?</p>
+<p>If you are having any technical issues with the Python coding examples, you may use the <a href="/d2l/le/1030403/discussions/List" target="_blank" rel="noopener">troubleshooting forum</a>&nbsp;for assistance.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

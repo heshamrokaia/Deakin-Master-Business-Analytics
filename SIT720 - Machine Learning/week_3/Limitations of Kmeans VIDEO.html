@@ -1,0 +1,152 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"><script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body class="cloudFirst" data-new-gr-c-s-check-loaded="8.912.0" data-gr-ext-installed=""><h1>Limitations of Kmeans</h1>
+<div>
+<p>Kmeans clustering has a number of limitations.</p>
+<p>Watch the video to understand some of Kmeans limitations and possible solutions.</p>
+<p>The most important limitations of simple Kmeans are:</p>
+<ul>
+<li>Random initialisation means that you may get different clusters each time. As a solution, we can use a&nbsp;<em>Kmeans++</em>&nbsp;initialisation algorithm to initialise better.</li>
+<li>We have to supply the number of clusters beforehand. We can use the&nbsp;<em>Elbow method</em>&nbsp;to choose&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math>,&nbsp;but it may not be straightforward.</li>
+<li>It cannot find clusters of arbitrary shapes.</li>
+<li><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">It cannot detect&nbsp;</span><em style="font-family: Lato, sans-serif; font-size: 0.95rem;">noisy</em><span style="font-family: Lato, sans-serif; font-size: 0.95rem;">&nbsp;data points, i.e. data points that should not be taken into account for cluster analysis. (The K-median method is less affected but cannot identify noisy data points either.)</span></li>
+</ul>
+<h3 id="finding-a-useful-number-of-clusters">Finding a useful number of clusters</h3>
+<p>As we have mentioned before, one of the challenges of Kmeans is the assumption we have to make about the number of clusters to start with. The&nbsp;<em>Elbow Method</em>&nbsp;is a method for finding the appropriate number of clusters. The Elbow method interprets and validates consistency within a cluster analysis to find the appropriate number of clusters in a dataset.</p>
+<h5 id="elbow-method">Elbow Method</h5>
+<p>Watch the video for an introduction to this concept. The idea of elbow method is to run the Kmeans clustering algorithm for a range of values of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math>,&nbsp;&nbsp;compute the sum of squared error (SSE) as:</p>
+<p><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mstyle><mi>S</mi><mi>S</mi><msub><mi>E</mi><mi>K</mi></msub><mo>=</mo><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>n</mi></mrow></munderover><munderover><mo>∑<!-- ∑ --></mo><mrow class="MJX-TeXAtom-ORD"><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mrow class="MJX-TeXAtom-ORD"><mi>K</mi></mrow></munderover><msub><mi>z</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>k</mi></mrow></msub><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−<!-- − --></mo><msub><mi>μ<!-- μ --></mi><mi>k</mi></msub><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><msup><mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow><mn>2</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"SSE_K = \sum_{i=1}^{n} \sum_{k=1}^{K} z_{ik} ||x_i - \mu_k||^2"}</annotation></semantics></math></p>
+<p>So&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mo fence="false" stretchy="false">∥<!-- ∥ --></mo><msub><mi>x</mi><mi>i</mi></msub><mo>−<!-- − --></mo><msub><mi>μ<!-- μ --></mi><mi>k</mi></msub><msup><mo fence="false" stretchy="false">∥<!-- ∥ --></mo><mn>2</mn></msup></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\|x_i - \mu_k\|^2\)"}</annotation></semantics></math>&nbsp;finds the distance of each point (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_i\)"}</annotation></semantics></math>)&nbsp;to its corresponding centroid (<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>μ<!-- μ --></mi><mi>k</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(\mu_k\)"}</annotation></semantics></math>)&nbsp;in the cluster.&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>z</mi><mrow class="MJX-TeXAtom-ORD"><mi>i</mi><mi>k</mi></mrow></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(z_{ik}\)"}</annotation></semantics></math>&nbsp;is a binary variable which is&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>1</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(1\)"}</annotation></semantics></math>&nbsp;when&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_i\)"}</annotation></semantics></math>&nbsp;is assigned to the cluster number&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;and it is&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>&nbsp;when&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><msub><mi>x</mi><mi>i</mi></msub></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(x_i\)"}</annotation></semantics></math>&nbsp;is not related to cluster number&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>.&nbsp;</p>
+<p>As you can see in the following figure (left image), based on the elbow method, it looks 6 is the best cluster number for this case.</p>
+<p class="centerImage"><img src="../images/Limitations%20of%20Kmeans%20image%201.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5 id="figure-illustration-of-elbow-method-with-different-number-of-clusters">Figure. Illustration of Elbow method with different number of clusters.*</h5>
+<p>Sometimes we might not be able to discern the elbow shape based on different numbers of clusters. In this case, the elbow method cannot help for obtaining the best value of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>.</p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=4d44532b-dbc4-40e3-bc78-afe70122a09e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">SPEAKER 1: In this tutorial, we're going to talk about K in Kmeans. As you know, we're required to specify K when we would like to perform Kmeans. But how challenging is it to find K? Consider these data points. As you can see, we have a specified two clusters. K equals the two four these data points. So we have one centroid in here, another centroid in there. So probably, these two groups will add up in one cluster. And these three groups will add up in another cluster. If we specified three clusters, we're going to have something like this. So this group is a cluster. These two groups will be another cluster. Also the remaining two is the last cluster.
+<p class="transcript__para">Now what if we increase the number of clusters to four? As you can see, these two groups will end up to be one cluster. And the remaining groups will be each one cluster. Now if you jump from five and go directly to six, we can see we have one centroid or one cluster for each of these groups, but two clusters or centroids for this one, which looks to be redundancy because they look to be only in one group.</p>
+<p class="transcript__para">But if you select five clusters, we can see it really makes sense. So we have a centroid and cluster for each group of the data. Also, you can see in here the distribution of data points and the cluster we found. This plot shows the value of the objective function, which we already talked about with respect to the number of clusters. As you know this, value will reduce as the number of clusters increases, because the value of inter-intro distances will be reduced. But how can we find the best number of clusters, because usually it's not possible to illustrate or visualise data like this? There is a method called elbow method. This method is used for finding the number of cluster.</p>
+<p class="transcript__para">The idea of elbow method is to run Kmeans clustering algorithm for a range of values of K. And for each value of K, we will compute the sum of a squared error as this. Sum of a squared error is exactly same as the J or the objective function we had in Kmeans. So as you can see, we're calculating the distance of Xi from the centroid of its cluster which it belongs to. Also we have zed IK as a binary value, which is 1 when Xi belongs to a cluster K. And it's 0 when Xi does not belong to cluster K.</p>
+<p class="transcript__para">Now if we plot the value of sum squared error or a J function with respect to the number of clusters and at different values of K, it decreases as K increases. So if the plot looks like an arm, then the elbow of the arm in the case and right value of K. As you can see here, we're increasing the number of clusters from one to eight. And this is the value of the cost function, the squared error, or the objective function we had in the Kmeans, which we show that by K. As you can see, we're kind of seeing an elbow in here.</p>
+<p class="transcript__para">In that case, we can say this elbow point, which K equals the three, is the best number of cluster. But usually it's not really easy to find that, because in most of the cases you'll face with something like this, which is not possible to find elbow pointing here. But if you ever had a data and you could find something like this, definitely choose this K as the best number of clusters.</p>
+</article>
+<p></p>
+<span style="font-size: 15.2px;"><br></span></div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

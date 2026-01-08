@@ -1,0 +1,365 @@
+
+.sebe_Tag {
+  color: whitesmoke;
+  background-color: grey;
+  display: inline-block; /* inline-block allows responsive wrapping of tags */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: 800;
+  background-color: royalblue;
+  margin-right: 8px;
+  margin-top: 8px; /* for responsive wrapping */
+}
+
+.sebe_Tag * {
+  display: inline;
+}
+
+.sebe_Tag.black {
+  background-color: black;
+}
+
+.sebe_Tag.blue {
+  background-color: #1e6aff;
+}
+
+.sebe_Tag.brown {
+  background-color: sienna;
+}
+
+.sebe_Tag.green {
+  background-color: green;
+}
+
+.sebe_Tag.orange {
+  background-color: #f14100;
+}
+
+.sebe_Tag.purple {
+  background-color: darkviolet;
+}
+
+.sebe_Tag.red {
+  background-color: #d61818;
+}
+
+.sebe_Tag.yellow {
+  background-color: #ffc920;
+  color: #363636;
+}
+
+
+
+
+/*
+
+.sebe_Tag.blueviolet {
+  background-color: blueviolet;
+}
+
+.sebe_Tag.brown {
+  background-color: brown;
+}
+
+.sebe_Tag.black {
+  background-color: black;
+}
+
+.sebe_Tag.chocolate {
+  background-color: chocolate;
+}
+
+.sebe_Tag.cornflowerblue {
+  background-color: cornflowerblue;
+}
+
+.sebe_Tag.crimson {
+  background-color: crimson;
+}
+
+.sebe_Tag.darkcyan {
+  background-color: darkcyan;
+}
+
+.sebe_Tag.darkgoldenrod {
+  background-color: darkgoldenrod;
+}
+
+.sebe_Tag.darkmagenta {
+  background-color: darkmagenta;
+}
+
+.sebe_Tag.darkorchid {
+  background-color: darkorchid;
+}
+
+.sebe_Tag.darkviolet {
+  background-color: darkviolet;
+}
+
+.sebe_Tag.dodgerblue {
+  background-color: dodgerblue;
+}
+
+.sebe_Tag.firebrick {
+  background-color: firebrick;
+}
+
+.sebe_Tag.forestgreen {
+  background-color: forestgreen;
+}
+
+.sebe_Tag.green {
+  background-color: green;
+}
+
+.sebe_Tag.indianred {
+  background-color: indianred;
+}
+
+.sebe_Tag.lightslategray {
+  background-color: lightslategray;
+}
+
+.sebe_Tag.lightslategrey {
+  background-color: lightslategrey;
+}
+
+.sebe_Tag.mediumorchid {
+  background-color: mediumorchid;
+}
+
+.sebe_Tag.mediumpurple {
+  background-color: mediumpurple;
+}
+
+.sebe_Tag.mediumseagreen {
+  background-color: mediumseagreen;
+}
+
+.sebe_Tag.mediumslateblue {
+  background-color: mediumslateblue;
+}
+
+.sebe_Tag.mediumvioletred {
+  background-color: mediumvioletred;
+}
+
+.sebe_Tag.olivedrab {
+  background-color: olivedrab;
+}
+
+.sebe_Tag.orangered {
+  background-color: orangered;
+}
+
+.sebe_Tag.palevioletred {
+  background-color: palevioletred;
+}
+
+.sebe_Tag.peru {
+  background-color: peru;
+}
+
+.sebe_Tag.red {
+  background-color: red;
+}
+
+.sebe_Tag.purple {
+  background-color: purple;
+}
+
+.sebe_Tag.rosybrown {
+  background-color: rosybrown;
+}
+
+.sebe_Tag.royalblue {
+  background-color: royalblue;
+}
+
+.sebe_Tag.saddlebrown {
+  background-color: saddlebrown;
+}
+
+.sebe_Tag.seagreen {
+  background-color: seagreen;
+}
+
+.sebe_Tag.sienna {
+  background-color: sienna;
+}
+
+.sebe_Tag.slategray {
+  background-color: slategray;
+}
+
+.sebe_Tag.slategrey {
+  background-color: slategrey;
+}
+
+.sebe_Tag.steelblue {
+  background-color: steelblue;
+}
+
+.sebe_Tag.teal {
+  background-color: teal;
+}
+
+.sebe_Tag.tomato {
+  background-color: tomato;
+}
+
+*/
+
+.sebe_colorfulbox {
+  background-color: #edefff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  /* width: fit-content; */
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sebe_colorfulbox.aliceblue {
+  background-color: aliceblue;
+}
+
+.sebe_colorfulbox.antiquewhite {
+  background-color: antiquewhite;
+}
+
+.sebe_colorfulbox.beige {
+  background-color: beige;
+}
+
+.sebe_colorfulbox.bisque {
+  background-color: bisque;
+}
+
+.sebe_colorfulbox.blanchedalmond {
+  background-color: blanchedalmond;
+}
+
+.sebe_colorfulbox.cornsilk {
+  background-color: cornsilk;
+}
+
+.sebe_colorfulbox.gainsboro {
+  background-color: gainsboro;
+}
+
+.sebe_colorfulbox.gold {
+  background-color: gold;
+}
+
+.sebe_colorfulbox.khaki {
+  background-color: khaki;
+}
+
+.sebe_colorfulbox.burlywood {
+  background-color: lavender;
+}
+
+.sebe_colorfulbox.lavenderblush {
+  background-color: lavenderblush;
+}
+
+.sebe_colorfulbox.lemonchiffon {
+  background-color: lemonchiffon;
+}
+
+.sebe_colorfulbox.lightblue {
+  background-color: #edefff;
+}
+
+.sebe_colorfulbox.linen {
+  background-color: linen;
+}
+
+.sebe_colorfulbox.mistyrose {
+  background-color: mistyrose;
+}
+
+.sebe_colorfulbox.moccasin {
+  background-color: moccasin;
+}
+
+.sebe_colorfulbox.navajowhite {
+  background-color: navajowhite;
+}
+
+.sebe_colorfulbox.oldlace {
+  background-color: oldlace;
+}
+
+.sebe_colorfulbox.palegoldenrod {
+  background-color: palegoldenrod;
+}
+
+.sebe_colorfulbox.paleturquoise {
+  background-color: paleturquoise;
+}
+
+.sebe_colorfulbox.papayawhip {
+  background-color: papayawhip;
+}
+
+.sebe_colorfulbox.peachpuff {
+  background-color: peachpuff;
+}
+
+.sebe_colorfulbox.pink {
+  background-color: pink;
+}
+
+.sebe_colorfulbox.plum {
+  background-color: plum;
+}
+
+.sebe_colorfulbox.powderblue {
+  background-color: powderblue;
+}
+
+.sebe_colorfulbox.thistle {
+  background-color: thistle;
+}
+
+.sebe_colorfulbox.wheat {
+  background-color: wheat;
+}
+
+.sebe_colorfulbox.whitesmoke {
+  background-color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

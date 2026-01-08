@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body><h1><span style="color: rgb(70, 166, 97);">This task is for SIT720 but SIT307 can do it as an advanced topic.</span></h1>
+<h2><span style="color: rgb(69, 0, 219);">DBSCAN</span></h2>
+<div>
+<p><em><strong>DBSCAN </strong></em>- Density-Based Spatial Clustering of Applications with Noise. Finds core samples of high density and expand clusters from them. Good for data which contains clusters of similar density. [<a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html" title="More details">More details</a>]</p>
+<pre class="line-numbers d2l-code"><code class="language-python">from sklearn.cluster import DBSCAN
+X=Feature_set.iloc[:,0:-1]
+y_true=Feature_set.iloc[:,-1]
+model = DBSCAN(eps=0.3, min_samples=10)
+y_pred=model.fit_predict(X)
+
+print(
+    "purity_score: %0.3f"
+    % purity_score(y_true, y_pred)
+)</code></pre>
+<p>Performance of the DBSCAN model:</p>
+<pre class="line-numbers d2l-code"><code class="language-markup">purity_score: 0.519</code></pre>
+</div>
+<h1><span style="color: rgb(69, 0, 219);"><strong>Hierarchical clustering</strong> </span></h1>
+<pre class="line-numbers d2l-code"><code class="language-python">import numpy as np
+
+from matplotlib import pyplot as plt
+from scipy.cluster.hierarchy import dendrogram
+from sklearn.cluster import AgglomerativeClustering
+
+
+def plot_dendrogram(model, **kwargs):
+    # Create linkage matrix and then plot the dendrogram
+
+    # create the counts of samples under each node
+    counts = np.zeros(model.children_.shape[0])
+    n_samples = len(model.labels_)
+    for i, merge in enumerate(model.children_):
+        current_count = 0
+        for child_idx in merge:
+            if child_idx &lt; n_samples:
+                current_count += 1  # leaf node
+            else:
+                current_count += counts[child_idx - n_samples]
+        counts[i] = current_count
+
+    linkage_matrix = np.column_stack(
+        [model.children_, model.distances_, counts]
+    ).astype(float)
+
+    # Plot the corresponding dendrogram
+    dendrogram(linkage_matrix, **kwargs)
+
+
+X=Feature_set.iloc[:,0:-1]
+y_true=Feature_set.iloc[:,-1]
+# setting distance_threshold=0 ensures we compute the full tree.
+model = AgglomerativeClustering(distance_threshold=0,linkage="complete", affinity="cosine",n_clusters=None)
+model = model.fit(X)
+
+plt.title("Hierarchical Clustering Dendrogram")
+# plot the top three levels of the dendrogram
+plot_dendrogram(model, truncate_mode="level", p=3)
+plt.xlabel("Number of points in node (or index of point if no parenthesis).")
+plt.show()</code></pre>
+<p><img src="File_7c133f46a878490f92aacb57d620183a_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p></p>
+<h1></h1>
+<pre class="line-numbers d2l-code"><code class="language-python">model = AgglomerativeClustering( linkage="complete", affinity="cosine",n_clusters=2)
+
+y_pred = model.fit_predict(X)
+print(
+    "purity_score: %0.3f"
+    % purity_score(y_true, y_pred)
+)
+</code></pre>
+<p><span style="color: rgb(32, 33, 34);">Purity of the&nbsp;Hierarchical clustering</span></p>
+<pre class="line-numbers d2l-code"><code class="language-markup">purity_score: 0.519</code></pre>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

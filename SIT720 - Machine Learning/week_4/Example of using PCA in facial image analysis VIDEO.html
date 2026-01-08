@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"><script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;" data-new-gr-c-s-check-loaded="8.912.0" data-gr-ext-installed=""><h1>Example of using PCA in facial image analysis</h1>
+<div>
+<p>In this video we learn about a real-world example of how PCA is used. Many researches have used PCA for reducing dimensionality in face recognition problems. In this example, each image in the data set is represented by a vector of size 1024 (e.g. each image is represented by 1024 pixels).</p>
+<p>The following steps are followed in the process described in the video.</p>
+<ol>
+<li>Generate the covariance matrix for data</li>
+<li>Find principle eigen vectors that represent the data</li>
+<li>Calculate face image preservation of energy when&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math>&nbsp;principle eigenvectors are used</li>
+<li><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">Projecting data back after preserving only&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;axis of variation (using only&nbsp;</span><math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>K</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(K\)"}</annotation></semantics></math><span style="font-family: Lato, Arial, sans-serif; font-size: 0.95rem;">&nbsp;principle eigenvectors)</span></li>
+</ol>
+<p>You will also see how the final image quality is effected by different&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;values and why selecting a smaller value for&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>k</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(k\)"}</annotation></semantics></math>&nbsp;can be beneficial for a classifier.</p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=5fb19e92-9c8e-4987-993d-afe70122a0a4&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="js-transcript transcript" id="transcript-en">
+<p class="transcript__para">SPEAKER: In this tutorial, we're going to learn about real-world example of PCA. Many researchers have used PCA for reducing dimensionality in face recognition problems. After reduce the dimensionality of data in face images, you can use any classifier, such as KNN, to classify images of faces. These are the face images of 100 people. And each image size is 32 time 32. For each image, we would generate a vector of 32 time 32, 1,024, dimensional vector by rasterizing. So basically, we are representing each image by 1,024 pixels. We can also represent this data in form of a matrix. As you know, we have 100 images. And each of them has 1,024 dimensions. So this is the form of the matrix.</p>
+<p class="transcript__para">As the first step of PCA, we need to find a covariance matrix. As we already know, the covariance matrix of this data would be a matrix of the size 1,024 times 1,024, which looks like this one. Now, if we find the principal eigenvectors and the corresponding eigenvalues, you can see there are only 100 non-zero eigenvalues. As you can see in here, these are the number of eigenvalues. So the eigenvalue number 1 has this value. Number 2 has this value. And the last one is getting close to 0. And the rest of eigenvalues are 0. So it means this 100 principal eigenvectors are kind of responsible for representing the whole data.</p>
+<p class="transcript__para">And we can escape the other parts of data since they are not really informative. Now you may ask, how much information would we preserve by reducing 1,024 dimensions into only K dimensions? In image processing, we call this preservation of energy, or information on the image. As we can see here, the face image preservation of energy if only K principal eigenvectors are used is a plot like this. Let's say we are going to use 100 eigenvectors, finally. But what if we only use the top 10 of this principal eigenvectors? As we can see, if you use the 0 to 10 principal eigenvectors, we are going to have around 10% of the information regarding the images.</p>
+<p class="transcript__para">But if we increase that, let's say, from 10 to 20 principal eigenvectors, we are going to have 20% of the information. But as we increase this more, let's say, when we are using 70 to 80 principal eigenvectors, we can gain around 80% of information. And finally, if we use all these 100 eigenvectors, we are going to have all their information. Now if we plot these eigenvectors after resizing the images, they look like-- something like this. You may be able to discern some sort of features out of this images.</p>
+<p class="transcript__para">We can also project each of the data vector xi using the K principal eigenvectors. We can say x dash i equals to xi times the matrix U, which matrix U is the matrix of principal eigenvectors. And here, we say-- choose all the rows, but only use K first columns. It means we select all rows, but only five columns of the matrix of principal eigenvectors. So in here, we say here we want to only use five first principal eigenvectors. Then we are projecting xi to x dash i with only five principal eigenvectors. To check what happened to our original data after preserving all the K axes of variance, we can project the data back into the original dimension.</p>
+<p class="transcript__para">So we can use x dash i and multiply that to the transpose of this U matrix we already had. Don't forget in here, the rows and columns are changed. Even though the data which has been projected back is in original 1,024 dimensions-- but this data is only used K dimensional subspaces rather than all dimensions. In the pictures in the right side, we can see the original face images, though in the left side, you can see the reconstructed images by only using five principal axes of variance. As you can see, in here, we are losing some details which are clear in these images, but they're not clear in this one.</p>
+<p class="transcript__para">Now, if we increase the number of principal axes, you can see-- we can now-- now we are getting more details in the images of faces. The most interesting part is sometimes, we intentionally want to do this. And the reason is we don't want to get too much into the noises. Let's say you're working in a company, and one day, you don't shave before going to work. And you have some sort of beard on your face. Should this system let you in or not? Of course it should. So by training your system on some noisy unrelated things, you may lose the generality of your system. So you have to be careful.</p>
+<p class="transcript__para">Sometimes, we need to use these sort of data rather than the original data with too much details.</p>
+</article>
+<h2 id="your-task">Activity</h2>
+<p>Think of another similar problem where reducing the dimensionality of a problem is critical for its implementation.</p>
+<p>Share your response in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener" class="kalmod-7432415-2">discussion forum</a>.</p>
+<span style="font-size: 15.2px;"><br></span></div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

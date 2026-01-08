@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<script>function lti_launch( vars, target ) {
+						var query = '';
+						var new_tab = false;
+
+						for(var key in vars) {
+							if(query.length == 0) {
+								query += '?' + key + '=' + encodeURIComponent(vars[key]);
+							}
+							else {
+								query += '&' + key + '=' + encodeURIComponent(vars[key]);
+							}
+						}
+
+						var url = '/d2l/customization/pearsonlti/6605/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/embeds.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/mathjax.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+							elm.setAttribute('style', 'display: block; height: 0.5rem;');
+						});
+
+						window.D2L.MathJax.loadMathJax({
+							outputScale: 1.5,
+							renderLatex: true,
+							enableMML3Support: false
+						});
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2024.6.211/unbundled/prism.js?v=20.24.6.19120" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) return;
+						document.documentElement.setAttribute('lang', 'en-GB'); 						
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}	
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					var params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					var el = document.getElementsByTagName( 'iframe' );
+					for ( var i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+							el[i].style.width = '100%';
+							console.info( 'Setting iFrame height to ' + params.height );
+							console.info( 'Setting iFrame width to 100%' );
+						}
+					}
+				});</script></head><body><h1>Text data representation</h1>
+<div>
+<p>This is a very brief introduction to data representation.</p>
+<p>Without the use of specialist tools, it is beyond the capacity of humans to analyse and interpret large volumes of data.</p>
+<p>Computers only understand numbers. Words, images and ideas must be turned into numbers before you can feed them in to a computer for processing.</p>
+<p><em>Data representation</em>&nbsp;is an important step towards creating models from large scale data. Machine Learning requires data to be described by ‘features’ called&nbsp;<em>attributes</em>&nbsp;or&nbsp;<em>parameters</em>&nbsp;before use. Choosing the right features is important to creating a useful model.</p>
+<h3 id="an-important-video">An important video</h3>
+<p>If you are new to ML, the video above introduces important concepts. This will help you understand how text data can be presented numerically using learning algorithms.</p>
+<p>The video also describes&nbsp;<em>feature vectors</em>, which are used in the next article and the following articles on matrices. Be sure to watch and develop your knowledge around how text becomes a table of numbers before you move on.</p>
+<p></p>
+<p align="center"><iframe src="https://deakin.au.panopto.com/Panopto/Pages/Embed.aspx?id=452554b4-f34d-4db7-a21b-afe70122a0cf&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=true&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe></p>
+<table class="tableClear" style="width: 880px;">
+<tbody>
+<tr>
+<td style="width: 59px;"></td>
+<td style="width: 466.433px;"><a id="viewTranscript">View transcript</a></td>
+<td style="width: 271.567px;"></td>
+</tr>
+</tbody>
+</table>
+<article class="transcript transcript" id="transcript-en">
+<p class="transcript__para">SPEAKER 1: Welcome. In this section, we would like to talk about text data representation. In order to present a text data readable and useful for machine learning algorithms, we are performing bag-of-words model. The bag-of-words model is simple to understand and easy to implement. It has seen great successes in problems such as language modelling and document classifications. The basic idea in bag-of-words is a representation of text that describes the occurrence of words feeding a document. As you can see in here, we have two documents, document number one and document number two. Also, we have a vocabulary list or terms. Then we're going to search for these terms inside the documents.</p>
+<p class="transcript__para">Let's say, for the word "goal," we have only one occurrence in document number one and no occurrence in document number two. For the word "data," we have one occurrence in document number one and two occurrences in document number two. For the word "information," two occurrences in document number one. Also, two occurrences in document number two. One occurrence of "insight" in document number one and no occurrence of "insight" in document number two. Also, as you can see, we have no occurrence of "you" in document number one. But we have two occurrences of "you" in document number two. We call these vectors the feature vectors of documents. So this one is the feature vector of document number one.</p>
+<p class="transcript__para">And Doc2 is the feature vector of document two. Then we add up these feature vectors into feature matrix, so that we can later use that as representation of text data for machine learning methods. As you can see, we add up the feature vector of the first document in the first column of the feature matrix, the feature vector of the second document in the second column of the feature metrics. In machine learning linguistic, each document is called instance, example, or record. Also, this matrix is called feature matrix. Each instance is put on a row or column of this matrix. As you can see in here, each instance is put on the column of the feature matrix.</p>
+</article>
+<h2 id="your-task">Activity</h2>
+<p>The technique described in the video is a popular model used to encode text data. What are some of its limitations?</p>
+<p>Extension: if you are familiar with the basic concept you might like to extend your knowledge by looking at this Lynda course which is free to Deakin students: <a href="https://www.lynda.com/Python-tutorials/Processing-Text-Python-Essential-Training/786424-2.html" target="_blank" rel="noopener noreferrer">Processing text with Python</a></p>
+<p>Share your response in the <a href="/d2l/common/dialogs/quickLink/quickLink.d2l?ou=1734011&amp;type=discuss&amp;rcode=DeakinUniv-19277" target="_blank" rel="noopener" class="kalmod-7432375-3">discussion forum</a>.</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-video.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

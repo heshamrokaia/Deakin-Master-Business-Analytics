@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Decision%20tree%20algorithms%20image%201.jpg" alt="Forrest in summer" title="Forrest in summer" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Decision tree algorithms</h1>
+</div>
+<div>
+<p>There are variety of algorithms for decision trees.</p>
+<p>Here are three of the more popular ones:</p>
+<ul>
+<li>ID3 (Iterative Dichotomiser 3)<br>uses Entropy.</li>
+<li>C4.5 (Successor of ID3)&nbsp;<br>slightly more advanced version of ID3 and also uses Entropy.</li>
+<li>CART (Classification and Regression Tree)<br>uses Gini impurity.</li>
+</ul>
+<p>We will look at ID3 in detail.</p>
+<h3 id="the-id3-algorithm">The ID3 Algorithm</h3>
+<p>The algorithm was developed by Ross Quinlan in 1975 (He is an Australian who graduated from University of Sydney). It’s used to generate a decision tree from a dataset. Although this method is simple, it is an effective machine learning algorithm. The basic algorithm is as follows:</p>
+<ol>
+<li>Calculate the entropy of every feature using the data set <math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>S</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S\)"}</annotation></semantics></math>. Split the set <math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>S</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(S\)"}</annotation></semantics></math> into subsets using the feature for which entropy is minimum. So lesser values of entropy means it should be a good choice for selection of the attribute or feature and it will&nbsp;<em>gain more information</em>.</li>
+<li>Make a decision tree node containing that feature.</li>
+<li>Recurse on subsets using remaining features.</li>
+</ol>
+<h3 id="tree-depth">Tree depth</h3>
+<p>If you build a very&nbsp;<em>deep tree</em>, you are basically partitioning the feature space into small regions. If the tree is very deep, we should expect low chances of visiting many training points in that sub-region. This means all the estimations in that region are not good because of the&nbsp;<em>high variance</em>.</p>
+<p>On the other hand, when the regions are very big and you have a&nbsp;<em>shallow tree</em>, you can infer that the training data points do not have high variances however you may have other problems such as&nbsp;<em>bias</em>. You will have a&nbsp;<em>high bias</em>&nbsp;in shallow decision trees. It means your decision making process is too naive. If you need to revise these concepts they are described in weeks 7 and 8.</p>
+<p>You need to create a decision tree of the right depth, to find the&nbsp;<em>sweet spot</em>&nbsp;in terms of depth. You can achieve that by performing the cross validation and other evaluation methods you have learned in weeks 5 and 6.</p>
+<p>Remember, you need to find or tune the proper hyperparameter which is the depth of the tree.</p>
+<h2 id="your-task">Activity</h2>
+<p>You might find this short tutorial on <a href="https://homes.cs.washington.edu/~shapiro/EE596/notes/InfoGain.pdf" target="_blank" rel="noopener noreferrer">information gain and entropy</a>interesting. Let us know your thoughts!</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

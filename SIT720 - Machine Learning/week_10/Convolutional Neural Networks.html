@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager --><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+  <link rel="stylesheet" type="text/css" href="../00-assets/navbar/navbar-parent.css">
+<link rel="stylesheet" type="text/css" href="../00-assets/css/sit307-720.css">
+
+<link rel="stylesheet" href="https://s.brightspace.com/lib/fonts/0.5.0/fonts.css"></head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><p><img src="../images/Convolutional%20Neural%20Networks%20image%201.jpg" alt="Brain, neural network, illustration Neural network. Computer illustration of the brains neural network represented by lines and dots." title="Brain, neural network, illustration Neural network. Computer illustration of the brains neural network represented by lines and dots." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Convolutional Neural Networks</h1>
+</div>
+<div>
+<p>The architecture of a&nbsp;<em>Convolutional Neural Network</em>&nbsp;(CNN or ConvNet) is modelled after the mammalian visual cortex, the part of the brain where visual input is processed.</p>
+<p>Within the visual cortex, specific neurons fire only when particular phenomena are in the field of vision. For example, one neuron might fire only when you are looking at a left-sloping diagonal line and another only when a horizontal line is in view. Our brains process images in layers of increasing complexity. The first layer distinguishes basic attributes like lines and curves. At higher levels, the brain recognizes that a configuration of edges and colours is, for instance, a house or a bird.</p>
+<p>Consider the figure below. Focusing on the regions of the image is the main attribute. As you can see in the figure, this network does not appear to be&nbsp;<em>fully connected</em>&nbsp;(it’s not going to use all the pixels) and is dealing with local regions which result in sparsity and locality.</p>
+<p class="centerImage"><img src="../images/Convolutional%20Neural%20Networks%20image%202.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. How a CNN works on different regions.</h5>
+<p>CNNs are made of three basic concepts:</p>
+<ul>
+<li><strong>Sparse interactions:&nbsp;</strong>Sparse weights within a smaller kernel (e.g.,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>3</mn><mo>×<!-- × --></mo><mn>3</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(3 \times 3\)"}</annotation></semantics></math>,<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>5</mn><mo>×<!-- × --></mo><mn>5</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(5 \times 5\)"}</annotation></semantics></math>) instead of the whole input. This helps reduce the number of parameters. The term&nbsp;<em>kernel</em>&nbsp;in CNN generally refers to an&nbsp;<em>operator</em>&nbsp;applied to the entirety of the image such that it transforms the information encoded in the pixels (see the figure above).</li>
+<li><strong style="font-family: Lato, sans-serif; font-size: 0.95rem;">Parameter sharing:&nbsp;</strong>A kernel uses the same set of weights while applying to different locations (sliding windows).</li>
+</ul>
+<ul>
+<li><strong>Translation invariance: </strong>Invariance means that you can recognize an object as an object, even when its appearance varies in some way. This is generally a good thing, because it allows abstraction of an object’s identity or category from the specifics of the visual input. For example it will recognise the object even with different relative positions of the viewer/camera and the object (see figure below).<strong><br></strong></li>
+</ul>
+<p class="centerImage"><img src="../images/Convolutional%20Neural%20Networks%20image%203.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. Translation invariance</h5>
+<h3 id="lene5">LeNe5</h3>
+<p>The very first CNN called <a href="http://yann.lecun.com/" target="_blank" rel="noopener noreferrer">LeNe5</a>&nbsp;was introduced by Yann LeCun.</p>
+<p>The LeNet5 architecture was fundamental. In particular the insight that image features are distributed across the entire image and that convolutions with learnable parameters are an effective way to extract similar features at multiple locations with few parameters. The following figures illustrate the structure of LeNet5.</p>
+<p class="centerImage"><img src="../images/Convolutional%20Neural%20Networks%20image%204.jpg" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. LeNet5 structure.</h5>
+<p class="centerImage"><img src="../images/Convolutional%20Neural%20Networks%20image%205.png" alt="" title="" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<h5>Figure. General LeNet5 structure. Source: (<a href="https://arxiv.org/pdf/1511.08458.pdf" target="_blank" rel="noopener noreferrer">O’Shea &amp; Nash 2015</a>)&nbsp;</h5>
+<p>In the figure above the CNN architecture is comprised of just five layers. As O’Shea &amp; Nash (2015) highlight, the basic functionality of the example CNN above can be divided into&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>4</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(4\)"}</annotation></semantics></math>&nbsp;</p>
+<p>key areas:</p>
+<ol style="font-size: 0.95rem;">
+<li>As found in other forms of ANN, the input layer will hold the pixel values of the image. In the previous figure, you see a picture of a number&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mn>0</mn></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(0\)"}</annotation></semantics></math>as an input to the CNN.</li>
+<li>The convolutional layer will determine the output of neurons which are connected to&nbsp;<em>local regions of the input</em>&nbsp;through the calculation of the scalar product between their weights and the region connected to the input volume. The rectified linear unit (commonly shortened to&nbsp;<em>ReLu</em>) aims to introduce to LeNet5, an&nbsp;<em>elementwise</em>&nbsp;activation function such as sigmoid to the output of the activation produced by the previous layer.</li>
+<li>The pooling layer will then simply perform&nbsp;<em>downsampling</em>&nbsp;along the spatial dimensionality of the given input, further reducing the number of parameters within that activation.</li>
+<li>The fully-connected layers will then perform the same duties found in standard ANNs and attempt to produce class scores from the activations, to be used for classification. ReLu may be used between these layers to improve performance. Through this simple method of transformation, CNNs are able to transform the original input layer-by-layer using convolutional and downsampling techniques to produce class scores for classification and regression purposes.</li>
+</ol>
+<p>To conclude, LeNet5 features can be summarized as:</p>
+<ul style="font-size: 0.95rem;">
+<li>a convolutional neural network that uses a sequence of 3 layers: convolution, pooling, non-linearity</li>
+<li>uses&nbsp;<em>convolution</em>&nbsp;to extract spatial features</li>
+<li>subsamples using&nbsp;<em>spatial average of maps</em></li>
+<li>nonlinearity in the form of&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(tanh\)"}</annotation></semantics></math>&nbsp;or<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mi>s</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(sigmoids\)"}</annotation></semantics></math></li>
+<li>basically an MLP as final classifier</li>
+<li>uses a sparse connection matrix between layers to avoid large computational cost</li>
+</ul>
+<p>Overall this network was the origin of many recent architectures and a true inspiration for many people in the field.</p>
+<h2 id="your-task">Activity</h2>
+<p>If you are interested, please go through the following video tutorial to get more information on CNNs</p>
+<p></p>
+<div>
+<p class="centerVideo"><iframe width="648" height="364" src="https://www.youtube.com/embed/YRhxdVk_sIs?wmode=opaque" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
+<h5>This is an additional video, hosted on YouTube.</h5>
+</div>
+<p></p>
+<h4 id="reference"></h4>
+<hr style="width: 100%; height: auto; color: #ffffff; border: 1px inset #cccccc;">
+<h4 id="reference" style="display: inline !important;">Reference</h4>
+<p>O’Shea, K &amp; Nash, R 2015&nbsp;<a href="https://arxiv.org/pdf/1511.08458.pdf">An Introduction to Convolutional Neural Networks</a>, viewed 6 September 2018.</p>
+</div>
+<hr>
+<div><iframe class="quickNavStyle" scrolling="no" src="../00-assets/navbar/navbar.html" title="NavBar" allowfullscreen="allowfullscreen" frameborder="0"></iframe></div>
+<!-- <div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+</div> -->
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+<script src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/jquery/jquery_3_5_1/jquery-3.5.1.min.js"></script>
+<script src="../00-assets/navbar/navbar-parent.js"></script>
+<script src="../00-assets/js/sit307-720.js"></script>
+</p></body></html>

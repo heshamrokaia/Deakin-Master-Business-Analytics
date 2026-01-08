@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><!-- Google Tag Manager --><script>window.dataLayer = window.dataLayer || [];window.dataLayer.push({'cmsType' : 'D2L'});</script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N3CB');</script><!-- End Google Tag Manager -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+</head><body style="color: rgb(32, 33, 34); font-family: verdana, sans-serif; font-size: 10px;"><h2 id="Random-data-into-pandas-dataframe">Data wrangling</h2>
+<p><span style="font-size: 16px;">Data wrangling is the procedure of acquiring, analysing, and manipulating raw data into a suitable format for faster processing and evaluation.</span><br><span style="font-size: 16px;">Data wrangling can be divided into the following section:</span></p>
+<ul style="list-style-type: disc;">
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data loading and saving</span></li>
+<li style="font-size: 16px; color: rgb(0, 111, 191); font-weight: bold;"><strong><span style="font-size: 16px; color: rgb(0, 111, 191);">Data exploration</span></strong></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data processing, such as missing value handling, encoding categorical values</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Data distribution</span></li>
+<li style="font-size: 16px;"><span style="font-size: 16px;">Scaling</span><span style="font-size: 16px;"></span></li>
+</ul>
+<h2 id="Data-exploration">Data exploration</h2>
+<pre class="line-numbers d2l-code"><code class="language-javascript">import pandas as pd
+df=pd.read_csv("data/Advertising.csv")
+df.info()</code></pre>
+<p>The output of this code is as follows:</p>
+<p></p>
+<pre class="line-numbers d2l-code"><code class="language-markup">&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 200 entries, 0 to 199
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype  
+---  ------     --------------  -----  
+ 0   TV         198 non-null    float64
+ 1   Radio      198 non-null    float64
+ 2   Newspaper  199 non-null    float64
+ 3   Sales      197 non-null    float64
+ 4   Types      200 non-null    object 
+dtypes: float64(4), object(1)
+memory usage: 7.9+ KB</code></pre>
+<h2 id="Data-describtion-such-as-mean,-std">Data descriptions such as mean, std</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">df.describe()</code></pre>
+<p>The output of this code is as follows:</p>
+<p></p>
+<p><img src="../week_1/File_a5c31af046c449f392959a4b7cebd7e4_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;"></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2>Find the missing values and replace them&nbsp;with the previous data point</h2>
+<pre class="line-numbers d2l-code"><code class="language-python">print("------------------------Before-------------------------------------------------------------")
+print("Check any values are null--&gt;",df.isnull().values.any())
+print("-------------------------------------------------------------------------------------")
+print("How many values are null in individual columns or attribute\n",df.isnull().sum())
+print("-------------------------------------------------------------------------------------")
+df2=df.copy().bfill()
+print("---------------------- After ---------------------------------------------------------------")
+print("Check any values are null--&gt;",df2.isnull().values.any())
+print("-------------------------------------------------------------------------------------")
+print("How many values are null in individual columns or attribute\n",df2.isnull().sum())
+print("-------------------------------------------------------------------------------------")</code></pre>
+<p>The output of this code is as follows:</p>
+<p><img src="../week_1/File_6c9ce963b3a34c96995c39bdc7c56869_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<h2 id="Find-the-missing-values-and-replace-with-previous-data-point"><img src="../week_1/File_6da8dc8c4f0f4c5886d05e0f591335f1_image.png" data-d2l-editor-default-img-style="true" style="max-width: 100%;"></h2>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<hr>
+<div style="padding-top: 20px;"></div>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;">&lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+  console.log("ready!");
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

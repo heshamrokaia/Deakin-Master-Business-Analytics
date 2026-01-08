@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body><p><img src="../images/Branching%20and%20decisions%20image%201.jpg" alt="Huge branching tree" title="Huge branching tree" style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Branching and decisions</h1>
+</div>
+<div>
+<p>Syntax, in this case indentation, and conditionals (decisions) are another two essential elements of coding.</p>
+<p>Python code blocks are defined by their indentation level. Program structure is controlled by how far lines of code are indented.</p>
+<p>Be careful how the code is laid out or you will get unexpected results or a broken program that will not run.</p>
+<h3 id="conditionals-and-decision-trees">Conditionals and decision trees</h3>
+<p>Decisions are resolved by checking the condition of a variable. Is the cup empty? The answer can only be Yes or no. True or false. The answer is ‘boolean’ - the digital bit is either on or off.</p>
+<p>Using our ‘trips around the city’ example,&nbsp; &nbsp;would need to ask, ‘Is this trip less than or equal to 25 km?’. Let’s imagine this data point (a trip) is 15 km. The answer to the question will be ‘True’. We can then ask the machine to put the trip into a cluster containing trips under 25 km.</p>
+<p>Enter this simple code into your Python setup:</p>
+<div>
+<div>
+<pre><code class="language-Python">trip1 = 15
+
+if trip1 &lt;= 25: 
+    print("This trip goes into the 25 km and under cluster")
+else:
+    print("This trip goes into the over 25 km cluster")
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">This trip goes into the 25 km and under cluster
+</code></pre>
+</div>
+</div>
+<hr>
+<p>The Python syntax for conditional execution of code use the keywords&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>i</mi><mi>f</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(if\)"}</annotation></semantics></math>,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>e</mi><mi>l</mi><mi>i</mi><mi>f</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(elif\)"}</annotation></semantics></math>&nbsp;,&nbsp;(else if),&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>e</mi><mi>l</mi><mi>s</mi><mi>e</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(else\)"}</annotation></semantics></math>.&nbsp;</p>
+<p>Run the code below:</p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">statement1 = True
+statement2 = False
+
+if statement1: 
+    print("First statement is true")
+elif statement2:
+    print("Second statement is true")
+else:
+    print("Both statements are false")
+
+print("This is printed outside the if-else block")
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">First statement is true
+This is printed outside the if-else block
+</code></pre>
+</div>
+</div>
+<p>The type of&nbsp;<em>statement1</em>&nbsp;and&nbsp;<em>statement2</em>&nbsp;is&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>b</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>a</mi><mi>n</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(boolean\)"}</annotation></semantics></math>.&nbsp;You can check this by running the type(statement1). Python also treats any non zero integer as&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(true\)"}</annotation></semantics></math>.</p>
+<h3 id="indentation">Indentation</h3>
+<p>Run the following blocks for an experiment with indentation:</p>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python"># nothing happens because this code doesn't produce any output
+statement1 = False 
+
+if statement1:
+    print("printed if statement1 is True")
+    
+    print("still inside the if block")
+</code></pre>
+</div>
+</div>
+<p>You will get no output:</p>
+<div>
+<div>
+<pre><code class="language-Python">if statement1:
+    print("printed if statement1 is True")
+    
+print("now outside the if block")
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">now outside the if block
+</code></pre>
+</div>
+</div>
+<h2 id="your-task">Activity</h2>
+<p>In&nbsp;<em>Code example 1</em>&nbsp;change the values of statements 1 and 2 to different boolean values and observe the output. Also try assigning them zero and non-zero values.</p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>

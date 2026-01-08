@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>CloudDeakin Dual Delivery Template</title>
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-fl.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.css">
+<link rel="stylesheet" type="text/css" href="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.overrides.css">
+</head><body class="cloudFirst"><p><img src="../images/Iterations%20image%201.jpg" alt="Computer artwork of a sphere from linked, interlocking stars, formed by a network of lines." title="Computer artwork of a sphere from linked, interlocking stars, formed by a network of lines." style="max-width: 100%;" data-d2l-editor-default-img-style="true"></p>
+<address><a href="https://www.gettyimages.com.au" target="_blank" rel="noopener noreferrer">© Getty Images</a></address>
+<div>
+<h1>Iterations</h1>
+</div>
+<div>
+<p>Loops or iterations can be programmed using&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>f</mi><mi>o</mi><mi>r</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(for\)"}</annotation></semantics></math>&nbsp;and&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>w</mi><mi>h</mi><mi>i</mi><mi>l</mi><mi>e</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(while\)"}</annotation></semantics></math>.&nbsp; The for-loop is used to iterate through Python objects like lists, arrays and tuples.</p>
+<h3 id="for-loops">For loops</h3>
+<p>The for loop runs for a fixed number of times, otherwise known as iterations:</p>
+<p><strong>Enter this code into a Jupyter Notebook cell:</strong></p>
+<h4 id="code-example-1">Code example 1</h4>
+<div>
+<div>
+<pre><code class="language-Python">exampleList = [1, 2, 3, 4, 5]
+for item in exampleList:
+      print(item)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">1
+2
+3
+4
+5
+</code></pre>
+</div>
+</div>
+<p>The following is an example using for loops to initialize lists:</p>
+<h4 id="code-example-2">Code example 2</h4>
+<div>
+<div>
+<pre><code class="language-Python"># range(start, stop) creates a range of values from start to stop-1
+x = list(range(2, 6))
+print("Initial list: {}".format(x))
+
+for idx, item in enumerate(x):
+    x[idx] = item**2
+
+print("The new list: {}".format(x))
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">Initial list: [2, 3, 4, 5]
+The new list: [4, 9, 16, 25]
+</code></pre>
+</div>
+</div>
+<p>During each step of the for loop,&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>e</mi><mi>n</mi><mi>u</mi><mi>m</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>e</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(enumerate(x)\)"}</annotation></semantics></math>&nbsp;iterates through the list and store the index in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>i</mi><mi>d</mi><mi>x</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(idx\)"}</annotation></semantics></math>&nbsp;and value in&nbsp;<math title="" xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mstyle><mi>i</mi><mi>t</mi><mi>e</mi><mi>m</mi></mstyle><annotation encoding="latex">{"version":"1.1","math":"\(item\)"}</annotation></semantics></math>.</p>
+<p>Here is a shorter way of doing it:</p>
+<h4 id="code-example-3">Code example 3</h4>
+<div>
+<div>
+<pre><code class="language-Python">newlist = [x**2 for x in range(2, 6)]
+
+print(newlist)
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">[4, 9, 16, 25]
+</code></pre>
+</div>
+</div>
+<hr>
+<h3 id="while-loops">While Loops</h3>
+<p>The following is an example on how to use a while loop:</p>
+<h4 id="code-example-4">Code example 4.</h4>
+<div>
+<div>
+<pre><code class="language-Python">i = 0
+while i &lt; 5:
+      print (i, end=" ")   # prints each iteration on the same line
+      i += 1            # adds 1 to the variable i
+print()                 # prints a blank line
+print("done")       # Note that this is printed outside the loop
+</code></pre>
+</div>
+</div>
+<p>You will get the following output:</p>
+<div>
+<div>
+<pre><code class="language-Python">0 1 2 3 4
+done
+</code></pre>
+</div>
+</div>
+<p></p>
+</div>
+<hr>
+<div style="padding-top: 20px;"><a href="#" class="navrep-button" target="_parent" title="Previous" style="padding: .5rem .5rem; font-size: 12pt; float: left;"> &lt; Previous</a> <a href="#" class="navrep-button" target="_parent" title="Next" style="padding: .5rem .5rem; font-size: 12pt; float: right;">Next &gt;</a></div>
+<p style="padding-bottom: 50px;"></p>
+<p>
+<script defer="defer" type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/sebe-master.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-intmedia-donotedit/templates/open-source-css-and-js/prism/prism.js"></script>
+</p>
+<p>
+<script>
+function localProc(){
+
+  console.log("");
+  console.log("ready!");
+
+ 
+}
+</script>
+</p>
+<p>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-prism.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-mathjax.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl-nav.js"></script>
+<script type="text/javascript" src="/content/enforced/384049-SEBE_LST_01/z-sebe-lst-learning-design/fl-dual-delivery/js/sebe-fl.js"></script>
+</p></body></html>
